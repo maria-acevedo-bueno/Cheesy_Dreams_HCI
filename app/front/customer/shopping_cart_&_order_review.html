@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Your Order - Cheesy Dreams</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#fac638", "background-light": "#f8f8f5", "background-dark": "#231e0f"}, fontFamily: {display: "Work Sans"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#4A2C2A] dark:text-gray-200">
+<div class="relative flex min-h-screen w-full flex-col">
+<header class="sticky top-0 z-10 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="container mx-auto px-4">
+<div class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#4A2C2A]/10 dark:border-white/10 py-4">
+<div class="flex items-center gap-4 text-[#4A2C2A] dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-[#4A2C2A] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Cheesy Dreams</h2>
+</div>
+<nav class="hidden md:flex flex-1 justify-end items-center gap-8">
+<a class="text-[#4A2C2A] dark:text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Menu</a>
+<a class="text-[#4A2C2A] dark:text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-[#4A2C2A] dark:text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">About</a>
+<a class="text-[#4A2C2A] dark:text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Contact</a>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-primary text-[#4A2C2A] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-opacity">
+<span class="truncate">Login</span>
+</button>
+</nav>
+</div>
+</div>
+</header>
+<main class="flex-grow container mx-auto px-4 py-8 md:py-16">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 xl:gap-12 items-start">
+<div class="lg:col-span-2 space-y-6">
+<div class="flex flex-wrap justify-between gap-3 p-4">
+<div class="flex flex-col gap-3">
+<p class="text-[#333333] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Your Order</p>
+<p class="text-[#4A2C2A]/70 dark:text-gray-400 text-base font-normal leading-normal">Review your items before proceeding to checkout.</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex flex-col sm:flex-row gap-4 bg-white/50 dark:bg-black/20 rounded-lg p-4 justify-between items-center border border-transparent hover:border-primary/50 transition-all">
+<div class="flex items-center gap-4 w-full">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[70px] shrink-0" data-alt="A delicious looking Gouda Grilled Cheese sandwich" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBaoYHBf9fkK_R6TOlzzyTU7wuTwvnTWUG6yCz71nVwCelYYbctkSukM0KNaxiHooJL1jrQFDCYzSeaX8fXoZ-zDGzpsByi2yAANYT-mT2XFsLNel_FWAc3xmA8emPV-d2eV1YTshTyj5l6mYOYVWvrVUfTj2E-TMDcNqJD2q7kwiFnalJjcKm4p5EKr9k9_vm9MhgbL4QmDHh5s8B4eKsQrJE83Fahz2DQVoqBEd7tUKshM7mdciSUv58onia6E1YG_WDuKk2Wm_s");'></div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-[#333333] dark:text-white text-base font-medium leading-normal">Gouda Grilled Cheese</p>
+<p class="text-[#4A2C2A]/70 dark:text-gray-400 text-sm font-normal leading-normal">Contains: Gluten, Dairy</p>
+<p class="text-[#4A2C2A]/70 dark:text-gray-400 text-sm font-normal leading-normal">$12.50</p>
+</div>
+</div>
+<div class="flex items-center gap-4 justify-between w-full sm:w-auto">
+<div class="flex items-center gap-2 text-[#4A2C2A] dark:text-white">
+<button class="text-base font-medium leading-normal flex h-8 w-8 items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">-</button>
+<span class="text-base font-medium leading-normal w-8 text-center">2</span>
+<button class="text-base font-medium leading-normal flex h-8 w-8 items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">+</button>
+</div>
+<button class="text-[#D32F2F] hover:text-white hover:bg-[#D32F2F] dark:hover:bg-[#D32F2F]/80 rounded-full p-2 transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 bg-white/50 dark:bg-black/20 rounded-lg p-4 justify-between items-center border border-transparent hover:border-primary/50 transition-all">
+<div class="flex items-center gap-4 w-full">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[70px] shrink-0" data-alt="A bowl of classic tomato soup" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC8bgCEjZPbPPPh1qYQNsrYEmYJ5UFGRyZ1u1CbbsgqBbt_y_FJ7-6X00neeTCXTnz27Jyz0pAW5DokXtxFqWwKO2-qlIJ7APHrkM8v9UPQrtDN9uzuZ1QiLNXb6abhslVocrtZcKkzhYPZ0a5UCi1bDErivnx6TQrUAU0DCFa4QxsGctzIJEAJUjdCDMhGP5W1ZPqScV0tO3RTH36JxmLLsim4hQ4S0Cj4qt15YcpTdzOiBIhVkfChGrMmoJrSYuJJOxhk-c6NkKc");'></div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-[#333333] dark:text-white text-base font-medium leading-normal">Classic Tomato Soup</p>
+<p class="text-[#4A2C2A]/70 dark:text-gray-400 text-sm font-normal leading-normal">Contains: Dairy</p>
+<p class="text-[#4A2C2A]/70 dark:text-gray-400 text-sm font-normal leading-normal">$6.00</p>
+</div>
+</div>
+<div class="flex items-center gap-4 justify-between w-full sm:w-auto">
+<div class="flex items-center gap-2 text-[#4A2C2A] dark:text-white">
+<button class="text-base font-medium leading-normal flex h-8 w-8 items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">-</button>
+<span class="text-base font-medium leading-normal w-8 text-center">1</span>
+<button class="text-base font-medium leading-normal flex h-8 w-8 items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">+</button>
+</div>
+<button class="text-[#D32F2F] hover:text-white hover:bg-[#D32F2F] dark:hover:bg-[#D32F2F]/80 rounded-full p-2 transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 bg-white/50 dark:bg-black/20 rounded-lg p-4 justify-between items-center border border-transparent hover:border-primary/50 transition-all">
+<div class="flex items-center gap-4 w-full">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[70px] shrink-0" data-alt="A basket of crispy golden fries" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDr3-JakCiNd_E3IgYHkcETLdeT4gNuySg436LHeILeAHJ7hWAeJzO_Jinuehute-eK3K3Mp72TbNX399IxUBm_VxXKOFHP9vLynFd7XfeomgKmn7027obCo_bmOPsR7OntRMADsq_Zu8sRx38XVwwnf8GBtqDEgagx81TwqXKxnvAdv3CbWljwIbB-LG_mk8d55Z8IMx5-15L_bYjEqytMAPazkmgStmRhPwM3LS57qyQykxNT_2bbgFm6YhM8nPFLrsXMGHVAGPY");'></div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-[#333333] dark:text-white text-base font-medium leading-normal">Crispy Fries</p>
+<p class="text-[#4A2C2A]/70 dark:text-gray-400 text-sm font-normal leading-normal">Contains: Gluten</p>
+<p class="text-[#4A2C2A]/70 dark:text-gray-400 text-sm font-normal leading-normal">$4.50</p>
+</div>
+</div>
+<div class="flex items-center gap-4 justify-between w-full sm:w-auto">
+<div class="flex items-center gap-2 text-[#4A2C2A] dark:text-white">
+<button class="text-base font-medium leading-normal flex h-8 w-8 items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">-</button>
+<span class="text-base font-medium leading-normal w-8 text-center">1</span>
+<button class="text-base font-medium leading-normal flex h-8 w-8 items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">+</button>
+</div>
+<button class="text-[#D32F2F] hover:text-white hover:bg-[#D32F2F] dark:hover:bg-[#D32F2F]/80 rounded-full p-2 transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-1">
+<div class="sticky top-28 bg-white/80 dark:bg-black/30 backdrop-blur-md rounded-xl p-6 shadow-md border border-gray-200 dark:border-gray-700">
+<h3 class="text-2xl font-bold text-[#333333] dark:text-white mb-6">Order Summary</h3>
+<div class="space-y-4 text-sm text-[#4A2C2A]/90 dark:text-gray-300">
+<div class="flex justify-between">
+<span>Subtotal</span>
+<span>$35.50</span>
+</div>
+<div class="flex justify-between">
+<span>Taxes &amp; Fees</span>
+<span>$3.15</span>
+</div>
+</div>
+<div class="border-t border-dashed border-gray-300 dark:border-gray-600 my-6"></div>
+<div class="flex justify-between items-center text-[#333333] dark:text-white mb-6">
+<span class="text-lg font-bold">Total</span>
+<span class="text-2xl font-black">$38.65</span>
+</div>
+<div class="flex flex-col gap-4">
+<button class="w-full flex items-center justify-center gap-2 cursor-pointer rounded-xl h-12 px-6 bg-primary text-[#4A2C2A] text-base font-bold leading-normal tracking-wide shadow-lg hover:bg-opacity-90 transition-all transform hover:scale-[1.02]">
+<span>Proceed to Checkout</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="w-full flex items-center justify-center gap-2 cursor-pointer rounded-xl h-12 px-6 bg-transparent text-[#4A2C2A] dark:text-white text-base font-medium leading-normal tracking-wide border border-[#4A2C2A]/20 dark:border-white/20 hover:bg-primary/20 dark:hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+<span>Back to Menu</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<div class="fixed bottom-4 right-4 z-50 group">
+<button aria-expanded="false" aria-haspopup="true" aria-label="Open Accessibility Menu" class="bg-primary text-[#4A2C2A] rounded-full p-4 shadow-lg hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark">
+<span class="material-symbols-outlined text-3xl">accessibility_new</span>
+</button>
+<div aria-labelledby="accessibility-heading" class="absolute bottom-full right-0 mb-3 w-72 bg-white dark:bg-gray-800 rounded-lg shadow-2xl p-6 border border-gray-200 dark:border-gray-700 hidden group-focus-within:block group-hover:block" role="dialog">
+<h3 class="text-xl font-bold text-[#4A2C2A] dark:text-white mb-4" id="accessibility-heading">Accessibility Settings</h3>
+<div class="space-y-6">
+<div class="space-y-2">
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="font-size">Font Size</label>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-500">format_size</span>
+<input class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-600 accent-primary" id="font-size" max="120" min="80" step="10" type="range" value="100"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="foreground-color">Foreground Color</label>
+<div class="flex items-center justify-start gap-4">
+<button aria-label="Set foreground to black" class="size-8 rounded-full bg-black border-2 border-gray-300 dark:border-gray-500 focus:outline-none focus:ring-2 focus:ring-primary"></button>
+<button aria-label="Set foreground to white" class="size-8 rounded-full bg-white border-2 border-gray-300 dark:border-gray-500 focus:outline-none focus:ring-2 focus:ring-primary"></button>
+<button aria-label="Set foreground to blue" class="size-8 rounded-full bg-blue-600 border-2 border-gray-300 dark:border-gray-500 focus:outline-none focus:ring-2 focus:ring-primary"></button>
+<button aria-label="Reset foreground color" class="text-sm font-medium text-primary hover:underline">Reset</button>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="background-color">Background Color</label>
+<div class="flex items-center justify-start gap-4">
+<button aria-label="Set background to white" class="size-8 rounded-full bg-white border-2 border-gray-300 dark:border-gray-500 focus:outline-none focus:ring-2 focus:ring-primary"></button>
+<button aria-label="Set background to black" class="size-8 rounded-full bg-black border-2 border-gray-300 dark:border-gray-500 focus:outline-none focus:ring-2 focus:ring-primary"></button>
+<button aria-label="Set background to sepia" class="size-8 rounded-full bg-[#f4e9d8] border-2 border-gray-300 dark:border-gray-500 focus:outline-none focus:ring-2 focus:ring-primary"></button>
+<button aria-label="Reset background color" class="text-sm font-medium text-primary hover:underline">Reset</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html class="" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cheesy Dreams - Staff Time Clock</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#fac638", "background-light": "#f8f8f5", "background-dark": "#231e0f", charcoal: "#343A40", success: "#28A745", inactive: "#6C757D", "surface-light": "#FFFFFF", "surface-dark": "#1C2431"}, fontFamily: {display: "Work Sans"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-charcoal dark:text-gray-200">
+<div class="relative flex min-h-screen w-full flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-gray-200 dark:border-gray-700/50 px-6 sm:px-10 py-4 bg-surface-light dark:bg-surface-dark">
+<div class="flex items-center gap-4 text-charcoal dark:text-white">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold">Cheesy Dreams</h2>
+</div>
+<div class="flex flex-1 items-center justify-end gap-4">
+<span class="hidden sm:inline text-right text-charcoal dark:text-gray-300">Welcome, <span class="font-semibold">Jane Doe</span></span>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="A profile picture of Jane Doe" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD0whqH4fJd8m7npxcG1HGydVVSXWlyIAUzNtudwJp6ihphaIyF6B_aEpeYnuL0boP-WKYaeeSNj-j-uYtR6wqoMA_g_K4bvOFkOGoXln70xsnY5S1ZHoS_Fi26VEYTcaR9GzQ918-_3Pq8LFZBXskmcyWTFR1CIDxhYhZCnrHtkcJfap4P4DpjRGgFWV0f69znVbBeDujqAYSrT1IMpi7j8YsGfoQNc6_fKPmz1IbFubPmA1kSiYDqqji0pGwlaV_LdBA3igBYvtc");'></div>
+</div>
+</header>
+<main class="flex flex-1 flex-col items-center justify-center p-4 text-center">
+<h1 class="text-charcoal dark:text-white tracking-tight text-3xl md:text-4xl font-bold leading-tight px-4 pb-2 pt-6">Tuesday, August 20, 2024 | 09:01:15 AM</h1>
+<div class="flex justify-center items-center gap-2 pb-4 pt-2 px-4">
+<span class="text-gray-600 dark:text-gray-400 text-base font-normal">Status:</span>
+<span class="inline-flex items-center gap-1.5 rounded-full bg-inactive/10 dark:bg-inactive/20 px-3 py-1 text-sm font-semibold text-inactive dark:text-gray-300">
+<span class="size-2 rounded-full bg-inactive"></span>
+                Checked Out
+            </span>
+</div>
+<p class="text-gray-700 dark:text-gray-300 text-lg font-normal leading-normal pb-6 pt-1 px-4 text-center max-w-2xl">Please check in to start your shift.</p>
+<div class="flex flex-col sm:flex-row w-full justify-center gap-4 px-4 py-3 max-w-lg">
+<button class="flex flex-1 min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-14 px-5 bg-primary text-charcoal text-lg font-bold leading-normal transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary/50">
+<span class="material-symbols-outlined">login</span>
+<span class="truncate">Check In</span>
+</button>
+<button class="flex flex-1 min-w-[84px] cursor-not-allowed items-center justify-center gap-2 overflow-hidden rounded-lg h-14 px-5 bg-gray-300 dark:bg-charcoal/50 text-gray-500 dark:text-gray-400 text-lg font-bold leading-normal opacity-60">
+<span class="material-symbols-outlined">logout</span>
+<span class="truncate">Check Out</span>
+</button>
+</div>
+</main>
+<div aria-modal="true" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 hidden" role="dialog">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-2xl p-6 sm:p-8 w-full max-w-md m-4 text-center">
+<div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-success/10 text-success mb-4">
+<span class="material-symbols-outlined !text-4xl">task_alt</span>
+</div>
+<h2 class="text-2xl font-bold text-charcoal dark:text-white mb-2">Checked In!</h2>
+<p class="text-gray-600 dark:text-gray-300 mb-6">You successfully checked in at <strong>9:02:15 AM</strong>. Have a great shift!</p>
+<button class="w-full flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-charcoal text-base font-bold leading-normal tracking-[0.015em] hover:opacity-90 focus:outline-none focus:ring-4 focus:ring-primary/50">
+<span class="truncate">OK</span>
+</button>
+</div>
+</div>
+<div class="fixed bottom-6 right-6 z-40">
+<button aria-label="Open Accessibility Menu" class="flex size-14 items-center justify-center rounded-full bg-charcoal dark:bg-surface-dark text-white shadow-lg hover:bg-charcoal/80 dark:hover:bg-gray-600 focus:outline-none focus:ring-4 focus:ring-primary/50">
+<span class="material-symbols-outlined !text-3xl">accessibility_new</span>
+</button>
+</div>
+</div>
+</body></html>

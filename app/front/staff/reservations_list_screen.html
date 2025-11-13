@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html class="" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cheesy Dreams - Reservations</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#fac638", "background-light": "#f8f8f5", "background-dark": "#231e0f", "status-seated": "#198754", "status-upcoming": "#0D6EFD", "status-completed": "#6c757d"}, fontFamily: {display: "Work Sans"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="relative flex min-h-screen w-full">
+<!-- SideNavBar -->
+<aside class="flex h-screen w-64 flex-col bg-[#111318] p-4 sticky top-0">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 px-3 py-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Cheesy Dreams logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuACWG7apcDQDYvNEqsji_QXxNXAAHmsavK3M2grSSmAsuCbB8QH6m8V97WY1Qo3PkFnSbd4ZdQ8omPhJNiTkN0T_Yj36jbtKZrNrmx2BAlUzJLMIOSZlvulEkHxiVK46Dz8kxMoiR5y3X-GdmFlLRh2h3nWCNPi7FlMCz3jMmbHSASdtzuykd7r0YKMrMuZJRx43-0rS5JIhKA1NGR2PUOnktpFXcC1z7I4DpPGQJhwT8fu84IMlKksjcm2qsGLxbL7iAgq-m-P4WI");'></div>
+<div class="flex flex-col">
+<h1 class="text-white text-base font-medium leading-normal">Cheesy Dreams</h1>
+<p class="text-[#9da6b9] text-sm font-normal leading-normal">Management System</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 text-white/70 hover:text-white hover:bg-[#282e39] rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-white" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<p class="text-sm font-medium leading-normal">Reservations</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white/70 hover:text-white hover:bg-[#282e39] rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">table_restaurant</span>
+<p class="text-sm font-medium leading-normal">Tables</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white/70 hover:text-white hover:bg-[#282e39] rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">restaurant_menu</span>
+<p class="text-sm font-medium leading-normal">Menu</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white/70 hover:text-white hover:bg-[#282e39] rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<p class="text-sm font-medium leading-normal">Staff</p>
+</a>
+</nav>
+</div>
+<div class="mt-auto">
+<a class="flex items-center gap-3 px-3 py-2 text-white/70 hover:text-white hover:bg-[#282e39] rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium leading-normal">Settings</p>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-8">
+<div class="w-full mx-auto">
+<!-- PageHeading -->
+<header class="flex flex-wrap justify-between items-center gap-4 mb-6">
+<div>
+<h1 class="text-gray-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Reservations</h1>
+<p class="text-gray-500 dark:text-gray-400 mt-1">Today, October 26</p>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+<span class="material-symbols-outlined" style="font-size: 20px;">add</span>
+<span class="truncate">New Reservation</span>
+</button>
+</header>
+<!-- ToolBar -->
+<div class="flex flex-wrap items-center justify-between gap-4 mb-4 p-4 bg-white dark:bg-[#1C1F27] rounded-xl border border-gray-200 dark:border-[#3b4354]">
+<div class="flex items-center gap-2 flex-1 min-w-[200px]">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400">search</span>
+<input class="w-full bg-transparent border-0 focus:ring-0 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400" placeholder="Search by name, table number..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-2 p-2 px-3 text-gray-700 dark:text-white bg-gray-100 dark:bg-[#282e39] rounded-lg hover:bg-gray-200 dark:hover:bg-[#3b4354] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+<span class="material-symbols-outlined" style="font-size: 20px;">calendar_today</span>
+<span>Date</span>
+</button>
+<!-- Chips -->
+<div class="flex gap-2">
+<button class="h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/20 text-primary px-4 text-sm font-medium leading-normal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">All</button>
+<button class="h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-gray-100 dark:bg-[#282e39] text-gray-700 dark:text-white/80 px-4 text-sm font-medium leading-normal hover:bg-gray-200 dark:hover:bg-[#3b4354] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Seated</button>
+<button class="h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-gray-100 dark:bg-[#282e39] text-gray-700 dark:text-white/80 px-4 text-sm font-medium leading-normal hover:bg-gray-200 dark:hover:bg-[#3b4354] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Upcoming</button>
+</div>
+</div>
+</div>
+<!-- Table -->
+<div class="overflow-hidden rounded-xl border border-gray-200 dark:border-[#3b4354] bg-white dark:bg-[#111318]">
+<div class="overflow-x-auto">
+<table class="min-w-full text-sm">
+<thead class="bg-gray-50 dark:bg-[#1c1f27]">
+<tr>
+<th class="px-6 py-4 text-left font-medium text-gray-500 dark:text-white/80 tracking-wider">Customer Name</th>
+<th class="px-6 py-4 text-left font-medium text-gray-500 dark:text-white/80 tracking-wider">Time</th>
+<th class="px-6 py-4 text-left font-medium text-gray-500 dark:text-white/80 tracking-wider">Guests</th>
+<th class="px-6 py-4 text-left font-medium text-gray-500 dark:text-white/80 tracking-wider">Table #</th>
+<th class="px-6 py-4 text-left font-medium text-gray-500 dark:text-white/80 tracking-wider">Status</th>
+<th class="px-6 py-4 text-left font-medium text-gray-500 dark:text-white/80 tracking-wider">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-200 dark:divide-[#3b4354]">
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-gray-900 dark:text-white">John Smith</td>
+<td class="px-6 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">7:30 PM</td>
+<td class="px-6 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">4</td>
+<td class="px-6 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">12</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-status-upcoming/20 text-status-upcoming">Upcoming</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400">
+<button class="p-2 hover:bg-gray-100 dark:hover:bg-white/10 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"><span class="material-symbols-outlined" style="font-size: 20px;">edit</span></button>
+<button class="p-2 hover:bg-gray-100 dark:hover:bg-white/10 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"><span class="material-symbols-outlined" style="font-size: 20px;">chair</span></button>
+<button class="p-2 hover:bg-gray-100 dark:hover:bg-white/10 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"><span class="material-symbols-outlined" style="font-size: 20px;">cancel</span></button>
+</div>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-gray-900 dark:text-white">Emily Johnson</td>
+<td class="px-6 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">7:15 PM</td>
+<td class="px-6 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">2</td>
+<td class="px-6 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">8</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-status-seated/20 text-status-seated">Seated</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400">
+<button class="p-2 hover:bg-gray-100 dark:hover:bg-white/10 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"><span class="material-symbols-outlined" style="font-size: 20px;">edit</span></button>
+<button class="p-2 hover:bg-gray-100 dark:hover:bg-white/10 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"><span class="material-symbols-outlined" style="font-size: 20px;">visibility</span></button>
+<button class="p-2 hover:bg-gray-100 dark:hover:bg-white/10 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"><span class="material-symbols-outlined" style="font-size: 20px;">cancel</span></button>
+</div>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-gray-900 dark:text-white">Michael Davis</td>
+<td class="px-6 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">8:00 PM</td>
+<td class="px-6 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">5</td>
+<td class="px-6 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">15</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-status-upcoming/20 text-status-upcoming">Upcoming</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400">
+<button class="p-2 hover:bg-gray-100 dark:hover:bg-white/10 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"><span class="material-symbols-outlined" style="font-size: 20px;">edit</span></button>
+<button class="p-2 hover:bg-gray-100 dark:hover:bg-white/10 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"><span class="material-symbols-outlined" style="font-size: 20px;">chair</span></button>
+<button class="p-2 hover:bg-gray-100 dark:hover:bg-white/10 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"><span class="material-symbols-outlined" style="font-size: 20px;">cancel</span></button>
+</div>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-gray-900 dark:text-white">Jessica Brown</td>
+<td class="px-6 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">6:45 PM</td>
+<td class="px-6 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">3</td>
+<td class="px-6 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">5</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-status-completed/20 text-status-completed">Completed</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400">
+<button class="p-2 hover:bg-gray-100 dark:hover:bg-white/10 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"><span class="material-symbols-outlined" style="font-size: 20px;">visibility</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Accessibility Widget -->
+<button class="fixed bottom-6 right-6 bg-primary text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+<span class="material-symbols-outlined" style="font-size: 28px;">accessibility_new</span>
+</button>
+</body></html>
