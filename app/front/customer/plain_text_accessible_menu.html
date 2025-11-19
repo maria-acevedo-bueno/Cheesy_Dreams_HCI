@@ -1,147 +1,211 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Cheesy Dreams - Accessible Menu</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script>tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#fac638", "background-light": "#f8f8f5", "background-dark": "#231e0f"}, fontFamily: {display: "Work Sans"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
-<style>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Cheesy Dreams - Accessible Menu</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>tailwind.config = { darkMode: "class", theme: { extend: { colors: { primary: "#fac638", "background-light": "#f8f8f5", "background-dark": "#231e0f" }, fontFamily: { display: "Work Sans" }, borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" } } } };</script>
+    <style>
         body {
             font-family: 'Lexend', sans-serif;
         }
     </style>
 </head>
+
 <body class="bg-background-light dark:bg-background-dark font-display">
-<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<div class="flex flex-1">
-<!-- SideNavBar -->
-<aside class="w-64 flex-shrink-0 bg-white dark:bg-black p-4 border-r border-gray-200 dark:border-gray-800">
-<div class="flex flex-col h-full justify-between">
-<div class="flex flex-col gap-4">
-<div class="flex gap-3 items-center">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Cheesy Dreams restaurant logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCO0M0LGaJFfTBOYX4K1nnygElmDFymwKrWnRnc-lT18miU_ChG-ZcPc4CsW-wb6AdWObItbnPJL-3vh1FUDiLHyBzQ9nbGONTa0Qr1BTj_hp_9LOC1g9lU3Fkfdl75esWtbnuqeUzBV_H1X2i9uDKyK2Pz9T14MxuwQeuO9P3E1EitYXGxDUATsatdEBsj3bJu4w57lV05fm8-ddOKMC4KfscpqsFXh8UlnYFlU2cd629t7tkJR5RbddyfNGUV3cyFxD1SYTq5K8c");'></div>
-<div class="flex flex-col">
-<h1 class="text-gray-900 dark:text-gray-100 text-base font-medium leading-normal">Cheesy Dreams</h1>
-<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Restaurant Management</p>
-</div>
-</div>
-<nav class="flex flex-col gap-2 mt-4">
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-gray-900 dark:text-white" href="#">
-<span class="material-symbols-outlined text-gray-900 dark:text-white">restaurant_menu</span>
-<p class="text-sm font-medium leading-normal">Menu</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-300" href="#">
-<span class="material-symbols-outlined">space_dashboard</span>
-<p class="text-sm font-medium leading-normal">Dashboard</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-300" href="#">
-<span class="material-symbols-outlined">receipt_long</span>
-<p class="text-sm font-medium leading-normal">Orders</p>
-                                a&gt;
-                                </a><a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-300" href="#">
-<span class="material-symbols-outlined">inventory_2</span>
-<p class="text-sm font-medium leading-normal">Inventory</p>
-</a>
-</nav>
-</div>
-<div class="flex flex-col gap-1">
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-300" href="#">
-<span class="material-symbols-outlined">settings</span>
-<p class="text-sm font-medium leading-normal">Settings</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-300" href="#">
-<span class="material-symbols-outlined">logout</span>
-<p class="text-sm font-medium leading-normal">Log Out</p>
-</a>
-</div>
-</div>
-</aside>
-<!-- Main Content -->
-<main class="flex-1 p-6 lg:p-10">
-<div class="layout-content-container flex flex-col max-w-4xl mx-auto">
-<!-- PageHeading -->
-<header class="flex flex-wrap justify-between gap-3 pb-6">
-<div class="flex min-w-72 flex-col gap-3">
-<h1 class="text-gray-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Cheesy Dreams - Accessible Menu</h1>
-<p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal">Use the filters below to find menu items that suit your dietary needs. The menu will update automatically.</p>
-</div>
-</header>
-<!-- Chips as Filters -->
-<div class="flex gap-3 py-3 flex-wrap items-center">
-<div aria-labelledby="filter-label" role="group">
-<span class="sr-only" id="filter-label">Dietary Filters</span>
-<div class="flex gap-3 flex-wrap">
-<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-primary/20 pl-4 pr-4">
-<p class="text-gray-900 dark:text-white text-sm font-medium leading-normal">Gluten-Free</p>
-</div>
-<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-gray-200 dark:bg-gray-700 pl-4 pr-4">
-<p class="text-gray-900 dark:text-gray-300 text-sm font-medium leading-normal">Vegetarian</p>
-</div>
-<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-gray-200 dark:bg-gray-700 pl-4 pr-4">
-<p class="text-gray-900 dark:text-gray-300 text-sm font-medium leading-normal">Vegan</p>
-</div>
-</div>
-</div>
-</div>
-<!-- Menu Sections -->
-<div class="mt-4">
-<!-- SectionHeader: Appetizers -->
-<h2 class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Appetizers</h2>
-<!-- DescriptionList: Appetizers -->
-<div class="p-4 grid grid-cols-1 md:grid-cols-[25%_1fr] gap-x-6">
-<div class="col-span-1 md:col-span-2 grid grid-cols-subgrid border-t border-t-gray-200 dark:border-t-gray-700 py-5">
-<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Cheesy Garlic Bread - $8.99</p>
-<p class="text-gray-900 dark:text-gray-100 text-sm font-normal leading-normal">Toasted baguette with a garlic butter spread, smothered in melted mozzarella and parmesan cheese.</p>
-</div>
-<div class="col-span-1 md:col-span-2 grid grid-cols-subgrid border-t border-t-gray-200 dark:border-t-gray-700 py-5">
-<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Mozzarella Sticks - $9.99</p>
-<p class="text-gray-900 dark:text-gray-100 text-sm font-normal leading-normal">Crispy fried mozzarella sticks served with a side of our classic marinara sauce.</p>
-</div>
-<div class="col-span-1 md:col-span-2 grid grid-cols-subgrid border-t border-t-gray-200 dark:border-t-gray-700 py-5">
-<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Caprese Skewers (GF) - $10.99</p>
-<p class="text-gray-900 dark:text-gray-100 text-sm font-normal leading-normal">Cherry tomatoes, fresh mozzarella, and basil drizzled with balsamic glaze.</p>
-</div>
-</div>
-<!-- SectionHeader: Main Courses -->
-<h2 class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Main Courses</h2>
-<!-- DescriptionList: Main Courses -->
-<div class="p-4 grid grid-cols-1 md:grid-cols-[25%_1fr] gap-x-6">
-<div class="col-span-1 md:col-span-2 grid grid-cols-subgrid border-t border-t-gray-200 dark:border-t-gray-700 py-5">
-<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">The Classic Melt - $12.99</p>
-<p class="text-gray-900 dark:text-gray-100 text-sm font-normal leading-normal">A perfect blend of cheddar and provolone cheese melted between two slices of buttery brioche bread. Gluten-free bread available.</p>
-</div>
-<div class="col-span-1 md:col-span-2 grid grid-cols-subgrid border-t border-t-gray-200 dark:border-t-gray-700 py-5">
-<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Gourmet Mac &amp; Cheese - $14.99</p>
-<p class="text-gray-900 dark:text-gray-100 text-sm font-normal leading-normal">Cavatappi pasta in a creamy five-cheese sauce, topped with toasted breadcrumbs. Gluten-free pasta available.</p>
-</div>
-<div class="col-span-1 md:col-span-2 grid grid-cols-subgrid border-t border-t-gray-200 dark:border-t-gray-700 py-5">
-<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Brie &amp; Apple Grilled Cheese (GF available) - $13.99</p>
-<p class="text-gray-900 dark:text-gray-100 text-sm font-normal leading-normal">Creamy brie, crisp apple slices, and a hint of fig jam on multigrain bread.</p>
-</div>
-</div>
-<!-- SectionHeader: Desserts -->
-<h2 class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Desserts</h2>
-<!-- DescriptionList: Desserts -->
-<div class="p-4 grid grid-cols-1 md:grid-cols-[25%_1fr] gap-x-6">
-<div class="col-span-1 md:col-span-2 grid grid-cols-subgrid border-t border-t-gray-200 dark:border-t-gray-700 py-5">
-<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Chocolate Lava Cake - $7.99</p>
-<p class="text-gray-900 dark:text-gray-100 text-sm font-normal leading-normal">Warm chocolate cake with a gooey molten center, served with vanilla bean ice cream.</p>
-</div>
-<div class="col-span-1 md:col-span-2 grid grid-cols-subgrid border-t border-t-gray-200 dark:border-t-gray-700 py-5">
-<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">New York Cheesecake - $8.99</p>
-<p class="text-gray-900 dark:text-gray-100 text-sm font-normal leading-normal">Classic creamy cheesecake with a graham cracker crust, topped with a strawberry compote.</p>
-</div>
-</div>
-</div>
-</div>
-</main>
-</div>
-</div>
-</div>
-</body></html>
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <div class="flex flex-1">
+                <!-- SideNavBar -->
+                <aside
+                    class="w-64 flex-shrink-0 bg-white dark:bg-black p-4 border-r border-gray-200 dark:border-gray-800">
+                    <div class="flex flex-col h-full justify-between">
+                        <div class="flex flex-col gap-4">
+                            <div class="flex gap-3 items-center">
+                                <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                                    data-alt="Cheesy Dreams restaurant logo"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCO0M0LGaJFfTBOYX4K1nnygElmDFymwKrWnRnc-lT18miU_ChG-ZcPc4CsW-wb6AdWObItbnPJL-3vh1FUDiLHyBzQ9nbGONTa0Qr1BTj_hp_9LOC1g9lU3Fkfdl75esWtbnuqeUzBV_H1X2i9uDKyK2Pz9T14MxuwQeuO9P3E1EitYXGxDUATsatdEBsj3bJu4w57lV05fm8-ddOKMC4KfscpqsFXh8UlnYFlU2cd629t7tkJR5RbddyfNGUV3cyFxD1SYTq5K8c");'>
+                                </div>
+                                <div class="flex flex-col">
+                                    <h1 class="text-gray-900 dark:text-gray-100 text-base font-medium leading-normal">
+                                        Cheesy Dreams</h1>
+                                    <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">
+                                        Restaurant Management</p>
+                                </div>
+                            </div>
+                            <nav class="flex flex-col gap-2 mt-4">
+                                <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-gray-900 dark:text-white"
+                                    href="#">
+                                    <span
+                                        class="material-symbols-outlined text-gray-900 dark:text-white">restaurant_menu</span>
+                                    <p class="text-sm font-medium leading-normal">Menu</p>
+                                </a>
+                                <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-300"
+                                    href="#">
+                                    <span class="material-symbols-outlined">space_dashboard</span>
+                                    <p class="text-sm font-medium leading-normal">Dashboard</p>
+                                </a>
+                                <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-300"
+                                    href="#">
+                                    <span class="material-symbols-outlined">receipt_long</span>
+                                    <p class="text-sm font-medium leading-normal">Orders</p>
+                                </a><a
+                                    class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-300"
+                                    href="#">
+                                    <span class="material-symbols-outlined">inventory_2</span>
+                                    <p class="text-sm font-medium leading-normal">Inventory</p>
+                                </a>
+                            </nav>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-300"
+                                href="#">
+                                <span class="material-symbols-outlined">settings</span>
+                                <p class="text-sm font-medium leading-normal">Settings</p>
+                            </a>
+                            <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-300"
+                                href="#">
+                                <span class="material-symbols-outlined">logout</span>
+                                <p class="text-sm font-medium leading-normal">Log Out</p>
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+                <!-- Main Content -->
+                <main class="flex-1 p-6 lg:p-10">
+                    <div class="layout-content-container flex flex-col max-w-4xl mx-auto">
+                        <!-- PageHeading -->
+                        <header class="flex flex-wrap justify-between gap-3 pb-6">
+                            <div class="flex min-w-72 flex-col gap-3">
+                                <h1
+                                    class="text-gray-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">
+                                    Cheesy Dreams - Accessible Menu</h1>
+                                <p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal">Use the
+                                    filters below to find menu items that suit your dietary needs. The menu will update
+                                    automatically.</p>
+                            </div>
+                        </header>
+                        <!-- Chips as Filters -->
+                        <div class="flex gap-3 py-3 flex-wrap items-center">
+                            <div aria-labelledby="filter-label" role="group">
+                                <span class="sr-only" id="filter-label">Dietary Filters</span>
+                                <div class="flex gap-3 flex-wrap">
+                                    <div
+                                        class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-primary/20 pl-4 pr-4">
+                                        <p class="text-gray-900 dark:text-white text-sm font-medium leading-normal">
+                                            Gluten-Free</p>
+                                    </div>
+                                    <div
+                                        class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-gray-200 dark:bg-gray-700 pl-4 pr-4">
+                                        <p class="text-gray-900 dark:text-gray-300 text-sm font-medium leading-normal">
+                                            Vegetarian</p>
+                                    </div>
+                                    <div
+                                        class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-gray-200 dark:bg-gray-700 pl-4 pr-4">
+                                        <p class="text-gray-900 dark:text-gray-300 text-sm font-medium leading-normal">
+                                            Vegan</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Menu Sections -->
+                        <div class="mt-4">
+                            <!-- SectionHeader: Appetizers -->
+                            <h2
+                                class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">
+                                Appetizers</h2>
+                            <!-- DescriptionList: Appetizers -->
+                            <div class="p-4 grid grid-cols-1 md:grid-cols-[25%_1fr] gap-x-6">
+                                <div
+                                    class="col-span-1 md:col-span-2 grid grid-cols-subgrid border-t border-t-gray-200 dark:border-t-gray-700 py-5">
+                                    <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">
+                                        Cheesy Garlic Bread - $8.99</p>
+                                    <p class="text-gray-900 dark:text-gray-100 text-sm font-normal leading-normal">
+                                        Toasted baguette with a garlic butter spread, smothered in melted mozzarella and
+                                        parmesan cheese.</p>
+                                </div>
+                                <div
+                                    class="col-span-1 md:col-span-2 grid grid-cols-subgrid border-t border-t-gray-200 dark:border-t-gray-700 py-5">
+                                    <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">
+                                        Mozzarella Sticks - $9.99</p>
+                                    <p class="text-gray-900 dark:text-gray-100 text-sm font-normal leading-normal">
+                                        Crispy fried mozzarella sticks served with a side of our classic marinara sauce.
+                                    </p>
+                                </div>
+                                <div
+                                    class="col-span-1 md:col-span-2 grid grid-cols-subgrid border-t border-t-gray-200 dark:border-t-gray-700 py-5">
+                                    <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">
+                                        Caprese Skewers (GF) - $10.99</p>
+                                    <p class="text-gray-900 dark:text-gray-100 text-sm font-normal leading-normal">
+                                        Cherry tomatoes, fresh mozzarella, and basil drizzled with balsamic glaze.</p>
+                                </div>
+                            </div>
+                            <!-- SectionHeader: Main Courses -->
+                            <h2
+                                class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">
+                                Main Courses</h2>
+                            <!-- DescriptionList: Main Courses -->
+                            <div class="p-4 grid grid-cols-1 md:grid-cols-[25%_1fr] gap-x-6">
+                                <div
+                                    class="col-span-1 md:col-span-2 grid grid-cols-subgrid border-t border-t-gray-200 dark:border-t-gray-700 py-5">
+                                    <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">The
+                                        Classic Melt - $12.99</p>
+                                    <p class="text-gray-900 dark:text-gray-100 text-sm font-normal leading-normal">A
+                                        perfect blend of cheddar and provolone cheese melted between two slices of
+                                        buttery brioche bread. Gluten-free bread available.</p>
+                                </div>
+                                <div
+                                    class="col-span-1 md:col-span-2 grid grid-cols-subgrid border-t border-t-gray-200 dark:border-t-gray-700 py-5">
+                                    <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">
+                                        Gourmet Mac &amp; Cheese - $14.99</p>
+                                    <p class="text-gray-900 dark:text-gray-100 text-sm font-normal leading-normal">
+                                        Cavatappi pasta in a creamy five-cheese sauce, topped with toasted breadcrumbs.
+                                        Gluten-free pasta available.</p>
+                                </div>
+                                <div
+                                    class="col-span-1 md:col-span-2 grid grid-cols-subgrid border-t border-t-gray-200 dark:border-t-gray-700 py-5">
+                                    <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Brie
+                                        &amp; Apple Grilled Cheese (GF available) - $13.99</p>
+                                    <p class="text-gray-900 dark:text-gray-100 text-sm font-normal leading-normal">
+                                        Creamy brie, crisp apple slices, and a hint of fig jam on multigrain bread.</p>
+                                </div>
+                            </div>
+                            <!-- SectionHeader: Desserts -->
+                            <h2
+                                class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">
+                                Desserts</h2>
+                            <!-- DescriptionList: Desserts -->
+                            <div class="p-4 grid grid-cols-1 md:grid-cols-[25%_1fr] gap-x-6">
+                                <div
+                                    class="col-span-1 md:col-span-2 grid grid-cols-subgrid border-t border-t-gray-200 dark:border-t-gray-700 py-5">
+                                    <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">
+                                        Chocolate Lava Cake - $7.99</p>
+                                    <p class="text-gray-900 dark:text-gray-100 text-sm font-normal leading-normal">Warm
+                                        chocolate cake with a gooey molten center, served with vanilla bean ice cream.
+                                    </p>
+                                </div>
+                                <div
+                                    class="col-span-1 md:col-span-2 grid grid-cols-subgrid border-t border-t-gray-200 dark:border-t-gray-700 py-5">
+                                    <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">New
+                                        York Cheesecake - $8.99</p>
+                                    <p class="text-gray-900 dark:text-gray-100 text-sm font-normal leading-normal">
+                                        Classic creamy cheesecake with a graham cracker crust, topped with a strawberry
+                                        compote.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
