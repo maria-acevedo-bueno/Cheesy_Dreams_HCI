@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cheesy Dreams - Pizza Preparation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#fac638",
+              "background-light": "#f8f8f5",
+              "background-dark": "#231e0f",
+            },
+            fontFamily: {
+              "display": ["Work Sans", "Noto Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#212121] dark:text-gray-200">
+<div class="relative flex min-h-screen w-full">
+<aside class="flex w-64 flex-col border-r border-solid border-white/10 bg-[#111318]">
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Cheesy Dreams restaurant logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDawIDw9sz4wNe9QPfqWnVsD1KPTvXn2b3blGAwg2KCPcKMyZ1_777zBsAxnGHxf7E1c3M7gyuHXs08AqNa8g59C5CH9oZP_TTBn5nyX_0c0z0anKZiGYzSG75zjS4SIB1BvHlnUHZdqdBJpRdA9qdRVilKh4e3WIL1iG4FXxyMyjJ1YYT4UcJMcoVd6bLVSUh_yqVBMItD7fiwAjooPZQrvSv38uBoP1_JNS0ev25Vfmu8Y69jnSyY0aniH2YAfYQIOnmc10L6Zn4");'></div>
+<div class="flex flex-col">
+<h1 class="text-base font-bold leading-normal text-gray-900 dark:text-white">Cheesy Dreams</h1>
+<p class="text-sm font-normal leading-normal text-gray-500 dark:text-gray-400">Management System</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 text-white/70 hover:text-white hover:bg-[#282e39] rounded-lg transition-colors" href="/staff/live">
+<span class="material-symbols-outlined">receipt_long</span>
+<p class="text-sm font-medium leading-normal">Live Orders</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white/70 hover:text-white hover:bg-[#282e39] rounded-lg transition-colors" href="/staff/reservations">
+<span class="material-symbols-outlined">calendar_month</span>
+<p class="text-sm font-medium leading-normal">Reservations</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white/70 hover:text-white hover:bg-[#282e39] rounded-lg transition-colors" href="/customer/menu">
+<span class="material-symbols-outlined">restaurant_menu</span>
+<p class="text-sm font-medium leading-normal">Menu</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-white" href="/staff/task">
+<span class="material-symbols-outlined">checklist</span>
+<p class="text-sm font-medium leading-normal">Tasks</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary" href="#">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">settings</span>
+<p class="text-sm font-medium leading-normal text-gray-700 dark:text-gray-300">Settings</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary" href="#">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">help_outline</span>
+<p class="text-sm font-medium leading-normal text-gray-700 dark:text-gray-300">Help</p>
+</a>
+</div>
+</aside>
+<main class="flex-1 p-8 overflow-auto">
+<div class="mx-auto max-w-4xl">
+<div class="mb-8">
+<div class="flex gap-6 justify-between items-center mb-2">
+<p class="text-lg font-semibold text-[#212121] dark:text-white">Step 1 of 5: Pizza Preparation</p>
+<p class="text-lg font-semibold text-primary">20%</p>
+</div>
+<div class="rounded-full bg-gray-200 dark:bg-gray-700 h-2.5">
+<div class="h-2.5 rounded-full bg-primary" style="width: 20%;"></div>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-2">
+<div class="flex items-center justify-center p-8 bg-primary/20 dark:bg-primary/30">
+<span class="material-symbols-outlined text-primary text-9xl">
+                                bakery_dining
+                            </span>
+</div>
+<div class="p-8 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-sm font-medium text-gray-500 dark:text-gray-400">Step 1</p>
+<h2 class="text-4xl font-bold text-[#212121] dark:text-white tracking-tight">Dough Preparation</h2>
+</div>
+<button class="p-3 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary" data-alt="Play audio instructions">
+<span class="material-symbols-outlined text-[#FF9800] dark:text-[#FFB74D]">
+                                            volume_up
+                                        </span>
+</button>
+</div>
+<p class="text-base text-gray-600 dark:text-gray-300 mb-6">Follow the steps below to prepare the pizza dough.</p>
+<div class="space-y-3">
+<div class="flex items-center gap-4 bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg">
+<div class="flex items-center justify-center rounded-full bg-primary/30 shrink-0 size-10">
+<span class="material-symbols-outlined text-primary-darker dark:text-primary-lighter text-xl">radio_button_unchecked</span>
+</div>
+<p class="text-base font-medium text-[#212121] dark:text-gray-200 flex-1 truncate">Measure flour and water</p>
+</div>
+<div class="flex items-center gap-4 bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg">
+<div class="flex items-center justify-center rounded-full bg-primary/30 shrink-0 size-10">
+<span class="material-symbols-outlined text-primary-darker dark:text-primary-lighter text-xl">radio_button_unchecked</span>
+</div>
+<p class="text-base font-medium text-[#212121] dark:text-gray-200 flex-1 truncate">Knead for 10 minutes</p>
+</div>
+<div class="flex items-center gap-4 bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg">
+<div class="flex items-center justify-center rounded-full bg-primary/30 shrink-0 size-10">
+<span class="material-symbols-outlined text-primary-darker dark:text-primary-lighter text-xl">radio_button_unchecked</span>
+</div>
+<p class="text-base font-medium text-[#212121] dark:text-gray-200 flex-1 truncate">Portion dough into balls</p>
+</div>
+</div>
+</div>
+<div class="mt-10 text-right">
+    <a href="/staff/pizza2" class="inline-block w-full text-center md:w-auto bg-primary text-[#212121] font-bold py-4 px-10 rounded-lg text-lg hover:opacity-90 focus:outline-none focus:ring-4 focus:ring-primary/50 transition-opacity">
+        Next
+    </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

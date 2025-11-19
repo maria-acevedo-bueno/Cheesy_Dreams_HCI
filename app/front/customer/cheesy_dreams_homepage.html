@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Cheesy Dreams - The Ultimate Comfort Food</title>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&amp;display=swap"
-    rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-  <style type="text/tailwindcss">
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cheesy Dreams - The Ultimate Comfort Food</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style type="text/tailwindcss">
     .group:focus-within .group-focus-within\:block {
         display: block;
     }
@@ -20,223 +17,169 @@
         transform: translateY(0);
     }
 </style>
-  <script>tailwind.config = { darkMode: "class", theme: { extend: { colors: { primary: "#fac638", "background-light": "#f8f8f5", "background-dark": "#231e0f", "text-light": "#1c180d", "text-dark": "#f8f8f5", "text-muted-light": "#9c8749", "text-muted-dark": "#a19a84", "border-light": "#e8e2ce", "border-dark": "#443c21" }, fontFamily: { display: "Work Sans" }, borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" } } } };</script>
+<script>tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#fac638", "background-light": "#f8f8f5", "background-dark": "#231e0f", "text-light": "#1c180d", "text-dark": "#f8f8f5", "text-muted-light": "#9c8749", "text-muted-dark": "#a19a84", "border-light": "#e8e2ce", "border-dark": "#443c21"}, fontFamily: {display: "Work Sans"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
 </head>
-
 <body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
-  <div class="relative flex min-h-screen w-full flex-col">
-    <header
-      class="sticky top-0 z-50 flex items-center justify-center border-b border-solid border-border-light dark:border-border-dark bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
-      <nav class="flex w-full max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <div class="flex items-center gap-4">
-          <span class="material-symbols-outlined text-3xl text-primary">lunch_dining</span>
-          <h2 class="text-lg font-bold tracking-tight">Cheesy Dreams</h2>
-        </div>
-        <div class="hidden items-center gap-9 md:flex">
-          <a class="text-sm font-medium hover:text-primary" href="filtered_menu_browsing.html">Menu</a>
-          <a class="text-sm font-medium hover:text-primary" href="#">Our Story</a>
-          <a class="text-sm font-medium hover:text-primary" href="#">Contact Us</a>
-        </div>
-        <div class="flex items-center gap-4">
-          <button
-            class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-text-light text-sm font-bold tracking-wide transition-colors hover:bg-primary/90">
-            <span class="truncate">Make a Reservation</span>
-          </button>
-          <button class="md:hidden rounded-lg p-2 hover:bg-primary/20">
-            <span class="material-symbols-outlined">menu</span>
-            <span class="sr-only">Open Menu</span>
-          </button>
-        </div>
-      </nav>
-    </header>
-    <main class="flex flex-1 flex-col items-center">
-      <div class="w-full max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
-        <section class="@container mb-16">
-          <div
-            class="flex min-h-[480px] flex-col items-center justify-center gap-6 rounded-xl bg-cover bg-center bg-no-repeat p-4 text-center"
-            data-alt="A gourmet grilled cheese sandwich with delicious, gooey melted cheese stretching from a half, set against a rustic background."
-            style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuA1xm6DQ8BYj8iqLFBdnATOlWUGQukR7u9JnN1nE63LpgyqA2RHT6FUC5zaGO_jjkFvHOqorASSKA5VWAUIvaKdnwgKl5hH_yQXk5KzspOf2wyzoYmfDuoBcsXPnlK-5nM_T8KemJOXrKavbSXAyqrdZTyoiTk8q3Ws_9bcmHBg0Cwnu-bMxysCuD2nGhVh3cfTuxS2uFJb7w1wD3ba0dgZZIRrewl6V_3YP4rLu86NtFJxEeenHij68Na9ZCo9_8Pj7TXV09-y_6o");'>
-            <div class="flex flex-col gap-2">
-              <h1 class="text-4xl font-black leading-tight tracking-tighter text-white @[480px]:text-5xl">
-                Experience the Ultimate Comfort Food.
-              </h1>
-              <p class="text-sm font-normal leading-normal text-white @[480px]:text-base">
-                Indulge in our unique selection of gourmet, cheese-focused dishes made with the freshest local
-                ingredients.
-              </p>
-            </div>
-            <button
-              class="flex min-w-[84px] max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-sm font-bold tracking-wide text-text-light transition-colors hover:bg-primary/90 @[480px]:text-base">
-              <span class="truncate">Make a Reservation</span>
-            </button>
-          </div>
-        </section>
-        <section class="mb-16">
-          <div class="flex flex-col gap-10">
-            <div class="flex flex-col gap-4 text-center">
-              <h2 class="text-3xl font-bold tracking-tight md:text-4xl">
-                Why You'll Love Cheesy Dreams
-              </h2>
-              <p
-                class="mx-auto max-w-3xl text-base font-normal leading-normal text-text-muted-light dark:text-text-muted-dark">
-                We are dedicated to crafting the most delightful cheese dishes, using only the best ingredients in a
-                warm and welcoming atmosphere.
-              </p>
-            </div>
-            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              <div aria-label="Feature: Fresh Ingredients"
-                class="flex flex-col gap-3 rounded-lg border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark p-6">
-                <span class="material-symbols-outlined text-3xl text-primary">eco</span>
-                <div class="flex flex-col gap-1">
-                  <h3 class="text-base font-bold leading-tight">Fresh Ingredients</h3>
-                  <p class="text-sm font-normal leading-normal text-text-muted-light dark:text-text-muted-dark">We
-                    source our ingredients from local farms to ensure every dish is fresh and flavorful.</p>
-                </div>
-              </div>
-              <div aria-label="Feature: Cozy Ambiance"
-                class="flex flex-col gap-3 rounded-lg border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark p-6">
-                <span class="material-symbols-outlined text-3xl text-primary">chair</span>
-                <div class="flex flex-col gap-1">
-                  <h3 class="text-base font-bold leading-tight">Cozy Ambiance</h3>
-                  <p class="text-sm font-normal leading-normal text-text-muted-light dark:text-text-muted-dark">Our
-                    restaurant offers a warm and inviting space, perfect for any occasion.</p>
-                </div>
-              </div>
-              <div aria-label="Feature: Daily Specials"
-                class="flex flex-col gap-3 rounded-lg border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark p-6">
-                <span class="material-symbols-outlined text-3xl text-primary">auto_awesome</span>
-                <div class="flex flex-col gap-1">
-                  <h3 class="text-base font-bold leading-tight">Daily Specials</h3>
-                  <p class="text-sm font-normal leading-normal text-text-muted-light dark:text-text-muted-dark">Discover
-                    new and exciting cheesy creations with our chef's daily specials.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="mb-16">
-          <h2 class="pb-6 text-center text-3xl font-bold tracking-tight">Our Menu Highlights</h2>
-          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <div class="flex flex-col gap-3">
-              <div class="aspect-square w-full rounded-lg bg-cover bg-center bg-no-repeat"
-                data-alt="A classic grilled cheese sandwich cut in half, showcasing melted cheddar and provolone on toasted sourdough bread."
-                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBFIYJ-xfDhfMAUiLnf1xqrxT5MvhWYZkl_fiDfZ7UjYuMccAf5y98KKIZ1zRs9Kkdnlsp5UDWo6tEy2O8Y0F9s5MQcwEijqrQHxKUFkXNPe3sikjtmP8Rx_6rNoJ6r3FGVyvQM3BRi-y2u83dVaQssYnTeK75vtirWMUcZrW7qclbWjx6Y3awSWcxoLOaWkg-cTMrSxD5JoD4zew-5jwXFT4XADI0IMtSReVVQ3RT57u9TEE4IFT34oEZjqYJr8HIs2srJmvPdEeQ");'>
-              </div>
-              <div>
-                <h3 class="text-base font-medium leading-normal">Classic Melt</h3>
-                <p class="text-sm font-normal leading-normal text-text-muted-light dark:text-text-muted-dark">A timeless
-                  classic with a blend of sharp cheddar and provolone on sourdough.</p>
-              </div>
-            </div>
-            <div class="flex flex-col gap-3">
-              <div class="aspect-square w-full rounded-lg bg-cover bg-center bg-no-repeat"
-                data-alt="A cast iron skillet filled with creamy baked macaroni and cheese, topped with a golden-brown crust."
-                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBhx2dKS1FEX5GIWQoHydGb8JFjXc-S_tiZxFTQBjRMQG-Sqv8dHFI7xhsHxzoIhoJoyGOy2rctK73RMbohryfVtkB-Z6ZB80sIJ-jC9XafuYLVFOS03AT7E83JbUrnHdO8DKZXhFi1Xv35PaHGa5S_Wc61nvfTDK_XQQ2rrj93ztz-ndzdD3xd-xDqNYsUchnUms2Yt-P-Ct4KWN--Gs7mxtpvRWZbmfCQmyz652pnotn71nvIREsE2CuB9HhoAOs7ymQJ-Yl84VI");'>
-              </div>
-              <div>
-                <h3 class="text-base font-medium leading-normal">Mac &amp; Cheese Supreme</h3>
-                <p class="text-sm font-normal leading-normal text-text-muted-light dark:text-text-muted-dark">Creamy,
-                  dreamy, and baked to perfection with a three-cheese sauce.</p>
-              </div>
-            </div>
-            <div class="flex flex-col gap-3">
-              <div class="aspect-square w-full rounded-lg bg-cover bg-center bg-no-repeat"
-                data-alt="A beautifully arranged wooden cheese board with various artisanal cheeses, grapes, nuts, and crackers."
-                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuARfKVazRyzcb11Ic9f9AmdaM7eCye9OI9KyjhLeYAX_Xqn6paoC1ckzSglyCk8S_Hv9_-6LL2TMaGeJ_H__w_4vw-522EmX44Ye9xnC1cFhN4-Q6aEX9sluS9nb6DC5cQ0E5OtVhEJXJF6T4cXka5O5_yEP9DlyMcdKAZ1JeFpPga7-_fS7_IZd0ncmikNWh38auAlD0U6KO89ZeRW-YMUj88q7NgPBZcwdr_63rZMd8zmY3G28ztCq1DJqBy68ntfjzjTpTdDShc");'>
-              </div>
-              <div>
-                <h3 class="text-base font-medium leading-normal">Gourmet Cheese Board</h3>
-                <p class="text-sm font-normal leading-normal text-text-muted-light dark:text-text-muted-dark">A curated
-                  selection of artisanal cheeses, fruits, and nuts.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </main>
-    <footer class="border-t border-border-light dark:border-border-dark">
-      <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
-        <div class="flex flex-col items-center justify-between gap-6 md:flex-row">
-          <div class="text-center md:text-left">
-            <h3 class="text-lg font-bold">Cheesy Dreams</h3>
-            <p class="text-sm text-text-muted-light dark:text-text-muted-dark">123 Cheese Lane, Foodie Town, USA</p>
-            <p class="text-sm text-text-muted-light dark:text-text-muted-dark">(555) 123-4567</p>
-          </div>
-          <div class="flex items-center gap-4">
-            <a aria-label="Cheesy Dreams on Instagram"
-              class="text-text-muted-light hover:text-primary dark:text-text-muted-dark" href="#">
-              <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                <path clip-rule="evenodd"
-                  d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 012.792 2.792c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-2.792 2.792c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-2.792-2.792c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 012.792-2.792c.636-.247 1.363.416 2.427.465C9.53 2.013 9.884 2 12.315 2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6zm6.406-11.845a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z"
-                  fill-rule="evenodd"></path>
-              </svg>
-            </a>
-            <a aria-label="Cheesy Dreams on Facebook"
-              class="text-text-muted-light hover:text-primary dark:text-text-muted-dark" href="#">
-              <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                <path clip-rule="evenodd"
-                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                  fill-rule="evenodd"></path>
-              </svg>
-            </a>
-            <a aria-label="Cheesy Dreams on Twitter"
-              class="text-text-muted-light hover:text-primary dark:text-text-muted-dark" href="#">
-              <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
-                </path>
-              </svg>
-            </a>
-          </div>
-        </div>
-        <div
-          class="mt-8 border-t border-border-light dark:border-border-dark pt-6 text-center text-sm text-text-muted-light dark:text-text-muted-dark">
-          <p>© 2024 Cheesy Dreams. All Rights Reserved. | <a class="hover:text-primary" href="#">Accessibility
-              Statement</a></p>
-        </div>
-      </div>
-    </footer>
-  </div>
-  <div class="group fixed bottom-4 right-4 z-50">
-    <button aria-controls="accessibility-menu" aria-expanded="false" aria-haspopup="true"
-      aria-label="Open Accessibility Menu"
-      class="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-text-light shadow-lg transition-transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-primary/50">
-      <span class="material-symbols-outlined text-3xl">accessibility_new</span>
-    </button>
-    <div aria-label="Accessibility Options"
-      class="absolute bottom-16 right-0 mb-2 w-64 origin-bottom-right scale-95 transform rounded-lg border border-border-light bg-background-light p-4 opacity-0 shadow-xl transition-all duration-200 ease-in-out group-focus-within:block group-focus-within:scale-100 group-focus-within:opacity-100 group-focus-within:translate-y-0 dark:border-border-dark dark:bg-background-dark"
-      id="accessibility-menu" role="menu">
-      <h3 class="mb-3 text-lg font-bold text-text-light dark:text-text-dark">Accessibility Tools</h3>
-      <div aria-labelledby="font-size-label" class="space-y-2 border-b border-border-light pb-4 dark:border-border-dark"
-        role="group">
-        <p class="text-sm font-medium text-text-light dark:text-text-dark" id="font-size-label">Font Size</p>
-        <div class="flex items-center gap-2">
-          <button aria-label="Decrease font size"
-            class="flex h-8 w-8 items-center justify-center rounded-md border border-border-light text-text-muted-light hover:bg-gray-100 dark:border-border-dark dark:text-text-muted-dark dark:hover:bg-background-dark/50">
-            <span class="material-symbols-outlined text-xl">text_decrease</span>
-          </button>
-          <span class="flex-grow text-center text-sm">Default</span>
-          <button aria-label="Increase font size"
-            class="flex h-8 w-8 items-center justify-center rounded-md border border-border-light text-text-muted-light hover:bg-gray-100 dark:border-border-dark dark:text-text-muted-dark dark:hover:bg-background-dark/50">
-            <span class="material-symbols-outlined text-xl">text_increase</span>
-          </button>
-        </div>
-      </div>
-      <div aria-labelledby="color-label" class="space-y-2 pt-4" role="group">
-        <p class="text-sm font-medium text-text-light dark:text-text-dark" id="color-label">Color Contrast</p>
-        <div class="grid grid-cols-2 gap-2">
-          <button
-            class="flex h-10 w-full items-center justify-center rounded-md border-2 border-border-light text-sm font-medium hover:border-primary dark:border-border-dark dark:hover:border-primary">Default</button>
-          <button
-            class="flex h-10 w-full items-center justify-center rounded-md border-2 border-transparent bg-black text-sm font-medium text-white hover:border-primary">High
-            Contrast</button>
-        </div>
-      </div>
-      <button
-        class="mt-4 w-full rounded-md py-2 text-sm font-medium text-text-muted-light hover:text-primary dark:text-text-muted-dark dark:hover:text-primary">Reset
-        Settings</button>
-    </div>
-  </div>
-</body>
-
-</html>
+<div class="relative flex min-h-screen w-full flex-col">
+<header class="sticky top-0 z-50 flex items-center justify-center border-b border-solid border-border-light dark:border-border-dark bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<nav class="flex w-full max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-3xl text-primary">lunch_dining</span>
+<h2 class="text-lg font-bold tracking-tight">Cheesy Dreams</h2>
+</div>
+<div class="hidden items-center gap-9 md:flex">
+<a class="text-sm font-medium hover:text-primary" href="/customer/menu">Menu</a>
+<a class="text-sm font-medium hover:text-primary" href="#">Our Story</a>
+<a class="text-sm font-medium hover:text-primary" href="#">Contact Us</a>
+<a href="/logout" class="text-sm font-medium hover:text-primary">Logout</a>
+</div>
+<div class="flex items-center gap-4">
+<a href="/customer/make_reservation" class="w-full sm:w-auto">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-text-light text-sm font-bold tracking-wide transition-colors hover:bg-primary/90">
+<span class="truncate">Make a Reservation</span>
+</button>
+</a>
+<button class="md:hidden rounded-lg p-2 hover:bg-primary/20">
+<span class="material-symbols-outlined">menu</span>
+<span class="sr-only">Open Menu</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="flex flex-1 flex-col items-center">
+<div class="w-full max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+<section class="@container mb-16">
+<div class="flex min-h-[480px] flex-col items-center justify-center gap-6 rounded-xl bg-cover bg-center bg-no-repeat p-4 text-center" data-alt="A gourmet grilled cheese sandwich with delicious, gooey melted cheese stretching from a half, set against a rustic background." style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuA1xm6DQ8BYj8iqLFBdnATOlWUGQukR7u9JnN1nE63LpgyqA2RHT6FUC5zaGO_jjkFvHOqorASSKA5VWAUIvaKdnwgKl5hH_yQXk5KzspOf2wyzoYmfDuoBcsXPnlK-5nM_T8KemJOXrKavbSXAyqrdZTyoiTk8q3Ws_9bcmHBg0Cwnu-bMxysCuD2nGhVh3cfTuxS2uFJb7w1wD3ba0dgZZIRrewl6V_3YP4rLu86NtFJxEeenHij68Na9ZCo9_8Pj7TXV09-y_6o");'>
+<div class="flex flex-col gap-2">
+<h1 class="text-4xl font-black leading-tight tracking-tighter text-white @[480px]:text-5xl">
+                              Experience the Ultimate Comfort Food.
+                            </h1>
+<p class="text-sm font-normal leading-normal text-white @[480px]:text-base">
+                              Indulge in our unique selection of gourmet, cheese-focused dishes made with the freshest local ingredients.
+                            </p>
+</div>
+<a href="/customer/make_reservation" class="w-full sm:w-auto">
+<button class="flex min-w-[84px] max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-sm font-bold tracking-wide text-text-light transition-colors hover:bg-primary/90 @[480px]:text-base">
+<span class="truncate">Make a Reservation</span>
+</button>
+</a>
+</div>
+</section>
+<section class="mb-16">
+<div class="flex flex-col gap-10">
+<div class="flex flex-col gap-4 text-center">
+<h2 class="text-3xl font-bold tracking-tight md:text-4xl">
+                              Why You'll Love Cheesy Dreams
+                            </h2>
+<p class="mx-auto max-w-3xl text-base font-normal leading-normal text-text-muted-light dark:text-text-muted-dark">
+                              We are dedicated to crafting the most delightful cheese dishes, using only the best ingredients in a warm and welcoming atmosphere.
+                            </p>
+</div>
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+<div aria-label="Feature: Fresh Ingredients" class="flex flex-col gap-3 rounded-lg border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark p-6">
+<span class="material-symbols-outlined text-3xl text-primary">eco</span>
+<div class="flex flex-col gap-1">
+<h3 class="text-base font-bold leading-tight">Fresh Ingredients</h3>
+<p class="text-sm font-normal leading-normal text-text-muted-light dark:text-text-muted-dark">We source our ingredients from local farms to ensure every dish is fresh and flavorful.</p>
+</div>
+</div>
+<div aria-label="Feature: Cozy Ambiance" class="flex flex-col gap-3 rounded-lg border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark p-6">
+<span class="material-symbols-outlined text-3xl text-primary">chair</span>
+<div class="flex flex-col gap-1">
+<h3 class="text-base font-bold leading-tight">Cozy Ambiance</h3>
+<p class="text-sm font-normal leading-normal text-text-muted-light dark:text-text-muted-dark">Our restaurant offers a warm and inviting space, perfect for any occasion.</p>
+</div>
+</div>
+<div aria-label="Feature: Daily Specials" class="flex flex-col gap-3 rounded-lg border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark p-6">
+<span class="material-symbols-outlined text-3xl text-primary">auto_awesome</span>
+<div class="flex flex-col gap-1">
+<h3 class="text-base font-bold leading-tight">Daily Specials</h3>
+<p class="text-sm font-normal leading-normal text-text-muted-light dark:text-text-muted-dark">Discover new and exciting cheesy creations with our chef's daily specials.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-16">
+<h2 class="pb-6 text-center text-3xl font-bold tracking-tight">Our Menu Highlights</h2>
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+<div class="flex flex-col gap-3">
+<div class="aspect-square w-full rounded-lg bg-cover bg-center bg-no-repeat" data-alt="A classic grilled cheese sandwich cut in half, showcasing melted cheddar and provolone on toasted sourdough bread." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBFIYJ-xfDhfMAUiLnf1xqrxT5MvhWYZkl_fiDfZ7UjYuMccAf5y98KKIZ1zRs9Kkdnlsp5UDWo6tEy2O8Y0F9s5MQcwEijqrQHxKUFkXNPe3sikjtmP8Rx_6rNoJ6r3FGVyvQM3BRi-y2u83dVaQssYnTeK75vtirWMUcZrW7qclbWjx6Y3awSWcxoLOaWkg-cTMrSxD5JoD4zew-5jwXFT4XADI0IMtSReVVQ3RT57u9TEE4IFT34oEZjqYJr8HIs2srJmvPdEeQ");'></div>
+<div>
+<h3 class="text-base font-medium leading-normal">Classic Melt</h3>
+<p class="text-sm font-normal leading-normal text-text-muted-light dark:text-text-muted-dark">A timeless classic with a blend of sharp cheddar and provolone on sourdough.</p>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<div class="aspect-square w-full rounded-lg bg-cover bg-center bg-no-repeat" data-alt="A cast iron skillet filled with creamy baked macaroni and cheese, topped with a golden-brown crust." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBhx2dKS1FEX5GIWQoHydGb8JFjXc-S_tiZxFTQBjRMQG-Sqv8dHFI7xhsHxzoIhoJoyGOy2rctK73RMbohryfVtkB-Z6ZB80sIJ-jC9XafuYLVFOS03AT7E83JbUrnHdO8DKZXhFi1Xv35PaHGa5S_Wc61nvfTDK_XQQ2rrj93ztz-ndzdD3xd-xDqNYsUchnUms2Yt-P-Ct4KWN--Gs7mxtpvRWZbmfCQmyz652pnotn71nvIREsE2CuB9HhoAOs7ymQJ-Yl84VI");'></div>
+<div>
+<h3 class="text-base font-medium leading-normal">Mac &amp; Cheese Supreme</h3>
+<p class="text-sm font-normal leading-normal text-text-muted-light dark:text-text-muted-dark">Creamy, dreamy, and baked to perfection with a three-cheese sauce.</p>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<div class="aspect-square w-full rounded-lg bg-cover bg-center bg-no-repeat" data-alt="A beautifully arranged wooden cheese board with various artisanal cheeses, grapes, nuts, and crackers." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuARfKVazRyzcb11Ic9f9AmdaM7eCye9OI9KyjhLeYAX_Xqn6paoC1ckzSglyCk8S_Hv9_-6LL2TMaGeJ_H__w_4vw-522EmX44Ye9xnC1cFhN4-Q6aEX9sluS9nb6DC5cQ0E5OtVhEJXJF6T4cXka5O5_yEP9DlyMcdKAZ1JeFpPga7-_fS7_IZd0ncmikNWh38auAlD0U6KO89ZeRW-YMUj88q7NgPBZcwdr_63rZMd8zmY3G28ztCq1DJqBy68ntfjzjTpTdDShc");'></div>
+<div>
+<h3 class="text-base font-medium leading-normal">Gourmet Cheese Board</h3>
+<p class="text-sm font-normal leading-normal text-text-muted-light dark:text-text-muted-dark">A curated selection of artisanal cheeses, fruits, and nuts.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer class="border-t border-border-light dark:border-border-dark">
+<div class="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+<div class="flex flex-col items-center justify-between gap-6 md:flex-row">
+<div class="text-center md:text-left">
+<h3 class="text-lg font-bold">Cheesy Dreams</h3>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">123 Cheese Lane, Foodie Town, USA</p>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">(555) 123-4567</p>
+</div>
+<div class="flex items-center gap-4">
+<a aria-label="Cheesy Dreams on Instagram" class="text-text-muted-light hover:text-primary dark:text-text-muted-dark" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 012.792 2.792c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-2.792 2.792c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-2.792-2.792c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 012.792-2.792c.636-.247 1.363.416 2.427.465C9.53 2.013 9.884 2 12.315 2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6zm6.406-11.845a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z" fill-rule="evenodd"></path></svg>
+</a>
+<a aria-label="Cheesy Dreams on Facebook" class="text-text-muted-light hover:text-primary dark:text-text-muted-dark" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+</a>
+<a aria-label="Cheesy Dreams on Twitter" class="text-text-muted-light hover:text-primary dark:text-text-muted-dark" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+</a>
+</div>
+</div>
+<div class="mt-8 border-t border-border-light dark:border-border-dark pt-6 text-center text-sm text-text-muted-light dark:text-text-muted-dark">
+<p>© 2024 Cheesy Dreams. All Rights Reserved. | <a class="hover:text-primary" href="#">Accessibility Statement</a></p>
+</div>
+</div>
+</footer>
+</div>
+<div class="group fixed bottom-4 right-4 z-50">
+<button aria-controls="accessibility-menu" aria-expanded="false" aria-haspopup="true" aria-label="Open Accessibility Menu" class="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-text-light shadow-lg transition-transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-primary/50">
+<span class="material-symbols-outlined text-3xl">accessibility_new</span>
+</button>
+<div aria-label="Accessibility Options" class="absolute bottom-16 right-0 mb-2 w-64 origin-bottom-right scale-95 transform rounded-lg border border-border-light bg-background-light p-4 opacity-0 shadow-xl transition-all duration-200 ease-in-out group-focus-within:block group-focus-within:scale-100 group-focus-within:opacity-100 group-focus-within:translate-y-0 dark:border-border-dark dark:bg-background-dark" id="accessibility-menu" role="menu">
+<h3 class="mb-3 text-lg font-bold text-text-light dark:text-text-dark">Accessibility Tools</h3>
+<div aria-labelledby="font-size-label" class="space-y-2 border-b border-border-light pb-4 dark:border-border-dark" role="group">
+<p class="text-sm font-medium text-text-light dark:text-text-dark" id="font-size-label">Font Size</p>
+<div class="flex items-center gap-2">
+<button aria-label="Decrease font size" class="flex h-8 w-8 items-center justify-center rounded-md border border-border-light text-text-muted-light hover:bg-gray-100 dark:border-border-dark dark:text-text-muted-dark dark:hover:bg-background-dark/50">
+<span class="material-symbols-outlined text-xl">text_decrease</span>
+</button>
+<span class="flex-grow text-center text-sm">Default</span>
+<button aria-label="Increase font size" class="flex h-8 w-8 items-center justify-center rounded-md border border-border-light text-text-muted-light hover:bg-gray-100 dark:border-border-dark dark:text-text-muted-dark dark:hover:bg-background-dark/50">
+<span class="material-symbols-outlined text-xl">text_increase</span>
+</button>
+</div>
+</div>
+<div aria-labelledby="color-label" class="space-y-2 pt-4" role="group">
+<p class="text-sm font-medium text-text-light dark:text-text-dark" id="color-label">Color Contrast</p>
+<div class="grid grid-cols-2 gap-2">
+<button class="flex h-10 w-full items-center justify-center rounded-md border-2 border-border-light text-sm font-medium hover:border-primary dark:border-border-dark dark:hover:border-primary">Default</button>
+<button class="flex h-10 w-full items-center justify-center rounded-md border-2 border-transparent bg-black text-sm font-medium text-white hover:border-primary">High Contrast</button>
+</div>
+</div>
+<button class="mt-4 w-full rounded-md py-2 text-sm font-medium text-text-muted-light hover:text-primary dark:text-text-muted-dark dark:hover:text-primary">Reset Settings</button>
+</div>
+</div>
+</body></html>

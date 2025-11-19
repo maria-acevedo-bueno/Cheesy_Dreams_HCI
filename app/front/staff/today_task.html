@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cheesy Dreams - Task List</title>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#FAC638",
+            "background-light": "#f8f8f5",
+            "background-dark": "#231e0f",
+            accent: "#FF9800",
+          },
+          fontFamily: {
+            display: "Work Sans"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    *:focus-visible {
+      outline: 2px solid #FF9800;
+      outline-offset: 2px;
+      border-radius: 0.25rem;
+    }
+  </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-[#333333] dark:text-background-light">
+<div class="flex h-screen w-full">
+<aside class="flex w-64 flex-col border-r border-solid border-white/10 bg-[#111318]">
+<div class="flex h-16 shrink-0 items-center gap-4 border-b border-solid border-black/10 dark:border-white/10 px-6">
+<span class="material-symbols-outlined text-4xl text-primary">chess</span>
+<h1 class="text-xl font-bold leading-tight tracking-[-0.015em] text-[#181611] dark:text-primary">Cheesy Dreams</h1>
+</div>
+<nav class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 text-white/70 hover:text-white hover:bg-[#282e39] rounded-lg transition-colors" href="/staff/live">
+<span class="material-symbols-outlined">receipt_long</span>
+<p class="text-sm font-medium leading-normal">Live Orders</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white/70 hover:text-white hover:bg-[#282e39] rounded-lg transition-colors" href="/staff/reservations">
+<span class="material-symbols-outlined">calendar_month</span>
+<p class="text-sm font-medium leading-normal">Reservations</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white/70 hover:text-white hover:bg-[#282e39] rounded-lg transition-colors" href="/customer/menu">
+<span class="material-symbols-outlined">restaurant_menu</span>
+<p class="text-sm font-medium leading-normal">Menu</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-white" href="/staff/task">
+<span class="material-symbols-outlined">checklist</span>
+<p class="text-sm font-medium leading-normal">Tasks</p>
+</a>
+</nav>
+<div class="mt-auto p-4">
+<button aria-label="User Profile" class="flex w-full items-center gap-3 rounded-lg p-3 text-left text-gray-600 transition-all hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-black/20">
+<span class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-[#181611] dark:text-primary">
+<span class="material-symbols-outlined">person</span>
+</span>
+<div>
+<p class="font-semibold">Alex Doe</p>
+<p class="text-sm text-gray-500">Staff</p>
+</div>
+</button>
+</div>
+</aside>
+<div class="flex flex-1 flex-col">
+<header class="flex h-16 shrink-0 items-center justify-between border-b border-solid border-black/10 bg-white dark:border-white/10 dark:bg-background-dark px-6">
+<h2 class="text-lg font-semibold text-gray-600 dark:text-gray-300">Task List View</h2>
+<div class="flex items-center gap-4">
+<button aria-label="Notifications" class="relative">
+<span class="material-symbols-outlined text-2xl text-gray-600 dark:text-gray-300">notifications</span>
+<span class="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-accent text-xs font-bold text-white">2</span>
+</button>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto p-6 md:p-8 lg:p-12">
+<div class="mx-auto max-w-4xl">
+<h2 class="mb-6 text-3xl font-bold text-[#181611] dark:text-white">Today's Tasks</h2>
+<div class="space-y-3">
+<a class="group flex cursor-pointer items-center justify-between rounded-lg border border-black/10 bg-white p-4 text-[#181611] transition-colors hover:border-primary hover:bg-primary/10 dark:border-white/10 dark:bg-black/20 dark:text-white dark:hover:border-primary dark:hover:bg-primary/20" href="/staff/pizza1">
+<div class="flex-grow">
+<span class="text-lg font-medium">Prepare Pizza Dough</span>
+<p class="text-sm text-gray-500 dark:text-gray-400">Mix, knead, and portion dough for the day.</p>
+</div>
+<span class="material-symbols-outlined text-gray-500 transition-transform group-hover:translate-x-1 dark:text-gray-400">arrow_forward</span>
+</a>
+<a class="group flex cursor-pointer items-center justify-between rounded-lg border border-black/10 bg-white p-4 text-[#181611] transition-colors hover:border-primary hover:bg-primary/10 dark:border-white/10 dark:bg-black/20 dark:text-white dark:hover:border-primary dark:hover:bg-primary/20" href="#">
+<div class="flex-grow">
+<span class="text-lg font-medium">Chop Vegetables</span>
+<p class="text-sm text-gray-500 dark:text-gray-400">Dice onions, slice peppers, and chop mushrooms.</p>
+</div>
+<span class="material-symbols-outlined text-gray-500 transition-transform group-hover:translate-x-1 dark:text-gray-400">arrow_forward</span>
+</a>
+<a class="group flex cursor-pointer items-center justify-between rounded-lg border border-black/10 bg-white p-4 text-[#181611] transition-colors hover:border-primary hover:bg-primary/10 dark:border-white/10 dark:bg-black/20 dark:text-white dark:hover:border-primary dark:hover:bg-primary/20" href="#">
+<div class="flex-grow">
+<span class="text-lg font-medium">Clean Kitchen Surfaces</span>
+<p class="text-sm text-gray-500 dark:text-gray-400">Wipe down all stainless steel counters.</p>
+</div>
+<span class="material-symbols-outlined text-gray-500 transition-transform group-hover:translate-x-1 dark:text-gray-400">arrow_forward</span>
+</a>
+<a class="group flex cursor-pointer items-center justify-between rounded-lg border border-black/10 bg-white p-4 text-[#181611] transition-colors hover:border-primary hover:bg-primary/10 dark:border-white/10 dark:bg-black/20 dark:text-white dark:hover:border-primary dark:hover:bg-primary/20" href="#">
+<div class="flex-grow">
+<span class="text-lg font-medium">Set Up Dining Area</span>
+<p class="text-sm text-gray-500 dark:text-gray-400">Arrange tables, chairs, and set cutlery.</p>
+</div>
+<span class="material-symbols-outlined text-gray-500 transition-transform group-hover:translate-x-1 dark:text-gray-400">arrow_forward</span>
+</a>
+<a class="group flex cursor-pointer items-center justify-between rounded-lg border border-black/10 bg-white p-4 text-[#181611] transition-colors hover:border-primary hover:bg-primary/10 dark:border-white/10 dark:bg-black/20 dark:text-white dark:hover:border-primary dark:hover:bg-primary/20" href="#">
+<div class="flex-grow">
+<span class="text-lg font-medium">Restock Condiments</span>
+<p class="text-sm text-gray-500 dark:text-gray-400">Refill salt, pepper, and parmesan shakers.</p>
+</div>
+<span class="material-symbols-outlined text-gray-500 transition-transform group-hover:translate-x-1 dark:text-gray-400">arrow_forward</span>
+</a>
+<a class="group flex cursor-pointer items-center justify-between rounded-lg border border-black/10 bg-white p-4 text-[#181611] transition-colors hover:border-primary hover:bg-primary/10 dark:border-white/10 dark:bg-black/20 dark:text-white dark:hover:border-primary dark:hover:bg-primary/20" href="#">
+<div class="flex-grow">
+<span class="text-lg font-medium">Prepare Pizza</span>
+<p class="text-sm text-gray-500 dark:text-gray-400">Assemble ingredients for Margherita and Pepperoni pizzas.</p>
+</div>
+<span class="material-symbols-outlined text-gray-500 transition-transform group-hover:translate-x-1 dark:text-gray-400">arrow_forward</span>
+</a>
+</div>
+</div>
+</main>
+</div>
+</div>
+<button aria-label="Open Accessibility Menu" class="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-accent text-white shadow-lg transition-transform hover:scale-105">
+<span class="material-symbols-outlined text-3xl">accessibility_new</span>
+</button>
+</body></html>

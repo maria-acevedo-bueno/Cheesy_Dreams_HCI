@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -21,7 +20,6 @@
 <body class="font-display">
 <div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
 <div class="flex min-h-screen">
-<!-- SideNavBar -->
 <div class="flex flex-col border-r border-[#e6e3db] dark:border-gray-700 bg-white dark:bg-black/20 w-64 p-4 shrink-0">
 <div class="flex flex-col gap-4">
 <div class="flex items-center gap-3">
@@ -31,34 +29,23 @@
 <p class="text-[#8c805f] dark:text-gray-400 text-sm font-normal leading-normal">Management</p>
 </div>
 </div>
-<div class="flex flex-col gap-2 mt-4">
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#181611] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<div class="flex flex-col gap-2 mt-4 flex-grow">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#181611] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" href="/manager/dashboard">
 <span class="material-symbols-outlined text-2xl">dashboard</span>
 <p class="text-sm font-medium leading-normal">Dashboard</p>
 </a>
 <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-[#181611] dark:bg-brand-yellow/30 dark:text-white" href="#">
-<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">book_online</span>
 <p class="text-sm font-medium leading-normal">Reservations</p>
 </a>
 <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#181611] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
-<span class="material-symbols-outlined text-2xl">table_restaurant</span>
-<p class="text-sm font-medium leading-normal">Tables</p>
+<span class="material-symbols-outlined text-2xl">calendar_month</span>
+<p class="text-sm font-medium leading-normal">Calendar</p>
 </a>
 <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#181611] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
 <span class="material-symbols-outlined text-2xl">restaurant_menu</span>
 <p class="text-sm font-medium leading-normal">Menu</p>
 </a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#181611] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
-<span class="material-symbols-outlined text-2xl">bar_chart</span>
-<p class="text-sm font-medium leading-normal">Reports</p>
-</a>
-</div>
-</div>
-<div class="flex flex-col gap-4 mt-auto">
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-brand-blue text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-brand-blue/90">
-<span class="truncate">New Reservation</span>
-</button>
-<div class="flex flex-col gap-1 border-t border-[#e6e3db] dark:border-gray-700 pt-4">
 <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#181611] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
 <span class="material-symbols-outlined text-2xl">settings</span>
 <p class="text-sm font-medium leading-normal">Settings</p>
@@ -69,18 +56,21 @@
 </a>
 </div>
 </div>
+<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-1 border-t border-[#e6e3db] dark:border-gray-700 pt-4">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#181611] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" href="/logout">
+<span class="material-symbols-outlined text-2xl">logout</span>
+<p class="text-sm font-medium leading-normal">Logout</p>
+</a>
 </div>
-<!-- Main Content -->
+</div>
+</div>
 <main class="flex-1 p-8 overflow-y-auto">
 <div class="max-w-4xl mx-auto">
-<!-- Page Heading -->
 <p class="text-[#181611] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Edit Reservation</p>
-<!-- Meta Text -->
 <p class="text-brand-gray-text dark:text-gray-400 text-sm font-normal leading-normal pt-1">Editing reservation for John Doe (Confirmation #1A2B3C)</p>
-<!-- Form Container -->
 <div class="mt-8 bg-white dark:bg-black/20 p-8 rounded-xl shadow-sm border border-[#e6e3db] dark:border-gray-700">
 <form class="flex flex-col gap-8">
-<!-- Customer Information Section -->
 <div>
 <h3 class="text-[#181611] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-4">Customer Information</h3>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -94,7 +84,6 @@
 </label>
 </div>
 </div>
-<!-- Reservation Details Section -->
 <div>
 <h3 class="text-[#181611] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-4">Reservation Details</h3>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -121,7 +110,6 @@
 </label>
 </div>
 </div>
-<!-- Additional Information Section -->
 <div>
 <h3 class="text-[#181611] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-4">Additional Information</h3>
 <label class="flex flex-col">
@@ -131,19 +119,21 @@
 </div>
 </form>
 </div>
-<!-- Action Bar -->
 <div class="sticky bottom-0 mt-8 py-4 bg-background-light dark:bg-background-dark border-t border-[#e6e3db] dark:border-gray-700 flex justify-end items-center gap-4">
+<a href="/manager/manage_reservations" class="w-full sm:w-auto">
 <button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-6 bg-transparent text-brand-gray-text dark:text-gray-300 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-300 dark:border-gray-600">
 <span class="truncate">Cancel</span>
 </button>
+</a>
+<a href="/manager/manage_reservations" class="w-full sm:w-auto">
 <button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-6 bg-brand-blue text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-brand-blue/90 disabled:bg-gray-400 dark:disabled:bg-gray-600 disabled:cursor-not-allowed">
 <span class="truncate">Save Changes</span>
 </button>
+</a>
 </div>
 </div>
 </main>
 </div>
-<!-- Accessibility Widget -->
 <button class="fixed bottom-6 right-6 z-50 flex items-center justify-center size-14 bg-brand-yellow rounded-full shadow-lg hover:bg-brand-yellow/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-yellow dark:focus:ring-offset-background-dark">
 <span class="material-symbols-outlined text-3xl text-black">accessibility_new</span>
 </button>

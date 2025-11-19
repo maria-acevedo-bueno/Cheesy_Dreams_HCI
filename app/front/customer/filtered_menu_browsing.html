@@ -31,7 +31,7 @@
 <h2 class="text-2xl font-black leading-tight tracking-[-0.015em] text-[#181611] dark:text-white">Cheesy Dreams</h2>
 </div>
 <nav class="hidden md:flex items-center gap-9">
-<a class="text-[#181611] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="#">Home</a>
+<a class="text-[#181611] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="/customer/home">Home</a>
 <a class="text-[#181611] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="#">About Us</a>
 <a class="text-[#181611] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="#">Contact</a>
 </nav>
@@ -110,15 +110,16 @@
 <div class="flex flex-wrap justify-between gap-4 p-4 items-center">
 <h1 class="text-[#181611] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">Our Menu</h1>
 <div class="flex items-center gap-2 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg">
-<button class="px-3 py-1.5 rounded-md text-sm font-bold text-[#181611] dark:text-white bg-white dark:bg-gray-700 shadow-sm">
-<span class="material-symbols-outlined text-lg inline-block align-middle mr-1.5">grid_view</span>
-Visual
-</button>
-<button class="px-3 py-1.5 rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-[#181611] dark:hover:text-white">
-<span class="material-symbols-outlined text-lg inline-block align-middle mr-1.5">notes</span>
-<a href="plain_text_accessible_menu.html">Plain Text</a>
-</button>
+    <button id="visual-btn" class="px-3 py-1.5 rounded-md text-sm font-bold text-[#181611] dark:text-white bg-white dark:bg-gray-700 shadow-sm">
+        <span class="material-symbols-outlined text-lg inline-block align-middle mr-1.5">grid_view</span>
+        Visual
+    </button>
+    <button id="text-btn" class="px-3 py-1.5 rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-[#181611] dark:hover:text-white">
+        <span class="material-symbols-outlined text-lg inline-block align-middle mr-1.5">notes</span>
+        Plain Text
+    </button>
 </div>
+
 </div>
 <div id="visual-menu">
 <section id="pizzas">
@@ -300,4 +301,32 @@ Visual
 </div>
 </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const visualBtn = document.getElementById('visual-btn');
+        const textBtn = document.getElementById('text-btn');
+        const visualMenu = document.getElementById('visual-menu');
+        const textMenu = document.getElementById('text-menu');
+
+        function setActiveButton(activeBtn, inactiveBtn) {
+            activeBtn.classList.add('font-bold', 'text-[#181611]', 'dark:text-white', 'bg-white', 'dark:bg-gray-700', 'shadow-sm');
+            activeBtn.classList.remove('font-medium', 'text-gray-500', 'dark:text-gray-400');
+            
+            inactiveBtn.classList.add('font-medium', 'text-gray-500', 'dark:text-gray-400');
+            inactiveBtn.classList.remove('font-bold', 'text-[#181611]', 'dark:text-white', 'bg-white', 'dark:bg-gray-700', 'shadow-sm');
+        }
+
+        textBtn.addEventListener('click', () => {
+            visualMenu.classList.add('hidden');
+            textMenu.classList.remove('hidden');
+            setActiveButton(textBtn, visualBtn);
+        });
+
+        visualBtn.addEventListener('click', () => {
+            textMenu.classList.add('hidden');
+            visualMenu.classList.remove('hidden');
+            setActiveButton(visualBtn, textBtn);
+        });
+    });
+</script>
 </body></html>

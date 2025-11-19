@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cheesy Dreams - Pizza Preparation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#fac638",
+            "background-light": "#f8f8f5",
+            "background-dark": "#231e0f",
+            "accent-orange": "#FD7E14",
+            "accent-yellow": "#FFC107",
+            "text-light": "#1c180d",
+            "text-dark": "#f8f8f5",
+            "text-muted-light": "#9e8747",
+            "text-muted-dark": "#a8a29e"
+          },
+          fontFamily: {
+            "display": ["Work Sans", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="relative flex min-h-screen w-full flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-gray-200/50 dark:border-gray-700/50 px-6 md:px-10 py-3">
+<div class="flex items-center gap-4">
+<div class="size-6 text-accent-yellow">
+<svg class="w-full h-full" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l5-2.5 5 2.5L12 4.5 6.5 17.5z"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold tracking-tight">Cheesy Dreams</h2>
+</div>
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-gray-200/60 dark:bg-gray-700/60 text-text-light dark:text-text-dark gap-2 text-sm font-bold leading-normal tracking-[0.015em] focus:outline-none focus:ring-2 focus:ring-accent-orange focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark">
+<span class="material-symbols-outlined text-xl">person</span>
+</button>
+</header>
+<main class="flex flex-1 flex-col items-center justify-center p-4 sm:p-6 md:p-8">
+<div class="w-full max-w-2xl text-center">
+<div class="mb-4 flex flex-wrap items-center justify-center gap-2">
+<a class="text-text-muted-light dark:text-text-muted-dark text-sm font-medium" href="#">Step 1</a>
+<span class="text-text-muted-light dark:text-text-muted-dark text-sm font-medium">/</span>
+<a class="text-text-muted-light dark:text-text-muted-dark text-sm font-medium" href="#">Step 2</a>
+<span class="text-text-muted-light dark:text-text-muted-dark text-sm font-medium">/</span>
+<a class="text-text-muted-light dark:text-text-muted-dark text-sm font-medium" href="#">Step 3</a>
+<span class="text-text-muted-light dark:text-text-muted-dark text-sm font-medium">/</span>
+<a class="text-text-muted-light dark:text-text-muted-dark text-sm font-medium" href="#">Step 4</a>
+<span class="text-text-muted-light dark:text-text-muted-dark text-sm font-medium">/</span>
+<span class="text-text-light dark:text-text-dark text-sm font-bold">Step 5</span>
+</div>
+<div class="mb-8 flex flex-col items-center gap-2">
+<h1 class="text-4xl font-black tracking-tighter sm:text-5xl">Margherita</h1>
+<p class="text-base font-normal text-text-muted-light dark:text-text-muted-dark">Step 5 of 5</p>
+</div>
+<div class="rounded-xl border border-gray-200/80 dark:border-gray-700/80 bg-white/50 dark:bg-black/20 p-8 shadow-sm">
+<div class="flex flex-col items-center gap-6">
+<div class="flex h-20 w-20 items-center justify-center rounded-full bg-accent-yellow/20 text-accent-yellow">
+<span class="material-symbols-outlined !text-5xl">local_pizza</span>
+</div>
+<div class="flex flex-col items-center gap-4">
+<h2 class="text-3xl font-bold tracking-tight text-text-light dark:text-text-dark">Slicing and Serving</h2>
+<button aria-label="Read instructions aloud" class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-text-muted-light dark:border-text-muted-dark text-text-muted-light dark:text-text-muted-dark transition-colors hover:border-accent-orange hover:text-accent-orange focus:outline-none focus:ring-2 focus:ring-accent-orange focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark">
+<span class="material-symbols-outlined text-3xl">volume_up</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-12 flex flex-col-reverse items-center justify-center gap-4 sm:flex-row">
+    <a href="/staff/pizza4" class="flex items-center justify-center h-12 w-full rounded-lg border-2 border-text-muted-light dark:border-text-muted-dark px-6 text-base font-bold text-text-muted-light dark:text-text-muted-dark transition-colors hover:border-text-light dark:hover:border-text-dark hover:text-text-light dark:hover:text-text-dark focus:outline-none focus:ring-2 focus:ring-accent-orange focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark sm:w-auto">
+        Previous
+    </a>
+    <a href="/staff/task" class="flex items-center justify-center h-12 w-full rounded-lg bg-accent-orange px-6 text-base font-bold text-white shadow-md transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent-orange focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark sm:w-auto">
+        Mark as Complete
+    </a>
+</div>
+</div>
+</main>
+</div>
+</body></html>

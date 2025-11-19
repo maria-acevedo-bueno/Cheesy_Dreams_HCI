@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reservation Management - Cheesy Dreams</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#fac638",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#231e0f"
+                    },
+                    fontFamily: {
+                        display: "Work Sans"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="font-display">
+<div class="relative flex h-screen min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-hidden">
+<div class="flex h-full w-full">
+<aside class="flex w-64 flex-col bg-white dark:bg-[#181611] border-r border-gray-200 dark:border-gray-800">
+<div class="flex h-20 items-center px-6">
+<div class="flex items-center gap-3">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
+<span class="text-2xl font-bold text-gray-900">CD</span>
+</div>
+<span class="text-xl font-bold text-gray-900 dark:text-white">Cheesy Dreams</span>
+</div>
+</div>
+<nav class="flex-1 space-y-2 px-4 py-4">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10" href="/manager/dashboard">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 font-bold text-primary dark:bg-primary/30" href="#">
+<span class="material-symbols-outlined">book_online</span>
+<span class="font-medium">Reservations</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-medium">Calendar</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10" href="#">
+<span class="material-symbols-outlined">restaurant_menu</span>
+<span class="font-medium">Menu</span>
+</a>
+</nav>
+<div class="mt-auto px-4 py-4">
+<nav class="flex-col space-y-2">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-medium">Help</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10" href="/logout">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-medium">Logout</span>
+</a>
+</nav>
+</div>
+</aside>
+<main class="flex-1 flex flex-col p-6 lg:p-8 overflow-y-auto">
+<div class="flex-shrink-0">
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+<h1 class="text-3xl font-bold text-gray-800 dark:text-gray-200">Reservation Management</h1>
+<div class="flex items-center gap-4">
+<a class="relative flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white" href="/manager/pending_reservations">
+<span class="material-symbols-outlined">notifications</span>
+<span>Pending</span>
+<span class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-xs font-bold text-gray-900">3</span>
+</a>
+<button class="flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 text-base font-bold text-gray-900 hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 dark:focus-visible:ring-offset-background-dark">
+<span class="material-symbols-outlined">add</span>
+<span>New Reservation</span>
+</button>
+</div>
+</div>
+<div class="mt-6 flex flex-wrap items-center gap-4">
+<div class="relative flex-grow sm:flex-grow-0 sm:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+<input class="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900/50 py-2 pl-10 pr-4 text-gray-900 dark:text-gray-100 focus:border-primary focus:ring-primary" placeholder="Search by name..." type="search"/>
+</div>
+<div class="relative">
+<select class="appearance-none rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900/50 py-2 pl-3 pr-8 text-gray-900 dark:text-gray-100 focus:border-primary focus:ring-primary">
+<option>All Dates</option>
+<option>Today</option>
+<option>Tomorrow</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-gray-400">expand_more</span>
+</div>
+<div class="relative">
+<select class="appearance-none rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900/50 py-2 pl-3 pr-8 text-gray-900 dark:text-gray-100 focus:border-primary focus:ring-primary">
+<option>All Times</option>
+<option>Lunch</option>
+<option>Dinner</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-gray-400">expand_more</span>
+</div>
+</div>
+</div>
+<div class="mt-6 flex-1 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#181611] overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-gray-50 dark:bg-white/5">
+<tr>
+<th class="px-6 py-3 text-sm font-semibold text-gray-600 dark:text-gray-300">Guest Name</th>
+<th class="px-6 py-3 text-sm font-semibold text-gray-600 dark:text-gray-300">Date &amp; Time</th>
+<th class="px-6 py-3 text-sm font-semibold text-gray-600 dark:text-gray-300">Party Size</th>
+<th class="px-6 py-3 text-sm font-semibold text-gray-600 dark:text-gray-300">Status</th>
+<th class="px-6 py-3 text-sm font-semibold text-gray-600 dark:text-gray-300">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-200 dark:divide-gray-800">
+<tr class="hover:bg-gray-50 dark:hover:bg-white/5 cursor-pointer">
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">Jane Cooper</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">Oct 28, 2024, 8:00 PM</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">2</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm">
+<span class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/40 px-2.5 py-0.5 font-medium text-green-800 dark:text-green-300">Confirmed</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+<a class="text-primary hover:underline" href="/manager/edit_reservations">Edit</a>
+<a class="ml-4 text-red-600 dark:text-red-500 hover:underline" href="/manager/cancel_reservations">Cancel</a>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-white/5 cursor-pointer">
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">John Doe</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">Oct 28, 2024, 7:30 PM</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">4</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm">
+<span class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/40 px-2.5 py-0.5 font-medium text-green-800 dark:text-green-300">Confirmed</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+<a class="text-primary hover:underline" href="#">Edit</a>
+<a class="ml-4 text-red-600 dark:text-red-500 hover:underline" href="#">Cancel</a>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-white/5 cursor-pointer">
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">Alice Smith</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">Oct 28, 2024, 6:00 PM</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">6</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm">
+<span class="inline-flex items-center rounded-full bg-blue-100 dark:bg-blue-900/40 px-2.5 py-0.5 font-medium text-blue-800 dark:text-blue-300">Seated</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+<a class="text-primary hover:underline" href="#">Edit</a>
+<a class="ml-4 text-red-600 dark:text-red-500 hover:underline" href="#">Cancel</a>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-white/5 cursor-pointer">
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">Bob Johnson</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">Oct 27, 2024, 9:00 PM</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">5</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm">
+<span class="inline-flex items-center rounded-full bg-gray-100 dark:bg-gray-700 px-2.5 py-0.5 font-medium text-gray-800 dark:text-gray-300">Completed</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+<a class="text-primary hover:underline" href="#">Details</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+</div>
+<button class="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-primary shadow-lg hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 dark:focus-visible:ring-offset-background-dark">
+<span aria-hidden="true" class="material-symbols-outlined text-3xl text-gray-900">accessibility_new</span>
+<span class="sr-only">Accessibility Options</span>
+</button>
+</div>
+
+</body></html>

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -24,7 +23,6 @@
 </head>
 <body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
 <div class="relative flex min-h-screen w-full">
-<!-- Side Navigation Bar -->
 <aside class="flex flex-col w-64 border-r border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark p-4 shrink-0">
 <div class="flex flex-col gap-4">
 <div class="flex items-center gap-3">
@@ -40,20 +38,16 @@
 <p class="text-sm font-medium leading-normal">Dashboard</p>
 </a>
 <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/20 focus:outline-none focus:ring-2 focus:ring-primary" href="#">
-<span class="material-symbols-outlined">receipt_long</span>
-<p class="text-sm font-medium leading-normal">Live Orders</p>
+<span class="material-symbols-outlined">event_seat</span>
+<p class="text-sm font-medium leading-normal">Reservations</p>
 </a>
 <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/20 focus:outline-none focus:ring-2 focus:ring-primary" href="#">
-<span class="material-symbols-outlined">inventory_2</span>
-<p class="text-sm font-medium leading-normal">Inventory Management</p>
+<span class="material-symbols-outlined">calendar_month</span>
+<p class="text-sm font-medium leading-normal">Calendar</p>
 </a>
 <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/20 focus:outline-none focus:ring-2 focus:ring-primary" href="#">
 <span class="material-symbols-outlined">restaurant_menu</span>
-<p class="text-sm font-medium leading-normal">Menu Editor</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/20 focus:outline-none focus:ring-2 focus:ring-primary" href="#">
-<span class="material-symbols-outlined">bar_chart</span>
-<p class="text-sm font-medium leading-normal">Sales Reports</p>
+<p class="text-sm font-medium leading-normal">Menu</p>
 </a>
 <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/20 focus:outline-none focus:ring-2 focus:ring-primary" href="#">
 <span class="material-symbols-outlined">settings</span>
@@ -72,12 +66,9 @@
 </a>
 </div>
 </aside>
-<!-- Main Content -->
 <main class="flex-1 flex flex-col">
-<!-- Top Navigation Bar -->
 <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark px-10 py-3 bg-card-light dark:bg-card-dark">
 <div class="flex items-center gap-4 text-text-light dark:text-text-dark">
-<!-- Placeholder for Breadcrumbs or Page Title if needed -->
 </div>
 <div class="flex flex-1 justify-end gap-6 items-center">
 <label class="flex flex-col min-w-40 !h-10 max-w-64">
@@ -94,9 +85,7 @@
 <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC7v0wi-jcfmxkUo9prbcjiJ1y1xK1KOjixMB1qjYkuIyE8d3Prbe60GpB89zIhOZrwmcL5clG7Ty7GUbHP5_GtBcAdVfSbBzQNloGYAER8Ozz-mvRPsU21QTnCduwaGwN3sjGSSzVZWh2nO9JjSPDv1HBosrYPU8tUjOEEjkcjBmXU7bfO7eHEvWGjV4liDCTZjeScMvqHwSS1MJxHFMy3aCMu2OHEP_utkopjASiqy1Fe70BzW3Mg6dGSoe0JGveU07_T4WMGcXU");'></div>
 </div>
 </header>
-<!-- Page Content -->
 <div class="p-6 lg:p-10 flex-1 overflow-y-auto">
-<!-- Alert Banner -->
 <div class="mb-6 flex flex-1 flex-col items-start justify-between gap-4 rounded-xl bg-alert-warning-bg p-5 @container sm:flex-row sm:items-center" role="alert">
 <div class="flex items-center gap-3">
 <span class="material-symbols-outlined text-alert-warning-text">warning</span>
@@ -109,11 +98,9 @@
 <span class="truncate">Manage Stock</span>
 </button>
 </div>
-<!-- Page Heading -->
-<div class="flex flex-wrap justify-between gap-3 mb-6">
+<div class="flex flex-wrap justify-between items-center gap-4 mb-6">
 <p class="text-text-light dark:text-text-dark text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">Dashboard Overview</p>
 </div>
-<!-- Stats Cards -->
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark">
 <p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">Live Order Count</p>
@@ -136,10 +123,8 @@
 <p class="text-[#e71408] text-base font-medium leading-normal">-2.0%</p>
 </div>
 </div>
-<!-- Additional content would go here, e.g., graphs, tables -->
 </div>
 </main>
-<!-- Accessibility Widget -->
 <button class="fixed bottom-6 right-6 flex items-center justify-center size-14 bg-primary text-text-light rounded-full shadow-lg hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-background-dark">
 <span class="material-symbols-outlined !text-3xl">accessibility_new</span>
 </button>
