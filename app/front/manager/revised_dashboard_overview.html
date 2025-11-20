@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html class="" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -9,50 +8,57 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 <script>tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#fac638", "background-light": "#f8f8f5", "background-dark": "#231e0f", "surface-light": "#FFFFFF", "surface-dark": "#34495E", "text-light": "#2C3E50", "text-dark": "#ECF0F1", "text-muted-light": "#5D6D7E", "text-muted-dark": "#95A5A6", "accent-blue": "#3498DB", "status-red": "#E74C3C", "status-green": "#2ECC71", "status-orange": "#E67E22"}, fontFamily: {display: "Work Sans"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0,
-            'wght' 400,
-            'GRAD' 0,
-            'opsz' 24
+.material-symbols-outlined {
+font-variation-settings: 'FILL' 0,
+'wght' 400,
+'GRAD' 0,
+'opsz' 24
         }
-        .material-symbols-outlined.filled {
-            font-variation-settings: 'FILL' 1
+.material-symbols-outlined.filled {
+font-variation-settings: 'FILL' 1
         }
-    </style>
+</style>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
 <div class="relative flex h-auto min-h-screen w-full">
-<aside class="sticky top-0 h-screen flex flex-col bg-surface-light dark:bg-surface-dark border-r border-gray-200 dark:border-white/10 w-20">
-<div class="flex items-center justify-center h-20 border-b border-gray-200 dark:border-white/10">
-<span class="material-symbols-outlined text-primary text-4xl">bakery_dining</span>
-</div>
-<nav class="flex-1 flex flex-col items-center py-6">
-<ul class="space-y-4">
-<li>
-<a aria-current="page" class="flex flex-col items-center p-2 rounded-lg text-primary bg-primary/10" href="/manager/dashboard" title="Dashboard">
-<span class="material-symbols-outlined filled text-2xl">dashboard</span>
-<span class="text-xs font-bold mt-1">Dashboard</span>
-</a>
-</li>
-<li>
-<a class="flex flex-col items-center p-2 rounded-lg text-text-muted-light dark:text-text-muted-dark hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary dark:hover:text-primary transition-colors" href="/manager/inventory" title="Inventory Management">
-<span class="material-symbols-outlined text-2xl">inventory_2</span>
-<span class="text-xs font-medium mt-1">Inventory</span>
-</a>
-</li>
-<li>
-<a class="flex flex-col items-center p-2 rounded-lg text-text-muted-light dark:text-text-muted-dark hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary dark:hover:text-primary transition-colors" href="/manager/sales" title="Sales Reports">
-<span class="material-symbols-outlined text-2xl">bar_chart</span>
-<span class="text-xs font-medium mt-1">Reports</span>
-</a>
-</li>
-</ul>
-</nav>
-<div class="mt-auto flex flex-col items-center py-6 space-y-4">
-<button aria-label="Accessibility Settings" class="flex items-center justify-center h-10 w-10 rounded-full text-text-muted-light dark:text-text-muted-dark hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary dark:hover:text-primary transition-colors">
-<span class="material-symbols-outlined">circle</span>
-</button>
-</div>
+<aside class="flex h-screen w-64 flex-col bg-white dark:bg-gray-900 p-4 sticky top-0 border-r border-gray-200 dark:border-gray-700">
+  <div class="flex flex-col gap-4">
+    <div class="flex items-center gap-3 px-3 py-2">
+      <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Cheesy Dreams logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuACWG7apcDQDYvNEqsji_QXxNXAAHmsavK3M2grSSmAsuCbB8QH6m8V97WY1Qo3PkFnSbd4ZdQ8omPhJNiTkN0T_Yj36jbtKZrNrmx2BAlUzJLMIOSZlvulEkHxiVK46Dz8kxMoiR5y3X-GdmFlLRh2h3nWCNPi7FlMCz3jMmbHSASdtzuykd7r0YKMrMuZJRx43-0rS5JIhKA1NGR2PUOnktpFXcC1z7I4DpPGQJhwT8fu84IMlKksjcm2qsGLxbL7iAgq-m-P4WI");'></div>
+      <div class="flex flex-col">
+        <h1 class="text-gray-900 dark:text-white text-base font-medium leading-normal">Cheesy Dreams</h1>
+        <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Management System</p>
+      </div>
+    </div>
+    <nav class="flex flex-col gap-2 mt-4">
+      <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-gray-900" href="/manager/dashboard">
+        <span class="material-symbols-outlined">dashboard</span>
+        <p class="text-sm font-medium leading-normal">Dashboard</p>
+      </a>
+      <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="/manager/manage_reservations">
+        <span class="material-symbols-outlined">book_online</span>
+        <p class="text-sm font-medium leading-normal">Reservations</p>
+      </a>
+      <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="/manager/inventory">
+        <span class="material-symbols-outlined">inventory_2</span>
+        <p class="text-sm font-medium leading-normal">Inventory</p>
+      </a>
+      <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="/manager/sales">
+        <span class="material-symbols-outlined">assessment</span>
+        <p class="text-sm font-medium leading-normal">Sales Reports</p>
+      </a>
+    </nav>
+  </div>
+  <div class="mt-auto flex flex-col gap-2">
+    <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="#" data-not-implemented>
+      <span class="material-symbols-outlined">settings</span>
+      <p class="text-sm font-medium leading-normal">Settings</p>
+    </a>
+    <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="#" data-not-implemented>
+      <span class="material-symbols-outlined">logout</span>
+      <p class="text-sm font-medium leading-normal">Log Out</p>
+    </a>
+  </div>
 </aside>
 <div class="flex flex-1 flex-col">
 <header class="flex items-center justify-between whitespace-nowrap border-b border-surface-light/[0.1] dark:border-surface-dark/[0.5] px-6 md:px-10 py-4 sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm z-50">
@@ -61,13 +67,13 @@
 </div>
 <nav class="hidden lg:flex flex-1 justify-center items-center gap-8">
 <a class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark hover:text-primary transition-colors" href="/manager/manage_reservations">Reservations</a>
-<a class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark hover:text-primary transition-colors" href="#">Orders</a>
-<a class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark hover:text-primary transition-colors" href="#">Staff</a>
-<a class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark hover:text-primary transition-colors" href="#">Settings</a>
-<a class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark hover:text-primary transition-colors" href="/logout">Logout</a>
+<a class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark hover:text-primary transition-colors" href="#" data-not-implemented>Orders</a>
+<a class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark hover:text-primary transition-colors" href="#" data-not-implemented>Staff</a>
+<a class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark hover:text-primary transition-colors" href="#" data-not-implemented>Settings</a>
+<a class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark hover:text-primary transition-colors" href="#" data-not-implemented>Logout</a>
 </nav>
 <div class="flex items-center gap-4">
-<button class="flex cursor-pointer items-center justify-center rounded-full h-10 w-10 bg-surface-light dark:bg-surface-dark text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary transition-colors">
+<button class="flex cursor-pointer items-center justify-center rounded-full h-10 w-10 bg-surface-light dark:bg-surface-dark text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary transition-colors" data-not-implemented>
 <span class="material-symbols-outlined">notifications</span>
 </button>
 <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBX9UYtOfoMNRuGqhabRTwnAPFFHutHDA5fu_LnegRwjgVrpaWa8c9ptHHeb2FnizDpFHHC_2PZFQLJ_acorW7fLAjowzcdGxLy5SO0lbxItfKYPTS4HdUqrNnKMGg6zkSuF_vcdKKPV0ehNKcRoKPWbH7QZ_3HZbxZUbEBgdmDBBeC518vC7ST93aIjKZ3-PbEyxnixaxESQLQA0-ZR2du0wk6ZmZlRarI91Gz8EYIXIrtbdW09WAVYVfKmngE-fxCC4HMXoygubI");'></div>
@@ -92,7 +98,7 @@
 <p class="text-text-light dark:text-text-dark text-base font-bold">Mozzarella stock low</p>
 <p class="text-text-muted-light dark:text-text-muted-dark text-sm">Timestamp: 5 minutes ago</p>
 </div>
-<button class="flex w-full sm:w-fit min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-9 px-4 bg-primary text-background-dark text-sm font-bold shadow-sm hover:opacity-90 transition-opacity">
+<button class="flex w-full sm:w-fit min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-9 px-4 bg-primary text-background-dark text-sm font-bold shadow-sm hover:opacity-90 transition-opacity" data-not-implemented>
 <span>View Inventory</span>
 </button>
 </div>
@@ -106,7 +112,7 @@
 <p class="text-text-light dark:text-text-dark text-base font-bold">Large party (12 guests) arriving in 15 mins</p>
 <p class="text-text-muted-light dark:text-text-muted-dark text-sm">Reservation: Smith Party</p>
 </div>
-<button class="flex w-full sm:w-fit min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-9 px-4 bg-surface-light dark:bg-surface-dark text-text-light dark:text-text-dark text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+<button class="flex w-full sm:w-fit min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-9 px-4 bg-surface-light dark:bg-surface-dark text-text-light dark:text-text-dark text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors" data-not-implemented>
 <span>View Reservation</span>
 </button>
 </div>
@@ -117,16 +123,16 @@
 <h2 class="text-text-light dark:text-text-dark text-[22px] font-bold tracking-tight px-1 pb-3 pt-5">Live Floor Plan</h2>
 <div class="rounded-xl bg-surface-light dark:bg-surface-dark p-4">
 <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4">
-<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-status-green/20 border border-status-green cursor-pointer hover:scale-105 transition-transform"><span class="font-bold text-lg text-status-green">T1</span><span class="text-xs text-status-green">Available</span></div>
-<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-accent-blue/20 border border-accent-blue cursor-pointer hover:scale-105 transition-transform"><span class="font-bold text-lg text-accent-blue">T2</span><span class="text-xs text-accent-blue">Occupied</span></div>
-<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-status-orange/20 border border-status-orange cursor-pointer hover:scale-105 transition-transform"><span class="font-bold text-lg text-status-orange">T3</span><span class="text-xs text-status-orange">Reserved</span></div>
-<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-status-green/20 border border-status-green cursor-pointer hover:scale-105 transition-transform"><span class="font-bold text-lg text-status-green">T4</span><span class="text-xs text-status-green">Available</span></div>
-<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-accent-blue/20 border border-accent-blue cursor-pointer hover:scale-105 transition-transform"><span class="font-bold text-lg text-accent-blue">T5</span><span class="text-xs text-accent-blue">Occupied</span></div>
-<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-status-red/20 border border-status-red cursor-pointer hover:scale-105 transition-transform"><span class="font-bold text-lg text-status-red">T6</span><span class="text-xs text-status-red text-center">Cleaning</span></div>
-<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-status-green/20 border border-status-green cursor-pointer hover:scale-105 transition-transform"><span class="font-bold text-lg text-status-green">T7</span><span class="text-xs text-status-green">Available</span></div>
-<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-status-green/20 border border-status-green cursor-pointer hover:scale-105 transition-transform"><span class="font-bold text-lg text-status-green">T8</span><span class="text-xs text-status-green">Available</span></div>
-<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-accent-blue/20 border border-accent-blue cursor-pointer hover:scale-105 transition-transform"><span class="font-bold text-lg text-accent-blue">T9</span><span class="text-xs text-accent-blue">Occupied</span></div>
-<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-status-orange/20 border border-status-orange cursor-pointer hover:scale-105 transition-transform"><span class="font-bold text-lg text-status-orange">T10</span><span class="text-xs text-status-orange">Reserved</span></div>
+<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-status-green/20 border border-status-green cursor-pointer hover:scale-105 transition-transform" data-not-implemented><span class="font-bold text-lg text-status-green">T1</span><span class="text-xs text-status-green">Available</span></div>
+<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-accent-blue/20 border border-accent-blue cursor-pointer hover:scale-105 transition-transform" data-not-implemented><span class="font-bold text-lg text-accent-blue">T2</span><span class="text-xs text-accent-blue">Occupied</span></div>
+<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-status-orange/20 border border-status-orange cursor-pointer hover:scale-105 transition-transform" data-not-implemented><span class="font-bold text-lg text-status-orange">T3</span><span class="text-xs text-status-orange">Reserved</span></div>
+<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-status-green/20 border border-status-green cursor-pointer hover:scale-105 transition-transform" data-not-implemented><span class="font-bold text-lg text-status-green">T4</span><span class="text-xs text-status-green">Available</span></div>
+<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-accent-blue/20 border border-accent-blue cursor-pointer hover:scale-105 transition-transform" data-not-implemented><span class="font-bold text-lg text-accent-blue">T5</span><span class="text-xs text-accent-blue">Occupied</span></div>
+<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-status-red/20 border border-status-red cursor-pointer hover:scale-105 transition-transform" data-not-implemented><span class="font-bold text-lg text-status-red">T6</span><span class="text-xs text-status-red text-center">Cleaning</span></div>
+<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-status-green/20 border border-status-green cursor-pointer hover:scale-105 transition-transform" data-not-implemented><span class="font-bold text-lg text-status-green">T7</span><span class="text-xs text-status-green">Available</span></div>
+<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-status-green/20 border border-status-green cursor-pointer hover:scale-105 transition-transform" data-not-implemented><span class="font-bold text-lg text-status-green">T8</span><span class="text-xs text-status-green">Available</span></div>
+<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-accent-blue/20 border border-accent-blue cursor-pointer hover:scale-105 transition-transform" data-not-implemented><span class="font-bold text-lg text-accent-blue">T9</span><span class="text-xs text-accent-blue">Occupied</span></div>
+<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-status-orange/20 border border-status-orange cursor-pointer hover:scale-105 transition-transform" data-not-implemented><span class="font-bold text-lg text-status-orange">T10</span><span class="text-xs text-status-orange">Reserved</span></div>
 </div>
 <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-6 pt-4 border-t border-black/10 dark:border-white/10">
 <div class="flex items-center gap-2">
@@ -190,16 +196,12 @@
 </main>
 </div>
 </div>
-
-
-
 <script>
 // popup.js inline - temporal para debugging
 (function() {
-  console.log('✅ Script inline cargado');
-  
-  const style = document.createElement('style');
-  style.textContent = `
+console.log('✅ Script inline cargado');
+const style = document.createElement('style');
+style.textContent = `
     .__notimpl_modal_backdrop {
       position: fixed;
       inset: 0;
@@ -242,46 +244,38 @@
       background: #D97706;
     }
   `;
-  document.head.appendChild(style);
-
-  function showModal() {
-    console.log('🎉 Mostrando modal');
-    if (document.querySelector('.__notimpl_modal_backdrop')) return;
-    
-    const backdrop = document.createElement('div');
-    backdrop.className = '__notimpl_modal_backdrop';
-    
-    const modal = document.createElement('div');
-    modal.className = '__notimpl_modal';
-    modal.innerHTML = '<h2>Not implemented yet!</h2><p>Esta funcionalidad aún no está implementada.</p>';
-    
-    const closeBtn = document.createElement('button');
-    closeBtn.textContent = 'Cerrar';
-    closeBtn.addEventListener('click', () => backdrop.remove());
-    
-    modal.appendChild(closeBtn);
-    backdrop.appendChild(modal);
-    backdrop.addEventListener('click', (e) => {
-      if (e.target === backdrop) backdrop.remove();
+document.head.appendChild(style);
+function showModal() {
+console.log('🎉 Mostrando modal');
+if (document.querySelector('.__notimpl_modal_backdrop')) return;
+const backdrop = document.createElement('div');
+backdrop.className = '__notimpl_modal_backdrop';
+const modal = document.createElement('div');
+modal.className = '__notimpl_modal';
+modal.innerHTML = '<h2>Not implemented yet!</h2><p>Esta funcionalidad aún no está implementada.</p>';
+const closeBtn = document.createElement('button');
+closeBtn.textContent = 'Cerrar';
+closeBtn.addEventListener('click', () => backdrop.remove());
+modal.appendChild(closeBtn);
+backdrop.appendChild(modal);
+backdrop.addEventListener('click', (e) => {
+if (e.target === backdrop) backdrop.remove();
     });
-    
-    document.body.appendChild(backdrop);
+document.body.appendChild(backdrop);
   }
-
-  document.addEventListener('click', function(e) {
-    console.log('👆 Clic en:', e.target.tagName);
-    const target = e.target.closest('[data-not-implemented]');
-    console.log('🔍 Target:', target);
-    
-    if (target) {
-      console.log('✋ Previniendo default');
-      e.preventDefault();
-      e.stopPropagation();
-      showModal();
+document.addEventListener('click', function(e) {
+console.log('👆 Clic en:', e.target.tagName);
+const target = e.target.closest('[data-not-implemented]');
+console.log('🔍 Target:', target);
+if (target) {
+console.log('✋ Previniendo default');
+e.preventDefault();
+e.stopPropagation();
+showModal();
     }
   }, true);
-
-  console.log('✅ Event listener configurado');
+console.log('✅ Event listener configurado');
 })();
 </script>
 </body></html>
+

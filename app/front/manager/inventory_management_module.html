@@ -21,50 +21,44 @@
 <body class="bg-background-light dark:bg-background-dark font-display text-neutral-text-light dark:text-neutral-text-dark">
 <div class="relative flex min-h-screen w-full">
 <!-- Side Navigation -->
-<aside class="flex w-64 flex-col bg-white dark:bg-neutral-bg-dark/20 p-4 border-r border-neutral-border-light dark:border-neutral-border-dark">
-<div class="flex flex-col gap-4">
-<div class="flex items-center gap-3">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Cheesy Dreams restaurant logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDFTNXBR3ZDaxq8yY7-r__lRenuGJNuVlBOBkQm8c-8GGvWMlMrTyzCVna2z9n6AChzULbw-Z-bFUUVkgfgqFAGL0qK2zsditqrXmMkxL6WjGXU-p8CjLjs5Jo926nTs0f-Klxg1HpwinRXFwyW6doprdeT9bi4WNBBeiFlKBBE7ovr30GDHdVNM1ZGbeYaSgFPVnYvC-knclpNrmhyFcmi8f2oywlqhhMqqcmKy_0IcKcERNwDlNak-XeCvkIf_vFf6L_xfgFG8vg");'></div>
-<div class="flex flex-col">
-<h1 class="text-base font-medium leading-normal text-neutral-text-light dark:text-neutral-text-dark">Cheesy Dreams</h1>
-<p class="text-sm font-normal leading-normal text-neutral-subtle-text-light dark:text-neutral-subtle-text-dark">Restaurant Management</p>
-</div>
-</div>
-<nav class="flex flex-col gap-2 mt-4">
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark" href="#">
-<span class="material-symbols-outlined text-neutral-text-light dark:text-neutral-text-dark">dashboard</span>
-<p class="text-sm font-medium leading-normal">Dashboard</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 dark:bg-primary/30 text-neutral-text-light dark:text-neutral-text-dark" href="#">
-<span class="material-symbols-outlined text-neutral-text-light dark:text-neutral-text-dark" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
-<p class="text-sm font-medium leading-normal">Inventory</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark" href="#">
-<span class="material-symbols-outlined text-neutral-text-light dark:text-neutral-text-dark">list_alt</span>
-<p class="text-sm font-medium leading-normal">Orders</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark" href="#">
-<span class="material-symbols-outlined text-neutral-text-light dark:text-neutral-text-dark">menu_book</span>
-<p class="text-sm font-medium leading-normal">Menu</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark" href="#">
-<span class="material-symbols-outlined text-neutral-text-light dark:text-neutral-text-dark">assessment</span>
-<p class="text-sm font-medium leading-normal">Reports</p>
-</a>
-</nav>
-</div>
-<div class="mt-auto flex flex-col gap-4">
-<nav class="flex flex-col gap-1">
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark" href="#">
-<span class="material-symbols-outlined text-neutral-text-light dark:text-neutral-text-dark">settings</span>
-<p class="text-sm font-medium leading-normal">Settings</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark" href="#">
-<span class="material-symbols-outlined text-neutral-text-light dark:text-neutral-text-dark">logout</span>
-<p class="text-sm font-medium leading-normal">Log Out</p>
-</a>
-</nav>
-</div>
+<aside class="flex h-screen w-64 flex-col bg-white dark:bg-gray-900 p-4 sticky top-0 border-r border-gray-200 dark:border-gray-700">
+  <div class="flex flex-col gap-4">
+    <div class="flex items-center gap-3 px-3 py-2">
+      <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Cheesy Dreams logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuACWG7apcDQDYvNEqsji_QXxNXAAHmsavK3M2grSSmAsuCbB8QH6m8V97WY1Qo3PkFnSbd4ZdQ8omPhJNiTkN0T_Yj36jbtKZrNrmx2BAlUzJLMIOSZlvulEkHxiVK46Dz8kxMoiR5y3X-GdmFlLRh2h3nWCNPi7FlMCz3jMmbHSASdtzuykd7r0YKMrMuZJRx43-0rS5JIhKA1NGR2PUOnktpFXcC1z7I4DpPGQJhwT8fu84IMlKksjcm2qsGLxbL7iAgq-m-P4WI");'></div>
+      <div class="flex flex-col">
+        <h1 class="text-gray-900 dark:text-white text-base font-medium leading-normal">Cheesy Dreams</h1>
+        <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Management System</p>
+      </div>
+    </div>
+    <nav class="flex flex-col gap-2 mt-4">
+      <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="/manager/dashboard">
+        <span class="material-symbols-outlined">dashboard</span>
+        <p class="text-sm font-medium leading-normal">Dashboard</p>
+      </a>
+      <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="/manager/manage_reservations">
+        <span class="material-symbols-outlined">book_online</span>
+        <p class="text-sm font-medium leading-normal">Reservations</p>
+      </a>
+      <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-gray-900" href="/manager/inventory">
+        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+        <p class="text-sm font-medium leading-normal">Inventory</p>
+      </a>
+      <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="/manager/sales">
+        <span class="material-symbols-outlined">assessment</span>
+        <p class="text-sm font-medium leading-normal">Sales Reports</p>
+      </a>
+    </nav>
+  </div>
+  <div class="mt-auto flex flex-col gap-2">
+    <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="#" data-not-implemented>
+      <span class="material-symbols-outlined">settings</span>
+      <p class="text-sm font-medium leading-normal">Settings</p>
+    </a>
+    <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="#" data-not-implemented>
+      <span class="material-symbols-outlined">logout</span>
+      <p class="text-sm font-medium leading-normal">Log Out</p>
+    </a>
+  </div>
 </aside>
 <!-- Main Content -->
 <main class="flex-1 p-8">
@@ -72,7 +66,7 @@
 <!-- Page Heading -->
 <div class="flex flex-wrap items-center justify-between gap-4">
 <h1 class="text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">Inventory Management</h1>
-<button class="flex min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-11 px-6 bg-primary text-neutral-text-light text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-primary/50">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-11 px-6 bg-primary text-neutral-text-light text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-primary/50" data-not-implemented>
 <span class="material-symbols-outlined">add</span>
 <span class="truncate">Add New Item</span>
 </button>
@@ -90,15 +84,15 @@
 </label>
 </div>
 <div class="flex gap-3 flex-wrap">
-<button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-neutral-bg-dark/40 pl-4 pr-3 hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50">
+<button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-neutral-bg-dark/40 pl-4 pr-3 hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50" data-not-implemented>
 <p class="text-sm font-medium leading-normal">Category: All</p>
 <span class="material-symbols-outlined text-neutral-subtle-text-light dark:text-neutral-subtle-text-dark">expand_more</span>
 </button>
-<button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-neutral-bg-dark/40 pl-4 pr-3 hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50">
+<button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-neutral-bg-dark/40 pl-4 pr-3 hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50" data-not-implemented>
 <p class="text-sm font-medium leading-normal">Status: All</p>
 <span class="material-symbols-outlined text-neutral-subtle-text-light dark:text-neutral-subtle-text-dark">expand_more</span>
 </button>
-<button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-neutral-bg-dark/40 pl-4 pr-3 hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50">
+<button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-neutral-bg-dark/40 pl-4 pr-3 hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50" data-not-implemented>
 <p class="text-sm font-medium leading-normal">Sort By: Name</p>
 <span class="material-symbols-outlined text-neutral-subtle-text-light dark:text-neutral-subtle-text-dark">expand_more</span>
 </button>
@@ -132,8 +126,8 @@
 </td>
 <td class="h-[72px] px-6 py-2">
 <div class="flex items-center gap-2">
-<button class="p-2 rounded-md hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50"><span class="material-symbols-outlined text-lg">edit</span></button>
-<button class="p-2 rounded-md hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50"><span class="material-symbols-outlined text-lg">delete</span></button>
+<button class="p-2 rounded-md hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50" data-not-implemented><span class="material-symbols-outlined text-lg">edit</span></button>
+<button class="p-2 rounded-md hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50" data-not-implemented><span class="material-symbols-outlined text-lg">delete</span></button>
 </div>
 </td>
 </tr>
@@ -149,8 +143,8 @@
 </td>
 <td class="h-[72px] px-6 py-2">
 <div class="flex items-center gap-2">
-<button class="p-2 rounded-md hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50"><span class="material-symbols-outlined text-lg">edit</span></button>
-<button class="p-2 rounded-md hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50"><span class="material-symbols-outlined text-lg">delete</span></button>
+<button class="p-2 rounded-md hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50" data-not-implemented><span class="material-symbols-outlined text-lg">edit</span></button>
+<button class="p-2 rounded-md hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50" data-not-implemented><span class="material-symbols-outlined text-lg">delete</span></button>
 </div>
 </td>
 </tr>
@@ -166,8 +160,8 @@
 </td>
 <td class="h-[72px] px-6 py-2">
 <div class="flex items-center gap-2">
-<button class="p-2 rounded-md hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50"><span class="material-symbols-outlined text-lg">edit</span></button>
-<button class="p-2 rounded-md hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50"><span class="material-symbols-outlined text-lg">delete</span></button>
+<button class="p-2 rounded-md hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50" data-not-implemented><span class="material-symbols-outlined text-lg">edit</span></button>
+<button class="p-2 rounded-md hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50" data-not-implemented><span class="material-symbols-outlined text-lg">delete</span></button>
 </div>
 </td>
 </tr>
@@ -183,8 +177,8 @@
 </td>
 <td class="h-[72px] px-6 py-2">
 <div class="flex items-center gap-2">
-<button class="p-2 rounded-md hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50"><span class="material-symbols-outlined text-lg">edit</span></button>
-<button class="p-2 rounded-md hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50"><span class="material-symbols-outlined text-lg">delete</span></button>
+<button class="p-2 rounded-md hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50" data-not-implemented><span class="material-symbols-outlined text-lg">edit</span></button>
+<button class="p-2 rounded-md hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50" data-not-implemented><span class="material-symbols-outlined text-lg">delete</span></button>
 </div>
 </td>
 </tr>
@@ -197,11 +191,11 @@
 <div class="mt-6 flex items-center justify-between">
 <p class="text-sm text-neutral-subtle-text-light dark:text-neutral-subtle-text-dark">Showing 1 to 4 of 12 items</p>
 <div class="flex items-center gap-2">
-<button class="flex h-9 w-9 items-center justify-center rounded-md border border-neutral-border-light dark:border-neutral-border-dark bg-white dark:bg-neutral-bg-dark/40 hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50"><span class="material-symbols-outlined text-xl">chevron_left</span></button>
+<button class="flex h-9 w-9 items-center justify-center rounded-md border border-neutral-border-light dark:border-neutral-border-dark bg-white dark:bg-neutral-bg-dark/40 hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50" data-not-implemented><span class="material-symbols-outlined text-xl">chevron_left</span></button>
 <button class="flex h-9 w-9 items-center justify-center rounded-md border border-primary/50 bg-primary/20 text-neutral-text-light dark:text-neutral-text-dark focus:outline-none focus:ring-2 focus:ring-primary/50">1</button>
-<button class="flex h-9 w-9 items-center justify-center rounded-md border border-neutral-border-light dark:border-neutral-border-dark bg-white dark:bg-neutral-bg-dark/40 hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50">2</button>
-<button class="flex h-9 w-9 items-center justify-center rounded-md border border-neutral-border-light dark:border-neutral-border-dark bg-white dark:bg-neutral-bg-dark/40 hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50">3</button>
-<button class="flex h-9 w-9 items-center justify-center rounded-md border border-neutral-border-light dark:border-neutral-border-dark bg-white dark:bg-neutral-bg-dark/40 hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50"><span class="material-symbols-outlined text-xl">chevron_right</span></button>
+<button class="flex h-9 w-9 items-center justify-center rounded-md border border-neutral-border-light dark:border-neutral-border-dark bg-white dark:bg-neutral-bg-dark/40 hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50" data-not-implemented>2</button>
+<button class="flex h-9 w-9 items-center justify-center rounded-md border border-neutral-border-light dark:border-neutral-border-dark bg-white dark:bg-neutral-bg-dark/40 hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50" data-not-implemented>3</button>
+<button class="flex h-9 w-9 items-center justify-center rounded-md border border-neutral-border-light dark:border-neutral-border-dark bg-white dark:bg-neutral-bg-dark/40 hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50" data-not-implemented><span class="material-symbols-outlined text-xl">chevron_right</span></button>
 </div>
 </div>
 </div>
@@ -308,3 +302,4 @@
 })();
 </script>
 </body></html>
+

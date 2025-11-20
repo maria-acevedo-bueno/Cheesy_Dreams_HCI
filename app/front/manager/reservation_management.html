@@ -7,75 +7,70 @@
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 <script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#fac638",
-                        "background-light": "#f8f8f5",
-                        "background-dark": "#231e0f"
+tailwind.config = {
+darkMode: "class",
+theme: {
+extend: {
+colors: {
+primary: "#fac638",
+"background-light": "#f8f8f5",
+"background-dark": "#231e0f"
                     },
-                    fontFamily: {
-                        display: "Work Sans"
+fontFamily: {
+display: "Work Sans"
                     },
-                    borderRadius: {
-                        DEFAULT: "0.25rem",
-                        lg: "0.5rem",
-                        xl: "0.75rem",
-                        full: "9999px"
+borderRadius: {
+DEFAULT: "0.25rem",
+lg: "0.5rem",
+xl: "0.75rem",
+full: "9999px"
                     }
                 }
             }
         };
-    </script>
+</script>
 </head>
 <body class="font-display">
 <div class="relative flex h-screen min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-hidden">
 <div class="flex h-full w-full">
-<aside class="flex w-64 flex-col bg-white dark:bg-[#181611] border-r border-gray-200 dark:border-gray-800">
-<div class="flex h-20 items-center px-6">
-<div class="flex items-center gap-3">
-<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-<span class="text-2xl font-bold text-gray-900">CD</span>
-</div>
-<span class="text-xl font-bold text-gray-900 dark:text-white">Cheesy Dreams</span>
-</div>
-</div>
-<nav class="flex-1 space-y-2 px-4 py-4">
-<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10" href="/manager/dashboard">
-<span class="material-symbols-outlined">dashboard</span>
-<span class="font-medium">Dashboard</span>
-</a>
-<a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 font-bold text-primary dark:bg-primary/30" href="#">
-<span class="material-symbols-outlined">book_online</span>
-<span class="font-medium">Reservations</span>
-</a>
-<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10" href="#">
-<span class="material-symbols-outlined">calendar_month</span>
-<span class="font-medium">Calendar</span>
-</a>
-<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10" href="#">
-<span class="material-symbols-outlined">restaurant_menu</span>
-<span class="font-medium">Menu</span>
-</a>
-</nav>
-<div class="mt-auto px-4 py-4">
-<nav class="flex-col space-y-2">
-<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10" href="#">
-<span class="material-symbols-outlined">settings</span>
-<span class="font-medium">Settings</span>
-</a>
-<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10" href="#">
-<span class="material-symbols-outlined">help</span>
-<span class="font-medium">Help</span>
-</a>
-<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10" href="/logout">
-<span class="material-symbols-outlined">logout</span>
-<span class="font-medium">Logout</span>
-</a>
-</nav>
-</div>
+<aside class="flex h-screen w-64 flex-col bg-white dark:bg-gray-900 p-4 sticky top-0 border-r border-gray-200 dark:border-gray-700">
+  <div class="flex flex-col gap-4">
+    <div class="flex items-center gap-3 px-3 py-2">
+      <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Cheesy Dreams logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuACWG7apcDQDYvNEqsji_QXxNXAAHmsavK3M2grSSmAsuCbB8QH6m8V97WY1Qo3PkFnSbd4ZdQ8omPhJNiTkN0T_Yj36jbtKZrNrmx2BAlUzJLMIOSZlvulEkHxiVK46Dz8kxMoiR5y3X-GdmFlLRh2h3nWCNPi7FlMCz3jMmbHSASdtzuykd7r0YKMrMuZJRx43-0rS5JIhKA1NGR2PUOnktpFXcC1z7I4DpPGQJhwT8fu84IMlKksjcm2qsGLxbL7iAgq-m-P4WI");'></div>
+      <div class="flex flex-col">
+        <h1 class="text-gray-900 dark:text-white text-base font-medium leading-normal">Cheesy Dreams</h1>
+        <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Management System</p>
+      </div>
+    </div>
+    <nav class="flex flex-col gap-2 mt-4">
+      <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="/manager/dashboard">
+        <span class="material-symbols-outlined">dashboard</span>
+        <p class="text-sm font-medium leading-normal">Dashboard</p>
+      </a>
+      <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-gray-900" href="/manager/manage_reservations">
+        <span class="material-symbols-outlined">book_online</span>
+        <p class="text-sm font-medium leading-normal">Reservations</p>
+      </a>
+      <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="/manager/inventory">
+        <span class="material-symbols-outlined">inventory_2</span>
+        <p class="text-sm font-medium leading-normal">Inventory</p>
+      </a>
+      <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="/manager/sales">
+        <span class="material-symbols-outlined">assessment</span>
+        <p class="text-sm font-medium leading-normal">Sales Reports</p>
+      </a>
+    </nav>
+  </div>
+  <div class="mt-auto flex flex-col gap-2">
+    <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="#" data-not-implemented>
+      <span class="material-symbols-outlined">settings</span>
+      <p class="text-sm font-medium leading-normal">Settings</p>
+    </a>
+    <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="#" data-not-implemented>
+      <span class="material-symbols-outlined">logout</span>
+      <p class="text-sm font-medium leading-normal">Log Out</p>
+    </a>
+  </div>
 </aside>
 <main class="flex-1 flex flex-col p-6 lg:p-8 overflow-y-auto">
 <div class="flex-shrink-0">
@@ -87,7 +82,7 @@
 <span>Pending</span>
 <span class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-xs font-bold text-gray-900">3</span>
 </a>
-<button class="flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 text-base font-bold text-gray-900 hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 dark:focus-visible:ring-offset-background-dark">
+<button class="flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 text-base font-bold text-gray-900 hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 dark:focus-visible:ring-offset-background-dark" data-not-implemented>
 <span class="material-symbols-outlined">add</span>
 <span>New Reservation</span>
 </button>
@@ -130,8 +125,20 @@
 </thead>
 <tbody class="divide-y divide-gray-200 dark:divide-gray-800">
 <tr class="hover:bg-gray-50 dark:hover:bg-white/5 cursor-pointer">
-<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">Jane Cooper</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">John Doe</td>
 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">Oct 28, 2024, 8:00 PM</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">4</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm">
+<span class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/40 px-2.5 py-0.5 font-medium text-green-800 dark:text-green-300">Confirmed</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+<a class="text-primary hover:underline" href="/manager/edit_reservations">Edit</a>
+<a class="ml-4 text-red-600 dark:text-red-500 hover:underline" href="/manager/cancel_reservations">Cancel</a>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-white/5 cursor-pointer">
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">Jane Cooper</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">Oct 28, 2024, 7:30 PM</td>
 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">2</td>
 <td class="px-6 py-4 whitespace-nowrap text-sm">
 <span class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/40 px-2.5 py-0.5 font-medium text-green-800 dark:text-green-300">Confirmed</span>
@@ -142,18 +149,6 @@
 </td>
 </tr>
 <tr class="hover:bg-gray-50 dark:hover:bg-white/5 cursor-pointer">
-<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">John Doe</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">Oct 28, 2024, 7:30 PM</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">4</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm">
-<span class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/40 px-2.5 py-0.5 font-medium text-green-800 dark:text-green-300">Confirmed</span>
-</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-<a class="text-primary hover:underline" href="#">Edit</a>
-<a class="ml-4 text-red-600 dark:text-red-500 hover:underline" href="#">Cancel</a>
-</td>
-</tr>
-<tr class="hover:bg-gray-50 dark:hover:bg-white/5 cursor-pointer">
 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">Alice Smith</td>
 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">Oct 28, 2024, 6:00 PM</td>
 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">6</td>
@@ -161,8 +156,8 @@
 <span class="inline-flex items-center rounded-full bg-blue-100 dark:bg-blue-900/40 px-2.5 py-0.5 font-medium text-blue-800 dark:text-blue-300">Seated</span>
 </td>
 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-<a class="text-primary hover:underline" href="#">Edit</a>
-<a class="ml-4 text-red-600 dark:text-red-500 hover:underline" href="#">Cancel</a>
+<a class="text-primary hover:underline" href="/manager/edit_reservations">Edit</a>
+<a class="ml-4 text-red-600 dark:text-red-500 hover:underline" href="/manager/cancel_reservations">Cancel</a>
 </td>
 </tr>
 <tr class="hover:bg-gray-50 dark:hover:bg-white/5 cursor-pointer">
@@ -173,7 +168,7 @@
 <span class="inline-flex items-center rounded-full bg-gray-100 dark:bg-gray-700 px-2.5 py-0.5 font-medium text-gray-800 dark:text-gray-300">Completed</span>
 </td>
 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-<a class="text-primary hover:underline" href="#">Details</a>
+<a class="text-primary hover:underline" href="#" data-not-implemented>Details</a>
 </td>
 </tr>
 </tbody>
@@ -187,17 +182,12 @@
 <span class="sr-only">Accessibility Options</span>
 </button>
 </div>
-
-
-
-
 <script>
 // popup.js inline - temporal para debugging
 (function() {
-  console.log('✅ Script inline cargado');
-  
-  const style = document.createElement('style');
-  style.textContent = `
+console.log('✅ Script inline cargado');
+const style = document.createElement('style');
+style.textContent = `
     .__notimpl_modal_backdrop {
       position: fixed;
       inset: 0;
@@ -240,46 +230,38 @@
       background: #D97706;
     }
   `;
-  document.head.appendChild(style);
-
-  function showModal() {
-    console.log('🎉 Mostrando modal');
-    if (document.querySelector('.__notimpl_modal_backdrop')) return;
-    
-    const backdrop = document.createElement('div');
-    backdrop.className = '__notimpl_modal_backdrop';
-    
-    const modal = document.createElement('div');
-    modal.className = '__notimpl_modal';
-    modal.innerHTML = '<h2>Not implemented yet!</h2><p>Esta funcionalidad aún no está implementada.</p>';
-    
-    const closeBtn = document.createElement('button');
-    closeBtn.textContent = 'Cerrar';
-    closeBtn.addEventListener('click', () => backdrop.remove());
-    
-    modal.appendChild(closeBtn);
-    backdrop.appendChild(modal);
-    backdrop.addEventListener('click', (e) => {
-      if (e.target === backdrop) backdrop.remove();
+document.head.appendChild(style);
+function showModal() {
+console.log('🎉 Mostrando modal');
+if (document.querySelector('.__notimpl_modal_backdrop')) return;
+const backdrop = document.createElement('div');
+backdrop.className = '__notimpl_modal_backdrop';
+const modal = document.createElement('div');
+modal.className = '__notimpl_modal';
+modal.innerHTML = '<h2>Not implemented yet!</h2><p>Esta funcionalidad aún no está implementada.</p>';
+const closeBtn = document.createElement('button');
+closeBtn.textContent = 'Cerrar';
+closeBtn.addEventListener('click', () => backdrop.remove());
+modal.appendChild(closeBtn);
+backdrop.appendChild(modal);
+backdrop.addEventListener('click', (e) => {
+if (e.target === backdrop) backdrop.remove();
     });
-    
-    document.body.appendChild(backdrop);
+document.body.appendChild(backdrop);
   }
-
-  document.addEventListener('click', function(e) {
-    console.log('👆 Clic en:', e.target.tagName);
-    const target = e.target.closest('[data-not-implemented]');
-    console.log('🔍 Target:', target);
-    
-    if (target) {
-      console.log('✋ Previniendo default');
-      e.preventDefault();
-      e.stopPropagation();
-      showModal();
+document.addEventListener('click', function(e) {
+console.log('👆 Clic en:', e.target.tagName);
+const target = e.target.closest('[data-not-implemented]');
+console.log('🔍 Target:', target);
+if (target) {
+console.log('✋ Previniendo default');
+e.preventDefault();
+e.stopPropagation();
+showModal();
     }
   }, true);
-
-  console.log('✅ Event listener configurado');
+console.log('✅ Event listener configurado');
 })();
 </script>
 </body></html>
+
