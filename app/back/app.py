@@ -127,6 +127,14 @@ def pizza4():
 def pizza5():
     return render_template('staff/pizza5.html')
 
+@app.route('/staff/live_orders.html') 
+def live_orders_html():
+    return render_template('staff/live_orders.html')
+
+@app.route('/staff/today_task.html') 
+def today_task_html(): 
+    return render_template('staff/today_task.html')
+
 # -------------- CUSTOMER ROUTES -------- #
 
 @app.route('/customer/home')
