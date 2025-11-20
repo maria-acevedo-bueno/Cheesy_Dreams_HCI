@@ -19,6 +19,7 @@
 </style>
 <script>tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#fac638", "background-light": "#f8f8f5", "background-dark": "#231e0f", "text-light": "#1c180d", "text-dark": "#f8f8f5", "text-muted-light": "#9c8749", "text-muted-dark": "#a19a84", "border-light": "#e8e2ce", "border-dark": "#443c21"}, fontFamily: {display: "Work Sans"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
 </head>
+
 <body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
 <div class="relative flex min-h-screen w-full flex-col">
 <header class="sticky top-0 z-50 flex items-center justify-center border-b border-solid border-border-light dark:border-border-dark bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
@@ -29,8 +30,8 @@
 </div>
 <div class="hidden items-center gap-9 md:flex">
 <a class="text-sm font-medium hover:text-primary" href="/customer/menu">Menu</a>
-<a class="text-sm font-medium hover:text-primary" href="#">Our Story</a>
-<a class="text-sm font-medium hover:text-primary" href="#">Contact Us</a>
+<a class="text-sm font-medium hover:text-primary" data-not-implemented href="#">Our Story</a>
+<a class="text-sm font-medium hover:text-primary" data-not-implemented href="#">Contact Us</a>
 <a href="/logout" class="text-sm font-medium hover:text-primary">Logout</a>
 </div>
 <div class="flex items-center gap-4">
@@ -182,4 +183,97 @@
 <button class="mt-4 w-full rounded-md py-2 text-sm font-medium text-text-muted-light hover:text-primary dark:text-text-muted-dark dark:hover:text-primary">Reset Settings</button>
 </div>
 </div>
+
+
+<script>
+// popup.js inline - temporal para debugging
+(function() {
+  console.log('✅ Script inline cargado');
+  
+  const style = document.createElement('style');
+  style.textContent = `
+    .__notimpl_modal_backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .__notimpl_modal {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      max-width: 90%;
+      width: 360px;
+      text-align: center;
+      font-family: 'Work Sans', sans-serif;
+    }
+    .__notimpl_modal h2 {
+      margin: 0 0 12px;
+      font-size: 20px;
+      color: #1F2937;
+    }
+    .__notimpl_modal p {
+      margin: 0 0 20px;
+      color: #6B7280;
+      font-size: 14px;
+    }
+    .__notimpl_modal button {
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      background: #fac638;
+      color: white;
+      font-weight: 600;
+    }
+    .__notimpl_modal button:hover {
+      background: #D97706;
+    }
+  `;
+  document.head.appendChild(style);
+
+  function showModal() {
+    console.log('🎉 Mostrando modal');
+    if (document.querySelector('.__notimpl_modal_backdrop')) return;
+    
+    const backdrop = document.createElement('div');
+    backdrop.className = '__notimpl_modal_backdrop';
+    
+    const modal = document.createElement('div');
+    modal.className = '__notimpl_modal';
+    modal.innerHTML = '<h2>Not implemented yet!</h2><p>Esta funcionalidad aún no está implementada.</p>';
+    
+    const closeBtn = document.createElement('button');
+    closeBtn.textContent = 'Cerrar';
+    closeBtn.addEventListener('click', () => backdrop.remove());
+    
+    modal.appendChild(closeBtn);
+    backdrop.appendChild(modal);
+    backdrop.addEventListener('click', (e) => {
+      if (e.target === backdrop) backdrop.remove();
+    });
+    
+    document.body.appendChild(backdrop);
+  }
+
+  document.addEventListener('click', function(e) {
+    console.log('👆 Clic en:', e.target.tagName);
+    const target = e.target.closest('[data-not-implemented]');
+    console.log('🔍 Target:', target);
+    
+    if (target) {
+      console.log('✋ Previniendo default');
+      e.preventDefault();
+      e.stopPropagation();
+      showModal();
+    }
+  }, true);
+
+  console.log('✅ Event listener configurado');
+})();
+</script>
 </body></html>
