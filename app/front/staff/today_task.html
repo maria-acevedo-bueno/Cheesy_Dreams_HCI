@@ -43,44 +43,48 @@
 </head>
 <body class="font-display bg-background-light dark:bg-background-dark text-[#333333] dark:text-background-light">
 <div class="flex h-screen w-full">
-<aside class="flex w-64 flex-col border-r border-solid border-white/10 bg-[#111318]">
-<div class="flex h-16 shrink-0 items-center gap-4 border-b border-solid border-black/10 dark:border-white/10 px-6">
-<span class="material-symbols-outlined text-4xl text-primary">chess</span>
-<h1 class="text-xl font-bold leading-tight tracking-[-0.015em] text-[#181611] dark:text-primary">Cheesy Dreams</h1>
-</div>
-<nav class="flex flex-col gap-2 mt-4">
-<a class="flex items-center gap-3 px-3 py-2 text-white/70 hover:text-white hover:bg-[#282e39] rounded-lg transition-colors" href="/staff/live">
-<span class="material-symbols-outlined">receipt_long</span>
-<p class="text-sm font-medium leading-normal">Live Orders</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 text-white/70 hover:text-white hover:bg-[#282e39] rounded-lg transition-colors" href="/staff/reservations">
-<span class="material-symbols-outlined">calendar_month</span>
-<p class="text-sm font-medium leading-normal">Reservations</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 text-white/70 hover:text-white hover:bg-[#282e39] rounded-lg transition-colors" href="/customer/menu">
-<span class="material-symbols-outlined">restaurant_menu</span>
-<p class="text-sm font-medium leading-normal">Menu</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-white" href="/staff/task">
-<span class="material-symbols-outlined">checklist</span>
-<p class="text-sm font-medium leading-normal">Tasks</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 text-white/70 hover:text-white hover:bg-[#282e39] rounded-lg transition-colors" href="/staff/staff_checkin">
-<span class="material-symbols-outlined">how_to_reg</span>
-<p class="text-sm font-medium leading-normal">Check-in/Check-out</p>
-</a>
-</nav>
-<div class="mt-auto p-4">
-<button aria-label="User Profile" class="flex w-full items-center gap-3 rounded-lg p-3 text-left text-gray-600 transition-all hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-black/20">
-<span class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-[#181611] dark:text-primary">
-<span class="material-symbols-outlined">person</span>
-</span>
-<div>
-<p class="font-semibold">Alex Doe</p>
-<p class="text-sm text-gray-500">Staff</p>
-</div>
-</button>
-</div>
+<aside class="flex h-screen w-64 flex-col bg-white dark:bg-gray-900 p-4 sticky top-0 border-r border-gray-200 dark:border-gray-700">
+  <div class="flex flex-col gap-4">
+    <div class="flex items-center gap-3 px-3 py-2">
+      <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Cheesy Dreams logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuACWG7apcDQDYvNEqsji_QXxNXAAHmsavK3M2grSSmAsuCbB8QH6m8V97WY1Qo3PkFnSbd4ZdQ8omPhJNiTkN0T_Yj36jbtKZrNrmx2BAlUzJLMIOSZlvulEkHxiVK46Dz8kxMoiR5y3X-GdmFlLRh2h3nWCNPi7FlMCz3jMmbHSASdtzuykd7r0YKMrMuZJRx43-0rS5JIhKA1NGR2PUOnktpFXcC1z7I4DpPGQJhwT8fu84IMlKksjcm2qsGLxbL7iAgq-m-P4WI");'></div>
+      <div class="flex flex-col">
+        <h1 class="text-gray-900 dark:text-white text-base font-medium leading-normal">Cheesy Dreams</h1>
+        <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Management System</p>
+      </div>
+    </div>
+    <nav class="flex flex-col gap-2 mt-4">
+      <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="/staff/reservations">
+        <span class="material-symbols-outlined">calendar_month</span>
+        <p class="text-sm font-medium leading-normal">Reservations</p>
+      </a>
+      <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="#">
+        <span data-not-implemented class="material-symbols-outlined">table_restaurant</span>
+        <p class="text-sm font-medium leading-normal">Tables</p>
+      </a>
+      <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="/staff/live">
+        <span class="material-symbols-outlined">receipt_long</span>
+        <p class="text-sm font-medium leading-normal">Orders</p>
+      </a>
+      <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-gray-900" href="/staff/task">
+        <span class="material-symbols-outlined">task_alt</span>
+        <p class="text-sm font-medium leading-normal">Tasks</p>
+      </a>
+      <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="/staff/staff_checkin">
+        <span class="material-symbols-outlined">how_to_reg</span>
+        <p class="text-sm font-medium leading-normal">Check-in/Check-out</p>
+      </a>
+    </nav>
+  </div>
+  <div class="mt-auto flex flex-col gap-2">
+    <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="#">
+      <span data-not-implemented class="material-symbols-outlined">help</span>
+      <p class="text-sm font-medium leading-normal">Help</p>
+    </a>
+    <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="#">
+      <span class="material-symbols-outlined">logout</span>
+      <p class="text-sm font-medium leading-normal">Logout</p>
+    </a>
+  </div>
 </aside>
 <div class="flex flex-1 flex-col">
 <header class="flex h-16 shrink-0 items-center justify-between border-b border-solid border-black/10 bg-white dark:border-white/10 dark:bg-background-dark px-6">
@@ -138,6 +142,8 @@
 </div>
 <span class="material-symbols-outlined text-gray-500 transition-transform group-hover:translate-x-1 dark:text-gray-400">arrow_forward</span>
 </a>
+
+
 </div>
 </div>
 </main>
@@ -242,3 +248,4 @@
 })();
 </script>
 </body></html>
+
