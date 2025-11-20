@@ -135,6 +135,7 @@ def live_orders_html():
 def today_task_html(): 
     return render_template('staff/today_task.html')
 
+
 # -------------- CUSTOMER ROUTES -------- #
 
 @app.route('/customer/home')
@@ -158,8 +159,8 @@ def confirm_reservation():
 @app.route('/logout')
 def logout():
     # Obtiene la URL de la página anterior. Si no existe, vuelve a la página de login.
-    previous_url = request.referrer or url_for('login')
-    return render_template('logout.html', previous_url=previous_url)
+    # previous_url = request.referrer or url_for('login')
+    return render_template('logout.html')
 
 # --------------- MAIN ------------------ #
 
