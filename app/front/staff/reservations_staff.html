@@ -35,7 +35,7 @@
 <p class="text-sm font-medium leading-normal">Reservations</p>
 </a>
 <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="#">
-<span class="material-symbols-outlined">table_restaurant</span>
+<span data-not-implemented class="material-symbols-outlined">table_restaurant</span>
 <p class="text-sm font-medium leading-normal">Tables</p>
 </a>
 <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="#">
@@ -54,7 +54,7 @@
 </div>
 <div class="mt-auto flex flex-col gap-2">
 <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="#">
-<span class="material-symbols-outlined">help</span>
+<span data-not-implemented class="material-symbols-outlined">help</span>
 <p class="text-sm font-medium leading-normal">Help</p>
 </a>
 <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="#">
@@ -83,14 +83,14 @@
 <input class="w-full bg-transparent border-0 focus:ring-0 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400" placeholder="Search by name, table number..." type="text"/>
 </div>
 <div class="flex items-center gap-2">
-<button class="flex items-center gap-2 p-2 px-3 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+<button data-not-implemented class="flex items-center gap-2 p-2 px-3 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
 <span class="material-symbols-outlined" style="font-size: 20px;">calendar_today</span>
 <span>Date</span>
 </button>
 <div class="flex gap-2">
 <button class="h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/20 text-primary px-4 text-sm font-medium leading-normal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">All</button>
-<button class="h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-4 text-sm font-medium leading-normal hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Seated</button>
-<button class="h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-4 text-sm font-medium leading-normal hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Upcoming</button>
+<button class="h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-4 text-sm font-medium leading-normal hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" data-not-implemented>Seated</button>
+<button class="h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-4 text-sm font-medium leading-normal hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" data-not-implemented>Upcoming</button>
 </div>
 </div>
 </div>
@@ -180,6 +180,99 @@
 <button class="fixed bottom-6 right-6 bg-primary text-gray-900 w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
 <span class="material-symbols-outlined" style="font-size: 28px;">accessibility_new</span>
 </button>
-<script src="../popup.js"></script>
+
+
+
+<script>
+// popup.js inline - temporal para debugging
+(function() {
+  console.log('✅ Script inline cargado');
+  
+  const style = document.createElement('style');
+  style.textContent = `
+    .__notimpl_modal_backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .__notimpl_modal {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      max-width: 90%;
+      width: 360px;
+      text-align: center;
+      font-family: 'Work Sans', sans-serif;
+    }
+    .__notimpl_modal h2 {
+      margin: 0 0 12px;
+      font-size: 20px;
+      color: #1F2937;
+    }
+    .__notimpl_modal p {
+      margin: 0 0 20px;
+      color: #6B7280;
+      font-size: 14px;
+    }
+    .__notimpl_modal button {
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      background: #fac638;
+      color: white;
+      font-weight: 600;
+    }
+    .__notimpl_modal button:hover {
+      background: #D97706;
+    }
+  `;
+  document.head.appendChild(style);
+
+  function showModal() {
+    console.log('🎉 Mostrando modal');
+    if (document.querySelector('.__notimpl_modal_backdrop')) return;
+    
+    const backdrop = document.createElement('div');
+    backdrop.className = '__notimpl_modal_backdrop';
+    
+    const modal = document.createElement('div');
+    modal.className = '__notimpl_modal';
+    modal.innerHTML = '<h2>Not implemented yet!</h2><p>Esta funcionalidad aún no está implementada.</p>';
+    
+    const closeBtn = document.createElement('button');
+    closeBtn.textContent = 'Cerrar';
+    closeBtn.addEventListener('click', () => backdrop.remove());
+    
+    modal.appendChild(closeBtn);
+    backdrop.appendChild(modal);
+    backdrop.addEventListener('click', (e) => {
+      if (e.target === backdrop) backdrop.remove();
+    });
+    
+    document.body.appendChild(backdrop);
+  }
+
+  document.addEventListener('click', function(e) {
+    console.log('👆 Clic en:', e.target.tagName);
+    const target = e.target.closest('[data-not-implemented]');
+    console.log('🔍 Target:', target);
+    
+    if (target) {
+      console.log('✋ Previniendo default');
+      e.preventDefault();
+      e.stopPropagation();
+      showModal();
+    }
+  }, true);
+
+  console.log('✅ Event listener configurado');
+})();
+</script>
 </body></html>
 

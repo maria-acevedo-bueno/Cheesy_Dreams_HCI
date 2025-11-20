@@ -73,5 +73,98 @@
 </div>
 </main>
 </div>
-<script src="../popup.js"></script>
+
+
+
+<script>
+// popup.js inline - temporal para debugging
+(function() {
+  console.log('✅ Script inline cargado');
+  
+  const style = document.createElement('style');
+  style.textContent = `
+    .__notimpl_modal_backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .__notimpl_modal {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      max-width: 90%;
+      width: 360px;
+      text-align: center;
+      font-family: 'Work Sans', sans-serif;
+    }
+    .__notimpl_modal h2 {
+      margin: 0 0 12px;
+      font-size: 20px;
+      color: #1F2937;
+    }
+    .__notimpl_modal p {
+      margin: 0 0 20px;
+      color: #6B7280;
+      font-size: 14px;
+    }
+    .__notimpl_modal button {
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      background: #fac638;
+      color: white;
+      font-weight: 600;
+    }
+    .__notimpl_modal button:hover {
+      background: #D97706;
+    }
+  `;
+  document.head.appendChild(style);
+
+  function showModal() {
+    console.log('🎉 Mostrando modal');
+    if (document.querySelector('.__notimpl_modal_backdrop')) return;
+    
+    const backdrop = document.createElement('div');
+    backdrop.className = '__notimpl_modal_backdrop';
+    
+    const modal = document.createElement('div');
+    modal.className = '__notimpl_modal';
+    modal.innerHTML = '<h2>Not implemented yet!</h2><p>Esta funcionalidad aún no está implementada.</p>';
+    
+    const closeBtn = document.createElement('button');
+    closeBtn.textContent = 'Cerrar';
+    closeBtn.addEventListener('click', () => backdrop.remove());
+    
+    modal.appendChild(closeBtn);
+    backdrop.appendChild(modal);
+    backdrop.addEventListener('click', (e) => {
+      if (e.target === backdrop) backdrop.remove();
+    });
+    
+    document.body.appendChild(backdrop);
+  }
+
+  document.addEventListener('click', function(e) {
+    console.log('👆 Clic en:', e.target.tagName);
+    const target = e.target.closest('[data-not-implemented]');
+    console.log('🔍 Target:', target);
+    
+    if (target) {
+      console.log('✋ Previniendo default');
+      e.preventDefault();
+      e.stopPropagation();
+      showModal();
+    }
+  }, true);
+
+  console.log('✅ Event listener configurado');
+})();
+</script>
 </body></html>
