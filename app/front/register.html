@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Login - Cheesy Dreams</title>
+    <title>Register - Cheesy Dreams</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;900&amp;display=swap"
         rel="stylesheet" />
@@ -72,12 +72,14 @@
             <main class="flex flex-1 items-center justify-center py-10 sm:py-20 px-4">
                 <div class="w-full max-w-md space-y-8">
                     <div class="text-center">
-                        <h1 class="text-4xl font-black leading-tight tracking-[-0.033em] text-text-primary">Welcome
-                            Back!</h1>
-                        <p class="mt-2 text-base font-normal leading-normal text-text-secondary">Please log in to your
-                            account</p>
+                        <h1 class="text-4xl font-black leading-tight tracking-[-0.033em] text-text-primary">
+                            Create Account
+                        </h1>
+                        <p class="mt-2 text-base font-normal leading-normal text-text-secondary">
+                            Please fill in the details to create your account
+                        </p>
                     </div>
-                    <form action="#" class="space-y-6" method="POST">
+                    <form action="{{ url_for('register') }}" class="space-y-6" method="POST">
                         <div class="space-y-4">
                             <div>
                                 <label class="block text-sm font-medium leading-6 text-text-primary"
@@ -89,16 +91,10 @@
                                 </div>
                             </div>
                             <div>
-                                <div class="flex items-center justify-between">
-                                    <label class="block text-sm font-medium leading-6 text-text-primary"
-                                        for="password">Password</label>
-                                    <div class="text-sm">
-                                        <a class="font-semibold text-primary hover:text-primary-dark" href="#">Forgot
-                                            Password?</a>
-                                    </div>
-                                </div>
+                                <label class="block text-sm font-medium leading-6 text-text-primary"
+                                    for="password">Password</label>
                                 <div class="mt-2">
-                                    <input autocomplete="current-password"
+                                    <input autocomplete="new-password"
                                         class="block w-full rounded-lg border-0 py-3 text-text-primary shadow-sm ring-1 ring-inset ring-border-color placeholder:text-text-secondary focus:ring-2 focus:ring-inset focus:ring-primary-dark sm:text-sm sm:leading-6"
                                         id="password" name="password" required="" type="password" />
                                 </div>
@@ -109,21 +105,24 @@
                                 <div class="mt-2 relative">
                                     <select
                                         class="block w-full appearance-none rounded-lg border-0 py-3 pl-3 pr-10 text-text-primary shadow-sm ring-1 ring-inset ring-border-color focus:ring-2 focus:ring-inset focus:ring-primary-dark sm:text-sm sm:leading-6"
-                                        id="user-type" name="user-type">
-                                        <option>Manager</option>
-                                        <option>Staff</option>
-                                        <option>Customer</option>
+                                        id="user-type" name="user-type" required>
+                                        <option value="" disabled selected>Select user type</option>
+                                        <option value="Staff">Staff</option>
+                                        <option value="Customer">Customer</option>
                                     </select>
                                 </div>
                             </div>
                             <div>
-                                <p>Don't have an account yet? <a class="font-semibold text-primary hover:text-primary-dark" href="{{ url_for('register') }}">Register here</a></p>
+                                <p>Already have an account?
+                                    <a class="font-semibold text-primary hover:text-primary-dark"
+                                        href="{{ url_for('login') }}">Log in here</a>
+                                </p>
                             </div>
                         </div>
                         <div>
                             <button
                                 class="flex w-full justify-center rounded-lg bg-primary px-4 py-3 text-base font-bold leading-normal text-white shadow-sm hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-dark"
-                                type="submit">Log In</button>
+                                type="submit">Create Account</button>
                         </div>
                     </form>
                     {% if error_message %}
