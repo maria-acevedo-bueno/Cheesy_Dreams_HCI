@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Confirm Cancellation - Cheesy Dreams</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script>
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Confirm Cancellation - Cheesy Dreams</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <script>
     tailwind.config = {
       darkMode: "class",
       theme: {
@@ -30,126 +32,139 @@
     };
   </script>
 </head>
+
 <body class="font-display">
-<div class="relative flex h-screen min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-hidden">
-<div class="flex h-full w-full">
-<aside class="flex w-64 flex-col bg-white dark:bg-[#181611] border-r border-gray-200 dark:border-gray-800">
-<div class="flex h-20 items-center px-6">
-<div class="flex items-center gap-3">
-<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-<span class="text-2xl font-bold text-gray-900">CD</span>
-</div>
-<span class="text-xl font-bold text-gray-900 dark:text-white">Cheesy Dreams</span>
-</div>
-</div>
-<nav class="flex-1 space-y-2 px-4 py-4">
-<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10" href="#">
-<span class="material-symbols-outlined">dashboard</span>
-<span class="font-medium">Dashboard</span>
-</a>
-<a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 font-bold text-primary dark:bg-primary/30" href="#">
-<span class="material-symbols-outlined">book_online</span>
-<span class="font-medium">Reservations</span>
-</a>
-<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10" href="#">
-<span class="material-symbols-outlined">calendar_month</span>
-<span class="font-medium">Calendar</span>
-</a>
-<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10" href="#">
-<span class="material-symbols-outlined">restaurant_menu</span>
-<span class="font-medium">Menu</span>
-</a>
-</nav>
-<div class="mt-auto px-4 py-4">
-<nav class="flex-col space-y-2">
-<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10" href="#">
-<span class="material-symbols-outlined">settings</span>
-<span class="font-medium">Settings</span>
-</a>
-<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10" href="#">
-<span class="material-symbols-outlined">help</span>
-<span class="font-medium">Help</span>
-</a>
-<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10" href="/logout">
-<span class="material-symbols-outlined">logout</span>
-<span class="font-medium">Logout</span>
-</a>
-</nav>
-</div>
-</aside>
-<main class="flex-1 p-8">
-<h1 class="text-3xl font-bold text-gray-800 dark:text-gray-200">Reservation Management</h1>
-<div class="mt-4 p-4 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800/50">
-<p class="text-gray-600 dark:text-gray-400">Existing reservation list...</p>
-</div>
-</main>
-</div>
-<div class="fixed inset-0 z-40 flex items-center justify-center bg-black/60">
-<div aria-describedby="modal-description" aria-labelledby="modal-title" aria-modal="true" class="relative m-4 flex w-full max-w-lg flex-col rounded-xl bg-white dark:bg-[#181611] shadow-2xl" role="alertdialog">
-<button class="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 dark:focus-visible:ring-offset-background-dark">
-<span aria-hidden="true" class="material-symbols-outlined text-2xl">close</span>
-<span class="sr-only">Close</span>
-</button>
-<div class="flex flex-col p-8">
-<div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-red-100 dark:bg-red-900/40">
-<span aria-hidden="true" class="material-symbols-outlined text-4xl text-red-600 dark:text-red-400">warning</span>
-</div>
-<div class="text-center mt-6">
-<h1 class="text-2xl font-bold text-gray-900 dark:text-white tracking-tight" id="modal-title">Are you sure you want to cancel this reservation?</h1>
-</div>
-<div class="text-center mt-2">
-<p class="text-base text-gray-600 dark:text-gray-400" id="modal-description">This action cannot be undone. Please review the details below before proceeding.</p>
-</div>
-</div>
-<div class="px-8 pb-4">
-<div class="grid grid-cols-[auto_1fr] gap-x-4 rounded-lg border border-gray-200 dark:border-gray-700">
-<div class="col-span-2 grid grid-cols-subgrid p-4 border-b border-b-gray-200 dark:border-b-gray-700">
-<p class="text-sm font-medium text-gray-500 dark:text-gray-400">Guest Name</p>
-<p class="text-sm text-gray-900 dark:text-white text-right font-medium">John Doe</p>
-</div>
-<div class="col-span-2 grid grid-cols-subgrid p-4 border-b border-b-gray-200 dark:border-b-gray-700">
-<p class="text-sm font-medium text-gray-500 dark:text-gray-400">Date &amp; Time</p>
-<p class="text-sm text-gray-900 dark:text-white text-right">October 26, 2024 at 7:00 PM</p>
-</div>
-<div class="col-span-2 grid grid-cols-subgrid p-4 border-b border-b-gray-200 dark:border-b-gray-700">
-<p class="text-sm font-medium text-gray-500 dark:text-gray-400">Party Size</p>
-<p class="text-sm text-gray-900 dark:text-white text-right">4</p>
-</div>
-<div class="col-span-2 grid grid-cols-subgrid p-4">
-<p class="text-sm font-medium text-gray-500 dark:text-gray-400">Contact</p>
-<p class="text-sm text-gray-900 dark:text-white text-right">(555) 123-4567</p>
-</div>
-</div>
-</div>
-<div class="flex flex-col-reverse sm:flex-row gap-3 p-8 pt-4">
-  <a href="/manager/manage_reservations" class="w-full sm:w-1/2">
-    <button class="flex w-full min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-gray-100 dark:bg-white/10 text-gray-800 dark:text-gray-200 text-base font-bold leading-normal tracking-[0.015em] hover:bg-gray-200 dark:hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 dark:focus-visible:ring-offset-background-dark">
-      <span class="truncate">Keep Reservation</span>
-    </button>
-  </a>
-  <a href="/manager/manage_reservations" class="w-full sm:w-1/2">
-    <button class="flex w-full min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-red-600 text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-background-dark">
-      <span class="truncate">Yes, Cancel Reservation</span>
-    </button>
-  </a>
-</div>
-</div>
-</div>
-<button class="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-primary shadow-lg hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 dark:focus-visible:ring-offset-background-dark">
-<span aria-hidden="true" class="material-symbols-outlined text-3xl text-gray-900">accessibility_new</span>
-<span class="sr-only">Accessibility Options</span>
-</button>
-</div>
+  <div
+    class="relative flex h-screen min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-hidden">
+    <div class="flex h-full w-full">
+      <aside class="flex w-64 flex-col bg-white dark:bg-[#181611] border-r border-gray-200 dark:border-gray-800">
+        <div class="flex h-20 items-center px-6">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
+              <span class="text-2xl font-bold text-gray-900">CD</span>
+            </div>
+            <span class="text-xl font-bold text-gray-900 dark:text-white">Cheesy Dreams</span>
+          </div>
+        </div>
+        <nav class="flex-1 space-y-2 px-4 py-4">
+          <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10"
+            href="#">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="font-medium">Dashboard</span>
+          </a>
+          <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 font-bold text-primary dark:bg-primary/30"
+            href="#">
+            <span class="material-symbols-outlined">book_online</span>
+            <span class="font-medium">Reservations</span>
+          </a>
+          <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10"
+            href="#">
+            <span class="material-symbols-outlined">calendar_month</span>
+            <span class="font-medium">Calendar</span>
+          </a>
+          <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10"
+            href="#">
+            <span class="material-symbols-outlined">restaurant_menu</span>
+            <span class="font-medium">Menu</span>
+          </a>
+        </nav>
+        <div class="mt-auto px-4 py-4">
+          <nav class="flex-col space-y-2">
+            <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10"
+              href="#">
+              <span class="material-symbols-outlined">settings</span>
+              <span class="font-medium">Settings</span>
+            </a>
+            <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10"
+              href="#">
+              <span class="material-symbols-outlined">help</span>
+              <span class="font-medium">Help</span>
+            </a>
+            <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10"
+              href="/logout">
+              <span class="material-symbols-outlined">logout</span>
+              <span class="font-medium">Logout</span>
+            </a>
+          </nav>
+        </div>
+      </aside>
+      <main class="flex-1 p-8">
+        <h1 class="text-3xl font-bold text-gray-800 dark:text-gray-200">Reservation Management</h1>
+        <div class="mt-4 p-4 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800/50">
+          <p class="text-gray-600 dark:text-gray-400">Existing reservation list...</p>
+        </div>
+      </main>
+    </div>
+    <div class="fixed inset-0 z-40 flex items-center justify-center bg-black/60">
+      <div aria-describedby="modal-description" aria-labelledby="modal-title" aria-modal="true"
+        class="relative m-4 flex w-full max-w-lg flex-col rounded-xl bg-white dark:bg-[#181611] shadow-2xl"
+        role="alertdialog">
+        <button
+          class="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 dark:focus-visible:ring-offset-background-dark">
+          <span aria-hidden="true" class="material-symbols-outlined text-2xl">close</span>
+          <span class="sr-only">Close</span>
+        </button>
+        <div class="flex flex-col p-8">
+          <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-red-100 dark:bg-red-900/40">
+            <span aria-hidden="true"
+              class="material-symbols-outlined text-4xl text-red-600 dark:text-red-400">warning</span>
+          </div>
+          <div class="text-center mt-6">
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-white tracking-tight" id="modal-title">Are you sure
+              you want to cancel this reservation?</h1>
+          </div>
+          <div class="text-center mt-2">
+            <p class="text-base text-gray-600 dark:text-gray-400" id="modal-description">This action cannot be undone.
+              Please review the details below before proceeding.</p>
+          </div>
+        </div>
+        <div class="px-8 pb-4">
+          <div class="grid grid-cols-[auto_1fr] gap-x-4 rounded-lg border border-gray-200 dark:border-gray-700">
+            <div class="col-span-2 grid grid-cols-subgrid p-4 border-b border-b-gray-200 dark:border-b-gray-700">
+              <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Guest Name</p>
+              <p class="text-sm text-gray-900 dark:text-white text-right font-medium">John Doe</p>
+            </div>
+            <div class="col-span-2 grid grid-cols-subgrid p-4 border-b border-b-gray-200 dark:border-b-gray-700">
+              <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Date &amp; Time</p>
+              <p class="text-sm text-gray-900 dark:text-white text-right">October 26, 2024 at 7:00 PM</p>
+            </div>
+            <div class="col-span-2 grid grid-cols-subgrid p-4 border-b border-b-gray-200 dark:border-b-gray-700">
+              <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Party Size</p>
+              <p class="text-sm text-gray-900 dark:text-white text-right">4</p>
+            </div>
+            <div class="col-span-2 grid grid-cols-subgrid p-4">
+              <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Contact</p>
+              <p class="text-sm text-gray-900 dark:text-white text-right">(555) 123-4567</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col-reverse sm:flex-row gap-3 p-8 pt-4">
+          <a href="/manager/manage_reservations" class="w-full sm:w-1/2">
+            <button
+              class="flex w-full min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-gray-100 dark:bg-white/10 text-gray-800 dark:text-gray-200 text-base font-bold leading-normal tracking-[0.015em] hover:bg-gray-200 dark:hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 dark:focus-visible:ring-offset-background-dark">
+              <span class="truncate">Keep Reservation</span>
+            </button>
+          </a>
+          <a href="/manager/manage_reservations" class="w-full sm:w-1/2">
+            <button
+              class="flex w-full min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-red-600 text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-background-dark">
+              <span class="truncate">Yes, Cancel Reservation</span>
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
-<script>
-// popup.js inline - temporal para debugging
-(function() {
-  console.log('✅ Script inline cargado');
-  
-  const style = document.createElement('style');
-  style.textContent = `
+  <script>
+    // popup.js inline - temporal para debugging
+    (function () {
+      console.log('✅ Script inline cargado');
+
+      const style = document.createElement('style');
+      style.textContent = `
     .__notimpl_modal_backdrop {
       position: fixed;
       inset: 0;
@@ -192,46 +207,48 @@
       background: #D97706;
     }
   `;
-  document.head.appendChild(style);
+      document.head.appendChild(style);
 
-  function showModal() {
-    console.log('🎉 Mostrando modal');
-    if (document.querySelector('.__notimpl_modal_backdrop')) return;
-    
-    const backdrop = document.createElement('div');
-    backdrop.className = '__notimpl_modal_backdrop';
-    
-    const modal = document.createElement('div');
-    modal.className = '__notimpl_modal';
-    modal.innerHTML = '<h2>Not implemented yet!</h2><p>Esta funcionalidad aún no está implementada.</p>';
-    
-    const closeBtn = document.createElement('button');
-    closeBtn.textContent = 'Cerrar';
-    closeBtn.addEventListener('click', () => backdrop.remove());
-    
-    modal.appendChild(closeBtn);
-    backdrop.appendChild(modal);
-    backdrop.addEventListener('click', (e) => {
-      if (e.target === backdrop) backdrop.remove();
-    });
-    
-    document.body.appendChild(backdrop);
-  }
+      function showModal() {
+        console.log('🎉 Mostrando modal');
+        if (document.querySelector('.__notimpl_modal_backdrop')) return;
 
-  document.addEventListener('click', function(e) {
-    console.log('👆 Clic en:', e.target.tagName);
-    const target = e.target.closest('[data-not-implemented]');
-    console.log('🔍 Target:', target);
-    
-    if (target) {
-      console.log('✋ Previniendo default');
-      e.preventDefault();
-      e.stopPropagation();
-      showModal();
-    }
-  }, true);
+        const backdrop = document.createElement('div');
+        backdrop.className = '__notimpl_modal_backdrop';
 
-  console.log('✅ Event listener configurado');
-})();
-</script>
-</body></html>
+        const modal = document.createElement('div');
+        modal.className = '__notimpl_modal';
+        modal.innerHTML = '<h2>Not implemented yet!</h2><p>Esta funcionalidad aún no está implementada.</p>';
+
+        const closeBtn = document.createElement('button');
+        closeBtn.textContent = 'Cerrar';
+        closeBtn.addEventListener('click', () => backdrop.remove());
+
+        modal.appendChild(closeBtn);
+        backdrop.appendChild(modal);
+        backdrop.addEventListener('click', (e) => {
+          if (e.target === backdrop) backdrop.remove();
+        });
+
+        document.body.appendChild(backdrop);
+      }
+
+      document.addEventListener('click', function (e) {
+        console.log('👆 Clic en:', e.target.tagName);
+        const target = e.target.closest('[data-not-implemented]');
+        console.log('🔍 Target:', target);
+
+        if (target) {
+          console.log('✋ Previniendo default');
+          e.preventDefault();
+          e.stopPropagation();
+          showModal();
+        }
+      }, true);
+
+      console.log('✅ Event listener configurado');
+    })();
+  </script>
+</body>
+
+</html>

@@ -1,178 +1,375 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Cheesy Dreams - Dish Detail</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#fac638", "background-light": "#f8f8f5", "background-dark": "#231e0f"}, fontFamily: {display: "Work Sans"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Cheesy Dreams - Dish Detail</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link href="https://fonts.cdnfonts.com/css/opendyslexic" rel="stylesheet">
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { primary: "#fac638", "background-light": "#f8f8f5", "background-dark": "#231e0f" }, fontFamily: { display: "Work Sans" }, borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" } } } };</script>
+  <style>
+    /* --- Accessibility Variables --- */
+    :root {
+      --a11y-fg: inherit;
+      --a11y-bg: inherit;
+    }
+
+    body.a11y-dyslexia-font {
+      font-family: 'OpenDyslexic', 'Work Sans', sans-serif !important;
+    }
+
+    body.a11y-cursor-big,
+    body.a11y-cursor-big a,
+    body.a11y-cursor-big button {
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="black" stroke="white" stroke-width="2"><path d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.36z"/></svg>') 0 0, auto !important;
+    }
+
+    body.a11y-highlight-links a {
+      text-decoration: underline !important;
+      text-decoration-thickness: 4px !important;
+      text-decoration-color: #fac638 !important;
+      font-weight: 800 !important;
+    }
+
+    body.a11y-text-spacing * {
+      line-height: 1.8 !important;
+      letter-spacing: 0.1em !important;
+      word-spacing: 0.16em !important;
+    }
+
+    body.a11y-text-spacing p {
+      margin-bottom: 2em !important;
+    }
+
+    html.a11y-grayscale {
+      filter: grayscale(100%) !important;
+    }
+
+    body.a11y-paused * {
+      animation-play-state: paused !important;
+      transition: none !important;
+    }
+
+    #a11y-reading-guide {
+      display: none;
+      position: fixed;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background-color: rgba(250, 198, 56, 0.4);
+      border-top: 2px solid #fac638;
+      border-bottom: 2px solid #fac638;
+      pointer-events: none;
+      z-index: 99999;
+      transform: translateY(-50%);
+    }
+
+    body.a11y-reading-guide #a11y-reading-guide {
+      display: block;
+    }
+
+    body.a11y-high-contrast .layout-container,
+    body.a11y-high-contrast .layout-container *:not(.material-symbols-outlined) {
+      color: var(--a11y-fg) !important;
+      background-color: var(--a11y-bg) !important;
+      border-color: var(--a11y-fg) !important;
+      box-shadow: none !important;
+    }
+
+    body.a11y-high-contrast .layout-container .material-symbols-outlined {
+      color: var(--a11y-fg) !important;
+    }
+
+    body.a11y-high-contrast .layout-container button {
+      border-width: 2px !important;
+      border-style: solid !important;
+    }
+  </style>
 </head>
+
 <body class="font-display bg-background-light dark:bg-background-dark">
-<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-gray-200 dark:border-b-gray-800 px-4 sm:px-10 lg:px-20 py-3 bg-white dark:bg-background-dark dark:text-gray-100">
-<div class="flex items-center gap-4 text-[#181611] dark:text-gray-100">
-<div class="size-6 text-primary">
-<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill-rule="evenodd"></path>
-</svg>
-</div>
-<h2 class="text-[#181611] dark:text-gray-100 text-lg font-bold leading-tight tracking-[-0.015em]">Cheesy Dreams</h2>
-</div>
-<div class="flex flex-1 justify-end items-center gap-8">
-<nav class="hidden md:flex items-center gap-9">
-<a class="text-[#181611] dark:text-gray-300 dark:hover:text-white text-sm font-medium leading-normal" href="#">Home</a>
-<a class="text-[#181611] dark:text-gray-300 dark:hover:text-white text-sm font-medium leading-normal" href="#">Menu</a>
-<a class="text-[#181611] dark:text-gray-300 dark:hover:text-white text-sm font-medium leading-normal" href="#">About Us</a>
-<a class="text-[#181611] dark:text-gray-300 dark:hover:text-white text-sm font-medium leading-normal" href="#">Contact</a>
-</nav>
-<div class="flex items-center gap-2">
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-primary text-[#181611] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-yellow-400 transition-colors">
-<span class="truncate">Order Online</span>
-</button>
-<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-gray-100 dark:bg-gray-800 text-[#181611] dark:text-gray-100 gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-<span class="material-symbols-outlined text-lg">shopping_cart</span>
-</button>
-<div class="hidden sm:block bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCN7YNY8GskSQVH9CVvjO_74vW1VMjseWsdUsuZ_djTfKgNSLQGtteC1zRXT7LpH_-l8h9lVrpKKrRMmGU4rQ2RIA3ao2P1WvTJUvp7oKgdOd0iaGzKTU-MtEozaoSo9ZOOiWQ862vcyRY8mNd8adOTEL378ZmEMAVUfvYCmp22Rh_vG5TeeNTHpYTy-AdP0FBa8lh1xoZNmIRi6dK5Ldenfy2rPVgfXitTb5EEe0grzc7LSEpZq8xmr0T3GflSQRpgYs-3uY6bdls");'></div>
-</div>
-</div>
-</header>
-<main class="flex flex-1 justify-center py-5 px-4 sm:px-10 lg:px-20">
-<div class="layout-content-container flex flex-col max-w-7xl w-full flex-1">
-<div class="flex flex-wrap gap-2 p-4">
-<a class="text-[#8c805f] dark:text-gray-400 text-sm sm:text-base font-medium leading-normal hover:text-primary dark:hover:text-primary" href="#">Home</a>
-<span class="text-[#8c805f] dark:text-gray-400 text-sm sm:text-base font-medium leading-normal">/</span>
-<a class="text-[#8c805f] dark:text-gray-400 text-sm sm:text-base font-medium leading-normal hover:text-primary dark:hover:text-primary" href="#">Menu</a>
-<span class="text-[#8c805f] dark:text-gray-400 text-sm sm:text-base font-medium leading-normal">/</span>
-<a class="text-[#8c805f] dark:text-gray-400 text-sm sm:text-base font-medium leading-normal hover:text-primary dark:hover:text-primary" href="#">Pizzas</a>
-<span class="text-[#8c805f] dark:text-gray-400 text-sm sm:text-base font-medium leading-normal">/</span>
-<span class="text-[#181611] dark:text-gray-100 text-sm sm:text-base font-medium leading-normal">The Ultimate Cheesy Dream</span>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 p-4">
-<div class="w-full h-80 sm:h-96 lg:h-auto bg-center bg-no-repeat bg-cover rounded-xl" data-alt="A mouth-watering picture of The Ultimate Cheesy Dream Pizza" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCFiC2l0l9Bq5BJkEqHmDHUTpja1cMShdOKss1L1Tb3zYs5OPmJMDv4d-5xwBMhVvHXZmsrBa2ADph7e8dH3BlNK-636LghYykuwXNDx-3AQBJtH8AnNi_YsTXfqk82GHzl3cJpiCl6gOG2oaCmPPQR_dIvQbPIkJYToNn0mx1SGmiFN-5Fooa1B7QiqS_oWJDzAwvIfmM1a5leg-g3moW2bMAjatrRDSePwKzqAC-41gms2MxvBbgvcgab7LuNkMjFDq0E8eS-TpI");'></div>
-<div class="flex flex-col gap-6">
-<div class="flex justify-between items-start gap-3">
-<div class="flex flex-col gap-2">
-<h1 class="text-[#181611] dark:text-gray-100 text-4xl lg:text-5xl font-black leading-tight tracking-[-0.033em]">The Ultimate Cheesy Dream Pizza</h1>
-<p class="text-[#8c805f] dark:text-gray-400 text-2xl font-normal leading-normal">$15.99</p>
-</div>
-<button class="p-3 rounded-full text-[#181611] dark:text-gray-100 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-<span class="material-symbols-outlined text-2xl">volume_up</span>
-</button>
-</div>
-<p class="text-gray-600 dark:text-gray-300 text-base leading-relaxed">
- Experience pure bliss with our signature pizza. A rich, creamy blend of five premium cheeses—mozzarella, provolone, cheddar, parmesan, and asiago—melted over a golden, hand-tossed crust. Topped with a sprinkle of fresh herbs for a flavor that's simply unforgettable.
- </p>
-<div class="space-y-3">
-<h3 class="text-base font-semibold text-[#181611] dark:text-gray-100">Allergen Info</h3>
-<div class="flex flex-wrap gap-3">
-<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 text-sm">
-<span class="material-symbols-outlined text-base">info</span>
-<span>Contains Gluten</span>
-</div>
-<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 text-sm">
-<span class="material-symbols-outlined text-base">info</span>
-<span>Contains Dairy</span>
-</div>
-</div>
-</div>
-<div class="space-y-4 border-t border-gray-200 dark:border-gray-800 pt-6">
-<h3 class="text-base font-semibold text-[#181611] dark:text-gray-100">Customize Your Pizza</h3>
-<div class="flex flex-col gap-3">
-<label class="flex items-center gap-3 cursor-pointer">
-<input checked="" class="form-radio text-primary focus:ring-primary/50 border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:checked:bg-primary" name="crust" type="radio"/>
-<span class="text-gray-700 dark:text-gray-300">Classic Crust</span>
-</label>
-<label class="flex items-center gap-3 cursor-pointer">
-<input class="form-radio text-primary focus:ring-primary/50 border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:checked:bg-primary" name="crust" type="radio"/>
-<span class="text-gray-700 dark:text-gray-300">Thin Crust (+ $1.00)</span>
-</label>
-</div>
-<div class="flex flex-col gap-3">
-<label class="flex items-center gap-3 cursor-pointer">
-<input class="form-checkbox rounded text-primary focus:ring-primary/50 border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:checked:bg-primary" name="extra" type="checkbox"/>
-<span class="text-gray-700 dark:text-gray-300">Extra Cheese (+ $2.50)</span>
-</label>
-<label class="flex items-center gap-3 cursor-pointer">
-<input class="form-checkbox rounded text-primary focus:ring-primary/50 border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:checked:bg-primary" name="extra" type="checkbox"/>
-<span class="text-gray-700 dark:text-gray-300">No Onions</span>
-</label>
-</div>
-</div>
-<div class="flex flex-col sm:flex-row items-center gap-4 pt-6 border-t border-gray-200 dark:border-gray-800">
-<div class="flex items-center gap-2">
-<button class="flex items-center justify-center size-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-<span class="material-symbols-outlined text-xl">remove</span>
-</button>
-<input class="w-12 h-10 text-center text-lg font-bold border-0 bg-transparent text-[#181611] dark:text-gray-100 focus:ring-0" type="text" value="1"/>
-<button class="flex items-center justify-center size-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-<span class="material-symbols-outlined text-xl">add</span>
-</button>
-</div>
-<button class="flex w-full sm:w-auto flex-1 items-center justify-center gap-2 rounded-xl bg-primary px-6 h-14 text-lg font-bold text-[#181611] hover:bg-yellow-400 transition-colors">
-<span class="material-symbols-outlined">add_shopping_cart</span>
-<span>Add to Cart</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-</main>
-</div>
-<div class="fixed bottom-4 right-4 z-50 group">
-<button aria-expanded="false" aria-haspopup="true" aria-label="Open Accessibility Menu" class="flex items-center justify-center size-14 bg-primary text-[#181611] rounded-full shadow-lg hover:bg-yellow-400 transition-colors">
-<span class="material-symbols-outlined text-3xl">accessibility_new</span>
-</button>
-<div class="absolute bottom-16 right-0 w-64 bg-white dark:bg-gray-900 rounded-lg shadow-2xl p-4 border border-gray-200 dark:border-gray-700 scale-95 opacity-0 group-focus-within:scale-100 group-focus-within:opacity-100 group:hover:scale-100 group:hover:opacity-100 transition-transform transition-opacity duration-150 ease-in-out origin-bottom-right">
-<div class="space-y-4">
-<h3 class="text-lg font-bold text-[#181611] dark:text-white">Accessibility Settings</h3>
-<div class="space-y-2">
-<label class="text-sm font-medium text-gray-700 dark:text-gray-300" for="font-size">Font Size</label>
-<div class="flex items-center gap-2">
-<button aria-label="Decrease font size" class="size-8 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-[#181611] dark:text-white">
-<span class="material-symbols-outlined text-xl">text_decrease</span>
-</button>
-<span class="flex-1 text-center font-semibold text-gray-800 dark:text-gray-200">Normal</span>
-<button aria-label="Increase font size" class="size-8 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-[#181611] dark:text-white">
-<span class="material-symbols-outlined text-xl">text_increase</span>
-</button>
-</div>
-</div>
-<div class="space-y-2">
-<label class="text-sm font-medium text-gray-700 dark:text-gray-300" for="fg-color">Text Color</label>
-<div class="grid grid-cols-4 gap-2">
-<button aria-label="Select black text color" class="size-10 rounded-full bg-[#181611] border-2 border-primary ring-2 ring-primary"></button>
-<button aria-label="Select white text color" class="size-10 rounded-full bg-white border-2 border-gray-300"></button>
-<button aria-label="Select blue text color" class="size-10 rounded-full bg-blue-600 border-2 border-gray-300"></button>
-<button aria-label="Select green text color" class="size-10 rounded-full bg-green-600 border-2 border-gray-300"></button>
-</div>
-</div>
-<div class="space-y-2">
-<label class="text-sm font-medium text-gray-700 dark:text-gray-300" for="bg-color">Background Color</label>
-<div class="grid grid-cols-4 gap-2">
-<button aria-label="Select white background color" class="size-10 rounded-full bg-white border-2 border-primary ring-2 ring-primary"></button>
-<button aria-label="Select dark background color" class="size-10 rounded-full bg-[#231e0f] border-2 border-gray-300"></button>
-<button aria-label="Select light blue background color" class="size-10 rounded-full bg-blue-100 border-2 border-gray-300"></button>
-<button aria-label="Select light green background color" class="size-10 rounded-full bg-green-100 border-2 border-gray-300"></button>
-</div>
-</div>
-<button class="w-full text-center py-2 px-4 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-sm font-semibold text-gray-700 dark:text-gray-300">Reset Settings</button>
-</div>
-</div>
-</div>
-</div>
+  <div id="a11y-reading-guide"></div>
+  <div class="layout-container relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+    <div class="layout-container flex h-full grow flex-col">
+      <header
+        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-gray-200 dark:border-b-gray-800 px-4 sm:px-10 lg:px-20 py-3 bg-white dark:bg-background-dark dark:text-gray-100">
+        <div class="flex items-center gap-4 text-[#181611] dark:text-gray-100">
+          <div class="size-6 text-primary">
+            <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path clip-rule="evenodd"
+                d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z"
+                fill-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h2 class="text-[#181611] dark:text-gray-100 text-lg font-bold leading-tight tracking-[-0.015em]">Cheesy
+            Dreams</h2>
+        </div>
+        <div class="flex flex-1 justify-end items-center gap-8">
+          <nav class="hidden md:flex items-center gap-9">
+            <a class="text-[#181611] dark:text-gray-300 dark:hover:text-white text-sm font-medium leading-normal"
+              href="#">Home</a>
+            <a class="text-[#181611] dark:text-gray-300 dark:hover:text-white text-sm font-medium leading-normal"
+              href="#">Menu</a>
+            <a class="text-[#181611] dark:text-gray-300 dark:hover:text-white text-sm font-medium leading-normal"
+              href="#">About Us</a>
+            <a class="text-[#181611] dark:text-gray-300 dark:hover:text-white text-sm font-medium leading-normal"
+              href="#">Contact</a>
+          </nav>
+          <div class="flex items-center gap-2">
+            <button
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-primary text-[#181611] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-yellow-400 transition-colors">
+              <span class="truncate">Order Online</span>
+            </button>
+            <button
+              class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-gray-100 dark:bg-gray-800 text-[#181611] dark:text-gray-100 gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+              <span class="material-symbols-outlined text-lg">shopping_cart</span>
+            </button>
+            <div class="hidden sm:block bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+              data-alt="User profile picture"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCN7YNY8GskSQVH9CVvjO_74vW1VMjseWsdUsuZ_djTfKgNSLQGtteC1zRXT7LpH_-l8h9lVrpKKrRMmGU4rQ2RIA3ao2P1WvTJUvp7oKgdOd0iaGzKTU-MtEozaoSo9ZOOiWQ862vcyRY8mNd8adOTEL378ZmEMAVUfvYCmp22Rh_vG5TeeNTHpYTy-AdP0FBa8lh1xoZNmIRi6dK5Ldenfy2rPVgfXitTb5EEe0grzc7LSEpZq8xmr0T3GflSQRpgYs-3uY6bdls");'>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="flex flex-1 justify-center py-5 px-4 sm:px-10 lg:px-20">
+        <div class="layout-content-container flex flex-col max-w-7xl w-full flex-1">
+          <div class="flex flex-wrap gap-2 p-4">
+            <a class="text-[#8c805f] dark:text-gray-400 text-sm sm:text-base font-medium leading-normal hover:text-primary dark:hover:text-primary"
+              href="#">Home</a>
+            <span class="text-[#8c805f] dark:text-gray-400 text-sm sm:text-base font-medium leading-normal">/</span>
+            <a class="text-[#8c805f] dark:text-gray-400 text-sm sm:text-base font-medium leading-normal hover:text-primary dark:hover:text-primary"
+              href="#">Menu</a>
+            <span class="text-[#8c805f] dark:text-gray-400 text-sm sm:text-base font-medium leading-normal">/</span>
+            <a class="text-[#8c805f] dark:text-gray-400 text-sm sm:text-base font-medium leading-normal hover:text-primary dark:hover:text-primary"
+              href="#">Pizzas</a>
+            <span class="text-[#8c805f] dark:text-gray-400 text-sm sm:text-base font-medium leading-normal">/</span>
+            <span class="text-[#181611] dark:text-gray-100 text-sm sm:text-base font-medium leading-normal">The Ultimate
+              Cheesy Dream</span>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 p-4">
+            <div class="w-full h-80 sm:h-96 lg:h-auto bg-center bg-no-repeat bg-cover rounded-xl"
+              data-alt="A mouth-watering picture of The Ultimate Cheesy Dream Pizza"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCFiC2l0l9Bq5BJkEqHmDHUTpja1cMShdOKss1L1Tb3zYs5OPmJMDv4d-5xwBMhVvHXZmsrBa2ADph7e8dH3BlNK-636LghYykuwXNDx-3AQBJtH8AnNi_YsTXfqk82GHzl3cJpiCl6gOG2oaCmPPQR_dIvQbPIkJYToNn0mx1SGmiFN-5Fooa1B7QiqS_oWJDzAwvIfmM1a5leg-g3moW2bMAjatrRDSePwKzqAC-41gms2MxvBbgvcgab7LuNkMjFDq0E8eS-TpI");'>
+            </div>
+            <div class="flex flex-col gap-6">
+              <div class="flex justify-between items-start gap-3">
+                <div class="flex flex-col gap-2">
+                  <h1
+                    class="text-[#181611] dark:text-gray-100 text-4xl lg:text-5xl font-black leading-tight tracking-[-0.033em]">
+                    The Ultimate Cheesy Dream Pizza</h1>
+                  <p class="text-[#8c805f] dark:text-gray-400 text-2xl font-normal leading-normal">$15.99</p>
+                </div>
+                <button
+                  class="p-3 rounded-full text-[#181611] dark:text-gray-100 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                  <span class="material-symbols-outlined text-2xl">volume_up</span>
+                </button>
+              </div>
+              <p class="text-gray-600 dark:text-gray-300 text-base leading-relaxed">
+                Experience pure bliss with our signature pizza. A rich, creamy blend of five premium cheeses—mozzarella,
+                provolone, cheddar, parmesan, and asiago—melted over a golden, hand-tossed crust. Topped with a sprinkle
+                of fresh herbs for a flavor that's simply unforgettable.
+              </p>
+              <div class="space-y-3">
+                <h3 class="text-base font-semibold text-[#181611] dark:text-gray-100">Allergen Info</h3>
+                <div class="flex flex-wrap gap-3">
+                  <div
+                    class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 text-sm">
+                    <span class="material-symbols-outlined text-base">info</span>
+                    <span>Contains Gluten</span>
+                  </div>
+                  <div
+                    class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 text-sm">
+                    <span class="material-symbols-outlined text-base">info</span>
+                    <span>Contains Dairy</span>
+                  </div>
+                </div>
+              </div>
+              <div class="space-y-4 border-t border-gray-200 dark:border-gray-800 pt-6">
+                <h3 class="text-base font-semibold text-[#181611] dark:text-gray-100">Customize Your Pizza</h3>
+                <div class="flex flex-col gap-3">
+                  <label class="flex items-center gap-3 cursor-pointer">
+                    <input checked=""
+                      class="form-radio text-primary focus:ring-primary/50 border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:checked:bg-primary"
+                      name="crust" type="radio" />
+                    <span class="text-gray-700 dark:text-gray-300">Classic Crust</span>
+                  </label>
+                  <label class="flex items-center gap-3 cursor-pointer">
+                    <input
+                      class="form-radio text-primary focus:ring-primary/50 border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:checked:bg-primary"
+                      name="crust" type="radio" />
+                    <span class="text-gray-700 dark:text-gray-300">Thin Crust (+ $1.00)</span>
+                  </label>
+                </div>
+                <div class="flex flex-col gap-3">
+                  <label class="flex items-center gap-3 cursor-pointer">
+                    <input
+                      class="form-checkbox rounded text-primary focus:ring-primary/50 border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:checked:bg-primary"
+                      name="extra" type="checkbox" />
+                    <span class="text-gray-700 dark:text-gray-300">Extra Cheese (+ $2.50)</span>
+                  </label>
+                  <label class="flex items-center gap-3 cursor-pointer">
+                    <input
+                      class="form-checkbox rounded text-primary focus:ring-primary/50 border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:checked:bg-primary"
+                      name="extra" type="checkbox" />
+                    <span class="text-gray-700 dark:text-gray-300">No Onions</span>
+                  </label>
+                </div>
+              </div>
+              <div
+                class="flex flex-col sm:flex-row items-center gap-4 pt-6 border-t border-gray-200 dark:border-gray-800">
+                <div class="flex items-center gap-2">
+                  <button
+                    class="flex items-center justify-center size-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    <span class="material-symbols-outlined text-xl">remove</span>
+                  </button>
+                  <input
+                    class="w-12 h-10 text-center text-lg font-bold border-0 bg-transparent text-[#181611] dark:text-gray-100 focus:ring-0"
+                    type="text" value="1" />
+                  <button
+                    class="flex items-center justify-center size-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    <span class="material-symbols-outlined text-xl">add</span>
+                  </button>
+                </div>
+                <button
+                  class="flex w-full sm:w-auto flex-1 items-center justify-center gap-2 rounded-xl bg-primary px-6 h-14 text-lg font-bold text-[#181611] hover:bg-yellow-400 transition-colors">
+                  <span class="material-symbols-outlined">add_shopping_cart</span>
+                  <span>Add to Cart</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div class="fixed bottom-4 right-4 z-50">
+      <button id="accessibility-trigger" type="button" aria-controls="accessibility-menu" aria-expanded="false"
+        class="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-lg hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-background-light">
+        <span class="material-symbols-outlined !text-3xl text-[#181611]">accessibility_new</span>
+        <span class="sr-only">Open Accessibility Menu</span>
+      </button>
 
+      <div id="accessibility-menu" role="dialog" aria-labelledby="accessibility-heading" aria-modal="true"
+        class="hidden mt-3 w-72 rounded-lg bg-white shadow-xl border border-gray-200 absolute bottom-16 right-0">
 
+        <div class="p-4 border-b border-gray-200">
+          <h2 class="text-lg font-bold text-gray-900" id="accessibility-heading">
+            Accessibility Settings
+          </h2>
+        </div>
 
-<script>
-// popup.js inline - temporal para debugging
-(function() {
-  console.log('✅ Script inline cargado');
-  
-  const style = document.createElement('style');
-  style.textContent = `
+        <div class="p-4 space-y-4 h-80 overflow-y-auto custom-scrollbar">
+          <div class="space-y-2">
+            <label class="text-sm font-medium text-gray-700" for="font-size">Font Size</label>
+            <div class="flex items-center gap-2">
+              <span class="text-xs text-gray-500">A</span>
+              <input id="font-size" type="range" min="100" max="180" value="100"
+                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary" />
+              <span class="text-lg text-gray-500">A</span>
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <p class="text-sm font-medium text-gray-700">Contrast Theme</p>
+            <div class="grid grid-cols-4 gap-2">
+              <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-white" data-contrast="black-on-white"
+                data-fg="#000000" data-bg="#ffffff" title="Black on white"></button>
+
+              <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-black" data-contrast="white-on-black"
+                data-fg="#ffffff" data-bg="#000000" title="White on black"></button>
+
+              <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-yellow-400" data-contrast="yellow-on-blue"
+                data-fg="#facc15" data-bg="#020617" title="Yellow on dark blue"></button>
+
+              <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-blue-600" data-contrast="blue-on-white"
+                data-fg="#2563eb" data-bg="#ffffff" title="Blue on white"></button>
+            </div>
+          </div>
+
+          <div class="space-y-3 pt-2 border-t border-gray-200">
+            <div class="flex items-center justify-between">
+              <p class="text-sm font-medium text-gray-700">Grayscale</p>
+              <label class="inline-flex items-center gap-2 cursor-pointer">
+                <input id="grayscale-toggle" type="checkbox"
+                  class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
+                <span class="text-xs text-gray-500">On</span>
+              </label>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <p class="text-sm font-medium text-gray-700">Text Spacing</p>
+              <label class="inline-flex items-center gap-2 cursor-pointer">
+                <input id="spacing-toggle" type="checkbox"
+                  class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
+                <span class="text-xs text-gray-500">On</span>
+              </label>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <p class="text-sm font-medium text-gray-700">Dyslexia Font</p>
+              <label class="inline-flex items-center gap-2 cursor-pointer">
+                <input id="dyslexia-toggle" type="checkbox"
+                  class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
+                <span class="text-xs text-gray-500">On</span>
+              </label>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <p class="text-sm font-medium text-gray-700">Big Cursor</p>
+              <label class="inline-flex items-center gap-2 cursor-pointer">
+                <input id="cursor-toggle" type="checkbox"
+                  class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
+                <span class="text-xs text-gray-500">On</span>
+              </label>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <p class="text-sm font-medium text-gray-700">Highlight Links</p>
+              <label class="inline-flex items-center gap-2 cursor-pointer">
+                <input id="links-toggle" type="checkbox"
+                  class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
+                <span class="text-xs text-gray-500">On</span>
+              </label>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <p class="text-sm font-medium text-gray-700">Reading Guide</p>
+              <label class="inline-flex items-center gap-2 cursor-pointer">
+                <input id="reading-guide-toggle" type="checkbox"
+                  class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
+                <span class="text-xs text-gray-500">On</span>
+              </label>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <p class="text-sm font-medium text-gray-700">Pause Animations</p>
+              <label class="inline-flex items-center gap-2 cursor-pointer">
+                <input id="animation-toggle" type="checkbox"
+                  class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
+                <span class="text-xs text-gray-500">On</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="p-4 border-t border-gray-200">
+            <button id="a11y-reset" class="w-full text-center text-sm font-semibold text-gray-500 hover:underline">
+              Reset to Default
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Modal for "Not Implemented" links
+      (function () {
+        const style = document.createElement('style');
+        style.textContent = `
     .__notimpl_modal_backdrop {
       position: fixed;
       inset: 0;
@@ -215,46 +412,211 @@
       background: #D97706;
     }
   `;
-  document.head.appendChild(style);
+        document.head.appendChild(style);
 
-  function showModal() {
-    console.log('🎉 Mostrando modal');
-    if (document.querySelector('.__notimpl_modal_backdrop')) return;
-    
-    const backdrop = document.createElement('div');
-    backdrop.className = '__notimpl_modal_backdrop';
-    
-    const modal = document.createElement('div');
-    modal.className = '__notimpl_modal';
-    modal.innerHTML = '<h2>Not implemented yet!</h2><p>Esta funcionalidad aún no está implementada.</p>';
-    
-    const closeBtn = document.createElement('button');
-    closeBtn.textContent = 'Cerrar';
-    closeBtn.addEventListener('click', () => backdrop.remove());
-    
-    modal.appendChild(closeBtn);
-    backdrop.appendChild(modal);
-    backdrop.addEventListener('click', (e) => {
-      if (e.target === backdrop) backdrop.remove();
-    });
-    
-    document.body.appendChild(backdrop);
-  }
+        function showModal() {
+          if (document.querySelector('.__notimpl_modal_backdrop')) return;
 
-  document.addEventListener('click', function(e) {
-    console.log('👆 Clic en:', e.target.tagName);
-    const target = e.target.closest('[data-not-implemented]');
-    console.log('🔍 Target:', target);
-    
-    if (target) {
-      console.log('✋ Previniendo default');
-      e.preventDefault();
-      e.stopPropagation();
-      showModal();
-    }
-  }, true);
+          const backdrop = document.createElement('div');
+          backdrop.className = '__notimpl_modal_backdrop';
 
-  console.log('✅ Event listener configurado');
-})();
-</script>
-</body></html>
+          const modal = document.createElement('div');
+          modal.className = '__notimpl_modal';
+          modal.innerHTML = '<h2>Not implemented yet!</h2><p>Esta funcionalidad aún no está implementada.</p>';
+
+          const closeBtn = document.createElement('button');
+          closeBtn.textContent = 'Cerrar';
+          closeBtn.addEventListener('click', () => backdrop.remove());
+
+          modal.appendChild(closeBtn);
+          backdrop.appendChild(modal);
+          backdrop.addEventListener('click', (e) => {
+            if (e.target === backdrop) backdrop.remove();
+          });
+
+          document.body.appendChild(backdrop);
+        }
+
+        document.addEventListener('click', (e) => {
+          const target = e.target.closest('[data-not-implemented]');
+          if (target) {
+            e.preventDefault();
+            e.stopPropagation();
+            showModal();
+          }
+        });
+      })();
+
+      // ===== ACCESSIBILITY PANEL LOGIC =====
+      (function () {
+        const KEY_SIZE = 'a11y_font';
+        const KEY_FG = 'a11y_fg';
+        const KEY_BG = 'a11y_bg';
+        const KEY_DYS = 'a11y_dyslexia';
+        const KEY_HC = 'a11y_highcontrast';
+        const KEY_CURSOR = 'a11y_cursor';
+        const KEY_LINKS = 'a11y_links';
+        const KEY_GRAY = 'a11y_grayscale';
+        const KEY_SPACE = 'a11y_spacing';
+        const KEY_GUIDE = 'a11y_guide';
+        const KEY_PAUSE = 'a11y_pause';
+
+        const trigger = document.getElementById('accessibility-trigger');
+        const menu = document.getElementById('accessibility-menu');
+
+        const sizeSlider = document.getElementById('font-size');
+        const dyslexiaToggle = document.getElementById('dyslexia-toggle');
+        const cursorToggle = document.getElementById('cursor-toggle');
+        const linksToggle = document.getElementById('links-toggle');
+        const grayscaleToggle = document.getElementById('grayscale-toggle');
+        const spacingToggle = document.getElementById('spacing-toggle');
+        const guideToggle = document.getElementById('reading-guide-toggle');
+        const animationToggle = document.getElementById('animation-toggle');
+        const resetBtn = document.getElementById('a11y-reset');
+
+        const contrastButtons = document.querySelectorAll('[data-contrast]');
+        const readingGuide = document.getElementById('a11y-reading-guide');
+
+        // --- Reading Guide Follow Logic ---
+        document.addEventListener('mousemove', (e) => {
+          if (document.body.classList.contains('a11y-reading-guide')) {
+            readingGuide.style.top = e.clientY + 'px';
+          }
+        });
+
+        // --- Toggle panel visibility ---
+        if (trigger && menu) {
+          trigger.addEventListener('click', () => {
+            const isHidden = menu.classList.contains('hidden');
+            menu.classList.toggle('hidden', !isHidden);
+            trigger.setAttribute('aria-expanded', String(isHidden));
+          });
+        }
+
+        // --- Apply settings on load ---
+        applyInitialSettings();
+
+        // --- Font size (100–180%) ---
+        if (sizeSlider) {
+          sizeSlider.addEventListener('input', (e) => {
+            const value = e.target.value;
+            document.documentElement.style.fontSize = value + '%';
+            localStorage.setItem(KEY_SIZE, value);
+          });
+        }
+
+        // --- High contrast presets ---
+        contrastButtons.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const fg = btn.dataset.fg;
+            const bg = btn.dataset.bg;
+            setHighContrast(fg, bg);
+          });
+        });
+
+        function setHighContrast(fg, bg) {
+          if (fg) {
+            document.documentElement.style.setProperty('--a11y-fg', fg);
+            localStorage.setItem(KEY_FG, fg);
+          }
+          if (bg) {
+            document.documentElement.style.setProperty('--a11y-bg', bg);
+            localStorage.setItem(KEY_BG, bg);
+          }
+          document.body.classList.add('a11y-high-contrast', 'a11y-custom-colors');
+          localStorage.setItem(KEY_HC, '1');
+        }
+
+        // --- Generic Toggle Handler ---
+        function setupToggle(el, cls, key) {
+          if (!el) return;
+          el.addEventListener('change', () => {
+            const enabled = el.checked;
+            if (cls === 'a11y-grayscale') {
+              document.documentElement.classList.toggle(cls, enabled);
+            } else {
+              document.body.classList.toggle(cls, enabled);
+            }
+            localStorage.setItem(key, enabled ? '1' : '0');
+          });
+        }
+
+        setupToggle(dyslexiaToggle, 'a11y-dyslexia-font', KEY_DYS);
+        setupToggle(cursorToggle, 'a11y-cursor-big', KEY_CURSOR);
+        setupToggle(linksToggle, 'a11y-highlight-links', KEY_LINKS);
+        setupToggle(grayscaleToggle, 'a11y-grayscale', KEY_GRAY);
+        setupToggle(spacingToggle, 'a11y-text-spacing', KEY_SPACE);
+        setupToggle(guideToggle, 'a11y-reading-guide', KEY_GUIDE);
+        setupToggle(animationToggle, 'a11y-paused', KEY_PAUSE);
+
+        // --- Reset ---
+        if (resetBtn) {
+          resetBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // Reset font size
+            document.documentElement.style.fontSize = '100%';
+            if (sizeSlider) sizeSlider.value = 100;
+
+            // Reset vars
+            document.documentElement.style.removeProperty('--a11y-fg');
+            document.documentElement.style.removeProperty('--a11y-bg');
+
+            // Reset classes
+            document.body.classList.remove(
+              'a11y-high-contrast', 'a11y-custom-colors', 'a11y-dyslexia-font',
+              'a11y-cursor-big', 'a11y-highlight-links', 'a11y-text-spacing',
+              'a11y-reading-guide', 'a11y-paused'
+            );
+            document.documentElement.classList.remove('a11y-grayscale');
+
+            // Reset Inputs
+            [dyslexiaToggle, cursorToggle, linksToggle, grayscaleToggle, spacingToggle, guideToggle, animationToggle].forEach(el => {
+              if (el) el.checked = false;
+            });
+
+            // Clear storage
+            [KEY_SIZE, KEY_FG, KEY_BG, KEY_DYS, KEY_HC, KEY_CURSOR, KEY_LINKS, KEY_GRAY, KEY_SPACE, KEY_GUIDE, KEY_PAUSE].forEach(k => localStorage.removeItem(k));
+          });
+        }
+
+        function applyInitialSettings() {
+          const loadState = (key, cls, input) => {
+            if (localStorage.getItem(key) === '1') {
+              if (cls === 'a11y-grayscale') document.documentElement.classList.add(cls);
+              else document.body.classList.add(cls);
+              if (input) input.checked = true;
+            }
+          };
+
+          // Font Size
+          const savedSize = localStorage.getItem(KEY_SIZE);
+          if (savedSize) {
+            document.documentElement.style.fontSize = savedSize + '%';
+            if (sizeSlider) sizeSlider.value = savedSize;
+          }
+
+          // Contrast
+          const savedFg = localStorage.getItem(KEY_FG);
+          const savedBg = localStorage.getItem(KEY_BG);
+          const savedHC = localStorage.getItem(KEY_HC);
+
+          if (savedFg) document.documentElement.style.setProperty('--a11y-fg', savedFg);
+          if (savedBg) document.documentElement.style.setProperty('--a11y-bg', savedBg);
+          if (savedHC === '1' && (savedFg || savedBg)) {
+            document.body.classList.add('a11y-high-contrast', 'a11y-custom-colors');
+          }
+
+          loadState(KEY_DYS, 'a11y-dyslexia-font', dyslexiaToggle);
+          loadState(KEY_CURSOR, 'a11y-cursor-big', cursorToggle);
+          loadState(KEY_LINKS, 'a11y-highlight-links', linksToggle);
+          loadState(KEY_GRAY, 'a11y-grayscale', grayscaleToggle);
+          loadState(KEY_SPACE, 'a11y-text-spacing', spacingToggle);
+          loadState(KEY_GUIDE, 'a11y-reading-guide', guideToggle);
+          loadState(KEY_PAUSE, 'a11y-paused', animationToggle);
+        }
+      })();
+    </script>
+</body>
+
+</html>

@@ -1,288 +1,498 @@
 <!DOCTYPE html>
-<html class="" lang="en">
-
+<html lang="en" class="">
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Login - Cheesy Dreams</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;900&amp;display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#fac638",
-                        "primary-dark": "#D97706",
-                        "primary-light": "#FEF3C7",
-                        secondary: "#F97316",
-                        "background-light": "#f8f8f5",
-                        "text-primary": "#1F2937",
-                        "text-secondary": "#6B7280",
-                        "border-color": "#E5E7EB",
-                        "background-dark": "#231e0f"
-                    },
-                    fontFamily: {
-                        display: "Work Sans"
-                    },
-                    borderRadius: {
-                        DEFAULT: "0.25rem",
-                        lg: "0.5rem",
-                        xl: "0.75rem",
-                        full: "9999px"
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            font-family: 'Work Sans', sans-serif;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Cheesy Dreams</title>
 
-        .material-symbols-outlined {
-            font-variation-settings:
-                'FILL' 0,
-                'wght' 400,
-                'GRAD' 0,
-                'opsz' 24
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Work Sans font -->
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+
+  <!-- Material icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <!-- Dyslexia-friendly font (optional) -->
+  <link href="https://fonts.cdnfonts.com/css/opendyslexic" rel="stylesheet">
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#fac638",
+            "primary-dark": "#D97706",
+            "primary-light": "#FEF3C7",
+            secondary: "#F97316",
+            "background-light": "#f8f8f5",
+            "text-primary": "#1F2937",
+            "text-secondary": "#6B7280",
+            "border-color": "#E5E7EB",
+            "background-dark": "#231e0f"
+          },
+          fontFamily: {
+            display: "Work Sans"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          }
         }
-    </style>
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Work Sans', sans-serif;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    }
+
+    /* --- Accessibility variables --- */
+    :root {
+      --a11y-fg: inherit;
+      --a11y-bg: inherit;
+    }
+
+    /* Dyslexia mode */
+    body.a11y-dyslexia-font {
+      font-family: 'OpenDyslexic', 'Work Sans', sans-serif !important;
+    }
+
+    /* High contrast applies ONLY to layout-container (main content), NOT the popup */
+    body.a11y-high-contrast .layout-container,
+    body.a11y-high-contrast .layout-container *:not(#accessibility-menu):not(#accessibility-menu *) {
+      color: var(--a11y-fg) !important;
+      background-color: var(--a11y-bg) !important;
+      border-color: var(--a11y-fg) !important;
+    }
+
+    /* Small tweaks for links/buttons when custom colors are active */
+    body.a11y-custom-colors .layout-container a {
+      text-decoration: underline;
+      font-weight: 600;
+    }
+    body.a11y-custom-colors .layout-container button {
+      border-width: 1px;
+    }
+  </style>
 </head>
 
 <body class="bg-background-light font-display text-text-primary">
-    <div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-        <div class="layout-container flex h-full grow flex-col">
-            <header
-                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-color px-6 sm:px-10 py-4 bg-white">
-                <div class="flex items-center gap-4">
-                    <div class="size-6 text-secondary">
-                        <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                            <path clip-rule="evenodd"
-                                d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z"
-                                fill-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                    <h2 class="text-lg font-bold leading-tight tracking-[-0.015em] text-text-primary">Cheesy Dreams</h2>
-                </div>
-            </header>
-            <main class="flex flex-1 items-center justify-center py-10 sm:py-20 px-4">
-                <div class="w-full max-w-md space-y-8">
-                    <div class="text-center">
-                        <h1 class="text-4xl font-black leading-tight tracking-[-0.033em] text-text-primary">Welcome
-                            Back!</h1>
-                        <p class="mt-2 text-base font-normal leading-normal text-text-secondary">Please log in to your
-                            account</p>
-                    </div>
-                    <form action="#" class="space-y-6" method="POST">
-                        <div class="space-y-4">
-                            <div>
-                                <label class="block text-sm font-medium leading-6 text-text-primary"
-                                    for="email">Username or Email</label>
-                                <div class="mt-2">
-                                    <input autocomplete="email"
-                                        class="block w-full rounded-lg border-0 py-3 text-text-primary shadow-sm ring-1 ring-inset ring-border-color placeholder:text-text-secondary focus:ring-2 focus:ring-inset focus:ring-primary-dark sm:text-sm sm:leading-6"
-                                        id="email" name="email" required="" type="email" />
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex items-center justify-between">
-                                    <label class="block text-sm font-medium leading-6 text-text-primary"
-                                        for="password">Password</label>
-                                    <div class="text-sm">
-                                        <a data-not-implemented class="font-semibold text-primary hover:text-primary-dark" href="#">Forgot
-                                            Password?</a>
-                                    </div>
-                                </div>
-                                <div class="mt-2">
-                                    <input autocomplete="current-password"
-                                        class="block w-full rounded-lg border-0 py-3 text-text-primary shadow-sm ring-1 ring-inset ring-border-color placeholder:text-text-secondary focus:ring-2 focus:ring-inset focus:ring-primary-dark sm:text-sm sm:leading-6"
-                                        id="password" name="password" required="" type="password" />
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium leading-6 text-text-primary"
-                                    for="user-type">User Type</label>
-                                <div class="mt-2 relative">
-                                    <select
-                                        class="block w-full appearance-none rounded-lg border-0 py-3 pl-3 pr-10 text-text-primary shadow-sm ring-1 ring-inset ring-border-color focus:ring-2 focus:ring-inset focus:ring-primary-dark sm:text-sm sm:leading-6"
-                                        id="user-type" name="user-type">
-                                        <option>Manager</option>
-                                        <option>Staff</option>
-                                        <option>Customer</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div>
-                                <p>Don't have an account yet? <a class="font-semibold text-primary hover:text-primary-dark" href="{{ url_for('register') }}">Register here</a></p>
-                            </div>
-                        </div>
-                        <div>
-                            <button
-                                class="flex w-full justify-center rounded-lg bg-primary px-4 py-3 text-base font-bold leading-normal text-white shadow-sm hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-dark"
-                                type="submit">Log In</button>
-                        </div>
-                    </form>
-                    {% if error_message %}
-                    <p class="text-red-500 text-sm mt-2">{{ error_message }}</p>
-                    {% endif %}
-                </div>
-            </main>
+  <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+    <!-- This is the main content wrapper we recolor -->
+    <div class="layout-container flex h-full grow flex-col">
+      <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-color px-6 sm:px-10 py-4 bg-white">
+        <div class="flex items-center gap-4">
+          <div class="size-6 text-secondary">
+            <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path clip-rule="evenodd"
+                    d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z"
+                    fill-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h2 class="text-lg font-bold leading-tight tracking-[-0.015em] text-text-primary">Cheesy Dreams</h2>
         </div>
-        <div class="fixed bottom-4 right-4 group z-50">
-            <button aria-controls="accessibility-menu" aria-expanded="false"
-                class="flex h-14 w-14 items-center justify-center rounded-full bg-secondary text-white shadow-lg hover:bg-secondary/90 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-background-light"
-                id="accessibility-trigger" type="button">
-                <span class="material-symbols-outlined !text-3xl">accessibility_new</span>
-                <span class="sr-only">Open Accessibility Menu</span>
-            </button>
-            <div aria-labelledby="accessibility-heading" aria-modal="true"
-                class="absolute bottom-16 right-0 w-72 origin-bottom-right scale-95 opacity-0 transition-transform transition-opacity duration-200 ease-out group-focus-within:scale-100 group-focus-within:opacity-100 group-hover:scale-100 group-hover:opacity-100 rounded-lg bg-white shadow-xl border border-border-color"
-                id="accessibility-menu" role="dialog">
-                <div class="p-4 border-b border-border-color">
-                    <h2 class="text-lg font-bold text-text-primary" id="accessibility-heading">Accessibility Settings
-                    </h2>
+      </header>
+
+      <main class="flex flex-1 items-center justify-center py-10 sm:py-20 px-4">
+        <div class="w-full max-w-md space-y-8">
+          <div class="text-center">
+            <h1 class="text-4xl font-black leading-tight tracking-[-0.033em] text-text-primary">Welcome Back!</h1>
+            <p class="mt-2 text-base font-normal leading-normal text-text-secondary">Please log in to your account</p>
+          </div>
+
+          <form action="#" class="space-y-6" method="POST">
+            <div class="space-y-4">
+              <div>
+                <label class="block text-sm font-medium leading-6 text-text-primary" for="email">Username or Email</label>
+                <div class="mt-2">
+                  <input autocomplete="email"
+                         class="block w-full rounded-lg border-0 py-3 text-text-primary shadow-sm ring-1 ring-inset ring-border-color placeholder:text-text-secondary focus:ring-2 focus:ring-inset focus:ring-primary-dark sm:text-sm sm:leading-6"
+                         id="email" name="email" required type="email" />
                 </div>
-                <div class="p-4 space-y-4">
-                    <div class="space-y-2">
-                        <label class="text-sm font-medium text-text-secondary" for="font-size">Font Size</label>
-                        <div class="flex items-center gap-2">
-                            <span class="text-xs text-text-secondary">A</span>
-                            <input
-                                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary"
-                                id="font-size" max="120" min="80" type="range" value="100" />
-                            <span class="text-lg text-text-secondary">A</span>
-                        </div>
-                    </div>
-                    <div class="space-y-2">
-                        <p class="text-sm font-medium text-text-secondary">Foreground Color</p>
-                        <div class="grid grid-cols-4 gap-2">
-                            <button aria-label="Set foreground to black"
-                                class="h-8 w-8 rounded-full bg-black border-2 border-primary ring-2 ring-primary ring-offset-2 ring-offset-white"></button>
-                            <button aria-label="Set foreground to white"
-                                class="h-8 w-8 rounded-full bg-white border-2 border-gray-300"></button>
-                            <button aria-label="Set foreground to blue"
-                                class="h-8 w-8 rounded-full bg-blue-600 border-2 border-gray-300"></button>
-                            <button aria-label="Set foreground to yellow"
-                                class="h-8 w-8 rounded-full bg-yellow-400 border-2 border-gray-300"></button>
-                        </div>
-                    </div>
-                    <div class="space-y-2">
-                        <p class="text-sm font-medium text-text-secondary">Background Color</p>
-                        <div class="grid grid-cols-4 gap-2">
-                            <button aria-label="Set background to white"
-                                class="h-8 w-8 rounded-full bg-white border-2 border-primary ring-2 ring-primary ring-offset-2 ring-offset-white"></button>
-                            <button aria-label="Set background to black"
-                                class="h-8 w-8 rounded-full bg-black border-2 border-gray-300"></button>
-                            <button aria-label="Set background to light gray"
-                                class="h-8 w-8 rounded-full bg-gray-200 border-2 border-gray-300"></button>
-                            <button aria-label="Set background to dark blue"
-                                class="h-8 w-8 rounded-full bg-slate-900 border-2 border-gray-300"></button>
-                        </div>
-                    </div>
+              </div>
+
+              <div>
+                <div class="flex items-center justify-between">
+                  <label class="block text-sm font-medium leading-6 text-text-primary" for="password">Password</label>
+                  <div class="text-sm">
+                    <a class="font-semibold text-primary hover:text-primary-dark" href="#" data-not-implemented>
+                      Forgot Password?
+                    </a>
+                  </div>
                 </div>
-                <div class="p-4 border-t border-border-color">
-                    <button class="w-full text-center text-sm font-semibold text-secondary hover:underline">Reset to
-                        Default</button>
+                <div class="mt-2">
+                  <input autocomplete="current-password"
+                         class="block w-full rounded-lg border-0 py-3 text-text-primary shadow-sm ring-1 ring-inset ring-border-color placeholder:text-text-secondary focus:ring-2 focus:ring-inset focus:ring-primary-dark sm:text-sm sm:leading-6"
+                         id="password" name="password" required type="password" />
                 </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium leading-6 text-text-primary" for="user-type">User Type</label>
+                <div class="mt-2 relative">
+                  <select
+                    class="block w-full appearance-none rounded-lg border-0 py-3 pl-3 pr-10 text-text-primary shadow-sm ring-1 ring-inset ring-border-color focus:ring-2 focus:ring-inset focus:ring-primary-dark sm:text-sm sm:leading-6"
+                    id="user-type" name="user-type">
+                    <option>Manager</option>
+                    <option>Staff</option>
+                    <option>Customer</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <p>Don't have an account yet?
+                  <a class="font-semibold text-primary hover:text-primary-dark" href="{{ url_for('register') }}">
+                    Register here
+                  </a>
+                </p>
+              </div>
             </div>
+
+            <div>
+              <button
+                class="flex w-full justify-center rounded-lg bg-primary px-4 py-3 text-base font-bold leading-normal text-white shadow-sm hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-dark"
+                type="submit">
+                Log In
+              </button>
+            </div>
+          </form>
+
+          {% if error_message %}
+          <p class="text-red-500 text-sm mt-2">{{ error_message }}</p>
+          {% endif %}
         </div>
+      </main>
     </div>
 
+    <!-- Accessibility FAB + Panel (NOT recolored) -->
+    <div class="fixed bottom-4 right-4 z-50">
+      <!-- Button -->
+      <button
+        id="accessibility-trigger"
+        type="button"
+        aria-controls="accessibility-menu"
+        aria-expanded="false"
+        class="flex h-14 w-14 items-center justify-center rounded-full bg-secondary text-white shadow-lg hover:bg-secondary/90 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-background-light">
+        <span class="material-symbols-outlined !text-3xl">accessibility_new</span>
+        <span class="sr-only">Open Accessibility Menu</span>
+      </button>
 
+      <!-- Panel -->
+      <div
+        id="accessibility-menu"
+        role="dialog"
+        aria-labelledby="accessibility-heading"
+        aria-modal="true"
+        class="hidden mt-3 w-72 rounded-lg bg-white shadow-xl border border-border-color">
 
+        <div class="p-4 border-b border-border-color">
+          <h2 class="text-lg font-bold text-text-primary" id="accessibility-heading">
+            Accessibility Settings
+          </h2>
+        </div>
 
-<script>
-// popup.js inline - temporal para debugging
-(function() {
-  console.log('✅ Script inline cargado');
-  
-  const style = document.createElement('style');
-  style.textContent = `
-    .__notimpl_modal_backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-    .__notimpl_modal {
-      background: white;
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-      max-width: 90%;
-      width: 360px;
-      text-align: center;
-      font-family: 'Work Sans', sans-serif;
-    }
-    .__notimpl_modal h2 {
-      margin: 0 0 12px;
-      font-size: 20px;
-      color: #1F2937;
-    }
-    .__notimpl_modal p {
-      margin: 0 0 20px;
-      color: #6B7280;
-      font-size: 14px;
-    }
-    .__notimpl_modal button {
-      padding: 10px 20px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      background: #fac638;
-      color: white;
-      font-weight: 600;
-    }
-    .__notimpl_modal button:hover {
-      background: #D97706;
-    }
-  `;
-  document.head.appendChild(style);
+        <div class="p-4 space-y-4">
+          <!-- Font size -->
+          <div class="space-y-2">
+            <label class="text-sm font-medium text-text-secondary" for="font-size">Font Size</label>
+            <div class="flex items-center gap-2">
+              <span class="text-xs text-text-secondary">A</span>
+              <input
+                id="font-size"
+                type="range"
+                min="100"
+                max="180"
+                value="100"
+                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary" />
+              <span class="text-lg text-text-secondary">A</span>
+            </div>
+          </div>
 
-  function showModal() {
-    console.log('🎉 Mostrando modal');
-    if (document.querySelector('.__notimpl_modal_backdrop')) return;
-    
-    const backdrop = document.createElement('div');
-    backdrop.className = '__notimpl_modal_backdrop';
-    
-    const modal = document.createElement('div');
-    modal.className = '__notimpl_modal';
-    modal.innerHTML = '<h2>Not implemented yet!</h2><p>Esta funcionalidad aún no está implementada.</p>';
-    
-    const closeBtn = document.createElement('button');
-    closeBtn.textContent = 'Cerrar';
-    closeBtn.addEventListener('click', () => backdrop.remove());
-    
-    modal.appendChild(closeBtn);
-    backdrop.appendChild(modal);
-    backdrop.addEventListener('click', (e) => {
-      if (e.target === backdrop) backdrop.remove();
-    });
-    
-    document.body.appendChild(backdrop);
-  }
+          <!-- SAFE high-contrast combos only -->
+          <div class="space-y-2">
+            <p class="text-sm font-medium text-text-secondary">High Contrast</p>
+            <div class="grid grid-cols-4 gap-2">
+              <!-- Black text / white background -->
+              <button
+                class="h-8 w-8 rounded-full border-2 border-gray-300 bg-white"
+                data-contrast="black-on-white"
+                data-fg="#000000"
+                data-bg="#ffffff"
+                title="Black on white"></button>
 
-  document.addEventListener('click', function(e) {
-    console.log('👆 Clic en:', e.target.tagName);
-    const target = e.target.closest('[data-not-implemented]');
-    console.log('🔍 Target:', target);
-    
-    if (target) {
-      console.log('✋ Previniendo default');
-      e.preventDefault();
-      e.stopPropagation();
-      showModal();
-    }
-  }, true);
+              <!-- White text / black background -->
+              <button
+                class="h-8 w-8 rounded-full border-2 border-gray-300 bg-black"
+                data-contrast="white-on-black"
+                data-fg="#ffffff"
+                data-bg="#000000"
+                title="White on black"></button>
 
-  console.log('✅ Event listener configurado');
-})();
-</script></body></html>
+              <!-- Yellow text / dark blue background -->
+              <button
+                class="h-8 w-8 rounded-full border-2 border-gray-300 bg-yellow-400"
+                data-contrast="yellow-on-blue"
+                data-fg="#facc15"
+                data-bg="#020617"
+                title="Yellow on dark blue"></button>
+
+              <!-- Blue text / white background -->
+              <button
+                class="h-8 w-8 rounded-full border-2 border-gray-300 bg-blue-600"
+                data-contrast="blue-on-white"
+                data-fg="#2563eb"
+                data-bg="#ffffff"
+                title="Blue on white"></button>
+            </div>
+          </div>
+
+          <!-- Dyslexia-friendly font -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <p class="text-sm font-medium text-text-secondary">Dyslexia-Friendly Font</p>
+              <label class="inline-flex items-center gap-2 cursor-pointer">
+                <input
+                  id="dyslexia-toggle"
+                  type="checkbox"
+                  class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
+                <span class="text-xs text-text-secondary">On</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 border-t border-border-color">
+          <button
+            id="a11y-reset"
+            class="w-full text-center text-sm font-semibold text-secondary hover:underline">
+            Reset to Default
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script must be at the END of body -->
+  <script>
+    // ===== Simple "not implemented" modal for links with data-not-implemented =====
+    (function () {
+      function showNotImplemented() {
+        if (document.querySelector('.__notimpl_modal_backdrop')) return;
+
+        const backdrop = document.createElement('div');
+        backdrop.className = '__notimpl_modal_backdrop';
+        Object.assign(backdrop.style, {
+          position: 'fixed',
+          inset: '0',
+          background: 'rgba(0,0,0,0.5)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: '9999'
+        });
+
+        const modal = document.createElement('div');
+        Object.assign(modal.style, {
+          background: 'white',
+          padding: '24px',
+          borderRadius: '12px',
+          maxWidth: '90%',
+          width: '360px',
+          boxShadow: '0 8px 30px rgba(0,0,0,0.2)',
+          textAlign: 'center',
+          fontFamily: 'Work Sans, sans-serif'
+        });
+
+        const title = document.createElement('h2');
+        title.textContent = 'Not implemented yet!';
+        title.style.marginBottom = '12px';
+
+        const text = document.createElement('p');
+        text.textContent = 'Esta funcionalidad aún no está implementada.';
+        text.style.marginBottom = '20px';
+
+        const btn = document.createElement('button');
+        btn.textContent = 'Cerrar';
+        Object.assign(btn.style, {
+          padding: '10px 20px',
+          borderRadius: '8px',
+          border: 'none',
+          cursor: 'pointer',
+          background: '#fac638',
+          color: 'white',
+          fontWeight: '600'
+        });
+        btn.addEventListener('click', () => backdrop.remove());
+
+        modal.appendChild(title);
+        modal.appendChild(text);
+        modal.appendChild(btn);
+        backdrop.appendChild(modal);
+
+        backdrop.addEventListener('click', (e) => {
+          if (e.target === backdrop) backdrop.remove();
+        });
+
+        document.body.appendChild(backdrop);
+      }
+
+      document.addEventListener('click', (e) => {
+        const target = e.target.closest('[data-not-implemented]');
+        if (target) {
+          e.preventDefault();
+          showNotImplemented();
+        }
+      });
+    })();
+
+    // ===== ACCESSIBILITY PANEL + SETTINGS =====
+    (function () {
+      const KEY_SIZE = 'a11y_font';
+      const KEY_FG = 'a11y_fg';
+      const KEY_BG = 'a11y_bg';
+      const KEY_DYS = 'a11y_dyslexia';
+      const KEY_HC = 'a11y_highcontrast';
+
+      const trigger = document.getElementById('accessibility-trigger');
+      const menu = document.getElementById('accessibility-menu');
+
+      const sizeSlider = document.getElementById('font-size');
+      const dyslexiaToggle = document.getElementById('dyslexia-toggle');
+      const resetBtn = document.getElementById('a11y-reset');
+
+      const contrastButtons = document.querySelectorAll('[data-contrast]');
+
+      let currentFg = '#000000';
+      let currentBg = '#ffffff';
+
+      // --- Toggle panel visibility ---
+      if (trigger && menu) {
+        trigger.addEventListener('click', () => {
+          const isHidden = menu.classList.contains('hidden');
+          menu.classList.toggle('hidden', !isHidden);
+          trigger.setAttribute('aria-expanded', String(isHidden));
+        });
+      }
+
+      // --- Apply initial settings from localStorage ---
+      applyInitialSettings();
+
+      // --- Font size (100–180%) ---
+      if (sizeSlider) {
+        sizeSlider.addEventListener('input', (e) => {
+          const value = e.target.value;
+          document.documentElement.style.fontSize = value + '%';
+          localStorage.setItem(KEY_SIZE, value);
+        });
+      }
+
+      // --- High contrast presets (safe pairs only) ---
+      contrastButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          currentFg = btn.dataset.fg || currentFg;
+          currentBg = btn.dataset.bg || currentBg;
+          setHighContrast(currentFg, currentBg);
+        });
+      });
+
+      function setHighContrast(fg, bg) {
+        if (fg) {
+          document.documentElement.style.setProperty('--a11y-fg', fg);
+          currentFg = fg;
+          localStorage.setItem(KEY_FG, fg);
+        }
+        if (bg) {
+          document.documentElement.style.setProperty('--a11y-bg', bg);
+          currentBg = bg;
+          localStorage.setItem(KEY_BG, bg);
+        }
+        document.body.classList.add('a11y-high-contrast', 'a11y-custom-colors');
+        localStorage.setItem(KEY_HC, '1');
+      }
+
+      // --- Dyslexia font ---
+      if (dyslexiaToggle) {
+        dyslexiaToggle.addEventListener('change', () => {
+          const enabled = dyslexiaToggle.checked;
+          document.body.classList.toggle('a11y-dyslexia-font', enabled);
+          localStorage.setItem(KEY_DYS, enabled ? '1' : '0');
+        });
+      }
+
+      // --- Reset ---
+      if (resetBtn) {
+        resetBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+
+          // Reset font
+          document.documentElement.style.fontSize = '100%';
+          if (sizeSlider) sizeSlider.value = 100;
+
+          // Reset CSS vars
+          document.documentElement.style.removeProperty('--a11y-fg');
+          document.documentElement.style.removeProperty('--a11y-bg');
+          currentFg = '#000000';
+          currentBg = '#ffffff';
+
+          // Reset classes
+          document.body.classList.remove('a11y-high-contrast', 'a11y-custom-colors', 'a11y-dyslexia-font');
+
+          // Reset dyslexia toggle
+          if (dyslexiaToggle) dyslexiaToggle.checked = false;
+
+          // Clear storage
+          [KEY_SIZE, KEY_FG, KEY_BG, KEY_DYS, KEY_HC].forEach(k => localStorage.removeItem(k));
+        });
+      }
+
+      function applyInitialSettings() {
+        // font size
+        const savedSize = localStorage.getItem(KEY_SIZE);
+        if (savedSize) {
+          document.documentElement.style.fontSize = savedSize + '%';
+          if (sizeSlider) sizeSlider.value = savedSize;
+        }
+
+        // colors + high contrast
+        const savedFg = localStorage.getItem(KEY_FG);
+        const savedBg = localStorage.getItem(KEY_BG);
+        const savedHC = localStorage.getItem(KEY_HC);
+
+        if (savedFg) {
+          currentFg = savedFg;
+          document.documentElement.style.setProperty('--a11y-fg', savedFg);
+        }
+        if (savedBg) {
+          currentBg = savedBg;
+          document.documentElement.style.setProperty('--a11y-bg', savedBg);
+        }
+        if (savedHC === '1' && (savedFg || savedBg)) {
+          document.body.classList.add('a11y-high-contrast', 'a11y-custom-colors');
+        }
+
+        // dyslexia
+        const savedDys = localStorage.getItem(KEY_DYS);
+        if (savedDys === '1') {
+          document.body.classList.add('a11y-dyslexia-font');
+          if (dyslexiaToggle) dyslexiaToggle.checked = true;
+        }
+      }
+    })();
+  </script>
+</body>
+</html>

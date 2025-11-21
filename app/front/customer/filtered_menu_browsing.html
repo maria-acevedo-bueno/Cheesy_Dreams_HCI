@@ -1,350 +1,661 @@
 <!DOCTYPE html>
-
 <html class="light" lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Cheesy Dreams Menu</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&amp;display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <style>
-        .material-symbols-outlined {
-            font-variation-settings:
-                'FILL' 0,
-                'wght' 400,
-                'GRAD' 0,
-                'opsz' 24
-        }
-    </style>
-    <script
-        id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { primary: "#fac638", "background-light": "#f8f8f5", "background-dark": "#231e0f" }, fontFamily: { display: "Work Sans" }, borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" } } } };</script>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Cheesy Dreams Menu</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link href="https://fonts.cdnfonts.com/css/opendyslexic" rel="stylesheet">
+
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { primary: "#fac638", "background-light": "#f8f8f5", "background-dark": "#231e0f" }, fontFamily: { display: "Work Sans" }, borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" } } } };</script>
+
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+
+    /* Utility for screen readers */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    /* --- Accessibility Variables --- */
+    :root {
+      --a11y-fg: inherit;
+      --a11y-bg: inherit;
+    }
+
+    /* 1. Dyslexia Friendly Font */
+    body.a11y-dyslexia-font {
+      font-family: 'OpenDyslexic', 'Work Sans', sans-serif !important;
+    }
+
+    /* 2. Big Cursor */
+    body.a11y-cursor-big,
+    body.a11y-cursor-big a,
+    body.a11y-cursor-big button {
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="black" stroke="white" stroke-width="2"><path d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.36z"/></svg>') 0 0, auto !important;
+    }
+
+    /* 3. Highlight Links */
+    body.a11y-highlight-links a {
+      text-decoration: underline !important;
+      text-decoration-thickness: 4px !important;
+      text-decoration-color: #fac638 !important;
+      font-weight: 800 !important;
+    }
+
+    /* 4. Text Spacing (Line Height & Letter Spacing) */
+    body.a11y-text-spacing * {
+      line-height: 1.8 !important;
+      letter-spacing: 0.1em !important;
+      word-spacing: 0.16em !important;
+    }
+
+    body.a11y-text-spacing p {
+      margin-bottom: 2em !important;
+    }
+
+    /* 5. Grayscale Mode */
+    html.a11y-grayscale {
+      filter: grayscale(100%) !important;
+    }
+
+    /* 6. Pause Animations */
+    body.a11y-paused * {
+      animation-play-state: paused !important;
+      transition: none !important;
+    }
+
+    /* 7. Reading Guide Bar */
+    #a11y-reading-guide {
+      display: none;
+      position: fixed;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background-color: rgba(250, 198, 56, 0.4);
+      border-top: 2px solid #fac638;
+      border-bottom: 2px solid #fac638;
+      pointer-events: none;
+      z-index: 99999;
+      transform: translateY(-50%);
+    }
+
+    body.a11y-reading-guide #a11y-reading-guide {
+      display: block;
+    }
+
+    /* 8. High Contrast Mode Logic */
+    body.a11y-high-contrast .layout-container,
+    body.a11y-high-contrast .layout-container *:not(.material-symbols-outlined) {
+      color: var(--a11y-fg) !important;
+      background-color: var(--a11y-bg) !important;
+      border-color: var(--a11y-fg) !important;
+      box-shadow: none !important;
+    }
+
+    body.a11y-high-contrast .layout-container .material-symbols-outlined {
+      color: var(--a11y-fg) !important;
+    }
+
+    body.a11y-high-contrast .layout-container button {
+      border-width: 2px !important;
+      border-style: solid !important;
+    }
+  </style>
 </head>
 
 <body class="font-display bg-background-light dark:bg-background-dark text-[#333333] dark:text-gray-200">
-    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-        <header
-            class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
-            <div class="container mx-auto px-6 py-3">
-                <div class="flex items-center justify-between whitespace-nowrap">
-                    <div class="flex items-center gap-8">
-                        <div class="flex items-center gap-3 text-primary">
-                            <span class="material-symbols-outlined text-4xl">
-                                local_pizza
-                            </span>
-<h2 class="text-2xl font-black leading-tight tracking-[-0.015em] text-[#181611] dark:text-white">Cheesy Dreams</h2>
-</div>
-<nav class="hidden md:flex items-center gap-9">
-<a class="text-[#181611] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="/customer/home">Home</a>
-<a class="text-[#181611] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" data-not-implemented href="#">About Us</a>
-<a class="text-[#181611] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" data-not-implemented href="#">Contact</a>
-</nav>
-</div>
-<div class="flex flex-1 justify-end gap-4">
-<label class="relative hidden sm:flex flex-col min-w-40 !h-10 max-w-64">
-<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
-<span data-not-implemented class="material-symbols-outlined text-[#8c805f] flex bg-[#f5f3f0] dark:bg-gray-800/50 items-center justify-center pl-3 rounded-l-lg">search</span>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181611] dark:text-gray-200 focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-[#f5f3f0] dark:bg-gray-800/50 h-full placeholder:text-[#8c805f] dark:placeholder:text-gray-500 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Search" value=""/>
-</div>
-</label>
-<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-primary/20 text-primary gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4">
-<span class="material-symbols-outlined">shopping_cart</span>
-<span data-not-implemented class="hidden md:inline">Cart</span>
-</button>
-</div>
-</div>
-</div>
-</header>
-<main class="container mx-auto px-6 py-8">
-<div class="flex flex-col lg:flex-row gap-8">
-<aside class="w-full lg:w-64 xl:w-72 flex-shrink-0">
-<div class="sticky top-24">
-<div class="flex flex-col gap-6 p-4 bg-white dark:bg-background-dark rounded-xl border border-gray-200 dark:border-gray-800">
-<div class="flex flex-col gap-2">
-<h3 class="text-[#181611] dark:text-white text-lg font-bold leading-normal">Dietary Options</h3>
-<div class="flex flex-col gap-1 border-t border-gray-200 dark:border-gray-700 pt-2">
-<label class="flex gap-x-3 py-2 flex-row cursor-pointer">
-<input class="h-5 w-5 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary dark:focus:border-primary" style="--checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(51,51,51)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');" type="checkbox"/>
-<p class="text-[#333333] dark:text-gray-300 text-base font-normal leading-normal">Gluten-Free</p>
-</label>
-<label class="flex gap-x-3 py-2 flex-row cursor-pointer">
-<input class="h-5 w-5 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary dark:focus:border-primary" style="--checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(51,51,51)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');" type="checkbox"/>
-<p class="text-[#333333] dark:text-gray-300 text-base font-normal leading-normal">Vegetarian</p>
-</label>
-<label class="flex gap-x-3 py-2 flex-row cursor-pointer">
-<input class="h-5 w-5 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary dark:focus:border-primary" style="--checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(51,51,51)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');" type="checkbox"/>
-<p class="text-[#333333] dark:text-gray-300 text-base font-normal leading-normal">Vegan</p>
-</label>
-<label class="flex gap-x-3 py-2 flex-row cursor-pointer">
-<input class="h-5 w-5 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary dark:focus:border-primary" style="--checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16%27 fill=%27rgb(51,51,51)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');" type="checkbox"/>
-<p class="text-[#333333] dark:text-gray-300 text-base font-normal leading-normal">Spicy</p>
-</label>
-</div>
-</div>
-<div class="flex flex-col gap-2">
-<h3 class="text-[#181611] dark:text-white text-lg font-bold leading-normal">Menu Categories</h3>
-<div class="flex flex-col gap-1 border-t border-gray-200 dark:border-gray-700 pt-2">
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 dark:bg-primary/30" href="#pizzas">
-<span class="material-symbols-outlined text-primary">local_pizza</span>
-<p class="text-[#181611] dark:text-white text-sm font-bold leading-normal">Pizzas</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800" href="#pastas">
-<span class="material-symbols-outlined text-[#333333] dark:text-gray-400">restaurant</span>
-<p class="text-[#333333] dark:text-gray-300 text-sm font-medium leading-normal">Pastas</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800" href="#salads">
-<span class="material-symbols-outlined text-[#333333] dark:text-gray-400">spa</span>
-<p class="text-[#333333] dark:text-gray-300 text-sm font-medium leading-normal">Salads</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800" href="#desserts">
-<span class="material-symbols-outlined text-[#333333] dark:text-gray-400">cake</span>
-<p class="text-[#333333] dark:text-gray-300 text-sm font-medium leading-normal">Desserts</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800" href="#drinks">
-<span class="material-symbols-outlined text-[#333333] dark:text-gray-400">local_bar</span>
-<p class="text-[#333333] dark:text-gray-300 text-sm font-medium leading-normal">Drinks</p>
-</a>
-</div>
-</div>
-</div>
-</div>
-</aside>
-<div class="flex-1">
-<div class="flex flex-col gap-8">
-<div class="flex flex-wrap justify-between gap-4 p-4 items-center">
-<h1 class="text-[#181611] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">Our Menu</h1>
-<div class="flex items-center gap-2 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg">
-    <button id="visual-btn" class="px-3 py-1.5 rounded-md text-sm font-bold text-[#181611] dark:text-white bg-white dark:bg-gray-700 shadow-sm">
-        <span class="material-symbols-outlined text-lg inline-block align-middle mr-1.5">grid_view</span>
-        Visual
-    </button>
-    <button id="text-btn" class="px-3 py-1.5 rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-[#181611] dark:hover:text-white">
-        <span class="material-symbols-outlined text-lg inline-block align-middle mr-1.5">notes</span>
-        Plain Text
-    </button>
-</div>
+  <div id="a11y-reading-guide"></div>
+  <div class="layout-container relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+    <header
+      class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
+      <div class="container mx-auto px-6 py-3">
+        <div class="flex items-center justify-between whitespace-nowrap">
+          <div class="flex items-center gap-8">
+            <div class="flex items-center gap-3 text-primary">
+              <span class="material-symbols-outlined text-4xl">
+                local_pizza
+              </span>
+              <h2 class="text-2xl font-black leading-tight tracking-[-0.015em] text-[#181611] dark:text-white">Cheesy
+                Dreams</h2>
+            </div>
+            <nav class="hidden md:flex items-center gap-9">
+              <a class="text-[#181611] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary"
+                href="/customer/home">Home</a>
+              <a class="text-[#181611] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary"
+                data-not-implemented href="#">About Us</a>
+              <a class="text-[#181611] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary"
+                data-not-implemented href="#">Contact</a>
+            </nav>
+          </div>
+          <div class="flex flex-1 justify-end gap-4">
+            <label class="relative hidden sm:flex flex-col min-w-40 !h-10 max-w-64">
+              <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+                <span data-not-implemented
+                  class="material-symbols-outlined text-[#8c805f] flex bg-[#f5f3f0] dark:bg-gray-800/50 items-center justify-center pl-3 rounded-l-lg">search</span>
+                <input
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181611] dark:text-gray-200 focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-[#f5f3f0] dark:bg-gray-800/50 h-full placeholder:text-[#8c805f] dark:placeholder:text-gray-500 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
+                  placeholder="Search" value="" />
+              </div>
+            </label>
+            <button
+              class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-primary/20 text-primary gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4">
+              <span class="material-symbols-outlined">shopping_cart</span>
+              <span data-not-implemented class="hidden md:inline">Cart</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="container mx-auto px-6 py-8">
+      <div class="flex flex-col lg:flex-row gap-8">
+        <aside class="w-full lg:w-64 xl:w-72 flex-shrink-0">
+          <div class="sticky top-24">
+            <div
+              class="flex flex-col gap-6 p-4 bg-white dark:bg-background-dark rounded-xl border border-gray-200 dark:border-gray-800">
+              <div class="flex flex-col gap-2">
+                <h3 class="text-[#181611] dark:text-white text-lg font-bold leading-normal">Dietary Options</h3>
+                <div class="flex flex-col gap-1 border-t border-gray-200 dark:border-gray-700 pt-2">
+                  <label class="flex gap-x-3 py-2 flex-row cursor-pointer">
+                    <input
+                      class="h-5 w-5 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary dark:focus:border-primary"
+                      style="--checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(51,51,51)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');"
+                      type="checkbox" />
+                    <p class="text-[#333333] dark:text-gray-300 text-base font-normal leading-normal">Gluten-Free</p>
+                  </label>
+                  <label class="flex gap-x-3 py-2 flex-row cursor-pointer">
+                    <input
+                      class="h-5 w-5 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary dark:focus:border-primary"
+                      style="--checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(51,51,51)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');"
+                      type="checkbox" />
+                    <p class="text-[#333333] dark:text-gray-300 text-base font-normal leading-normal">Vegetarian</p>
+                  </label>
+                  <label class="flex gap-x-3 py-2 flex-row cursor-pointer">
+                    <input
+                      class="h-5 w-5 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary dark:focus:border-primary"
+                      style="--checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(51,51,51)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');"
+                      type="checkbox" />
+                    <p class="text-[#333333] dark:text-gray-300 text-base font-normal leading-normal">Vegan</p>
+                  </label>
+                  <label class="flex gap-x-3 py-2 flex-row cursor-pointer">
+                    <input
+                      class="h-5 w-5 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary dark:focus:border-primary"
+                      style="--checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16%27 fill=%27rgb(51,51,51)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');"
+                      type="checkbox" />
+                    <p class="text-[#333333] dark:text-gray-300 text-base font-normal leading-normal">Spicy</p>
+                  </label>
+                </div>
+              </div>
+              <div class="flex flex-col gap-2">
+                <h3 class="text-[#181611] dark:text-white text-lg font-bold leading-normal">Menu Categories</h3>
+                <div class="flex flex-col gap-1 border-t border-gray-200 dark:border-gray-700 pt-2">
+                  <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 dark:bg-primary/30"
+                    href="#pizzas">
+                    <span class="material-symbols-outlined text-primary">local_pizza</span>
+                    <p class="text-[#181611] dark:text-white text-sm font-bold leading-normal">Pizzas</p>
+                  </a>
+                  <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+                    href="#pastas">
+                    <span class="material-symbols-outlined text-[#333333] dark:text-gray-400">restaurant</span>
+                    <p class="text-[#333333] dark:text-gray-300 text-sm font-medium leading-normal">Pastas</p>
+                  </a>
+                  <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+                    href="#salads">
+                    <span class="material-symbols-outlined text-[#333333] dark:text-gray-400">spa</span>
+                    <p class="text-[#333333] dark:text-gray-300 text-sm font-medium leading-normal">Salads</p>
+                  </a>
+                  <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+                    href="#desserts">
+                    <span class="material-symbols-outlined text-[#333333] dark:text-gray-400">cake</span>
+                    <p class="text-[#333333] dark:text-gray-300 text-sm font-medium leading-normal">Desserts</p>
+                  </a>
+                  <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+                    href="#drinks">
+                    <span class="material-symbols-outlined text-[#333333] dark:text-gray-400">local_bar</span>
+                    <p class="text-[#333333] dark:text-gray-300 text-sm font-medium leading-normal">Drinks</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+        </aside>
+        <div class="flex-1">
+          <div class="flex flex-col gap-8">
+            <div class="flex flex-wrap justify-between gap-4 p-4 items-center">
+              <h1 class="text-[#181611] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">
+                Our Menu</h1>
+              <div class="flex items-center gap-2 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg">
+                <button id="visual-btn"
+                  class="px-3 py-1.5 rounded-md text-sm font-bold text-[#181611] dark:text-white bg-white dark:bg-gray-700 shadow-sm">
+                  <span class="material-symbols-outlined text-lg inline-block align-middle mr-1.5">grid_view</span>
+                  Visual
+                </button>
+                <button id="text-btn"
+                  class="px-3 py-1.5 rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-[#181611] dark:hover:text-white">
+                  <span class="material-symbols-outlined text-lg inline-block align-middle mr-1.5">notes</span>
+                  Plain Text
+                </button>
+              </div>
 
-</div>
-<div id="visual-menu">
-<section id="pizzas">
-<h2 class="text-[#181611] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Pizzas</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-<div class="flex flex-col bg-white dark:bg-background-dark rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg transition-shadow duration-300">
-<img class="w-full h-48 object-cover" data-alt="A delicious looking Margherita pizza on a wooden board." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADSksfeGRXmpjY1Z54mW0SSliuiHuZynJNJsPvD-ONxyK07uhY6tXacSbDobCLcuQn04NBJ55z5KSIsEQ55oju-ROkm62z9RORoY8KbIau_hrV82DLazlQ5kEoX2HILHEvhd4H6-Scl4EZFw8v2IYcnDahh5kJ0X48Gxvm_hW1upAEkpKGbIwNeTQhJCsUrteHmweT-fymwtHUduow84OnL733M8FWdnZ8KpDRejabXarz3AqR5tUS5LP5zujejZHI77tdRKUOeww"/>
-<div class="p-4 flex flex-col flex-grow">
-<div class="flex justify-between items-start">
-<h3 class="text-lg font-bold text-[#181611] dark:text-white">The Gouda Life</h3>
-<div class="flex items-center gap-2 text-green-600" title="Vegetarian">
-<span class="material-symbols-outlined text-xl">eco</span>
-</div>
-</div>
-<p class="text-sm text-gray-600 dark:text-gray-400 mt-2 flex-grow">Creamy gouda, mozzarella, fresh basil, and a drizzle of olive oil on our signature tomato base.</p>
-<div class="flex justify-between items-center mt-4">
-<p class="text-lg font-bold text-primary">$14.99</p>
-<button data-not-implemented class="flex cursor-pointer items-center justify-center rounded-lg h-9 bg-primary text-[#181611] gap-2 text-sm font-bold px-4">Add to Cart</button>
-</div>
-</div>
-</div>
-<div class="flex flex-col bg-white dark:bg-background-dark rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg transition-shadow duration-300">
-<img class="w-full h-48 object-cover" data-alt="A spicy pepperoni pizza with chili flakes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBUcFL8N4rFElp_NXC_oB5dLy3E1MpX68I9GZJmorOg8HZFv3qxinnJLJWZLzH1x2k_FM_d4OhPcu1_XOo4AvQmGbrn_rbyFaWrpfsqD2_-3942I_Cnx4mar6Ldz6-E8Ryx30Oq6VVqEBqedj-geQVN7K8wI9cYXK-Pczwwot-0QXkc2ltGsPeyexAIgrfIyXaAMiTvZZbXCn2KC1bUrkVt8XOsL5n7cenR6ZPmuW-156TDvxI8gE_j2JWd3o7GVBETUEslyFbjXM"/>
-<div class="p-4 flex flex-col flex-grow">
-<div class="flex justify-between items-start">
-<h3 class="text-lg font-bold text-[#181611] dark:text-white">Spicy Pepperoni</h3>
-<div class="flex items-center gap-2 text-red-500" title="Spicy">
-<span class="material-symbols-outlined text-xl">local_fire_department</span>
-</div>
-</div>
-<p class="text-sm text-gray-600 dark:text-gray-400 mt-2 flex-grow">Classic pepperoni with a kick. Topped with jalapenos and red chili flakes.</p>
-<div class="flex justify-between items-center mt-4">
-<p class="text-lg font-bold text-primary">$16.50</p>
-<button data-not-implemented class="flex cursor-pointer items-center justify-center rounded-lg h-9 bg-primary text-[#181611] gap-2 text-sm font-bold px-4">Add to Cart</button>
-</div>
-</div>
-</div>
-<div class="flex flex-col bg-white dark:bg-background-dark rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg transition-shadow duration-300">
-<img class="w-full h-48 object-cover" data-alt="A gluten-free pizza with various vegetable toppings." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH4mXiRW_DS_1IJUMmrlwm2j9NF-AllPDKf_uq0x-xmLDvh6PfA_YNujbkrf47nDvSFmpxzsuKtsTAc7GC0tDfAZtpDNCn5R5lYigqMsIv_0AI4mgA-8LlLBWYJo0OEKH9dpECa4wJ_yZsc8ruJK4a6RHkU8sFFj6kf8CR2c8SWMyTktwFEjoKASxBUKaCbbg5PmcrqARdL-p5bukqVhiVmD-8r5JGwflpE1-jpf7L2lB9sv8lA9g6cmK3_odrPt6Tc2cYXi_Wg70"/>
-<div class="p-4 flex flex-col flex-grow">
-<div class="flex justify-between items-start">
-<h3 class="text-lg font-bold text-[#181611] dark:text-white">Veggie Delight (GF)</h3>
-<div class="flex items-center gap-2 text-blue-500" title="Gluten-Free">
-<span class="material-symbols-outlined text-xl">grain</span>
-</div>
-</div>
-<p class="text-sm text-gray-600 dark:text-gray-400 mt-2 flex-grow">A vibrant mix of bell peppers, onions, olives, and mushrooms on a crispy gluten-free crust.</p>
-<div class="flex justify-between items-center mt-4">
-<p class="text-lg font-bold text-primary">$17.00</p>
-<button data-not-implemented class="flex cursor-pointer items-center justify-center rounded-lg h-9 bg-primary text-[#181611] gap-2 text-sm font-bold px-4">Add to Cart</button>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="pastas">
-<h2 class="text-[#181611] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Pastas</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-<div class="flex flex-col bg-white dark:bg-background-dark rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg transition-shadow duration-300">
-<img class="w-full h-48 object-cover" data-alt="A bowl of creamy Alfredo pasta." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjzCX0MbfUP0kaPAVyjepi0xA9VrFnSX9gUED-ApwX0EQv9xwbSyPzQdWY9U_B5XhLCdy0knogzuvp3DX44fpRCWPgM0TO5ZFt93TUQYIDVoSp_FqYa_Zn-dR1s26e28s5YgFcnYWAaHzMHtBJu-bMT7_2QLmIZDPTDHinl5IAZf6995aSZDh726O7fPWeUzP7fy-4TbY-BD-5GcC4SU7uBRpV_OQ0ZPqBp2MNH9ehN6_DPlD3_3cwE9nbCq4gFe6BHWPttnAWGmg"/>
-<div class="p-4 flex flex-col flex-grow">
-<h3 class="text-lg font-bold text-[#181611] dark:text-white">Creamy Fettuccine Alfredo</h3>
-<p class="text-sm text-gray-600 dark:text-gray-400 mt-2 flex-grow">Rich and creamy sauce with parmesan cheese and a hint of garlic, served over fettuccine.</p>
-<div class="flex justify-between items-center mt-4">
-<p class="text-lg font-bold text-primary">$15.50</p>
-<button data-not-implemented class="flex cursor-pointer items-center justify-center rounded-lg h-9 bg-primary text-[#181611] gap-2 text-sm font-bold px-4">Add to Cart</button>
-</div>
-</div>
-</div>
-</div>
-</section>
-</div>
-<div class="hidden" id="text-menu">
-<section id="pizzas-text">
-<h2 class="text-[#181611] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 border-b border-gray-200 dark:border-gray-700">Pizzas</h2>
-<div class="divide-y divide-gray-200 dark:divide-gray-700">
-<div class="grid grid-cols-[1fr_auto] items-center gap-x-4 gap-y-2 p-4">
-<div class="flex flex-col">
-<h3 class="text-lg font-bold text-[#181611] dark:text-white">The Gouda Life <span class="text-sm font-medium text-green-600">(Vegetarian)</span></h3>
-<p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Creamy gouda, mozzarella, fresh basil, and a drizzle of olive oil on our signature tomato base.</p>
-</div>
-<div class="flex items-center gap-4">
-<p class="text-lg font-bold text-primary">$14.99</p>
-<button data-not-implemented class="flex cursor-pointer items-center justify-center rounded-lg h-9 bg-primary text-[#181611] gap-2 text-sm font-bold px-4">Add to Cart</button>
-</div>
-</div>
-<div class="grid grid-cols-[1fr_auto] items-center gap-x-4 gap-y-2 p-4">
-<div class="flex flex-col">
-<h3 class="text-lg font-bold text-[#181611] dark:text-white">Spicy Pepperoni <span class="text-sm font-medium text-red-500">(Spicy)</span></h3>
-<p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Classic pepperoni with a kick. Topped with jalapenos and red chili flakes.</p>
-</div>
-<div class="flex items-center gap-4">
-<p class="text-lg font-bold text-primary">$16.50</p>
-<button data-not-implemented class="flex cursor-pointer items-center justify-center rounded-lg h-9 bg-primary text-[#181611] gap-2 text-sm font-bold px-4">Add to Cart</button>
-</div>
-</div>
-<div class="grid grid-cols-[1fr_auto] items-center gap-x-4 gap-y-2 p-4">
-<div class="flex flex-col">
-<h3 class="text-lg font-bold text-[#181611] dark:text-white">Veggie Delight (GF) <span class="text-sm font-medium text-blue-500">(Gluten-Free)</span></h3>
-<p class="text-sm text-gray-600 dark:text-gray-400 mt-1">A vibrant mix of bell peppers, onions, olives, and mushrooms on a crispy gluten-free crust.</p>
-</div>
-<div class="flex items-center gap-4">
-<p class="text-lg font-bold text-primary">$17.00</p>
-<button data-not-implemented class="flex cursor-pointer items-center justify-center rounded-lg h-9 bg-primary text-[#181611] gap-2 text-sm font-bold px-4">Add to Cart</button>
-</div>
-</div>
-</div>
-</section>
-<section class="mt-8" id="pastas-text">
-<h2 class="text-[#181611] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 border-b border-gray-200 dark:border-gray-700">Pastas</h2>
-<div class="divide-y divide-gray-200 dark:divide-gray-700">
-<div class="grid grid-cols-[1fr_auto] items-center gap-x-4 gap-y-2 p-4">
-<div class="flex flex-col">
-<h3 class="text-lg font-bold text-[#181611] dark:text-white">Creamy Fettuccine Alfredo</h3>
-<p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Rich and creamy sauce with parmesan cheese and a hint of garlic, served over fettuccine.</p>
-</div>
-<div class="flex items-center gap-4">
-<p class="text-lg font-bold text-primary">$15.50</p>
-<button data-not-implemented class="flex cursor-pointer items-center justify-center rounded-lg h-9 bg-primary text-[#181611] gap-2 text-sm font-bold px-4">Add to Cart</button>
-</div>
-</div>
-</div>
-</section>
-</div>
-<div class="hidden text-center py-16 px-6 bg-gray-50 dark:bg-gray-800/50 rounded-xl">
-<span class="material-symbols-outlined text-6xl text-gray-400 dark:text-gray-600">search_off</span>
-<h3 class="mt-4 text-xl font-bold text-[#181611] dark:text-white">No Dishes Found</h3>
-<p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Try adjusting your filters to find what you're looking for.</p>
-</div>
-<section id="salads"></section>
-<section id="desserts"></section>
-<section id="drinks"></section>
-</div>
-</div>
-</div>
-</main>
-<div class="fixed bottom-6 right-6 z-50 group">
-<button aria-expanded="false" aria-haspopup="true" aria-label="Accessibility Settings" class="flex items-center justify-center w-14 h-14 bg-primary text-[#181611] rounded-full shadow-lg hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark">
-<span class="material-symbols-outlined text-3xl">accessibility_new</span>
-</button>
-<div aria-labelledby="accessibility-heading" class="absolute bottom-full right-0 mb-3 w-72 bg-white dark:bg-gray-800 rounded-lg shadow-2xl border border-gray-200 dark:border-gray-700 p-4 opacity-0 invisible group-focus-within:opacity-100 group-focus-within:visible transition-opacity duration-300" role="dialog">
-<div class="flex justify-between items-center mb-4">
-<h3 class="text-lg font-bold text-[#181611] dark:text-white" id="accessibility-heading">Accessibility Settings</h3>
-<button aria-label="Close accessibility menu" class="text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white">
-<span class="material-symbols-outlined">close</span>
-</button>
-</div>
-<div class="space-y-4">
-<div>
-<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="font-size">Font Size</label>
-<div class="flex items-center gap-2">
-<span class="text-xs font-semibold text-gray-500 dark:text-gray-400">A</span>
-<input aria-label="Adjust font size" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 accent-primary" id="font-size" max="120" min="80" step="10" type="range" value="100"/>
-<span class="text-xl font-semibold text-gray-500 dark:text-gray-400">A</span>
-</div>
-</div>
-<div>
-<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" id="foreground-color-label">Foreground Color</label>
-<div aria-labelledby="foreground-color-label" class="grid grid-cols-4 gap-2" role="group">
-<button aria-label="Set foreground to default color" class="w-10 h-10 rounded-full bg-[#333333] border-2 border-primary ring-2 ring-primary ring-offset-2 ring-offset-white dark:ring-offset-gray-800"></button>
-<button aria-label="Set foreground to white" class="w-10 h-10 rounded-full bg-white border-2 border-gray-300 dark:border-gray-600"></button>
-<button aria-label="Set foreground to black" class="w-10 h-10 rounded-full bg-black border-2 border-gray-300 dark:border-gray-600"></button>
-<button aria-label="Set foreground to blue" class="w-10 h-10 rounded-full bg-[#0000ff] border-2 border-gray-300 dark:border-gray-600"></button>
-</div>
-</div>
-<div>
-<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" id="background-color-label">Background Color</label>
-<div aria-labelledby="background-color-label" class="grid grid-cols-4 gap-2" role="group">
-<button aria-label="Set background to default color" class="w-10 h-10 rounded-full bg-[#f8f8f5] border-2 border-primary ring-2 ring-primary ring-offset-2 ring-offset-white dark:ring-offset-gray-800"></button>
-<button aria-label="Set background to white" class="w-10 h-10 rounded-full bg-white border-2 border-gray-300 dark:border-gray-600"></button>
-<button aria-label="Set background to black" class="w-10 h-10 rounded-full bg-black border-2 border-gray-300 dark:border-gray-600"></button>
-<button aria-label="Set background to light yellow" class="w-10 h-10 rounded-full bg-[#fdf0d5] border-2 border-gray-300 dark:border-gray-600"></button>
-</div>
-</div>
-</div>
-<div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 text-right">
-<button class="px-4 py-2 text-sm font-bold text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 rounded-md hover:bg-gray-200 dark:hover:bg-gray-600">Reset</button>
-</div>
-</div>
-</div>
-</div>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
+            </div>
+
+            <div id="visual-menu">
+              <section id="pizzas">
+                <h2
+                  class="text-[#181611] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">
+                  Pizzas</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                  <div
+                    class="flex flex-col bg-white dark:bg-background-dark rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg transition-shadow duration-300">
+                    <img class="w-full h-48 object-cover"
+                      data-alt="A delicious looking Margherita pizza on a wooden board."
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuADSksfeGRXmpjY1Z54mW0SSliuiHuZynJNJsPvD-ONxyK07uhY6tXacSbDobCLcuQn04NBJ55z5KSIsEQ55oju-ROkm62z9RORoY8KbIau_hrV82DLazlQ5kEoX2HILHEvhd4H6-Scl4EZFw8v2IYcnDahh5kJ0X48Gxvm_hW1upAEkpKGbIwNeTQhJCsUrteHmweT-fymwtHUduow84OnL733M8FWdnZ8KpDRejabXarz3AqR5tUS5LP5zujejZHI77tdRKUOeww" />
+                    <div class="p-4 flex flex-col flex-grow">
+                      <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-[#181611] dark:text-white">The Gouda Life</h3>
+                        <div class="flex items-center gap-2 text-green-600" title="Vegetarian">
+                          <span class="material-symbols-outlined text-xl">eco</span>
+                        </div>
+                      </div>
+                      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 flex-grow">Creamy gouda, mozzarella, fresh
+                        basil, and a drizzle of olive oil on our signature tomato base.</p>
+                      <div class="flex justify-between items-center mt-4">
+                        <p class="text-lg font-bold text-primary">$14.99</p>
+                        <button data-not-implemented
+                          class="flex cursor-pointer items-center justify-center rounded-lg h-9 bg-primary text-[#181611] gap-2 text-sm font-bold px-4">Add
+                          to Cart</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-col bg-white dark:bg-background-dark rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg transition-shadow duration-300">
+                    <img class="w-full h-48 object-cover" data-alt="A spicy pepperoni pizza with chili flakes."
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBUcFL8N4rFElp_NXC_oB5dLy3E1MpX68I9GZJmorOg8HZFv3qxinnJLJWZLzH1x2k_FM_d4OhPcu1_XOo4AvQmGbrn_rbyFaWrpfsqD2_-3942I_Cnx4mar6Ldz6-E8Ryx30Oq6VVqEBqedj-geQVN7K8wI9cYXK-Pczwwot-0QXkc2ltGsPeyexAIgrfIyXaAMiTvZZbXCn2KC1bUrkVt8XOsL5n7cenR6ZPmuW-156TDvxI8gE_j2JWd3o7GVBETUEslyFbjXM" />
+                    <div class="p-4 flex flex-col flex-grow">
+                      <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-[#181611] dark:text-white">Spicy Pepperoni</h3>
+                        <div class="flex items-center gap-2 text-red-500" title="Spicy">
+                          <span class="material-symbols-outlined text-xl">local_fire_department</span>
+                        </div>
+                      </div>
+                      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 flex-grow">Classic pepperoni with a kick.
+                        Topped with jalapenos and red chili flakes.</p>
+                      <div class="flex justify-between items-center mt-4">
+                        <p class="text-lg font-bold text-primary">$16.50</p>
+                        <button data-not-implemented
+                          class="flex cursor-pointer items-center justify-center rounded-lg h-9 bg-primary text-[#181611] gap-2 text-sm font-bold px-4">Add
+                          to Cart</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-col bg-white dark:bg-background-dark rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg transition-shadow duration-300">
+                    <img class="w-full h-48 object-cover"
+                      data-alt="A gluten-free pizza with various vegetable toppings."
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH4mXiRW_DS_1IJUMmrlwm2j9NF-AllPDKf_uq0x-xmLDvh6PfA_YNujbkrf47nDvSFmpxzsuKtsTAc7GC0tDfAZtpDNCn5R5lYigqMsIv_0AI4mgA-8LlLBWYJo0OEKH9dpECa4wJ_yZsc8ruJK4a6RHkU8sFFj6kf8CR2c8SWMyTktwFEjoKASxBUKaCbbg5PmcrqARdL-p5bukqVhiVmD-8r5JGwflpE1-jpf7L2lB9sv8lA9g6cmK3_odrPt6Tc2cYXi_Wg70" />
+                    <div class="p-4 flex flex-col flex-grow">
+                      <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-[#181611] dark:text-white">Veggie Delight (GF)</h3>
+                        <div class="flex items-center gap-2 text-blue-500" title="Gluten-Free">
+                          <span class="material-symbols-outlined text-xl">grain</span>
+                        </div>
+                      </div>
+                      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 flex-grow">A vibrant mix of bell peppers,
+                        onions, olives, and mushrooms on a crispy gluten-free crust.</p>
+                      <div class="flex justify-between items-center mt-4">
+                        <p class="text-lg font-bold text-primary">$17.00</p>
+                        <button data-not-implemented
+                          class="flex cursor-pointer items-center justify-center rounded-lg h-9 bg-primary text-[#181611] gap-2 text-sm font-bold px-4">Add
+                          to Cart</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section id="pastas">
+                <h2
+                  class="text-[#181611] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">
+                  Pastas</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                  <div
+                    class="flex flex-col bg-white dark:bg-background-dark rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg transition-shadow duration-300">
+                    <img class="w-full h-48 object-cover" data-alt="A bowl of creamy Alfredo pasta."
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjzCX0MbfUP0kaPAVyjepi0xA9VrFnSX9gUED-ApwX0EQv9xwbSyPzQdWY9U_B5XhLCdy0knogzuvp3DX44fpRCWPgM0TO5ZFt93TUQYIDVoSp_FqYa_Zn-dR1s26e28s5YgFcnYWAaHzMHtBJu-bMT7_2QLmIZDPTDHinl5IAZf6995aSZDh726O7fPWeUzP7fy-4TbY-BD-5GcC4SU7uBRpV_OQ0ZPqBp2MNH9ehN6_DPlD3_3cwE9nbCq4gFe6BHWPttnAWGmg" />
+                    <div class="p-4 flex flex-col flex-grow">
+                      <h3 class="text-lg font-bold text-[#181611] dark:text-white">Creamy Fettuccine Alfredo</h3>
+                      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 flex-grow">Rich and creamy sauce with
+                        parmesan cheese and a hint of garlic, served over fettuccine.</p>
+                      <div class="flex justify-between items-center mt-4">
+                        <p class="text-lg font-bold text-primary">$15.50</p>
+                        <button data-not-implemented
+                          class="flex cursor-pointer items-center justify-center rounded-lg h-9 bg-primary text-[#181611] gap-2 text-sm font-bold px-4">Add
+                          to Cart</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <div class="hidden max-w-3xl mx-auto w-full" id="text-menu">
+              <section id="pizzas-text" aria-labelledby="pizzas-heading">
+                <h2 id="pizzas-heading"
+                  class="text-[#181611] dark:text-white text-2xl font-bold px-4 pb-4 pt-6 border-b border-gray-200 dark:border-gray-700">
+                  Pizzas
+                </h2>
+                <ul class="divide-y divide-gray-200 dark:divide-gray-700">
+                  <li class="p-6">
+                    <article>
+                      <header class="flex flex-col mb-2">
+                        <h3 class="text-xl font-bold text-[#181611] dark:text-white">The Gouda Life</h3>
+
+                        <span class="text-sm font-medium text-green-600 mt-1" aria-hidden="true">(Vegetarian)</span>
+                        <span class="sr-only">Dietary Information: Vegetarian.</span>
+                      </header>
+
+                      <div class="mb-4">
+                        <span class="sr-only">Description: </span>
+                        <p class="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+                          Creamy gouda, mozzarella, fresh basil, and a drizzle of olive oil on our signature tomato
+                          base.
+                        </p>
+                      </div>
+
+                      <footer class="flex items-center justify-between mt-4">
+                        <div class="text-lg font-bold text-primary">
+                          <span class="sr-only">Price: </span>$14.99
+                        </div>
+                        <button data-not-implemented aria-label="Add The Gouda Life to cart"
+                          class="bg-primary/10 hover:bg-primary/20 text-primary border border-primary/50 font-bold py-2 px-6 rounded-lg transition-colors">
+                          Add to Cart
+                        </button>
+                      </footer>
+                    </article>
+                  </li>
+
+                  <li class="p-6">
+                    <article>
+                      <header class="flex flex-col mb-2">
+                        <h3 class="text-xl font-bold text-[#181611] dark:text-white">Spicy Pepperoni</h3>
+                        <span class="text-sm font-medium text-red-500 mt-1" aria-hidden="true">(Spicy)</span>
+                        <span class="sr-only">Dietary Information: Spicy.</span>
+                      </header>
+
+                      <div class="mb-4">
+                        <span class="sr-only">Description: </span>
+                        <p class="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+                          Classic pepperoni with a kick. Topped with jalapenos and red chili flakes.
+                        </p>
+                      </div>
+
+                      <footer class="flex items-center justify-between mt-4">
+                        <div class="text-lg font-bold text-primary">
+                          <span class="sr-only">Price: </span>$16.50
+                        </div>
+                        <button data-not-implemented aria-label="Add Spicy Pepperoni to cart"
+                          class="bg-primary/10 hover:bg-primary/20 text-primary border border-primary/50 font-bold py-2 px-6 rounded-lg transition-colors">
+                          Add to Cart
+                        </button>
+                      </footer>
+                    </article>
+                  </li>
+
+                  <li class="p-6">
+                    <article>
+                      <header class="flex flex-col mb-2">
+                        <h3 class="text-xl font-bold text-[#181611] dark:text-white">Veggie Delight</h3>
+                        <span class="text-sm font-medium text-blue-500 mt-1" aria-hidden="true">(GF)</span>
+                        <span class="sr-only">Dietary Information: Gluten Free.</span>
+                      </header>
+
+                      <div class="mb-4">
+                        <span class="sr-only">Description: </span>
+                        <p class="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+                          A vibrant mix of bell peppers, onions, olives, and mushrooms on a crispy gluten-free crust.
+                        </p>
+                      </div>
+
+                      <footer class="flex items-center justify-between mt-4">
+                        <div class="text-lg font-bold text-primary">
+                          <span class="sr-only">Price: </span>$17.00
+                        </div>
+                        <button data-not-implemented aria-label="Add Veggie Delight to cart"
+                          class="bg-primary/10 hover:bg-primary/20 text-primary border border-primary/50 font-bold py-2 px-6 rounded-lg transition-colors">
+                          Add to Cart
+                        </button>
+                      </footer>
+                    </article>
+                  </li>
+                </ul>
+              </section>
+
+              <section id="pastas-text" class="mt-8" aria-labelledby="pastas-heading">
+                <h2 id="pastas-heading"
+                  class="text-[#181611] dark:text-white text-2xl font-bold px-4 pb-4 pt-6 border-b border-gray-200 dark:border-gray-700">
+                  Pastas
+                </h2>
+                <ul class="divide-y divide-gray-200 dark:divide-gray-700">
+                  <li class="p-6">
+                    <article>
+                      <header class="flex flex-col mb-2">
+                        <h3 class="text-xl font-bold text-[#181611] dark:text-white">Creamy Fettuccine Alfredo</h3>
+                      </header>
+
+                      <div class="mb-4">
+                        <span class="sr-only">Description: </span>
+                        <p class="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+                          Rich and creamy sauce with parmesan cheese and a hint of garlic, served over fettuccine.
+                        </p>
+                      </div>
+
+                      <footer class="flex items-center justify-between mt-4">
+                        <div class="text-lg font-bold text-primary">
+                          <span class="sr-only">Price: </span>$15.50
+                        </div>
+                        <button data-not-implemented aria-label="Add Creamy Fettuccine Alfredo to cart"
+                          class="bg-primary/10 hover:bg-primary/20 text-primary border border-primary/50 font-bold py-2 px-6 rounded-lg transition-colors">
+                          Add to Cart
+                        </button>
+                      </footer>
+                    </article>
+                  </li>
+                </ul>
+              </section>
+            </div>
+
+            <div class="hidden text-center py-16 px-6 bg-gray-50 dark:bg-gray-800/50 rounded-xl">
+              <span class="material-symbols-outlined text-6xl text-gray-400 dark:text-gray-600">search_off</span>
+              <h3 class="mt-4 text-xl font-bold text-[#181611] dark:text-white">No Dishes Found</h3>
+              <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Try adjusting your filters to find what you're
+                looking for.</p>
+            </div>
+            <section id="salads"></section>
+            <section id="desserts"></section>
+            <section id="drinks"></section>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="fixed bottom-4 right-4 z-50">
+      <button id="accessibility-trigger" type="button" aria-controls="accessibility-menu" aria-expanded="false"
+        aria-label="Open Accessibility Options"
+        class="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-lg hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-background-light">
+        <span class="material-symbols-outlined !text-3xl text-[#181611]">accessibility_new</span>
+        <span class="sr-only">Open Accessibility Menu</span>
+      </button>
+
+      <div id="accessibility-menu" role="dialog" aria-labelledby="accessibility-heading" aria-modal="true"
+        class="hidden mb-2 w-72 origin-bottom-right rounded-lg border border-border-light bg-background-light p-4 shadow-xl transition-all duration-200 ease-in-out dark:border-border-dark dark:bg-background-dark absolute bottom-16 right-0">
+
+        <div class="border-b border-border-light pb-2 mb-4 dark:border-border-dark">
+          <h3 id="accessibility-heading" class="text-lg font-bold text-text-light dark:text-text-dark">
+            Accessibility Settings
+          </h3>
+        </div>
+
+        <div class="p-4 space-y-4 h-80 overflow-y-auto pr-1 custom-scrollbar">
+          <div class="space-y-2">
+            <label class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark" for="font-size">Text
+              Size</label>
+            <div class="flex items-center gap-2">
+              <span class="text-xs text-text-muted-light dark:text-text-muted-dark">A</span>
+              <input id="font-size" type="range" min="100" max="180" step="10" value="100"
+                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary" />
+              <span class="text-lg text-text-muted-light dark:text-text-muted-dark">A</span>
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Contrast Theme</p>
+            <div class="grid grid-cols-4 gap-2">
+              <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-white" data-contrast="black-on-white"
+                data-fg="#000000" data-bg="#ffffff" title="Black on White"
+                aria-label="Black text on White background"></button>
+
+              <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-black" data-contrast="white-on-black"
+                data-fg="#ffffff" data-bg="#000000" title="White on Black"
+                aria-label="White text on Black background"></button>
+
+              <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-yellow-400" data-contrast="yellow-on-blue"
+                data-fg="#facc15" data-bg="#020617" title="Yellow on Blue"
+                aria-label="Yellow text on Dark Blue background"></button>
+
+              <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-blue-600" data-contrast="blue-on-white"
+                data-fg="#2563eb" data-bg="#ffffff" title="Blue on White"
+                aria-label="Blue text on White background"></button>
+            </div>
+          </div>
+
+          <div class="space-y-3 pt-2 border-t border-border-light dark:border-border-dark">
+
+            <div class="flex items-center justify-between">
+              <p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Grayscale</p>
+              <label class="inline-flex items-center gap-2 cursor-pointer">
+                <input id="grayscale-toggle" type="checkbox"
+                  class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
+                <span class="text-xs text-text-muted-light dark:text-text-muted-dark">On</span>
+              </label>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Text Spacing</p>
+              <label class="inline-flex items-center gap-2 cursor-pointer">
+                <input id="spacing-toggle" type="checkbox"
+                  class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
+                <span class="text-xs text-text-muted-light dark:text-text-muted-dark">On</span>
+              </label>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Dyslexia Font</p>
+              <label class="inline-flex items-center gap-2 cursor-pointer">
+                <input id="dyslexia-toggle" type="checkbox"
+                  class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
+                <span class="text-xs text-text-muted-light dark:text-text-muted-dark">On</span>
+              </label>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Big Cursor</p>
+              <label class="inline-flex items-center gap-2 cursor-pointer">
+                <input id="cursor-toggle" type="checkbox"
+                  class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
+                <span class="text-xs text-text-muted-light dark:text-text-muted-dark">On</span>
+              </label>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Highlight Links</p>
+              <label class="inline-flex items-center gap-2 cursor-pointer">
+                <input id="links-toggle" type="checkbox"
+                  class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
+                <span class="text-xs text-text-muted-light dark:text-text-muted-dark">On</span>
+              </label>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Reading Guide</p>
+              <label class="inline-flex items-center gap-2 cursor-pointer">
+                <input id="reading-guide-toggle" type="checkbox"
+                  class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
+                <span class="text-xs text-text-muted-light dark:text-text-muted-dark">On</span>
+              </label>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Pause Animations</p>
+              <label class="inline-flex items-center gap-2 cursor-pointer">
+                <input id="animation-toggle" type="checkbox"
+                  class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
+                <span class="text-xs text-text-muted-light dark:text-text-muted-dark">On</span>
+              </label>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="mt-4 border-t border-border-light pt-3 dark:border-border-dark">
+          <button id="a11y-reset"
+            class="w-full text-center text-sm font-bold text-primary hover:text-primary-dark hover:underline">
+            Reset Settings
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
         const visualBtn = document.getElementById('visual-btn');
         const textBtn = document.getElementById('text-btn');
         const visualMenu = document.getElementById('visual-menu');
         const textMenu = document.getElementById('text-menu');
 
-            function setActiveButton(activeBtn, inactiveBtn) {
-                activeBtn.classList.add('font-bold', 'text-[#181611]', 'dark:text-white', 'bg-white', 'dark:bg-gray-700', 'shadow-sm');
-                activeBtn.classList.remove('font-medium', 'text-gray-500', 'dark:text-gray-400');
+        function setActiveButton(activeBtn, inactiveBtn) {
+          activeBtn.classList.add('font-bold', 'text-[#181611]', 'dark:text-white', 'bg-white', 'dark:bg-gray-700', 'shadow-sm');
+          activeBtn.classList.remove('font-medium', 'text-gray-500', 'dark:text-gray-400');
 
-                inactiveBtn.classList.add('font-medium', 'text-gray-500', 'dark:text-gray-400');
-                inactiveBtn.classList.remove('font-bold', 'text-[#181611]', 'dark:text-white', 'bg-white', 'dark:bg-gray-700', 'shadow-sm');
-            }
+          inactiveBtn.classList.add('font-medium', 'text-gray-500', 'dark:text-gray-400');
+          inactiveBtn.classList.remove('font-bold', 'text-[#181611]', 'dark:text-white', 'bg-white', 'dark:bg-gray-700', 'shadow-sm');
+        }
 
-            textBtn.addEventListener('click', () => {
-                visualMenu.classList.add('hidden');
-                textMenu.classList.remove('hidden');
-                setActiveButton(textBtn, visualBtn);
-            });
+        textBtn.addEventListener('click', () => {
+          visualMenu.classList.add('hidden');
+          textMenu.classList.remove('hidden');
+          setActiveButton(textBtn, visualBtn);
+        });
 
         visualBtn.addEventListener('click', () => {
-            textMenu.classList.add('hidden');
-            visualMenu.classList.remove('hidden');
-            setActiveButton(visualBtn, textBtn);
+          textMenu.classList.add('hidden');
+          visualMenu.classList.remove('hidden');
+          setActiveButton(visualBtn, textBtn);
         });
-    });
-</script>
+      });
+    </script>
 
 
 
-<script>
-// popup.js inline - temporal para debugging
-(function() {
-  console.log('✅ Script inline cargado');
-  
-  const style = document.createElement('style');
-  style.textContent = `
+    <script>
+      // Modal for "Not Implemented" links
+      (function () {
+        const style = document.createElement('style');
+        style.textContent = `
     .__notimpl_modal_backdrop {
       position: fixed;
       inset: 0;
@@ -387,46 +698,210 @@
       background: #D97706;
     }
   `;
-  document.head.appendChild(style);
+        document.head.appendChild(style);
 
-  function showModal() {
-    console.log('🎉 Mostrando modal');
-    if (document.querySelector('.__notimpl_modal_backdrop')) return;
-    
-    const backdrop = document.createElement('div');
-    backdrop.className = '__notimpl_modal_backdrop';
-    
-    const modal = document.createElement('div');
-    modal.className = '__notimpl_modal';
-    modal.innerHTML = '<h2>Not implemented yet!</h2><p>Esta funcionalidad aún no está implementada.</p>';
-    
-    const closeBtn = document.createElement('button');
-    closeBtn.textContent = 'Cerrar';
-    closeBtn.addEventListener('click', () => backdrop.remove());
-    
-    modal.appendChild(closeBtn);
-    backdrop.appendChild(modal);
-    backdrop.addEventListener('click', (e) => {
-      if (e.target === backdrop) backdrop.remove();
-    });
-    
-    document.body.appendChild(backdrop);
-  }
+        function showModal() {
+          if (document.querySelector('.__notimpl_modal_backdrop')) return;
 
-  document.addEventListener('click', function(e) {
-    console.log('👆 Clic en:', e.target.tagName);
-    const target = e.target.closest('[data-not-implemented]');
-    console.log('🔍 Target:', target);
-    
-    if (target) {
-      console.log('✋ Previniendo default');
-      e.preventDefault();
-      e.stopPropagation();
-      showModal();
-    }
-  }, true);
+          const backdrop = document.createElement('div');
+          backdrop.className = '__notimpl_modal_backdrop';
 
-  console.log('✅ Event listener configurado');
-})();
-</script>
-</body></html>
+          const modal = document.createElement('div');
+          modal.className = '__notimpl_modal';
+          modal.innerHTML = '<h2>Not implemented yet!</h2><p>Esta funcionalidad aún no está implementada.</p>';
+
+          const closeBtn = document.createElement('button');
+          closeBtn.textContent = 'Cerrar';
+          closeBtn.addEventListener('click', () => backdrop.remove());
+
+          modal.appendChild(closeBtn);
+          backdrop.appendChild(modal);
+          backdrop.addEventListener('click', (e) => {
+            if (e.target === backdrop) backdrop.remove();
+          });
+
+          document.body.appendChild(backdrop);
+        }
+
+        document.addEventListener('click', (e) => {
+          const target = e.target.closest('[data-not-implemented]');
+          if (target) {
+            e.preventDefault();
+            showNotImplemented();
+          }
+        });
+      })();
+
+      // ===== ACCESSIBILITY PANEL LOGIC =====
+      (function () {
+        const KEY_SIZE = 'a11y_font';
+        const KEY_FG = 'a11y_fg';
+        const KEY_BG = 'a11y_bg';
+        const KEY_DYS = 'a11y_dyslexia';
+        const KEY_HC = 'a11y_highcontrast';
+        const KEY_CURSOR = 'a11y_cursor';
+        const KEY_LINKS = 'a11y_links';
+        const KEY_GRAY = 'a11y_grayscale';
+        const KEY_SPACE = 'a11y_spacing';
+        const KEY_GUIDE = 'a11y_guide';
+        const KEY_PAUSE = 'a11y_pause';
+
+        const trigger = document.getElementById('accessibility-trigger');
+        const menu = document.getElementById('accessibility-menu');
+
+        const sizeSlider = document.getElementById('font-size');
+        const dyslexiaToggle = document.getElementById('dyslexia-toggle');
+        const cursorToggle = document.getElementById('cursor-toggle');
+        const linksToggle = document.getElementById('links-toggle');
+        const grayscaleToggle = document.getElementById('grayscale-toggle');
+        const spacingToggle = document.getElementById('spacing-toggle');
+        const guideToggle = document.getElementById('reading-guide-toggle');
+        const animationToggle = document.getElementById('animation-toggle');
+        const resetBtn = document.getElementById('a11y-reset');
+
+        const contrastButtons = document.querySelectorAll('[data-contrast]');
+        const readingGuide = document.getElementById('a11y-reading-guide');
+
+        // --- Reading Guide Follow Logic ---
+        document.addEventListener('mousemove', (e) => {
+          if (document.body.classList.contains('a11y-reading-guide')) {
+            readingGuide.style.top = e.clientY + 'px';
+          }
+        });
+
+        // --- Toggle panel visibility ---
+        if (trigger && menu) {
+          trigger.addEventListener('click', () => {
+            const isHidden = menu.classList.contains('hidden');
+            menu.classList.toggle('hidden', !isHidden);
+            trigger.setAttribute('aria-expanded', String(isHidden));
+          });
+        }
+
+        // --- Apply settings on load ---
+        applyInitialSettings();
+
+        // --- Font size (100–180%) ---
+        if (sizeSlider) {
+          sizeSlider.addEventListener('input', (e) => {
+            const value = e.target.value;
+            document.documentElement.style.fontSize = value + '%';
+            localStorage.setItem(KEY_SIZE, value);
+          });
+        }
+
+        // --- High contrast presets (safe pairs only) ---
+        contrastButtons.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const currentFg = btn.dataset.fg;
+            const currentBg = btn.dataset.bg;
+            setHighContrast(currentFg, currentBg);
+          });
+        });
+
+        function setHighContrast(fg, bg) {
+          if (fg) {
+            document.documentElement.style.setProperty('--a11y-fg', fg);
+            localStorage.setItem(KEY_FG, fg);
+          }
+          if (bg) {
+            document.documentElement.style.setProperty('--a11y-bg', bg);
+            localStorage.setItem(KEY_BG, bg);
+          }
+          document.body.classList.add('a11y-high-contrast', 'a11y-custom-colors');
+          localStorage.setItem(KEY_HC, '1');
+        }
+
+        // --- Generic Toggle Handler ---
+        function setupToggle(el, cls, key) {
+          if (!el) return;
+          el.addEventListener('change', () => {
+            const enabled = el.checked;
+            if (cls === 'a11y-grayscale') {
+              document.documentElement.classList.toggle(cls, enabled);
+            } else {
+              document.body.classList.toggle(cls, enabled);
+            }
+            localStorage.setItem(key, enabled ? '1' : '0');
+          });
+        }
+
+        setupToggle(dyslexiaToggle, 'a11y-dyslexia-font', KEY_DYS);
+        setupToggle(cursorToggle, 'a11y-cursor-big', KEY_CURSOR);
+        setupToggle(linksToggle, 'a11y-highlight-links', KEY_LINKS);
+        setupToggle(grayscaleToggle, 'a11y-grayscale', KEY_GRAY);
+        setupToggle(spacingToggle, 'a11y-text-spacing', KEY_SPACE);
+        setupToggle(guideToggle, 'a11y-reading-guide', KEY_GUIDE);
+        setupToggle(animationToggle, 'a11y-paused', KEY_PAUSE);
+
+        // --- Reset ---
+        if (resetBtn) {
+          resetBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // Reset font size
+            document.documentElement.style.fontSize = '100%';
+            if (sizeSlider) sizeSlider.value = 100;
+
+            // Reset vars
+            document.documentElement.style.removeProperty('--a11y-fg');
+            document.documentElement.style.removeProperty('--a11y-bg');
+
+            // Reset classes
+            document.body.classList.remove(
+              'a11y-high-contrast', 'a11y-custom-colors', 'a11y-dyslexia-font',
+              'a11y-cursor-big', 'a11y-highlight-links', 'a11y-text-spacing',
+              'a11y-reading-guide', 'a11y-paused'
+            );
+            document.documentElement.classList.remove('a11y-grayscale');
+
+            // Reset Inputs
+            [dyslexiaToggle, cursorToggle, linksToggle, grayscaleToggle, spacingToggle, guideToggle, animationToggle].forEach(el => {
+              if (el) el.checked = false;
+            });
+
+            // Clear storage
+            [KEY_SIZE, KEY_FG, KEY_BG, KEY_DYS, KEY_HC, KEY_CURSOR, KEY_LINKS, KEY_GRAY, KEY_SPACE, KEY_GUIDE, KEY_PAUSE].forEach(k => localStorage.removeItem(k));
+          });
+        }
+
+        function applyInitialSettings() {
+          const loadState = (key, cls, input) => {
+            if (localStorage.getItem(key) === '1') {
+              if (cls === 'a11y-grayscale') document.documentElement.classList.add(cls);
+              else document.body.classList.add(cls);
+              if (input) input.checked = true;
+            }
+          };
+
+          // Font Size
+          const savedSize = localStorage.getItem(KEY_SIZE);
+          if (savedSize) {
+            document.documentElement.style.fontSize = savedSize + '%';
+            if (sizeSlider) sizeSlider.value = savedSize;
+          }
+
+          // Contrast
+          const savedFg = localStorage.getItem(KEY_FG);
+          const savedBg = localStorage.getItem(KEY_BG);
+          const savedHC = localStorage.getItem(KEY_HC);
+
+          if (savedFg) document.documentElement.style.setProperty('--a11y-fg', savedFg);
+          if (savedBg) document.documentElement.style.setProperty('--a11y-bg', savedBg);
+          if (savedHC === '1' && (savedFg || savedBg)) {
+            document.body.classList.add('a11y-high-contrast', 'a11y-custom-colors');
+          }
+
+          loadState(KEY_DYS, 'a11y-dyslexia-font', dyslexiaToggle);
+          loadState(KEY_CURSOR, 'a11y-cursor-big', cursorToggle);
+          loadState(KEY_LINKS, 'a11y-highlight-links', linksToggle);
+          loadState(KEY_GRAY, 'a11y-grayscale', grayscaleToggle);
+          loadState(KEY_SPACE, 'a11y-text-spacing', spacingToggle);
+          loadState(KEY_GUIDE, 'a11y-reading-guide', guideToggle);
+          loadState(KEY_PAUSE, 'a11y-paused', animationToggle);
+        }
+      })();
+    </script>
+</body>
+
+</html>

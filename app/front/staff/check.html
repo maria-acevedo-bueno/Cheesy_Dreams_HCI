@@ -1,170 +1,589 @@
 <!DOCTYPE html>
+<html class="" lang="en">
 
-<html class="" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Cheesy Dreams - Staff Time Clock</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script>tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#fac638", "background-light": "#f8f8f5", "background-dark": "#231e0f", charcoal: "#343A40", success: "#28A745", inactive: "#6C757D", "surface-light": "#FFFFFF", "surface-dark": "#1C2431"}, fontFamily: {display: "Work Sans"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Cheesy Dreams - Staff Time Clock</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link href="https://fonts.cdnfonts.com/css/opendyslexic" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#fac638",
+            "background-light": "#f8f8f5",
+            "background-dark": "#231e0f",
+            charcoal: "#343A40",
+            success: "#28A745",
+            inactive: "#6C757D",
+            "surface-light": "#FFFFFF",
+            "surface-dark": "#1C2431"
+          },
+          fontFamily: {
+            display: "Work Sans"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          }
         }
-    </style>
-</head>
-<body class="bg-background-light dark:bg-background-dark font-display text-charcoal dark:text-gray-200">
-<div class="relative flex min-h-screen w-full flex-col">
-<header class="flex items-center justify-between whitespace-nowrap border-b border-gray-200 dark:border-gray-700/50 px-6 sm:px-10 py-4 bg-surface-light dark:bg-surface-dark">
-<div class="flex items-center gap-4 text-charcoal dark:text-white">
-<div class="size-8 text-primary">
-<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-<h2 class="text-xl font-bold">Cheesy Dreams</h2>
-</div>
-<div class="flex flex-1 items-center justify-end gap-4">
-<span class="hidden sm:inline text-right text-charcoal dark:text-gray-300">Welcome, <span class="font-semibold">Jane Doe</span></span>
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="A profile picture of Jane Doe" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD0whqH4fJd8m7npxcG1HGydVVSXWlyIAUzNtudwJp6ihphaIyF6B_aEpeYnuL0boP-WKYaeeSNj-j-uYtR6wqoMA_g_K4bvOFkOGoXln70xsnY5S1ZHoS_Fi26VEYTcaR9GzQ918-_3Pq8LFZBXskmcyWTFR1CIDxhYhZCnrHtkcJfap4P4DpjRGgFWV0f69znVbBeDujqAYSrT1IMpi7j8YsGfoQNc6_fKPmz1IbFubPmA1kSiYDqqji0pGwlaV_LdBA3igBYvtc");'></div>
-</div>
-</header>
-<main class="flex flex-1 flex-col items-center justify-center p-4 text-center">
-<h1 class="text-charcoal dark:text-white tracking-tight text-3xl md:text-4xl font-bold leading-tight px-4 pb-2 pt-6">Tuesday, August 20, 2024 | 09:01:15 AM</h1>
-<div class="flex justify-center items-center gap-2 pb-4 pt-2 px-4">
-<span class="text-gray-600 dark:text-gray-400 text-base font-normal">Status:</span>
-<span class="inline-flex items-center gap-1.5 rounded-full bg-inactive/10 dark:bg-inactive/20 px-3 py-1 text-sm font-semibold text-inactive dark:text-gray-300">
-<span class="size-2 rounded-full bg-inactive"></span>
-                Checked Out
-            </span>
-</div>
-<p class="text-gray-700 dark:text-gray-300 text-lg font-normal leading-normal pb-6 pt-1 px-4 text-center max-w-2xl">Please check in to start your shift.</p>
-<div class="flex flex-col sm:flex-row w-full justify-center gap-4 px-4 py-3 max-w-lg">
-<button class="flex flex-1 min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-14 px-5 bg-primary text-charcoal text-lg font-bold leading-normal transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary/50">
-<a href="/staff/reservations" class="flex flex-1 min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-14 px-5 bg-primary text-charcoal text-lg font-bold leading-normal transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary/50">
-    <span class="material-symbols-outlined">login</span>
-    <span class="truncate">Check In</span>
-</a>
-</button>
-<button class="flex flex-1 min-w-[84px] cursor-not-allowed items-center justify-center gap-2 overflow-hidden rounded-lg h-14 px-5 bg-gray-300 dark:bg-charcoal/50 text-gray-500 dark:text-gray-400 text-lg font-bold leading-normal opacity-60">
-<span class="material-symbols-outlined">logout</span>
-<span class="truncate">Check Out</span>
-</button>
-</div>
-</main>
-<div aria-modal="true" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 hidden" role="dialog">
-<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-2xl p-6 sm:p-8 w-full max-w-md m-4 text-center">
-<div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-success/10 text-success mb-4">
-<span class="material-symbols-outlined !text-4xl">task_alt</span>
-</div>
-<h2 class="text-2xl font-bold text-charcoal dark:text-white mb-2">Checked In!</h2>
-<p class="text-gray-600 dark:text-gray-300 mb-6">You successfully checked in at <strong>9:02:15 AM</strong>. Have a great shift!</p>
-<button class="w-full flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-charcoal text-base font-bold leading-normal tracking-[0.015em] hover:opacity-90 focus:outline-none focus:ring-4 focus:ring-primary/50">
-<span class="truncate">OK</span>
-</button>
-</div>
-</div>
-<div class="fixed bottom-6 right-6 z-40">
-<button aria-label="Open Accessibility Menu" class="flex size-14 items-center justify-center rounded-full bg-charcoal dark:bg-surface-dark text-white shadow-lg hover:bg-charcoal/80 dark:hover:bg-gray-600 focus:outline-none focus:ring-4 focus:ring-primary/50">
-<span class="material-symbols-outlined !text-3xl">accessibility_new</span>
-</button>
-</div>
-</div>
+      }
+    };
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+    }
 
+    /* --- Accessibility Variables --- */
+    :root {
+      --a11y-fg: inherit;
+      --a11y-bg: inherit;
+    }
 
+    /* 1. Dyslexia Friendly Font */
+    body.a11y-dyslexia-font {
+      font-family: 'OpenDyslexic', 'Work Sans', sans-serif !important;
+    }
 
-<script>
-// popup.js inline - temporal para debugging
-(function() {
-  console.log('✅ Script inline cargado');
-  
-  const style = document.createElement('style');
-  style.textContent = `
-    .__notimpl_modal_backdrop {
+    /* 2. Big Cursor */
+    body.a11y-cursor-big,
+    body.a11y-cursor-big a,
+    body.a11y-cursor-big button {
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="black" stroke="white" stroke-width="2"><path d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.36z"/></svg>') 0 0, auto !important;
+    }
+
+    /* 3. Highlight Links */
+    body.a11y-highlight-links a {
+      text-decoration: underline !important;
+      text-decoration-thickness: 4px !important;
+      text-decoration-color: #fac638 !important;
+      font-weight: 800 !important;
+    }
+
+    /* 4. Text Spacing (Line Height & Letter Spacing) */
+    body.a11y-text-spacing * {
+      line-height: 1.8 !important;
+      letter-spacing: 0.1em !important;
+      word-spacing: 0.16em !important;
+    }
+
+    body.a11y-text-spacing p {
+      margin-bottom: 2em !important;
+    }
+
+    /* 5. Grayscale Mode */
+    html.a11y-grayscale {
+      filter: grayscale(100%) !important;
+    }
+
+    /* 6. Pause Animations */
+    body.a11y-paused * {
+      animation-play-state: paused !important;
+      transition: none !important;
+    }
+
+    /* 7. Reading Guide Bar */
+    #a11y-reading-guide {
+      display: none;
       position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background-color: rgba(250, 198, 56, 0.4);
+      border-top: 2px solid #fac638;
+      border-bottom: 2px solid #fac638;
+      pointer-events: none;
+      z-index: 99999;
+      transform: translateY(-50%);
     }
-    .__notimpl_modal {
-      background: white;
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-      max-width: 90%;
-      width: 360px;
-      text-align: center;
-      font-family: 'Work Sans', sans-serif;
-    }
-    .__notimpl_modal h2 {
-      margin: 0 0 12px;
-      font-size: 20px;
-      color: #1F2937;
-    }
-    .__notimpl_modal p {
-      margin: 0 0 20px;
-      color: #6B7280;
-      font-size: 14px;
-    }
-    .__notimpl_modal button {
-      padding: 10px 20px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      background: #fac638;
-      color: white;
-      font-weight: 600;
-    }
-    .__notimpl_modal button:hover {
-      background: #D97706;
-    }
-  `;
-  document.head.appendChild(style);
 
-  function showModal() {
-    console.log('🎉 Mostrando modal');
-    if (document.querySelector('.__notimpl_modal_backdrop')) return;
-    
-    const backdrop = document.createElement('div');
-    backdrop.className = '__notimpl_modal_backdrop';
-    
-    const modal = document.createElement('div');
-    modal.className = '__notimpl_modal';
-    modal.innerHTML = '<h2>Not implemented yet!</h2><p>Esta funcionalidad aún no está implementada.</p>';
-    
-    const closeBtn = document.createElement('button');
-    closeBtn.textContent = 'Cerrar';
-    closeBtn.addEventListener('click', () => backdrop.remove());
-    
-    modal.appendChild(closeBtn);
-    backdrop.appendChild(modal);
-    backdrop.addEventListener('click', (e) => {
-      if (e.target === backdrop) backdrop.remove();
-    });
-    
-    document.body.appendChild(backdrop);
-  }
-
-  document.addEventListener('click', function(e) {
-    console.log('👆 Clic en:', e.target.tagName);
-    const target = e.target.closest('[data-not-implemented]');
-    console.log('🔍 Target:', target);
-    
-    if (target) {
-      console.log('✋ Previniendo default');
-      e.preventDefault();
-      e.stopPropagation();
-      showModal();
+    body.a11y-reading-guide #a11y-reading-guide {
+      display: block;
     }
-  }, true);
 
-  console.log('✅ Event listener configurado');
-})();
-</script>
-</body></html>
+    /* 8. High Contrast Mode Logic */
+    body.a11y-high-contrast .layout-container,
+    body.a11y-high-contrast .layout-container *:not(.material-symbols-outlined) {
+      color: var(--a11y-fg) !important;
+      background-color: var(--a11y-bg) !important;
+      border-color: var(--a11y-fg) !important;
+      box-shadow: none !important;
+    }
+
+    body.a11y-high-contrast .layout-container .material-symbols-outlined {
+      color: var(--a11y-fg) !important;
+    }
+
+    body.a11y-high-contrast .layout-container button {
+      border-width: 2px !important;
+      border-style: solid !important;
+    }
+  </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-charcoal dark:text-gray-200">
+
+  <div id="a11y-reading-guide"></div>
+
+  <div class="layout-container relative flex min-h-screen w-full flex-col">
+    <header
+      class="flex items-center justify-between whitespace-nowrap border-b border-gray-200 dark:border-gray-700/50 px-6 sm:px-10 py-4 bg-surface-light dark:bg-surface-dark">
+      <div class="flex items-center gap-4 text-charcoal dark:text-white">
+        <div class="size-8 text-primary">
+          <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <path clip-rule="evenodd"
+              d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z"
+              fill="currentColor" fill-rule="evenodd"></path>
+          </svg>
+        </div>
+        <h2 class="text-xl font-bold">Cheesy Dreams</h2>
+      </div>
+      <div class="flex flex-1 items-center justify-end gap-4">
+        <span class="hidden sm:inline text-right text-charcoal dark:text-gray-300">Welcome, <span
+            class="font-semibold">Jane Doe</span></span>
+        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+          data-alt="A profile picture of Jane Doe"
+          style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD0whqH4fJd8m7npxcG1HGydVVSXWlyIAUzNtudwJp6ihphaIyF6B_aEpeYnuL0boP-WKYaeeSNj-j-uYtR6wqoMA_g_K4bvOFkOGoXln70xsnY5S1ZHoS_Fi26VEYTcaR9GzQ918-_3Pq8LFZBXskmcyWTFR1CIDxhYhZCnrHtkcJfap4P4DpjRGgFWV0f69znVbBeDujqAYSrT1IMpi7j8YsGfoQNc6_fKPmz1IbFubPmA1kSiYDqqji0pGwlaV_LdBA3igBYvtc");'>
+        </div>
+      </div>
+    </header>
+    <main class="flex flex-1 flex-col items-center justify-center p-4 text-center">
+      <h1
+        class="text-charcoal dark:text-white tracking-tight text-3xl md:text-4xl font-bold leading-tight px-4 pb-2 pt-6">
+        Tuesday, August 20, 2024 | 09:01:15 AM</h1>
+      <div class="flex justify-center items-center gap-2 pb-4 pt-2 px-4">
+        <span class="text-gray-600 dark:text-gray-400 text-base font-normal">Status:</span>
+        <span
+          class="inline-flex items-center gap-1.5 rounded-full bg-inactive/10 dark:bg-inactive/20 px-3 py-1 text-sm font-semibold text-inactive dark:text-gray-300">
+          <span class="size-2 rounded-full bg-inactive"></span>
+          Checked Out
+        </span>
+      </div>
+      <p
+        class="text-gray-700 dark:text-gray-300 text-lg font-normal leading-normal pb-6 pt-1 px-4 text-center max-w-2xl">
+        Please check in to start your shift.</p>
+      <div class="flex flex-col sm:flex-row w-full justify-center gap-4 px-4 py-3 max-w-lg">
+        <button
+          class="flex flex-1 min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-14 px-5 bg-primary text-charcoal text-lg font-bold leading-normal transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary/50">
+          <a href="/staff/reservations"
+            class="flex flex-1 min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-14 px-5 bg-primary text-charcoal text-lg font-bold leading-normal transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary/50">
+            <span class="material-symbols-outlined">login</span>
+            <span class="truncate">Check In</span>
+          </a>
+        </button>
+        <button
+          class="flex flex-1 min-w-[84px] cursor-not-allowed items-center justify-center gap-2 overflow-hidden rounded-lg h-14 px-5 bg-gray-300 dark:bg-charcoal/50 text-gray-500 dark:text-gray-400 text-lg font-bold leading-normal opacity-60">
+          <span class="material-symbols-outlined">logout</span>
+          <span class="truncate">Check Out</span>
+        </button>
+      </div>
+    </main>
+    <div aria-modal="true" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 hidden" role="dialog">
+      <div
+        class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-2xl p-6 sm:p-8 w-full max-w-md m-4 text-center">
+        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-success/10 text-success mb-4">
+          <span class="material-symbols-outlined !text-4xl">task_alt</span>
+        </div>
+        <h2 class="text-2xl font-bold text-charcoal dark:text-white mb-2">Checked In!</h2>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">You successfully checked in at <strong>9:02:15 AM</strong>.
+          Have a great shift!</p>
+        <button
+          class="w-full flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-charcoal text-base font-bold leading-normal tracking-[0.015em] hover:opacity-90 focus:outline-none focus:ring-4 focus:ring-primary/50">
+          <span class="truncate">OK</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="fixed bottom-4 right-4 z-50">
+    <button id="accessibility-trigger" type="button" aria-controls="accessibility-menu" aria-expanded="false"
+      aria-label="Open Accessibility Options"
+      class="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-black shadow-lg transition-transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-primary/50">
+      <span class="material-symbols-outlined !text-3xl">accessibility_new</span>
+    </button>
+
+    <div id="accessibility-menu" role="dialog" aria-labelledby="accessibility-heading" aria-modal="true"
+      class="hidden mb-2 w-72 origin-bottom-right rounded-lg border border-gray-200 bg-white p-4 shadow-xl transition-all duration-200 ease-in-out dark:border-gray-700 dark:bg-[#231e0f] absolute bottom-16 right-0">
+
+      <div class="border-b border-gray-200 pb-2 mb-4 dark:border-gray-700">
+        <h3 id="accessibility-heading" class="text-lg font-bold text-gray-900 dark:text-white">
+          Accessibility Settings
+        </h3>
+      </div>
+
+      <div class="space-y-4 h-80 overflow-y-auto pr-1 custom-scrollbar">
+        <div class="space-y-2">
+          <label class="text-sm font-medium text-gray-600 dark:text-gray-400" for="font-size">Text
+            Size</label>
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-gray-600 dark:text-gray-400">A</span>
+            <input id="font-size" type="range" min="100" max="180" step="10" value="100"
+              class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary" />
+            <span class="text-lg text-gray-600 dark:text-gray-400">A</span>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Contrast Theme</p>
+          <div class="grid grid-cols-4 gap-2">
+            <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-white" data-contrast="black-on-white"
+              data-fg="#000000" data-bg="#ffffff" title="Black on White"
+              aria-label="Black text on White background"></button>
+
+            <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-black" data-contrast="white-on-black"
+              data-fg="#ffffff" data-bg="#000000" title="White on Black"
+              aria-label="White text on Black background"></button>
+
+            <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-yellow-400" data-contrast="yellow-on-blue"
+              data-fg="#facc15" data-bg="#020617" title="Yellow on Blue"
+              aria-label="Yellow text on Dark Blue background"></button>
+
+            <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-blue-600" data-contrast="blue-on-white"
+              data-fg="#2563eb" data-bg="#ffffff" title="Blue on White"
+              aria-label="Blue text on White background"></button>
+          </div>
+        </div>
+
+        <div class="space-y-3 pt-2 border-t border-gray-200 dark:border-gray-700">
+
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Grayscale</p>
+            <label class="inline-flex items-center gap-2 cursor-pointer">
+              <input id="grayscale-toggle" type="checkbox"
+                class="rounded border-gray-300 text-primary focus:ring-primary" />
+              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
+            </label>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Text Spacing</p>
+            <label class="inline-flex items-center gap-2 cursor-pointer">
+              <input id="spacing-toggle" type="checkbox"
+                class="rounded border-gray-300 text-primary focus:ring-primary" />
+              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
+            </label>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Dyslexia Font</p>
+            <label class="inline-flex items-center gap-2 cursor-pointer">
+              <input id="dyslexia-toggle" type="checkbox"
+                class="rounded border-gray-300 text-primary focus:ring-primary" />
+              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
+            </label>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Big Cursor</p>
+            <label class="inline-flex items-center gap-2 cursor-pointer">
+              <input id="cursor-toggle" type="checkbox"
+                class="rounded border-gray-300 text-primary focus:ring-primary" />
+              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
+            </label>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Highlight Links</p>
+            <label class="inline-flex items-center gap-2 cursor-pointer">
+              <input id="links-toggle" type="checkbox"
+                class="rounded border-gray-300 text-primary focus:ring-primary" />
+              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
+            </label>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Reading Guide</p>
+            <label class="inline-flex items-center gap-2 cursor-pointer">
+              <input id="reading-guide-toggle" type="checkbox"
+                class="rounded border-gray-300 text-primary focus:ring-primary" />
+              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
+            </label>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Pause Animations</p>
+            <label class="inline-flex items-center gap-2 cursor-pointer">
+              <input id="animation-toggle" type="checkbox"
+                class="rounded border-gray-300 text-primary focus:ring-primary" />
+              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
+            </label>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="mt-4 border-t border-gray-200 pt-3 dark:border-gray-700">
+        <button id="a11y-reset"
+          class="w-full text-center text-sm font-bold text-primary hover:text-yellow-600 hover:underline">
+          Reset Settings
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Modal for "Not Implemented" links
+    (function () {
+      const style = document.createElement('style');
+      style.textContent = `
+      .__notimpl_modal_backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+      .__notimpl_modal {
+        background: white;
+        padding: 24px;
+        border-radius: 12px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        max-width: 90%;
+        width: 360px;
+        text-align: center;
+        font-family: 'Work Sans', sans-serif;
+      }
+      .__notimpl_modal h2 {
+        margin: 0 0 12px;
+        font-size: 20px;
+        color: #1F2937;
+      }
+      .__notimpl_modal p {
+        margin: 0 0 20px;
+        color: #6B7280;
+        font-size: 14px;
+      }
+      .__notimpl_modal button {
+        padding: 10px 20px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        background: #fac638;
+        color: white;
+        font-weight: 600;
+      }
+      .__notimpl_modal button:hover {
+        background: #D97706;
+      }
+    `;
+      document.head.appendChild(style);
+
+      function showModal() {
+        if (document.querySelector('.__notimpl_modal_backdrop')) return;
+
+        const backdrop = document.createElement('div');
+        backdrop.className = '__notimpl_modal_backdrop';
+
+        const modal = document.createElement('div');
+        modal.className = '__notimpl_modal';
+        modal.innerHTML = '<h2>Not implemented yet!</h2><p>Esta funcionalidad aún no está implementada.</p>';
+
+        const closeBtn = document.createElement('button');
+        closeBtn.textContent = 'Cerrar';
+        closeBtn.addEventListener('click', () => backdrop.remove());
+
+        modal.appendChild(closeBtn);
+        backdrop.appendChild(modal);
+        backdrop.addEventListener('click', (e) => {
+          if (e.target === backdrop) backdrop.remove();
+        });
+
+        document.body.appendChild(backdrop);
+      }
+
+      document.addEventListener('click', function (e) {
+        const target = e.target.closest('[data-not-implemented]');
+        if (target) {
+          e.preventDefault();
+          e.stopPropagation();
+          showModal();
+        }
+      }, true);
+    })();
+
+    // ===== ACCESSIBILITY PANEL LOGIC =====
+    (function () {
+      const KEY_SIZE = 'a11y_font';
+      const KEY_FG = 'a11y_fg';
+      const KEY_BG = 'a11y_bg';
+      const KEY_DYS = 'a11y_dyslexia';
+      const KEY_HC = 'a11y_highcontrast';
+      const KEY_CURSOR = 'a11y_cursor';
+      const KEY_LINKS = 'a11y_links';
+      const KEY_GRAY = 'a11y_grayscale';
+      const KEY_SPACE = 'a11y_spacing';
+      const KEY_GUIDE = 'a11y_guide';
+      const KEY_PAUSE = 'a11y_pause';
+
+      const trigger = document.getElementById('accessibility-trigger');
+      const menu = document.getElementById('accessibility-menu');
+
+      const sizeSlider = document.getElementById('font-size');
+      const dyslexiaToggle = document.getElementById('dyslexia-toggle');
+      const cursorToggle = document.getElementById('cursor-toggle');
+      const linksToggle = document.getElementById('links-toggle');
+      const grayscaleToggle = document.getElementById('grayscale-toggle');
+      const spacingToggle = document.getElementById('spacing-toggle');
+      const guideToggle = document.getElementById('reading-guide-toggle');
+      const animationToggle = document.getElementById('animation-toggle');
+      const resetBtn = document.getElementById('a11y-reset');
+
+      const contrastButtons = document.querySelectorAll('[data-contrast]');
+      const readingGuide = document.getElementById('a11y-reading-guide');
+
+      // --- Reading Guide Follow Logic ---
+      document.addEventListener('mousemove', (e) => {
+        if (document.body.classList.contains('a11y-reading-guide')) {
+          readingGuide.style.top = e.clientY + 'px';
+        }
+      });
+
+      // --- Toggle panel visibility ---
+      if (trigger && menu) {
+        trigger.addEventListener('click', () => {
+          const isHidden = menu.classList.contains('hidden');
+          menu.classList.toggle('hidden', !isHidden);
+          trigger.setAttribute('aria-expanded', String(isHidden));
+        });
+      }
+
+      // --- Apply settings on load ---
+      applyInitialSettings();
+
+      // --- Font size (100–180%) ---
+      if (sizeSlider) {
+        sizeSlider.addEventListener('input', (e) => {
+          const value = e.target.value;
+          document.documentElement.style.fontSize = value + '%';
+          localStorage.setItem(KEY_SIZE, value);
+        });
+      }
+
+      // --- High contrast presets ---
+      contrastButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const fg = btn.dataset.fg;
+          const bg = btn.dataset.bg;
+          setHighContrast(fg, bg);
+        });
+      });
+
+      function setHighContrast(fg, bg) {
+        if (fg) {
+          document.documentElement.style.setProperty('--a11y-fg', fg);
+          localStorage.setItem(KEY_FG, fg);
+        }
+        if (bg) {
+          document.documentElement.style.setProperty('--a11y-bg', bg);
+          localStorage.setItem(KEY_BG, bg);
+        }
+        document.body.classList.add('a11y-high-contrast', 'a11y-custom-colors');
+        localStorage.setItem(KEY_HC, '1');
+      }
+
+      // --- Generic Toggle Handler ---
+      function setupToggle(el, cls, key) {
+        if (!el) return;
+        el.addEventListener('change', () => {
+          const enabled = el.checked;
+          if (cls === 'a11y-grayscale') {
+            document.documentElement.classList.toggle(cls, enabled);
+          } else {
+            document.body.classList.toggle(cls, enabled);
+          }
+          localStorage.setItem(key, enabled ? '1' : '0');
+        });
+      }
+
+      setupToggle(dyslexiaToggle, 'a11y-dyslexia-font', KEY_DYS);
+      setupToggle(cursorToggle, 'a11y-cursor-big', KEY_CURSOR);
+      setupToggle(linksToggle, 'a11y-highlight-links', KEY_LINKS);
+      setupToggle(grayscaleToggle, 'a11y-grayscale', KEY_GRAY);
+      setupToggle(spacingToggle, 'a11y-text-spacing', KEY_SPACE);
+      setupToggle(guideToggle, 'a11y-reading-guide', KEY_GUIDE);
+      setupToggle(animationToggle, 'a11y-paused', KEY_PAUSE);
+
+      // --- Reset ---
+      if (resetBtn) {
+        resetBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+
+          // Reset font size
+          document.documentElement.style.fontSize = '100%';
+          if (sizeSlider) sizeSlider.value = 100;
+
+          // Reset vars
+          document.documentElement.style.removeProperty('--a11y-fg');
+          document.documentElement.style.removeProperty('--a11y-bg');
+
+          // Reset classes
+          document.body.classList.remove(
+            'a11y-high-contrast', 'a11y-custom-colors', 'a11y-dyslexia-font',
+            'a11y-cursor-big', 'a11y-highlight-links', 'a11y-text-spacing',
+            'a11y-reading-guide', 'a11y-paused'
+          );
+          document.documentElement.classList.remove('a11y-grayscale');
+
+          // Reset Inputs
+          [dyslexiaToggle, cursorToggle, linksToggle, grayscaleToggle, spacingToggle, guideToggle, animationToggle].forEach(el => {
+            if (el) el.checked = false;
+          });
+
+          // Clear storage
+          [KEY_SIZE, KEY_FG, KEY_BG, KEY_DYS, KEY_HC, KEY_CURSOR, KEY_LINKS, KEY_GRAY, KEY_SPACE, KEY_GUIDE, KEY_PAUSE].forEach(k => localStorage.removeItem(k));
+        });
+      }
+
+      function applyInitialSettings() {
+        const loadState = (key, cls, input) => {
+          if (localStorage.getItem(key) === '1') {
+            if (cls === 'a11y-grayscale') document.documentElement.classList.add(cls);
+            else document.body.classList.add(cls);
+            if (input) input.checked = true;
+          }
+        };
+
+        // Font Size
+        const savedSize = localStorage.getItem(KEY_SIZE);
+        if (savedSize) {
+          document.documentElement.style.fontSize = savedSize + '%';
+          if (sizeSlider) sizeSlider.value = savedSize;
+        }
+
+        // Contrast
+        const savedFg = localStorage.getItem(KEY_FG);
+        const savedBg = localStorage.getItem(KEY_BG);
+        const savedHC = localStorage.getItem(KEY_HC);
+
+        if (savedFg) document.documentElement.style.setProperty('--a11y-fg', savedFg);
+        if (savedBg) document.documentElement.style.setProperty('--a11y-bg', savedBg);
+        if (savedHC === '1' && (savedFg || savedBg)) {
+          document.body.classList.add('a11y-high-contrast', 'a11y-custom-colors');
+        }
+
+        loadState(KEY_DYS, 'a11y-dyslexia-font', dyslexiaToggle);
+        loadState(KEY_CURSOR, 'a11y-cursor-big', cursorToggle);
+        loadState(KEY_LINKS, 'a11y-highlight-links', linksToggle);
+        loadState(KEY_GRAY, 'a11y-grayscale', grayscaleToggle);
+        loadState(KEY_SPACE, 'a11y-text-spacing', spacingToggle);
+        loadState(KEY_GUIDE, 'a11y-reading-guide', guideToggle);
+        loadState(KEY_PAUSE, 'a11y-paused', animationToggle);
+      }
+    })();
+  </script>
+</body>
+
+</html>

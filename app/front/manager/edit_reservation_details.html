@@ -1,153 +1,188 @@
 <!DOCTYPE html>
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Edit Reservation - Cheesy Dreams</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<style>
-      .material-symbols-outlined {
-        font-variation-settings:
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Edit Reservation - Cheesy Dreams</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings:
         'FILL' 0,
         'wght' 400,
         'GRAD' 0,
         'opsz' 24
-      }
-    </style>
-<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#fac638", "background-light": "#f8f8f5", "background-dark": "#231e0f", "brand-blue": "#005A9C", "brand-gray-bg": "#F0F2F5", "brand-gray-text": "#6C757D", "brand-yellow": "#FFC107", "brand-success": "#28A745", "brand-danger": "#DC3545"}, fontFamily: {display: "Work Sans"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
+    }
+  </style>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { primary: "#fac638", "background-light": "#f8f8f5", "background-dark": "#231e0f", "brand-blue": "#005A9C", "brand-gray-bg": "#F0F2F5", "brand-gray-text": "#6C757D", "brand-yellow": "#FFC107", "brand-success": "#28A745", "brand-danger": "#DC3545" }, fontFamily: { display: "Work Sans" }, borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" } } } };</script>
 </head>
+
 <body class="font-display">
-<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
-<div class="flex min-h-screen">
-<div class="flex flex-col border-r border-[#e6e3db] dark:border-gray-700 bg-white dark:bg-black/20 w-64 p-4 shrink-0">
-<div class="flex flex-col gap-4">
-<div class="flex items-center gap-3">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Cheesy Dreams restaurant logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuArBRiL7gkCxgru8l8eTdKUkdYAoYzzK8XisdY21LYEeOVdfOwxwQ3M5cDrQDg4EZnlBMWYpL3s6aF8dPS0FdlPtLnojBq4B7PK3bOBhQ9J99XoeRspgtBa_ymg0kA0RSINPGqMNjsDM36z4Jf4cp-jp6uTmVkYyrvPF2vygwryCB_NxO7cRwSDWgPdfx_gRSIu8t8LPXM4TK1NgvZR1qCGZx6s9wcdfWfdDv8ztD7zRV8cp9ov__hmucS7GfHR6HgutJlsGkTkmK0");'></div>
-<div class="flex flex-col">
-<h1 class="text-[#181611] dark:text-white text-base font-medium leading-normal">Cheesy Dreams</h1>
-<p class="text-[#8c805f] dark:text-gray-400 text-sm font-normal leading-normal">Management</p>
-</div>
-</div>
-<div class="flex flex-col gap-2 mt-4 flex-grow">
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#181611] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" href="/manager/dashboard">
-<span class="material-symbols-outlined text-2xl">dashboard</span>
-<p class="text-sm font-medium leading-normal">Dashboard</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-[#181611] dark:bg-brand-yellow/30 dark:text-white" href="#">
-<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">book_online</span>
-<p class="text-sm font-medium leading-normal">Reservations</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#181611] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
-<span class="material-symbols-outlined text-2xl">calendar_month</span>
-<p class="text-sm font-medium leading-normal">Calendar</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#181611] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
-<span class="material-symbols-outlined text-2xl">restaurant_menu</span>
-<p class="text-sm font-medium leading-normal">Menu</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#181611] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
-<span class="material-symbols-outlined text-2xl">settings</span>
-<p class="text-sm font-medium leading-normal">Settings</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#181611] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
-<span class="material-symbols-outlined text-2xl">help</span>
-<p class="text-sm font-medium leading-normal">Help</p>
-</a>
-</div>
-</div>
-<div class="flex flex-col gap-4">
-<div class="flex flex-col gap-1 border-t border-[#e6e3db] dark:border-gray-700 pt-4">
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#181611] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" href="/logout">
-<span class="material-symbols-outlined text-2xl">logout</span>
-<p class="text-sm font-medium leading-normal">Logout</p>
-</a>
-</div>
-</div>
-</div>
-<main class="flex-1 p-8 overflow-y-auto">
-<div class="max-w-4xl mx-auto">
-<p class="text-[#181611] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Edit Reservation</p>
-<p class="text-brand-gray-text dark:text-gray-400 text-sm font-normal leading-normal pt-1">Editing reservation for John Doe (Confirmation #1A2B3C)</p>
-<div class="mt-8 bg-white dark:bg-black/20 p-8 rounded-xl shadow-sm border border-[#e6e3db] dark:border-gray-700">
-<form class="flex flex-col gap-8">
-<div>
-<h3 class="text-[#181611] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-4">Customer Information</h3>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<label class="flex flex-col">
-<p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Guest Name</p>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181611] dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-brand-blue/50 border border-[#e6e3db] dark:border-gray-600 bg-white focus:border-brand-blue dark:focus:border-brand-blue h-12 placeholder:text-brand-gray-text px-4 text-base font-normal leading-normal" value="John Doe"/>
-</label>
-<label class="flex flex-col">
-<p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Contact Phone</p>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181611] dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-brand-blue/50 border border-[#e6e3db] dark:border-gray-600 bg-white focus:border-brand-blue dark:focus:border-brand-blue h-12 placeholder:text-brand-gray-text px-4 text-base font-normal leading-normal" value="(555) 123-4567"/>
-</label>
-</div>
-</div>
-<div>
-<h3 class="text-[#181611] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-4">Reservation Details</h3>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-<label class="flex flex-col">
-<p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Date</p>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181611] dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-brand-blue/50 border border-[#e6e3db] dark:border-gray-600 bg-white focus:border-brand-blue dark:focus:border-brand-blue h-12 placeholder:text-brand-gray-text px-4 text-base font-normal leading-normal" type="date" value="2024-10-26"/>
-</label>
-<label class="flex flex-col">
-<p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Time</p>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181611] dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-brand-blue/50 border border-[#e6e3db] dark:border-gray-600 bg-white focus:border-brand-blue dark:focus:border-brand-blue h-12 placeholder:text-brand-gray-text px-4 text-base font-normal leading-normal" type="time" value="19:30"/>
-</label>
-<label class="flex flex-col">
-<p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Guests</p>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181611] dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-brand-blue/50 border border-[#e6e3db] dark:border-gray-600 bg-white focus:border-brand-blue dark:focus:border-brand-blue h-12 placeholder:text-brand-gray-text px-4 text-base font-normal leading-normal" type="number" value="4"/>
-</label>
-<label class="flex flex-col">
-<p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Table</p>
-<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181611] dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-brand-blue/50 border border-[#e6e3db] dark:border-gray-600 bg-white focus:border-brand-blue dark:focus:border-brand-blue h-12 px-4 text-base font-normal leading-normal">
-<option>Table 12</option>
-<option>Table 14</option>
-<option selected="">Booth 3</option>
-<option>Patio 5</option>
-</select>
-</label>
-</div>
-</div>
-<div>
-<h3 class="text-[#181611] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-4">Additional Information</h3>
-<label class="flex flex-col">
-<p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Special Requests / Notes</p>
-<textarea class="form-textarea flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-lg text-[#181611] dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-brand-blue/50 border border-[#e6e3db] dark:border-gray-600 bg-white focus:border-brand-blue dark:focus:border-brand-blue min-h-28 placeholder:text-brand-gray-text p-4 text-base font-normal leading-normal">Anniversary celebration. Please bring a small dessert with a candle.</textarea>
-</label>
-</div>
-</form>
-</div>
-<div class="sticky bottom-0 mt-8 py-4 bg-background-light dark:bg-background-dark border-t border-[#e6e3db] dark:border-gray-700 flex justify-end items-center gap-4">
-<a href="/manager/manage_reservations" class="w-full sm:w-auto">
-<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-6 bg-transparent text-brand-gray-text dark:text-gray-300 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-300 dark:border-gray-600">
-<span class="truncate">Cancel</span>
-</button>
-</a>
-<a href="/manager/manage_reservations" class="w-full sm:w-auto">
-<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-6 bg-brand-blue text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-brand-blue/90 disabled:bg-gray-400 dark:disabled:bg-gray-600 disabled:cursor-not-allowed">
-<span class="truncate">Save Changes</span>
-</button>
-</a>
-</div>
-</div>
-</main>
-</div>
-<button class="fixed bottom-6 right-6 z-50 flex items-center justify-center size-14 bg-brand-yellow rounded-full shadow-lg hover:bg-brand-yellow/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-yellow dark:focus:ring-offset-background-dark">
-<span class="material-symbols-outlined text-3xl text-black">accessibility_new</span>
-</button>
-</div>
+  <div
+    class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+    <div class="flex min-h-screen">
+      <div
+        class="flex flex-col border-r border-[#e6e3db] dark:border-gray-700 bg-white dark:bg-black/20 w-64 p-4 shrink-0">
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center gap-3">
+            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+              data-alt="Cheesy Dreams restaurant logo"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuArBRiL7gkCxgru8l8eTdKUkdYAoYzzK8XisdY21LYEeOVdfOwxwQ3M5cDrQDg4EZnlBMWYpL3s6aF8dPS0FdlPtLnojBq4B7PK3bOBhQ9J99XoeRspgtBa_ymg0kA0RSINPGqMNjsDM36z4Jf4cp-jp6uTmVkYyrvPF2vygwryCB_NxO7cRwSDWgPdfx_gRSIu8t8LPXM4TK1NgvZR1qCGZx6s9wcdfWfdDv8ztD7zRV8cp9ov__hmucS7GfHR6HgutJlsGkTkmK0");'>
+            </div>
+            <div class="flex flex-col">
+              <h1 class="text-[#181611] dark:text-white text-base font-medium leading-normal">Cheesy Dreams</h1>
+              <p class="text-[#8c805f] dark:text-gray-400 text-sm font-normal leading-normal">Management</p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-2 mt-4 flex-grow">
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#181611] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+              href="/manager/dashboard">
+              <span class="material-symbols-outlined text-2xl">dashboard</span>
+              <p class="text-sm font-medium leading-normal">Dashboard</p>
+            </a>
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-[#181611] dark:bg-brand-yellow/30 dark:text-white"
+              href="#">
+              <span class="material-symbols-outlined text-2xl"
+                style="font-variation-settings: 'FILL' 1;">book_online</span>
+              <p class="text-sm font-medium leading-normal">Reservations</p>
+            </a>
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#181611] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+              href="#">
+              <span class="material-symbols-outlined text-2xl">calendar_month</span>
+              <p class="text-sm font-medium leading-normal">Calendar</p>
+            </a>
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#181611] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+              href="#">
+              <span class="material-symbols-outlined text-2xl">restaurant_menu</span>
+              <p class="text-sm font-medium leading-normal">Menu</p>
+            </a>
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#181611] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+              href="#">
+              <span class="material-symbols-outlined text-2xl">settings</span>
+              <p class="text-sm font-medium leading-normal">Settings</p>
+            </a>
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#181611] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+              href="#">
+              <span class="material-symbols-outlined text-2xl">help</span>
+              <p class="text-sm font-medium leading-normal">Help</p>
+            </a>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <div class="flex flex-col gap-1 border-t border-[#e6e3db] dark:border-gray-700 pt-4">
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#181611] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+              href="/logout">
+              <span class="material-symbols-outlined text-2xl">logout</span>
+              <p class="text-sm font-medium leading-normal">Logout</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <main class="flex-1 p-8 overflow-y-auto">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-[#181611] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Edit
+            Reservation</p>
+          <p class="text-brand-gray-text dark:text-gray-400 text-sm font-normal leading-normal pt-1">Editing reservation
+            for John Doe (Confirmation #1A2B3C)</p>
+          <div
+            class="mt-8 bg-white dark:bg-black/20 p-8 rounded-xl shadow-sm border border-[#e6e3db] dark:border-gray-700">
+            <form class="flex flex-col gap-8">
+              <div>
+                <h3 class="text-[#181611] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-4">
+                  Customer Information</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <label class="flex flex-col">
+                    <p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Guest Name
+                    </p>
+                    <input
+                      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181611] dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-brand-blue/50 border border-[#e6e3db] dark:border-gray-600 bg-white focus:border-brand-blue dark:focus:border-brand-blue h-12 placeholder:text-brand-gray-text px-4 text-base font-normal leading-normal"
+                      value="John Doe" />
+                  </label>
+                  <label class="flex flex-col">
+                    <p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Contact Phone
+                    </p>
+                    <input
+                      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181611] dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-brand-blue/50 border border-[#e6e3db] dark:border-gray-600 bg-white focus:border-brand-blue dark:focus:border-brand-blue h-12 placeholder:text-brand-gray-text px-4 text-base font-normal leading-normal"
+                      value="(555) 123-4567" />
+                  </label>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-[#181611] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-4">
+                  Reservation Details</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  <label class="flex flex-col">
+                    <p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Date</p>
+                    <input
+                      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181611] dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-brand-blue/50 border border-[#e6e3db] dark:border-gray-600 bg-white focus:border-brand-blue dark:focus:border-brand-blue h-12 placeholder:text-brand-gray-text px-4 text-base font-normal leading-normal"
+                      type="date" value="2024-10-26" />
+                  </label>
+                  <label class="flex flex-col">
+                    <p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Time</p>
+                    <input
+                      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181611] dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-brand-blue/50 border border-[#e6e3db] dark:border-gray-600 bg-white focus:border-brand-blue dark:focus:border-brand-blue h-12 placeholder:text-brand-gray-text px-4 text-base font-normal leading-normal"
+                      type="time" value="19:30" />
+                  </label>
+                  <label class="flex flex-col">
+                    <p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Guests</p>
+                    <input
+                      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181611] dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-brand-blue/50 border border-[#e6e3db] dark:border-gray-600 bg-white focus:border-brand-blue dark:focus:border-brand-blue h-12 placeholder:text-brand-gray-text px-4 text-base font-normal leading-normal"
+                      type="number" value="4" />
+                  </label>
+                  <label class="flex flex-col">
+                    <p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Table</p>
+                    <select
+                      class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181611] dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-brand-blue/50 border border-[#e6e3db] dark:border-gray-600 bg-white focus:border-brand-blue dark:focus:border-brand-blue h-12 px-4 text-base font-normal leading-normal">
+                      <option>Table 12</option>
+                      <option>Table 14</option>
+                      <option selected="">Booth 3</option>
+                      <option>Patio 5</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-[#181611] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-4">
+                  Additional Information</h3>
+                <label class="flex flex-col">
+                  <p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Special
+                    Requests / Notes</p>
+                  <textarea
+                    class="form-textarea flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-lg text-[#181611] dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-brand-blue/50 border border-[#e6e3db] dark:border-gray-600 bg-white focus:border-brand-blue dark:focus:border-brand-blue min-h-28 placeholder:text-brand-gray-text p-4 text-base font-normal leading-normal">Anniversary celebration. Please bring a small dessert with a candle.</textarea>
+                </label>
+              </div>
+            </form>
+          </div>
+          <div
+            class="sticky bottom-0 mt-8 py-4 bg-background-light dark:bg-background-dark border-t border-[#e6e3db] dark:border-gray-700 flex justify-end items-center gap-4">
+            <a href="/manager/manage_reservations" class="w-full sm:w-auto">
+              <button
+                class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-6 bg-transparent text-brand-gray-text dark:text-gray-300 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-300 dark:border-gray-600">
+                <span class="truncate">Cancel</span>
+              </button>
+            </a>
+            <a href="/manager/manage_reservations" class="w-full sm:w-auto">
+              <button
+                class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-6 bg-brand-blue text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-brand-blue/90 disabled:bg-gray-400 dark:disabled:bg-gray-600 disabled:cursor-not-allowed">
+                <span class="truncate">Save Changes</span>
+              </button>
+            </a>
+          </div>
+        </div>
+      </main>
 
+      <script>
+        // popup.js inline - temporal para debugging
+        (function () {
+          console.log('✅ Script inline cargado');
 
-
-<script>
-// popup.js inline - temporal para debugging
-(function() {
-  console.log('✅ Script inline cargado');
-  
-  const style = document.createElement('style');
-  style.textContent = `
+          const style = document.createElement('style');
+          style.textContent = `
     .__notimpl_modal_backdrop {
       position: fixed;
       inset: 0;
@@ -190,46 +225,48 @@
       background: #D97706;
     }
   `;
-  document.head.appendChild(style);
+          document.head.appendChild(style);
 
-  function showModal() {
-    console.log('🎉 Mostrando modal');
-    if (document.querySelector('.__notimpl_modal_backdrop')) return;
-    
-    const backdrop = document.createElement('div');
-    backdrop.className = '__notimpl_modal_backdrop';
-    
-    const modal = document.createElement('div');
-    modal.className = '__notimpl_modal';
-    modal.innerHTML = '<h2>Not implemented yet!</h2><p>Esta funcionalidad aún no está implementada.</p>';
-    
-    const closeBtn = document.createElement('button');
-    closeBtn.textContent = 'Cerrar';
-    closeBtn.addEventListener('click', () => backdrop.remove());
-    
-    modal.appendChild(closeBtn);
-    backdrop.appendChild(modal);
-    backdrop.addEventListener('click', (e) => {
-      if (e.target === backdrop) backdrop.remove();
-    });
-    
-    document.body.appendChild(backdrop);
-  }
+          function showModal() {
+            console.log('🎉 Mostrando modal');
+            if (document.querySelector('.__notimpl_modal_backdrop')) return;
 
-  document.addEventListener('click', function(e) {
-    console.log('👆 Clic en:', e.target.tagName);
-    const target = e.target.closest('[data-not-implemented]');
-    console.log('🔍 Target:', target);
-    
-    if (target) {
-      console.log('✋ Previniendo default');
-      e.preventDefault();
-      e.stopPropagation();
-      showModal();
-    }
-  }, true);
+            const backdrop = document.createElement('div');
+            backdrop.className = '__notimpl_modal_backdrop';
 
-  console.log('✅ Event listener configurado');
-})();
-</script>
-</body></html>
+            const modal = document.createElement('div');
+            modal.className = '__notimpl_modal';
+            modal.innerHTML = '<h2>Not implemented yet!</h2><p>Esta funcionalidad aún no está implementada.</p>';
+
+            const closeBtn = document.createElement('button');
+            closeBtn.textContent = 'Cerrar';
+            closeBtn.addEventListener('click', () => backdrop.remove());
+
+            modal.appendChild(closeBtn);
+            backdrop.appendChild(modal);
+            backdrop.addEventListener('click', (e) => {
+              if (e.target === backdrop) backdrop.remove();
+            });
+
+            document.body.appendChild(backdrop);
+          }
+
+          document.addEventListener('click', function (e) {
+            console.log('👆 Clic en:', e.target.tagName);
+            const target = e.target.closest('[data-not-implemented]');
+            console.log('🔍 Target:', target);
+
+            if (target) {
+              console.log('✋ Previniendo default');
+              e.preventDefault();
+              e.stopPropagation();
+              showModal();
+            }
+          }, true);
+
+          console.log('✅ Event listener configurado');
+        })();
+      </script>
+</body>
+
+</html>
