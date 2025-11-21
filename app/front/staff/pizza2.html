@@ -6,7 +6,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Pizza Preparation - Step 2</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
   <link href="https://fonts.cdnfonts.com/css/opendyslexic" rel="stylesheet">
   <script>
@@ -18,54 +18,35 @@
             "primary": "#fac638",
             "background-light": "#f8f8f5",
             "background-dark": "#231e0f",
-            "text-light": "#1c180d",
-            "text-dark": "#f8f8f5",
-            "subtle-light": "#e9e2ce",
-            "subtle-dark": "#3a3424",
-            "button-secondary-light": "#f4f0e6",
-            "button-secondary-dark": "#3a3424",
           },
           fontFamily: {
-            "display": ["Work Sans", "sans-serif"]
+            "display": ["Work Sans", "Noto Sans", "sans-serif"]
           },
-          borderRadius: {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
-          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
         },
       },
     }
   </script>
   <style>
     .material-symbols-outlined {
-      font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     }
 
-    /* --- Accessibility Variables --- */
     :root {
       --a11y-fg: inherit;
       --a11y-bg: inherit;
     }
 
-    /* 1. Dyslexia Friendly Font */
     body.a11y-dyslexia-font {
       font-family: 'OpenDyslexic', 'Work Sans', sans-serif !important;
     }
 
-    /* 2. Big Cursor */
     body.a11y-cursor-big,
     body.a11y-cursor-big a,
     body.a11y-cursor-big button {
       cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="black" stroke="white" stroke-width="2"><path d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.36z"/></svg>') 0 0, auto !important;
     }
 
-    /* 3. Highlight Links */
     body.a11y-highlight-links a {
       text-decoration: underline !important;
       text-decoration-thickness: 4px !important;
@@ -73,7 +54,6 @@
       font-weight: 800 !important;
     }
 
-    /* 4. Text Spacing (Line Height & Letter Spacing) */
     body.a11y-text-spacing * {
       line-height: 1.8 !important;
       letter-spacing: 0.1em !important;
@@ -84,18 +64,15 @@
       margin-bottom: 2em !important;
     }
 
-    /* 5. Grayscale Mode */
     html.a11y-grayscale {
       filter: grayscale(100%) !important;
     }
 
-    /* 6. Pause Animations */
     body.a11y-paused * {
       animation-play-state: paused !important;
       transition: none !important;
     }
 
-    /* 7. Reading Guide Bar */
     #a11y-reading-guide {
       display: none;
       position: fixed;
@@ -114,7 +91,6 @@
       display: block;
     }
 
-    /* 8. High Contrast Mode Logic */
     body.a11y-high-contrast .layout-container,
     body.a11y-high-contrast .layout-container *:not(.material-symbols-outlined) {
       color: var(--a11y-fg) !important;
@@ -134,64 +110,69 @@
   </style>
 </head>
 
-<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+<body class="bg-background-light dark:bg-background-dark font-display text-[#212121] dark:text-gray-200">
 
   <div id="a11y-reading-guide"></div>
 
   <div class="layout-container relative flex min-h-screen w-full flex-col">
-    <div class="flex h-full grow flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
-      <main class="flex w-full max-w-3xl flex-col items-center justify-center gap-6 sm:gap-8">
-        <div class="w-full max-w-md">
-          <div class="flex flex-col gap-3">
-            <div class="flex justify-between">
-              <p class="text-base font-medium leading-normal">Step 2 of 5</p>
-              <p class="text-sm font-normal leading-normal">40%</p>
+    <header class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 px-6 sm:px-10 py-3">
+      <div class="flex items-center gap-3">
+        <span aria-hidden="true" class="material-symbols-outlined text-primary text-2xl">bakery_dining</span>
+        <h1 class="text-[#333333] dark:text-gray-100 text-lg font-bold">Cheesy Dreams - Kitchen Prep Station</h1>
+      </div>
+    </header>
+
+    <main class="flex flex-1 flex-col items-center justify-center p-4 sm:p-8">
+      <div class="flex w-full max-w-2xl flex-col items-center gap-6">
+
+        <div class="w-full max-w-md mb-2">
+          <div class="flex justify-between items-center mb-2">
+            <p class="text-base font-medium text-[#212121] dark:text-white">Step 2 of 5</p>
+            <p class="text-base font-medium text-primary">40%</p>
+          </div>
+          <div class="rounded-full bg-gray-200 dark:bg-gray-700 h-2.5">
+            <div class="h-2.5 rounded-full bg-primary" style="width: 40%;"></div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center rounded-full bg-primary/20 dark:bg-primary/30 size-48">
+          <span class="material-symbols-outlined text-primary text-8xl">soup_kitchen</span>
+        </div>
+
+        <h2 class="text-4xl font-bold text-[#212121] dark:text-white mb-2">Add Sauce & Cheese</h2>
+
+        <div
+          class="w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm p-6">
+          <div class="flex gap-4 items-start">
+            <div
+              class="flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700 shrink-0 size-12 text-primary">
+              <span class="material-symbols-outlined">receipt_long</span>
             </div>
-            <div class="rounded-full bg-subtle-light dark:bg-subtle-dark">
-              <div class="h-2 rounded-full bg-primary" style="width: 40%;"></div>
+            <div class="flex flex-1 flex-col">
+              <h3 class="text-lg font-bold mb-2">Instructions</h3>
+              <p class="text-gray-600 dark:text-gray-300">Spread one ladle of tomato sauce evenly across the pizza base,
+                leaving a small border. Sprinkle a generous layer of mozzarella cheese over the sauce.</p>
             </div>
+            <button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-primary">
+              <span class="material-symbols-outlined">volume_up</span>
+            </button>
           </div>
         </div>
-        <div class="flex w-full items-center justify-center">
-          <div
-            class="flex h-48 w-48 items-center justify-center rounded-full bg-button-secondary-light dark:bg-button-secondary-dark text-primary">
-            <span class="material-symbols-outlined" style="font-size: 96px;">soup_kitchen</span>
-          </div>
+
+        <div
+          class="flex w-full flex-col sm:flex-row items-center justify-between gap-4 pt-6 mt-4 border-t border-gray-200 dark:border-gray-700">
+          <a href="/staff/pizza1"
+            class="flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-gray-200 dark:bg-gray-700 px-10 py-4 text-lg font-bold text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+            <span class="material-symbols-outlined">arrow_back</span> Previous
+          </a>
+          <a href="/staff/pizza3"
+            class="flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-primary px-10 py-4 text-lg font-bold text-[#212121] hover:bg-yellow-500 transition-colors">
+            Next <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
         </div>
-        <div class="flex flex-col items-center gap-4 text-center">
-          <h1 class="text-4xl font-black leading-tight tracking-tighter sm:text-5xl">Add Sauce and Cheese</h1>
-          <p class="max-w-xl text-base font-normal leading-normal text-text-light/70 dark:text-text-dark/70">
-            Spread one ladle of tomato sauce evenly across the pizza base, leaving a small border. Sprinkle a generous
-            layer of mozzarella cheese over the sauce.
-          </p>
-        </div>
-        <div class="flex justify-center">
-          <button
-            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-transparent gap-2 text-sm font-bold leading-normal tracking-[0.015em] transition-colors hover:bg-primary/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background-light dark:focus-visible:ring-offset-background-dark">
-            <span aria-hidden="true" class="material-symbols-outlined text-xl">play_circle</span>
-            <span class="truncate">Play Audio Instructions</span>
-          </button>
-        </div>
-        <div class="w-full max-w-lg pt-4">
-          <div class="flex flex-1 flex-wrap justify-between gap-3">
-            <a href="/staff/pizza1" class="flex-1 min-w-[120px]">
-              <button
-                class="w-full flex items-center justify-center gap-2 overflow-hidden rounded-lg h-14 px-5 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-base font-bold leading-normal tracking-[0.015em] transition-colors hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background-light dark:focus-visible:ring-offset-background-dark">
-                <span aria-hidden="true" class="material-symbols-outlined">arrow_back</span>
-                <span class="truncate">Previous</span>
-              </button>
-            </a>
-            <a href="/staff/pizza3" class="flex-1 min-w-[120px]">
-              <button
-                class="w-full flex items-center justify-center gap-2 overflow-hidden rounded-lg h-14 px-5 bg-primary text-black text-base font-bold leading-normal tracking-[0.015em] transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background-light dark:focus-visible:ring-offset-background-dark">
-                <span class="truncate">Next</span>
-                <span aria-hidden="true" class="material-symbols-outlined">arrow_forward</span>
-              </button>
-            </a>
-          </div>
-        </div>
-      </main>
-    </div>
+
+      </div>
+    </main>
   </div>
 
   <div class="fixed bottom-4 right-4 z-50">
@@ -200,20 +181,15 @@
       class="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-black shadow-lg transition-transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-primary/50">
       <span class="material-symbols-outlined !text-3xl">accessibility_new</span>
     </button>
-
     <div id="accessibility-menu" role="dialog" aria-labelledby="accessibility-heading" aria-modal="true"
       class="hidden mb-2 w-72 origin-bottom-right rounded-lg border border-gray-200 bg-white p-4 shadow-xl transition-all duration-200 ease-in-out dark:border-gray-700 dark:bg-[#231e0f] absolute bottom-16 right-0">
-
       <div class="border-b border-gray-200 pb-2 mb-4 dark:border-gray-700">
-        <h3 id="accessibility-heading" class="text-lg font-bold text-gray-900 dark:text-white">
-          Accessibility Settings
+        <h3 id="accessibility-heading" class="text-lg font-bold text-gray-900 dark:text-white">Accessibility Settings
         </h3>
       </div>
-
       <div class="space-y-4 h-80 overflow-y-auto pr-1 custom-scrollbar">
         <div class="space-y-2">
-          <label class="text-sm font-medium text-gray-600 dark:text-gray-400" for="font-size">Text
-            Size</label>
+          <label class="text-sm font-medium text-gray-600 dark:text-gray-400" for="font-size">Text Size</label>
           <div class="flex items-center gap-2">
             <span class="text-xs text-gray-600 dark:text-gray-400">A</span>
             <input id="font-size" type="range" min="100" max="180" step="10" value="100"
@@ -221,152 +197,118 @@
             <span class="text-lg text-gray-600 dark:text-gray-400">A</span>
           </div>
         </div>
-
         <div class="space-y-2">
           <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Contrast Theme</p>
           <div class="grid grid-cols-4 gap-2">
             <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-white" data-contrast="black-on-white"
-              data-fg="#000000" data-bg="#ffffff" title="Black on White"
-              aria-label="Black text on White background"></button>
-
+              data-fg="#000000" data-bg="#ffffff" title="Black on White"></button>
             <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-black" data-contrast="white-on-black"
-              data-fg="#ffffff" data-bg="#000000" title="White on Black"
-              aria-label="White text on Black background"></button>
-
+              data-fg="#ffffff" data-bg="#000000" title="White on Black"></button>
             <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-yellow-400" data-contrast="yellow-on-blue"
-              data-fg="#facc15" data-bg="#020617" title="Yellow on Blue"
-              aria-label="Yellow text on Dark Blue background"></button>
-
+              data-fg="#facc15" data-bg="#020617" title="Yellow on Blue"></button>
             <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-blue-600" data-contrast="blue-on-white"
-              data-fg="#2563eb" data-bg="#ffffff" title="Blue on White"
-              aria-label="Blue text on White background"></button>
+              data-fg="#2563eb" data-bg="#ffffff" title="Blue on White"></button>
           </div>
         </div>
-
         <div class="space-y-3 pt-2 border-t border-gray-200 dark:border-gray-700">
-
           <div class="flex items-center justify-between">
             <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Grayscale</p>
-            <label class="inline-flex items-center gap-2 cursor-pointer">
-              <input id="grayscale-toggle" type="checkbox"
-                class="rounded border-gray-300 text-primary focus:ring-primary" />
-              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
-            </label>
+            <label class="inline-flex items-center gap-2 cursor-pointer"><input id="grayscale-toggle" type="checkbox"
+                class="rounded border-gray-300 text-primary focus:ring-primary" /><span
+                class="text-xs text-gray-600 dark:text-gray-400">On</span></label>
           </div>
-
           <div class="flex items-center justify-between">
             <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Text Spacing</p>
-            <label class="inline-flex items-center gap-2 cursor-pointer">
-              <input id="spacing-toggle" type="checkbox"
-                class="rounded border-gray-300 text-primary focus:ring-primary" />
-              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
-            </label>
+            <label class="inline-flex items-center gap-2 cursor-pointer"><input id="spacing-toggle" type="checkbox"
+                class="rounded border-gray-300 text-primary focus:ring-primary" /><span
+                class="text-xs text-gray-600 dark:text-gray-400">On</span></label>
           </div>
-
           <div class="flex items-center justify-between">
             <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Dyslexia Font</p>
-            <label class="inline-flex items-center gap-2 cursor-pointer">
-              <input id="dyslexia-toggle" type="checkbox"
-                class="rounded border-gray-300 text-primary focus:ring-primary" />
-              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
-            </label>
+            <label class="inline-flex items-center gap-2 cursor-pointer"><input id="dyslexia-toggle" type="checkbox"
+                class="rounded border-gray-300 text-primary focus:ring-primary" /><span
+                class="text-xs text-gray-600 dark:text-gray-400">On</span></label>
           </div>
-
           <div class="flex items-center justify-between">
             <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Big Cursor</p>
-            <label class="inline-flex items-center gap-2 cursor-pointer">
-              <input id="cursor-toggle" type="checkbox"
-                class="rounded border-gray-300 text-primary focus:ring-primary" />
-              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
-            </label>
+            <label class="inline-flex items-center gap-2 cursor-pointer"><input id="cursor-toggle" type="checkbox"
+                class="rounded border-gray-300 text-primary focus:ring-primary" /><span
+                class="text-xs text-gray-600 dark:text-gray-400">On</span></label>
           </div>
-
           <div class="flex items-center justify-between">
             <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Highlight Links</p>
-            <label class="inline-flex items-center gap-2 cursor-pointer">
-              <input id="links-toggle" type="checkbox"
-                class="rounded border-gray-300 text-primary focus:ring-primary" />
-              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
-            </label>
+            <label class="inline-flex items-center gap-2 cursor-pointer"><input id="links-toggle" type="checkbox"
+                class="rounded border-gray-300 text-primary focus:ring-primary" /><span
+                class="text-xs text-gray-600 dark:text-gray-400">On</span></label>
           </div>
-
           <div class="flex items-center justify-between">
             <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Reading Guide</p>
-            <label class="inline-flex items-center gap-2 cursor-pointer">
-              <input id="reading-guide-toggle" type="checkbox"
-                class="rounded border-gray-300 text-primary focus:ring-primary" />
-              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
-            </label>
+            <label class="inline-flex items-center gap-2 cursor-pointer"><input id="reading-guide-toggle"
+                type="checkbox" class="rounded border-gray-300 text-primary focus:ring-primary" /><span
+                class="text-xs text-gray-600 dark:text-gray-400">On</span></label>
           </div>
-
           <div class="flex items-center justify-between">
             <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Pause Animations</p>
-            <label class="inline-flex items-center gap-2 cursor-pointer">
-              <input id="animation-toggle" type="checkbox"
-                class="rounded border-gray-300 text-primary focus:ring-primary" />
-              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
-            </label>
+            <label class="inline-flex items-center gap-2 cursor-pointer"><input id="animation-toggle" type="checkbox"
+                class="rounded border-gray-300 text-primary focus:ring-primary" /><span
+                class="text-xs text-gray-600 dark:text-gray-400">On</span></label>
           </div>
-
         </div>
       </div>
-
       <div class="mt-4 border-t border-gray-200 pt-3 dark:border-gray-700">
         <button id="a11y-reset"
-          class="w-full text-center text-sm font-bold text-primary hover:text-yellow-600 hover:underline">
-          Reset Settings
-        </button>
+          class="w-full text-center text-sm font-bold text-primary hover:text-yellow-600 hover:underline">Reset
+          Settings</button>
       </div>
     </div>
   </div>
-
   <script>
       // Modal for "Not Implemented" links
       (function () {
         const style = document.createElement('style');
         style.textContent = `
-    .__notimpl_modal_backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-    .__notimpl_modal {
-      background: white;
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-      max-width: 90%;
-      width: 360px;
-      text-align: center;
-      font-family: 'Work Sans', sans-serif;
-    }
-    .__notimpl_modal h2 {
-      margin: 0 0 12px;
-      font-size: 20px;
-      color: #1F2937;
-    }
-    .__notimpl_modal p {
-      margin: 0 0 20px;
-      color: #6B7280;
-      font-size: 14px;
-    }
-    .__notimpl_modal button {
-      padding: 10px 20px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      background: #fac638;
-      color: white;
-      font-weight: 600;
-    }
-    .__notimpl_modal button:hover {
-      background: #D97706;
-    }
-  `;
+      .__notimpl_modal_backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+      .__notimpl_modal {
+        background: white;
+        padding: 24px;
+        border-radius: 12px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        max-width: 90%;
+        width: 360px;
+        text-align: center;
+        font-family: 'Work Sans', sans-serif;
+      }
+      .__notimpl_modal h2 {
+        margin: 0 0 12px;
+        font-size: 20px;
+        color: #1F2937;
+      }
+      .__notimpl_modal p {
+        margin: 0 0 20px;
+        color: #6B7280;
+        font-size: 14px;
+      }
+      .__notimpl_modal button {
+        padding: 10px 20px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        background: #fac638;
+        color: white;
+        font-weight: 600;
+      }
+      .__notimpl_modal button:hover {
+        background: #D97706;
+      }
+    `;
         document.head.appendChild(style);
 
         function showModal() {
@@ -402,7 +344,7 @@
         }, true);
       })();
 
-    // ===== ACCESSIBILITY PANEL LOGIC =====
+    // ===== ACCESSIBILITY PANEL LOGIC (Matches Pizza1) =====
     (function () {
       const KEY_SIZE = 'a11y_font';
       const KEY_FG = 'a11y_fg';
