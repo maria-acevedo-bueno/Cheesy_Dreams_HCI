@@ -5,20 +5,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login - Cheesy Dreams</title>
-
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-
-  <!-- Work Sans font -->
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;900&display=swap"
-    rel="stylesheet" />
-
-  <!-- Material icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-
-  <!-- Dyslexia-friendly font (optional) -->
   <link href="https://fonts.cdnfonts.com/css/opendyslexic" rel="stylesheet">
-
+  <style type="text/tailwindcss">
+    .group:focus-within .group-focus-within\:block {
+      display: block;
+    }
+    .group:focus-within .group-focus-within\:opacity-100 {
+      opacity: 1;
+    }
+    .group:focus-within .group-focus-within\:translate-y-0 {
+      transform: translateY(0);
+    }
+    </style>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
@@ -50,50 +51,87 @@
   </script>
 
   <style>
-    body {
-      font-family: 'Work Sans', sans-serif;
-    }
-
-    .material-symbols-outlined {
-      font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24;
-    }
-
-    /* --- Accessibility variables --- */
+    /* --- Accessibility Variables --- */
     :root {
       --a11y-fg: inherit;
       --a11y-bg: inherit;
     }
 
-    /* Dyslexia mode */
     body.a11y-dyslexia-font {
       font-family: 'OpenDyslexic', 'Work Sans', sans-serif !important;
     }
 
-    /* High contrast applies ONLY to layout-container (main content), NOT the popup */
+    body.a11y-cursor-big,
+    body.a11y-cursor-big a,
+    body.a11y-cursor-big button {
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="black" stroke="white" stroke-width="2"><path d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.36z"/></svg>') 0 0, auto !important;
+    }
+
+    body.a11y-highlight-links a {
+      text-decoration: underline !important;
+      text-decoration-thickness: 4px !important;
+      text-decoration-color: #fac638 !important;
+      font-weight: 800 !important;
+    }
+
+    body.a11y-text-spacing * {
+      line-height: 1.8 !important;
+      letter-spacing: 0.1em !important;
+      word-spacing: 0.16em !important;
+    }
+
+    body.a11y-text-spacing p {
+      margin-bottom: 2em !important;
+    }
+
+    html.a11y-grayscale {
+      filter: grayscale(100%) !important;
+    }
+
+    body.a11y-paused * {
+      animation-play-state: paused !important;
+      transition: none !important;
+    }
+
+    #a11y-reading-guide {
+      display: none;
+      position: fixed;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background-color: rgba(250, 198, 56, 0.4);
+      border-top: 2px solid #fac638;
+      border-bottom: 2px solid #fac638;
+      pointer-events: none;
+      z-index: 99999;
+      transform: translateY(-50%);
+    }
+
+    body.a11y-reading-guide #a11y-reading-guide {
+      display: block;
+    }
+
     body.a11y-high-contrast .layout-container,
-    body.a11y-high-contrast .layout-container *:not(#accessibility-menu):not(#accessibility-menu *) {
+    body.a11y-high-contrast .layout-container *:not(.material-symbols-outlined) {
       color: var(--a11y-fg) !important;
       background-color: var(--a11y-bg) !important;
       border-color: var(--a11y-fg) !important;
+      box-shadow: none !important;
     }
 
-    /* Small tweaks for links/buttons when custom colors are active */
-    body.a11y-custom-colors .layout-container a {
-      text-decoration: underline;
-      font-weight: 600;
+    body.a11y-high-contrast .layout-container .material-symbols-outlined {
+      color: var(--a11y-fg) !important;
     }
 
-    body.a11y-custom-colors .layout-container button {
-      border-width: 1px;
+    body.a11y-high-contrast .layout-container button {
+      border-width: 2px !important;
+      border-style: solid !important;
     }
   </style>
 </head>
 
 <body class="bg-background-light font-display text-text-primary">
+  <div id="a11y-reading-guide"></div>
   <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
     <!-- This is the main content wrapper we recolor -->
     <div class="layout-container flex h-full grow flex-col">
