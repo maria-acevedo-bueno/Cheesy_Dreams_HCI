@@ -459,7 +459,7 @@
     <script>
       // ===== Simple "not implemented" modal for links with data-not-implemented =====
       (function () {
-        function showNotImplemented() {
+        function showModal() {
           if (document.querySelector('.__notimpl_modal_backdrop')) return;
 
           const backdrop = document.createElement('div');
@@ -523,7 +523,7 @@
           const target = e.target.closest('[data-not-implemented]');
           if (target) {
             e.preventDefault();
-            showNotImplemented();
+            showModal();
           }
         });
       })();

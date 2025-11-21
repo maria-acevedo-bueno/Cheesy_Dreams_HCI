@@ -142,7 +142,7 @@
               <a class="text-[#181611] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary"
                 href="/customer/home">Home</a>
               <a class="text-[#181611] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary"
-                data-not-implemented href="#">About Us</a>
+                href="#" data-not-implemented>About Us</a>
               <a class="text-[#181611] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary"
                 data-not-implemented href="#">Contact</a>
             </nav>
@@ -727,7 +727,7 @@
           const target = e.target.closest('[data-not-implemented]');
           if (target) {
             e.preventDefault();
-            showNotImplemented();
+            showModal();
           }
         });
       })();
