@@ -11,7 +11,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
   <link href="https://fonts.cdnfonts.com/css/opendyslexic" rel="stylesheet">
-
+  <script>
+    const currentStatus = localStorage.getItem('staffStatus');
+    if (currentStatus === 'checkin') {
+      window.location.href = '/staff/staff_checkout';
+    }
+  </script>
   <script>
     tailwind.config = {
       darkMode: "class",
@@ -177,7 +182,8 @@
         <button
           class="flex flex-1 min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-14 px-5 bg-primary text-charcoal text-lg font-bold leading-normal transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary/50">
           <a href="/staff/reservations"
-            class="flex flex-1 min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-14 px-5 bg-primary text-charcoal text-lg font-bold leading-normal transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary/50">
+            class="flex flex-1 min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-14 px-5 bg-primary text-charcoal text-lg font-bold leading-normal transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary/50"
+            onclick="doCheckIn()">
             <span class="material-symbols-outlined">login</span>
             <span class="truncate">Check In</span>
           </a>
@@ -583,6 +589,11 @@
         loadState(KEY_PAUSE, 'a11y-paused', animationToggle);
       }
     })();
+  </script>
+  <script>
+    function doCheckIn() {
+      localStorage.setItem('staffStatus', 'checkin');
+    }
   </script>
 </body>
 

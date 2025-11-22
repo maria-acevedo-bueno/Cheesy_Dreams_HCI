@@ -95,6 +95,10 @@ def sales():
 def staff_checkin():
     return render_template('staff/check.html')
 
+@app.route('/staff/staff_checkout')
+def staff_checkout():
+    return render_template('staff/checkout.html')
+
 @app.route('/staff/reservations')
 def staff_reservations():
     return render_template('staff/reservations_staff.html')
