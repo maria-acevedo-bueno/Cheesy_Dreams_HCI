@@ -180,9 +180,11 @@
                     <span class="truncate">Check In</span>
                 </button>
                 <button
-                    class="flex flex-1 min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-14 px-5 bg-primary text-charcoal text-lg font-bold leading-normal transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary/50">
-                    <span class="material-symbols-outlined">logout</span>
-                    <span class="truncate">Check Out</span>
+                    class="flex flex-1 min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-14 px-5 bg-primary text-charcoal text-lg font-bold leading-normal transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary/50" onclick="doCheckOut()">
+                    <a href="/">
+                        <span class="material-symbols-outlined">logout</span>
+                        <span class="truncate">Check Out</span>
+                    </a>
                 </button>
             </div>
         </main>
@@ -390,7 +392,7 @@
 
                 const modal = document.createElement('div');
                 modal.className = '__notimpl_modal';
-                modal.innerHTML = '<h2>Not implemented yet!</h2><p>Esta funcionalidad aún no está implementada.</p>';
+                modal.innerHTML = '<h2>Not implemented yet!</h2><p>This functionality is not implemented yet.</p>';
 
                 const closeBtn = document.createElement('button');
                 closeBtn.textContent = 'Cerrar';
@@ -584,6 +586,11 @@
                 loadState(KEY_PAUSE, 'a11y-paused', animationToggle);
             }
         })();
+    </script>
+    <script>
+        function doCheckOut() {
+            localStorage.setItem('staffStatus', 'checkout');
+        }
     </script>
 </body>
 
