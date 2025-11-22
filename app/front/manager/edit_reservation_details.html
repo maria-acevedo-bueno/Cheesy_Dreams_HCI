@@ -18,71 +18,95 @@
         'opsz' 24
     }
   </style>
-  <script
-    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { primary: "#fac638", "background-light": "#f8f8f5", "background-dark": "#231e0f", "brand-blue": "#005A9C", "brand-gray-bg": "#F0F2F5", "brand-gray-text": "#6C757D", "brand-yellow": "#FFC107", "brand-success": "#28A745", "brand-danger": "#DC3545" }, fontFamily: { display: "Work Sans" }, borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" } } } };</script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#fac638",
+            "background-light": "#f8f8f5",
+            "background-dark": "#231e0f",
+            "brand-blue": "#005A9C",
+            "brand-gray-bg": "#F0F2F5",
+            "brand-gray-text": "#6C757D",
+            "brand-yellow": "#FFC107",
+            "brand-success": "#28A745",
+            "brand-danger": "#DC3545"
+          },
+          fontFamily: {
+            display: "Work Sans"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          }
+        }
+      }
+    };
+  </script>
 </head>
 
 <body class="font-display">
   <div
     class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
     <div class="flex min-h-screen">
-      <div
-        class="flex flex-col border-r border-[#e6e3db] dark:border-gray-700 bg-white dark:bg-black/20 w-64 p-4 shrink-0">
+
+      <!-- INICIO: Panel Lateral (Copiado del segundo código) -->
+      <aside
+        class="flex h-screen w-64 flex-col bg-white dark:bg-gray-900 p-4 sticky top-0 border-r border-gray-200 dark:border-gray-700">
         <div class="flex flex-col gap-4">
-          <div class="flex items-center gap-3">
+          <div class="flex items-center gap-3 px-3 py-2">
             <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-              data-alt="Cheesy Dreams restaurant logo"
-              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuArBRiL7gkCxgru8l8eTdKUkdYAoYzzK8XisdY21LYEeOVdfOwxwQ3M5cDrQDg4EZnlBMWYpL3s6aF8dPS0FdlPtLnojBq4B7PK3bOBhQ9J99XoeRspgtBa_ymg0kA0RSINPGqMNjsDM36z4Jf4cp-jp6uTmVkYyrvPF2vygwryCB_NxO7cRwSDWgPdfx_gRSIu8t8LPXM4TK1NgvZR1qCGZx6s9wcdfWfdDv8ztD7zRV8cp9ov__hmucS7GfHR6HgutJlsGkTkmK0");'>
+              data-alt="Cheesy Dreams logo"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuACWG7apcDQDYvNEqsji_QXxNXAAHmsavK3M2grSSmAsuCbB8QH6m8V97WY1Qo3PkFnSbd4ZdQ8omPhJNiTkN0T_Yj36jbtKZrNrmx2BAlUzJLMIOSZlvulEkHxiVK46Dz8kxMoiR5y3X-GdmFlLRh2h3nWCNPi7FlMCz3jMmbHSASdtzuykd7r0YKMrMuZJRx43-0rS5JIhKA1NGR2PUOnktpFXcC1z7I4DpPGQJhwT8fu84IMlKksjcm2qsGLxbL7iAgq-m-P4WI");'>
             </div>
             <div class="flex flex-col">
-              <h1 class="text-[#181611] dark:text-white text-base font-medium leading-normal">Cheesy Dreams</h1>
-              <p class="text-[#8c805f] dark:text-gray-400 text-sm font-normal leading-normal">Management</p>
+              <h1 class="text-gray-900 dark:text-white text-base font-medium leading-normal">Cheesy Dreams</h1>
+              <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Management System</p>
             </div>
           </div>
-          <div class="flex flex-col gap-2 mt-4 flex-grow">
-            <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#181611] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+          <nav class="flex flex-col gap-2 mt-4">
+            <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
               href="/manager/dashboard">
-              <span class="material-symbols-outlined text-2xl">dashboard</span>
+              <span class="material-symbols-outlined">dashboard</span>
               <p class="text-sm font-medium leading-normal">Dashboard</p>
             </a>
-            <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-[#181611] dark:bg-brand-yellow/30 dark:text-white"
-              href="#">
-              <span class="material-symbols-outlined text-2xl"
-                style="font-variation-settings: 'FILL' 1;">book_online</span>
+            <!-- Pestaña Activa: Reservations -->
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-gray-900"
+              href="/manager/manage_reservations">
+              <span class="material-symbols-outlined">book_online</span>
               <p class="text-sm font-medium leading-normal">Reservations</p>
             </a>
-            <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#181611] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-              href="#">
-              <span class="material-symbols-outlined text-2xl">calendar_month</span>
-              <p class="text-sm font-medium leading-normal">Calendar</p>
+            <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+              href="/manager/inventory">
+              <span class="material-symbols-outlined">inventory_2</span>
+              <p class="text-sm font-medium leading-normal">Inventory</p>
             </a>
-            <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#181611] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-              href="#">
-              <span class="material-symbols-outlined text-2xl">restaurant_menu</span>
-              <p class="text-sm font-medium leading-normal">Menu</p>
+            <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+              href="/manager/sales">
+              <span class="material-symbols-outlined">assessment</span>
+              <p class="text-sm font-medium leading-normal">Sales Reports</p>
             </a>
-            <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#181611] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-              href="#">
-              <span class="material-symbols-outlined text-2xl">settings</span>
-              <p class="text-sm font-medium leading-normal">Settings</p>
-            </a>
-            <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#181611] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-              href="#">
-              <span class="material-symbols-outlined text-2xl">help</span>
-              <p class="text-sm font-medium leading-normal">Help</p>
-            </a>
-          </div>
+          </nav>
         </div>
-        <div class="flex flex-col gap-4">
-          <div class="flex flex-col gap-1 border-t border-[#e6e3db] dark:border-gray-700 pt-4">
-            <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#181611] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-              href="/logout">
-              <span class="material-symbols-outlined text-2xl">logout</span>
-              <p class="text-sm font-medium leading-normal">Logout</p>
-            </a>
-          </div>
+        <div class="mt-auto flex flex-col gap-2">
+          <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+            href="#" data-not-implemented>
+            <span class="material-symbols-outlined">settings</span>
+            <p class="text-sm font-medium leading-normal">Settings</p>
+          </a>
+          <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+            href="../logout">
+            <span class="material-symbols-outlined">logout</span>
+            <p class="text-sm font-medium leading-normal">Log Out</p>
+          </a>
         </div>
-      </div>
+      </aside>
+      <!-- FIN: Panel Lateral -->
+
       <main class="flex-1 p-8 overflow-y-auto">
         <div class="max-w-4xl mx-auto">
           <p class="text-[#181611] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Edit
@@ -168,9 +192,10 @@
             </a>
             <a href="/manager/manage_reservations" class="w-full sm:w-auto">
               <button
-                class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-6 bg-brand-blue text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-brand-blue/90 disabled:bg-gray-400 dark:disabled:bg-gray-600 disabled:cursor-not-allowed">
+                class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-6 bg-primary text-gray-900 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 disabled:bg-gray-400 dark:disabled:bg-gray-600 disabled:cursor-not-allowed">
                 <span class="truncate">Save Changes</span>
               </button>
+
             </a>
           </div>
         </div>
