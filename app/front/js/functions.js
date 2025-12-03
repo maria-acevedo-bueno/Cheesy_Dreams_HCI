@@ -289,4 +289,14 @@
     applyInitialSettings();
   })();
 
+  // Expose simple staff helpers used by inline handlers
+  window.doCheckIn = function() {
+    try { localStorage.setItem('staffStatus','checkin'); } catch(e){}
+    window.location.href = '/staff/staff_checkout';
+  };
+  window.doCheckOut = function() {
+    try { localStorage.removeItem('staffStatus'); } catch(e){}
+    window.location.href = '/';
+  };
+
 })();
