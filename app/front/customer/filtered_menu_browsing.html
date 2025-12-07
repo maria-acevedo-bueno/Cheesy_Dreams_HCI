@@ -36,6 +36,15 @@
       border-width: 0;
     }
 
+    /* Pictogram specific styles */
+    .pictogram-card {
+      transition: all 0.3s ease;
+    }
+
+    .pictogram-card:hover {
+      transform: scale(1.05);
+    }
+
     /* --- Accessibility Variables --- */
     :root {
       --a11y-fg: inherit;
@@ -242,24 +251,31 @@
             <div class="flex flex-wrap justify-between gap-4 p-4 items-center">
               <h1 class="text-[#181611] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">
                 Our Menu</h1>
-              <div class="flex items-center gap-2 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg">
-                <button id="visual-btn"
-                  class="px-3 py-1.5 rounded-md text-sm font-bold text-[#181611] dark:text-white bg-white dark:bg-gray-700 shadow-sm">
-                  <span class="material-symbols-outlined text-lg inline-block align-middle mr-1.5">grid_view</span>
-                  Visual
-                </button>
-                <button id="text-btn"
-                  class="px-3 py-1.5 rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-[#181611] dark:hover:text-white">
-                  <span class="material-symbols-outlined text-lg inline-block align-middle mr-1.5">notes</span>
-                  Plain Text
-                </button>
-                <div class="flex items-center gap-2">
-                  <button id="tts-read-btn" title="Read visible text" aria-pressed="false" class="px-3 py-1.5 rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-[#181611] dark:hover:text-white bg-white dark:bg-gray-700 shadow-sm">
-                    <span class="material-symbols-outlined text-lg inline-block align-middle mr-1">volume_up</span>
+              <div class="flex flex-wrap items-center gap-2">
+                <div class="flex items-center gap-2 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg">
+                  <button id="visual-btn"
+                    class="px-3 py-1.5 rounded-md text-sm font-bold text-[#181611] dark:text-white bg-white dark:bg-gray-700 shadow-sm">
+                    <span class="material-symbols-outlined text-lg inline-block align-middle mr-1.5">grid_view</span>
+                    Visual
+                  </button>
+                  <button id="text-btn"
+                    class="px-3 py-1.5 rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-[#181611] dark:hover:text-white">
+                    <span class="material-symbols-outlined text-lg inline-block align-middle mr-1.5">notes</span>
+                    Plain Text
+                  </button>
+                  <button id="pictogram-btn"
+                    class="px-3 py-1.5 rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-[#181611] dark:hover:text-white">
+                    <span class="material-symbols-outlined text-lg inline-block align-middle mr-1.5">image</span>
+                    Pictogram
+                  </button>
+                </div>
+                <div class="flex items-center gap-2 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg">
+                  <button id="tts-read-btn" title="Read visible text" aria-pressed="false" class="px-3 py-1.5 rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-[#181611] dark:hover:text-white">
+                    <span class="material-symbols-outlined text-lg inline-block align-middle mr-1.5">volume_up</span>
                     Read
                   </button>
                   <button id="tts-stop-btn" title="Stop reading" aria-hidden="true" class="px-3 py-1.5 rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-[#181611] dark:hover:text-white hidden">
-                    <span class="material-symbols-outlined text-lg inline-block align-middle mr-1">stop</span>
+                    <span class="material-symbols-outlined text-lg inline-block align-middle mr-1.5">stop</span>
                     Stop
                   </button>
                 </div>
@@ -491,6 +507,212 @@
               </section>
             </div>
 
+            <!-- Pictogram Menu -->
+            <div class="hidden" id="pictogram-menu">
+              <!-- Pizzas Section -->
+              <section id="pizzas-pictogram" class="mb-12">
+                <div class="flex items-center gap-3 mb-6 border-b-4 border-primary pb-4">
+                  <span class="material-symbols-outlined text-primary" style="font-size: 120px; line-height: 1;">local_pizza</span>
+                  <h2 class="text-4xl font-black text-[#181611] dark:text-white">Pizzas</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <!-- Pizza Item 1 -->
+                  <article class="pictogram-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border-4 border-gray-200 dark:border-gray-700 hover:border-primary shadow-xl">
+                    <div class="w-full h-64 bg-gradient-to-br from-yellow-100 to-amber-100 flex items-center justify-center gap-4 p-4">
+                      <div class="flex flex-col items-center">
+                        <span class="material-symbols-outlined text-yellow-600" style="font-size: 80px;">nutrition</span>
+                        <span class="text-xs font-bold text-gray-600 mt-1">Cheese</span>
+                      </div>
+                      <div class="flex flex-col items-center">
+                        <span class="material-symbols-outlined text-red-600" style="font-size: 80px;">circle</span>
+                        <span class="text-xs font-bold text-gray-600 mt-1">Tomato</span>
+                      </div>
+                      <div class="flex flex-col items-center">
+                        <span class="material-symbols-outlined text-green-600" style="font-size: 80px;">eco</span>
+                        <span class="text-xs font-bold text-gray-600 mt-1">Basil</span>
+                      </div>
+                    </div>
+                    <div class="p-6">
+                      <div class="flex items-center gap-2 mb-3">
+                        <span class="material-symbols-outlined text-green-600" style="font-size: 40px;" aria-label="Vegetarian">eco</span>
+                        <span class="text-sm font-bold text-green-600 bg-green-100 dark:bg-green-900/40 px-3 py-1 rounded-full">VEGETARIAN</span>
+                      </div>
+                      <h3 class="text-2xl font-black text-[#181611] dark:text-white mb-3">The Gouda Life</h3>
+                      <p class="text-lg text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+                        Cheese pizza with gouda, mozzarella, and basil
+                      </p>
+                      <div class="flex items-center justify-between">
+                        <span class="text-3xl font-black text-primary">$14.99</span>
+                        <button data-not-implemented
+                          class="flex items-center gap-2 bg-primary hover:bg-primary/90 text-[#181611] font-bold px-6 py-3 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all"
+                          aria-label="Add The Gouda Life to cart">
+                          <span class="material-symbols-outlined" style="font-size: 32px;">add_shopping_cart</span>
+                          <span>Add</span>
+                        </button>
+                      </div>
+                    </div>
+                  </article>
+
+                  <!-- Pizza Item 2 -->
+                  <article class="pictogram-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border-4 border-gray-200 dark:border-gray-700 hover:border-primary shadow-xl">
+                    <div class="w-full h-64 bg-gradient-to-br from-red-100 to-orange-100 flex items-center justify-center gap-4 p-4">
+                      <div class="flex flex-col items-center">
+                        <span class="material-symbols-outlined text-red-700" style="font-size: 80px;">circle</span>
+                        <span class="text-xs font-bold text-gray-600 mt-1">Pepperoni</span>
+                      </div>
+                      <div class="flex flex-col items-center">
+                        <span class="material-symbols-outlined text-red-600" style="font-size: 80px;">local_fire_department</span>
+                        <span class="text-xs font-bold text-gray-600 mt-1">Chili</span>
+                      </div>
+                      <div class="flex flex-col items-center">
+                        <span class="material-symbols-outlined text-yellow-600" style="font-size: 80px;">nutrition</span>
+                        <span class="text-xs font-bold text-gray-600 mt-1">Cheese</span>
+                      </div>
+                    </div>
+                    <div class="p-6">
+                      <div class="flex items-center gap-2 mb-3">
+                        <span class="material-symbols-outlined text-red-500" style="font-size: 40px;" aria-label="Spicy">local_fire_department</span>
+                        <span class="text-sm font-bold text-red-500 bg-red-100 dark:bg-red-900/40 px-3 py-1 rounded-full">SPICY</span>
+                      </div>
+                      <h3 class="text-2xl font-black text-[#181611] dark:text-white mb-3">Spicy Pepperoni</h3>
+                      <p class="text-lg text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+                        Pepperoni pizza with jalapenos and chili flakes
+                      </p>
+                      <div class="flex items-center justify-between">
+                        <span class="text-3xl font-black text-primary">$16.50</span>
+                        <button data-not-implemented
+                          class="flex items-center gap-2 bg-primary hover:bg-primary/90 text-[#181611] font-bold px-6 py-3 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all"
+                          aria-label="Add Spicy Pepperoni to cart">
+                          <span class="material-symbols-outlined" style="font-size: 32px;">add_shopping_cart</span>
+                          <span>Add</span>
+                        </button>
+                      </div>
+                    </div>
+                  </article>
+
+                  <!-- Pizza Item 3 -->
+                  <article class="pictogram-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border-4 border-gray-200 dark:border-gray-700 hover:border-primary shadow-xl">
+                    <div class="w-full h-64 bg-gradient-to-br from-green-100 to-lime-100 flex items-center justify-center gap-3 p-4">
+                      <div class="flex flex-col items-center">
+                        <span class="material-symbols-outlined text-red-600" style="font-size: 70px;">nutrition</span>
+                        <span class="text-xs font-bold text-gray-600 mt-1">Peppers</span>
+                      </div>
+                      <div class="flex flex-col items-center">
+                        <span class="material-symbols-outlined text-purple-600" style="font-size: 70px;">circle</span>
+                        <span class="text-xs font-bold text-gray-600 mt-1">Onions</span>
+                      </div>
+                      <div class="flex flex-col items-center">
+                        <span class="material-symbols-outlined text-gray-700" style="font-size: 70px;">circle</span>
+                        <span class="text-xs font-bold text-gray-600 mt-1">Olives</span>
+                      </div>
+                      <div class="flex flex-col items-center">
+                        <span class="material-symbols-outlined text-amber-700" style="font-size: 70px;">eco</span>
+                        <span class="text-xs font-bold text-gray-600 mt-1">Mushrooms</span>
+                      </div>
+                    </div>
+                    <div class="p-6">
+                      <div class="flex items-center gap-2 mb-3">
+                        <span class="material-symbols-outlined text-blue-500" style="font-size: 40px;" aria-label="Gluten Free">grain</span>
+                        <span class="text-sm font-bold text-blue-500 bg-blue-100 dark:bg-blue-900/40 px-3 py-1 rounded-full">GLUTEN FREE</span>
+                      </div>
+                      <h3 class="text-2xl font-black text-[#181611] dark:text-white mb-3">Veggie Delight</h3>
+                      <p class="text-lg text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+                        Vegetable pizza with peppers, onions, olives, and mushrooms
+                      </p>
+                      <div class="flex items-center justify-between">
+                        <span class="text-3xl font-black text-primary">$17.00</span>
+                        <button data-not-implemented
+                          class="flex items-center gap-2 bg-primary hover:bg-primary/90 text-[#181611] font-bold px-6 py-3 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all"
+                          aria-label="Add Veggie Delight to cart">
+                          <span class="material-symbols-outlined" style="font-size: 32px;">add_shopping_cart</span>
+                          <span>Add</span>
+                        </button>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </section>
+
+              <!-- Pastas Section -->
+              <section id="pastas-pictogram" class="mb-12">
+                <div class="flex items-center gap-3 mb-6 border-b-4 border-primary pb-4">
+                  <span class="material-symbols-outlined text-primary" style="font-size: 120px; line-height: 1;">restaurant</span>
+                  <h2 class="text-4xl font-black text-[#181611] dark:text-white">Pastas</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <!-- Pasta Item 1 -->
+                  <article class="pictogram-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border-4 border-gray-200 dark:border-gray-700 hover:border-primary shadow-xl">
+                    <div class="w-full h-64 bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center gap-4 p-4">
+                      <div class="flex flex-col items-center">
+                        <span class="material-symbols-outlined text-amber-600" style="font-size: 80px;">restaurant</span>
+                        <span class="text-xs font-bold text-gray-600 mt-1">Pasta</span>
+                      </div>
+                      <div class="flex flex-col items-center">
+                        <span class="material-symbols-outlined text-yellow-600" style="font-size: 80px;">nutrition</span>
+                        <span class="text-xs font-bold text-gray-600 mt-1">Cheese</span>
+                      </div>
+                      <div class="flex flex-col items-center">
+                        <span class="material-symbols-outlined text-gray-400" style="font-size: 80px;">bubble_chart</span>
+                        <span class="text-xs font-bold text-gray-600 mt-1">Cream</span>
+                      </div>
+                    </div>
+                    <div class="p-6">
+                      <h3 class="text-2xl font-black text-[#181611] dark:text-white mb-3">Fettuccine Alfredo</h3>
+                      <p class="text-lg text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+                        Creamy pasta with cheese and garlic sauce
+                      </p>
+                      <div class="flex items-center justify-between">
+                        <span class="text-3xl font-black text-primary">$15.50</span>
+                        <button data-not-implemented
+                          class="flex items-center gap-2 bg-primary hover:bg-primary/90 text-[#181611] font-bold px-6 py-3 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all"
+                          aria-label="Add Fettuccine Alfredo to cart">
+                          <span class="material-symbols-outlined" style="font-size: 32px;">add_shopping_cart</span>
+                          <span>Add</span>
+                        </button>
+                      </div>
+                    </div>
+                  </article>
+
+                  <!-- Pasta Item 2 -->
+                  <article class="pictogram-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border-4 border-gray-200 dark:border-gray-700 hover:border-primary shadow-xl">
+                    <div class="w-full h-64 bg-gradient-to-br from-red-100 to-orange-100 flex items-center justify-center gap-4 p-4">
+                      <div class="flex flex-col items-center">
+                        <span class="material-symbols-outlined text-amber-600" style="font-size: 80px;">restaurant</span>
+                        <span class="text-xs font-bold text-gray-600 mt-1">Spaghetti</span>
+                      </div>
+                      <div class="flex flex-col items-center">
+                        <span class="material-symbols-outlined text-red-600" style="font-size: 80px;">circle</span>
+                        <span class="text-xs font-bold text-gray-600 mt-1">Tomato</span>
+                      </div>
+                      <div class="flex flex-col items-center">
+                        <span class="material-symbols-outlined text-green-600" style="font-size: 80px;">eco</span>
+                        <span class="text-xs font-bold text-gray-600 mt-1">Herbs</span>
+                      </div>
+                    </div>
+                    <div class="p-6">
+                      <h3 class="text-2xl font-black text-[#181611] dark:text-white mb-3">Spaghetti Marinara</h3>
+                      <p class="text-lg text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+                        Spaghetti with tomato sauce and herbs
+                      </p>
+                      <div class="flex items-center justify-between">
+                        <span class="text-3xl font-black text-primary">$13.99</span>
+                        <button data-not-implemented
+                          class="flex items-center gap-2 bg-primary hover:bg-primary/90 text-[#181611] font-bold px-6 py-3 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all"
+                          aria-label="Add Spaghetti Marinara to cart">
+                          <span class="material-symbols-outlined" style="font-size: 32px;">add_shopping_cart</span>
+                          <span>Add</span>
+                        </button>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </section>
+
+              <!-- More sections can be added similarly -->
+            </div>
+
             <div class="hidden text-center py-16 px-6 bg-gray-50 dark:bg-gray-800/50 rounded-xl">
               <span class="material-symbols-outlined text-6xl text-gray-400 dark:text-gray-600">search_off</span>
               <h3 class="mt-4 text-xl font-bold text-[#181611] dark:text-white">No Dishes Found</h3>
@@ -634,28 +856,54 @@
       document.addEventListener('DOMContentLoaded', function () {
         const visualBtn = document.getElementById('visual-btn');
         const textBtn = document.getElementById('text-btn');
+        const pictogramBtn = document.getElementById('pictogram-btn');
         const visualMenu = document.getElementById('visual-menu');
         const textMenu = document.getElementById('text-menu');
+        const pictogramMenu = document.getElementById('pictogram-menu');
 
-        function setActiveButton(activeBtn, inactiveBtn) {
+        function setActiveButton(activeBtn, inactiveBtns) {
           activeBtn.classList.add('font-bold', 'text-[#181611]', 'dark:text-white', 'bg-white', 'dark:bg-gray-700', 'shadow-sm');
           activeBtn.classList.remove('font-medium', 'text-gray-500', 'dark:text-gray-400');
 
-          inactiveBtn.classList.add('font-medium', 'text-gray-500', 'dark:text-gray-400');
-          inactiveBtn.classList.remove('font-bold', 'text-[#181611]', 'dark:text-white', 'bg-white', 'dark:bg-gray-700', 'shadow-sm');
+          inactiveBtns.forEach(btn => {
+            btn.classList.add('font-medium', 'text-gray-500', 'dark:text-gray-400');
+            btn.classList.remove('font-bold', 'text-[#181611]', 'dark:text-white', 'bg-white', 'dark:bg-gray-700', 'shadow-sm');
+          });
         }
 
         textBtn.addEventListener('click', () => {
           visualMenu.classList.add('hidden');
+          pictogramMenu.classList.add('hidden');
           textMenu.classList.remove('hidden');
-          setActiveButton(textBtn, visualBtn);
+          setActiveButton(textBtn, [visualBtn, pictogramBtn]);
         });
 
         visualBtn.addEventListener('click', () => {
           textMenu.classList.add('hidden');
+          pictogramMenu.classList.add('hidden');
           visualMenu.classList.remove('hidden');
-          setActiveButton(visualBtn, textBtn);
+          setActiveButton(visualBtn, [textBtn, pictogramBtn]);
         });
+
+        pictogramBtn.addEventListener('click', () => {
+          textMenu.classList.add('hidden');
+          visualMenu.classList.add('hidden');
+          pictogramMenu.classList.remove('hidden');
+          setActiveButton(pictogramBtn, [visualBtn, textBtn]);
+        });
+
+        // Check URL hash on load to show specific menu
+        if (window.location.hash === '#text') {
+          visualMenu.classList.add('hidden');
+          pictogramMenu.classList.add('hidden');
+          textMenu.classList.remove('hidden');
+          setActiveButton(textBtn, [visualBtn, pictogramBtn]);
+        } else if (window.location.hash === '#pictogram') {
+          visualMenu.classList.add('hidden');
+          textMenu.classList.add('hidden');
+          pictogramMenu.classList.remove('hidden');
+          setActiveButton(pictogramBtn, [visualBtn, textBtn]);
+        }
       });
     </script>
 
