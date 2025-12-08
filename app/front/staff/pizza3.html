@@ -122,7 +122,7 @@
       </div>
     </header>
 
-    <main class="flex flex-1 flex-col items-center justify-center p-4 sm:p-8">
+    <main id="text-menu" class="flex flex-1 flex-col items-center justify-center p-4 sm:p-8">
       <div class="flex w-full max-w-2xl flex-col items-center gap-6">
 
         <div class="w-full max-w-md mb-2">
@@ -156,9 +156,17 @@
                 <li>Sprinkle 50g of chopped mushrooms.</li>
               </ul>
             </div>
-            <button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-primary">
-              <span class="material-symbols-outlined">volume_up</span>
-            </button>
+            
+            <div class="flex items-center gap-2 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg">
+              <button id="tts-read-btn" title="Read visible text" aria-pressed="false" class="px-3 py-1.5 rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-[#181611] dark:hover:text-white">
+                <span class="material-symbols-outlined text-lg inline-block align-middle mr-1.5">volume_up</span>
+                Read
+              </button>
+              <button id="tts-stop-btn" title="Stop reading" aria-hidden="true" class="px-3 py-1.5 rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-[#181611] dark:hover:text-white hidden">
+                <span class="material-symbols-outlined text-lg inline-block align-middle mr-1.5">stop</span>
+                Stop
+              </button>
+            </div>
           </div>
         </div>
 
@@ -265,6 +273,99 @@
       </div>
     </div>
   </div>
+
+  <script>
+      // Text-to-Speech for Plain Text menu
+      (function () {
+        const readBtn = document.getElementById('tts-read-btn');
+        const stopBtn = document.getElementById('tts-stop-btn');
+        const textMenu = document.getElementById('text-menu');
+        let utterance;
+
+        function gatherVisibleText() {
+          if (!textMenu) return '';
+          // Only read visible sections inside #text-menu
+          const visible = Array.from(textMenu.querySelectorAll(':scope section, :scope ul, :scope p, :scope h1, :scope h2, :scope h3, :scope li'))
+            .filter(el => el.offsetParent !== null);
+          const texts = visible.map(el => el.innerText.trim()).filter(Boolean);
+          return texts.join('\n\n');
+        }
+
+        function startReading() {
+          if (!('speechSynthesis' in window)) {
+            alert('Text-to-speech is not supported in this browser.');
+            return;
+          }
+
+          const text = gatherVisibleText();
+          if (!text) return;
+
+          // Stop any existing speech
+          window.speechSynthesis.cancel();
+
+          utterance = new SpeechSynthesisUtterance(text);
+          utterance.lang = document.documentElement.lang || 'en-US';
+          utterance.rate = 1; // normal
+          utterance.pitch = 1;
+
+          utterance.onstart = () => {
+            readBtn.setAttribute('aria-pressed', 'true');
+            stopBtn.classList.remove('hidden');
+            stopBtn.removeAttribute('aria-hidden');
+          };
+
+          utterance.onend = () => {
+            readBtn.setAttribute('aria-pressed', 'false');
+            stopBtn.classList.add('hidden');
+            stopBtn.setAttribute('aria-hidden', 'true');
+          };
+
+          utterance.onerror = () => {
+            readBtn.setAttribute('aria-pressed', 'false');
+            stopBtn.classList.add('hidden');
+            stopBtn.setAttribute('aria-hidden', 'true');
+          };
+
+          window.speechSynthesis.speak(utterance);
+        }
+
+        function stopReading() {
+          if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+          }
+          if (utterance) utterance = null;
+          readBtn.setAttribute('aria-pressed', 'false');
+          stopBtn.classList.add('hidden');
+          stopBtn.setAttribute('aria-hidden', 'true');
+        }
+
+        if (readBtn) {
+          readBtn.addEventListener('click', (e) => {
+            const pressed = readBtn.getAttribute('aria-pressed') === 'true';
+            if (pressed) {
+              stopReading();
+            } else {
+              startReading();
+            }
+          });
+        }
+
+        if (stopBtn) {
+          stopBtn.addEventListener('click', stopReading);
+        }
+
+        // Stop speech when navigating back to visual menu
+        const visualBtn = document.getElementById('visual-btn');
+        if (visualBtn) visualBtn.addEventListener('click', stopReading);
+
+        // Ensure speech cancels on page hide
+        window.addEventListener('beforeunload', stopReading);
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden) stopReading();
+        });
+      })();
+
+    </script>
 
   <script>
       // Modal for "Not Implemented" links
@@ -518,7 +619,7 @@
       }
     })();
   </script>
-  <script src="../js/functions.js">  <script src="../js/functions.js"></script>
+  <script src="../js/functions.js"> </script>
 </body>
 
 </html>
