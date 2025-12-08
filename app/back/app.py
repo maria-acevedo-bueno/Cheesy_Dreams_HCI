@@ -9,20 +9,21 @@ users = {
     'customer@example.com': {'password': 'customerpass', 'role': 'Customer'}
 }
 
-# ---------------- AUTH ---------------- #
+# -------------------- AUTH -------------------- #
 
 @app.route('/', methods=['GET', 'POST'], endpoint='login')
 def login():
     error_message = ''
     if request.method == 'POST':
-        # normalize email
+        # Normalize email to lowercase
         email = request.form['email'].strip().lower()
         password = request.form['password']
         user_type = request.form['user-type']
 
+        # Check if user exists and credentials are valid
         user = users.get(email)
         if user and user['password'] == password and user['role'].lower() == user_type.lower():
-            # Según el rol redirigimos a una pag u otra.
+            # Redirect to different dashboard based on user role
             if user_type.lower() == 'manager':
                 return redirect(url_for('manager_dashboard'))
             elif user_type.lower() == 'staff':
@@ -30,7 +31,7 @@ def login():
             elif user_type.lower() == 'customer':
                 return redirect(url_for('customer_home'))
         else:
-            error_message = 'Usuario o contraseña incorrecta'
+            error_message = 'Invalid username or password'
 
     return render_template('login.html', error_message=error_message)
 
@@ -43,23 +44,23 @@ def register():
         password = request.form['password']
         user_type = request.form['user-type']  # 'Customer' or 'Staff'
 
-        # Only allow Customer and Staff registration
+        # Only allow Customer and Staff registration, not Manager
         allowed_roles = ['customer', 'staff']
 
         if user_type.lower() not in allowed_roles:
-            error_message = 'Solo puedes registrarte como Staff o Customer.'
+            error_message = 'You can only register as Staff or Customer.'
         elif email in users:
-            error_message = 'Ya existe un usuario con ese email.'
+            error_message = 'A user with that email already exists.'
         else:
-            # Normalize role names like in users dict
+            # Normalize role names to match the users dictionary format
             role = 'Customer' if user_type.lower() == 'customer' else 'Staff'
             users[email] = {'password': password, 'role': role}
-            # After successful registration, send to login
+            # After successful registration, redirect to login page
             return redirect(url_for('login'))
 
     return render_template('register.html', error_message=error_message)
 
-# ------------- MANAGER ROUTES ---------- #
+# -------------------- MANAGER ROUTES -------------------- #
 
 @app.route('/manager/dashboard')
 def manager_dashboard():
@@ -89,7 +90,7 @@ def inventory():
 def sales():
     return render_template('manager/sales_reports_page.html')
 
-# --------------- STAFF ROUTES ---------- #
+# -------------------- STAFF ROUTES -------------------- #
 
 @app.route('/staff/staff_checkin')
 def staff_checkin():
@@ -140,7 +141,7 @@ def today_task_html():
     return render_template('staff/today_task.html')
 
 
-# -------------- CUSTOMER ROUTES -------- #
+# -------------------- CUSTOMER ROUTES -------------------- #
 
 @app.route('/customer/home')
 def customer_home():
@@ -158,17 +159,17 @@ def make_reservation():
 def confirm_reservation():
     return render_template('customer/reservation_confirmation.html')
 
-# --------------- LOGOUT ---------------- #
+# -------------------- LOGOUT -------------------- #
 
 @app.route('/logout')
 def logout():
-    # Obtiene la URL de la página anterior. Si no existe, vuelve a la página de login.
+    # Gets the URL of the previous page. If it doesn't exist, return to login page
     # previous_url = request.referrer or url_for('login')
     return render_template('logout.html')
 
-# --------------- MAIN ------------------ #
+# -------------------- MAIN -------------------- #
 
 if __name__ == '__main__':
-    # Esto te permite verificar que la ruta /register existe:
+    # This allows you to verify that the /register route exists
     print(app.url_map)
     app.run(debug=True)

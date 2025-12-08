@@ -139,18 +139,18 @@
       </header>
       <main class="flex flex-1 justify-center py-5 px-4 sm:px-10 lg:px-20">
         <div class="layout-content-container flex flex-col max-w-7xl w-full flex-1">
+          <!-- Breadcrumb navigation -->
           <div class="flex flex-wrap gap-2 p-4">
             <a class="text-[#8c805f] dark:text-gray-400 text-sm sm:text-base font-medium leading-normal hover:text-primary dark:hover:text-primary"
-              href="#">Home</a>
+              href="#">Inicio</a>
             <span class="text-[#8c805f] dark:text-gray-400 text-sm sm:text-base font-medium leading-normal">/</span>
             <a class="text-[#8c805f] dark:text-gray-400 text-sm sm:text-base font-medium leading-normal hover:text-primary dark:hover:text-primary"
-              href="#">Menu</a>
+              href="#">Menú</a>
             <span class="text-[#8c805f] dark:text-gray-400 text-sm sm:text-base font-medium leading-normal">/</span>
             <a class="text-[#8c805f] dark:text-gray-400 text-sm sm:text-base font-medium leading-normal hover:text-primary dark:hover:text-primary"
               href="#">Pizzas</a>
             <span class="text-[#8c805f] dark:text-gray-400 text-sm sm:text-base font-medium leading-normal">/</span>
-            <span class="text-[#181611] dark:text-gray-100 text-sm sm:text-base font-medium leading-normal">The Ultimate
-              Cheesy Dream</span>
+            <span class="text-[#181611] dark:text-gray-100 text-sm sm:text-base font-medium leading-normal">La Pizza de Queso Definitiva</span>
           </div>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 p-4">
             <div class="w-full h-80 sm:h-96 lg:h-auto bg-center bg-no-repeat bg-cover rounded-xl"
@@ -162,7 +162,7 @@
                 <div class="flex flex-col gap-2">
                   <h1
                     class="text-[#181611] dark:text-gray-100 text-4xl lg:text-5xl font-black leading-tight tracking-[-0.033em]">
-                    The Ultimate Cheesy Dream Pizza</h1>
+                    La Pizza de Queso Definitiva</h1>
                   <p class="text-[#8c805f] dark:text-gray-400 text-2xl font-normal leading-normal">$15.99</p>
                 </div>
                 <button
@@ -171,39 +171,37 @@
                 </button>
               </div>
               <p class="text-gray-600 dark:text-gray-300 text-base leading-relaxed">
-                Experience pure bliss with our signature pizza. A rich, creamy blend of five premium cheeses—mozzarella,
-                provolone, cheddar, parmesan, and asiago—melted over a golden, hand-tossed crust. Topped with a sprinkle
-                of fresh herbs for a flavor that's simply unforgettable.
+                Experimenta la pura felicidad con nuestra pizza insignia. Una mezcla rica y cremosa de cinco quesos premium—mozzarella, provolone, cheddar, parmesano y asiago—fundidos sobre una masa casera dorada. Cubierta con un toque de hierbas frescas para un sabor simplemente inolvidable.
               </p>
+              <!-- Allergen Information -->
               <div class="space-y-3">
-                <h3 class="text-base font-semibold text-[#181611] dark:text-gray-100">Allergen Info</h3>
+                <h3 class="text-base font-semibold text-[#181611] dark:text-gray-100">Información de Alérgenos</h3>
                 <div class="flex flex-wrap gap-3">
-                  <div
-                    class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 text-sm">
+                  <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 text-sm">
                     <span class="material-symbols-outlined text-base">info</span>
-                    <span>Contains Gluten</span>
+                    <span>Contiene Gluten</span>
                   </div>
-                  <div
-                    class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 text-sm">
+                  <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 text-sm">
                     <span class="material-symbols-outlined text-base">info</span>
-                    <span>Contains Dairy</span>
+                    <span>Contiene Lácteos</span>
                   </div>
                 </div>
               </div>
+              <!-- Customize Pizza section -->
               <div class="space-y-4 border-t border-gray-200 dark:border-gray-800 pt-6">
-                <h3 class="text-base font-semibold text-[#181611] dark:text-gray-100">Customize Your Pizza</h3>
+                <h3 class="text-base font-semibold text-[#181611] dark:text-gray-100">Personaliza Tu Pizza</h3>
                 <div class="flex flex-col gap-3">
                   <label class="flex items-center gap-3 cursor-pointer">
                     <input checked=""
                       class="form-radio text-primary focus:ring-primary/50 border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:checked:bg-primary"
                       name="crust" type="radio" />
-                    <span class="text-gray-700 dark:text-gray-300">Classic Crust</span>
+                    <span class="text-gray-700 dark:text-gray-300">Masa Clásica</span>
                   </label>
                   <label class="flex items-center gap-3 cursor-pointer">
                     <input
                       class="form-radio text-primary focus:ring-primary/50 border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:checked:bg-primary"
                       name="crust" type="radio" />
-                    <span class="text-gray-700 dark:text-gray-300">Thin Crust (+ $1.00)</span>
+                    <span class="text-gray-700 dark:text-gray-300">Masa Fina (+ $1.00)</span>
                   </label>
                 </div>
                 <div class="flex flex-col gap-3">
@@ -211,16 +209,17 @@
                     <input
                       class="form-checkbox rounded text-primary focus:ring-primary/50 border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:checked:bg-primary"
                       name="extra" type="checkbox" />
-                    <span class="text-gray-700 dark:text-gray-300">Extra Cheese (+ $2.50)</span>
+                    <span class="text-gray-700 dark:text-gray-300">Queso Extra (+ $2.50)</span>
                   </label>
                   <label class="flex items-center gap-3 cursor-pointer">
                     <input
                       class="form-checkbox rounded text-primary focus:ring-primary/50 border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:checked:bg-primary"
                       name="extra" type="checkbox" />
-                    <span class="text-gray-700 dark:text-gray-300">No Onions</span>
+                    <span class="text-gray-700 dark:text-gray-300">Sin Cebolla</span>
                   </label>
                 </div>
               </div>
+              <!-- Add to Cart section -->
               <div
                 class="flex flex-col sm:flex-row items-center gap-4 pt-6 border-t border-gray-200 dark:border-gray-800">
                 <div class="flex items-center gap-2">
@@ -239,7 +238,7 @@
                 <button
                   class="flex w-full sm:w-auto flex-1 items-center justify-center gap-2 rounded-xl bg-primary px-6 h-14 text-lg font-bold text-[#181611] hover:bg-yellow-400 transition-colors">
                   <span class="material-symbols-outlined">add_shopping_cart</span>
-                  <span>Add to Cart</span>
+                  <span>Agregar al Carrito</span>
                 </button>
               </div>
             </div>
