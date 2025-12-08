@@ -92,22 +92,30 @@
       display: block;
     }
 
-    /* 8. High Contrast Mode Logic */
-    body.a11y-high-contrast .layout-container,
-    body.a11y-high-contrast .layout-container *:not(.material-symbols-outlined) {
+    /* 8. High Contrast Mode Logic - FIXED */
+    body.a11y-high-contrast {
+      color: var(--a11y-fg) !important;
+      background-color: var(--a11y-bg) !important;
+    }
+
+    body.a11y-high-contrast *:not(.material-symbols-outlined) {
       color: var(--a11y-fg) !important;
       background-color: var(--a11y-bg) !important;
       border-color: var(--a11y-fg) !important;
       box-shadow: none !important;
     }
 
-    body.a11y-high-contrast .layout-container .material-symbols-outlined {
+    body.a11y-high-contrast .material-symbols-outlined {
       color: var(--a11y-fg) !important;
     }
 
-    body.a11y-high-contrast .layout-container button {
+    body.a11y-high-contrast button,
+    body.a11y-high-contrast select,
+    body.a11y-high-contrast textarea,
+    body.a11y-high-contrast input {
       border-width: 2px !important;
       border-style: solid !important;
+      border-color: var(--a11y-fg) !important;
     }
   </style>
 </head>
@@ -131,7 +139,7 @@
                 Dreams</h2>
             </div>
             <a class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-button-secondary-light dark:bg-button-secondary-dark text-text-light dark:text-text-dark gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
-              href="#">
+              href="/customer/make_reservation">
               <span class="material-symbols-outlined">arrow_back</span>
             </a>
           </header>
@@ -147,16 +155,16 @@
               <div class="p-4 sm:p-6 grid grid-cols-1 sm:grid-cols-2 gap-x-4">
                 <div class="flex flex-col gap-1 border-t border-solid border-border-light dark:border-border-dark py-4">
                   <p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">Date</p>
-                  <p class="text-text-light dark:text-text-dark text-sm font-normal leading-normal">October 26, 2024</p>
+                  <p id="reservation-date" class="text-text-light dark:text-text-dark text-sm font-normal leading-normal">October 26, 2024</p>
                 </div>
                 <div class="flex flex-col gap-1 border-t border-solid border-border-light dark:border-border-dark py-4">
                   <p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">Time</p>
-                  <p class="text-text-light dark:text-text-dark text-sm font-normal leading-normal">7:30 PM</p>
+                  <p id="reservation-time" class="text-text-light dark:text-text-dark text-sm font-normal leading-normal">7:30 PM</p>
                 </div>
                 <div class="flex flex-col gap-1 border-t border-solid border-border-light dark:border-border-dark py-4">
                   <p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">Guests
                   </p>
-                  <p class="text-text-light dark:text-text-dark text-sm font-normal leading-normal">4 Guests</p>
+                  <p id="reservation-guests" class="text-text-light dark:text-text-dark text-sm font-normal leading-normal">4 Guests</p>
                 </div>
                 <div class="flex flex-col gap-1 border-t border-solid border-border-light dark:border-border-dark py-4">
                   <p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">Table
@@ -166,18 +174,6 @@
                 <div class="flex flex-col gap-1 border-t border-solid border-border-light dark:border-border-dark py-4">
                   <p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">Name</p>
                   <p class="text-text-light dark:text-text-dark text-sm font-normal leading-normal">Jane Doe</p>
-                </div>
-                <div class="flex flex-col gap-1 border-t border-solid border-border-light dark:border-border-dark py-4">
-                  <p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">Phone
-                  </p>
-                  <p class="text-text-light dark:text-text-dark text-sm font-normal leading-normal">(123) 456-7890</p>
-                </div>
-                <div
-                  class="flex flex-col gap-1 border-t border-solid border-border-light dark:border-border-dark py-4 sm:col-span-2">
-                  <p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">Email
-                  </p>
-                  <p class="text-text-light dark:text-text-dark text-sm font-normal leading-normal">jane.doe@email.com
-                  </p>
                 </div>
               </div>
             </div>
@@ -191,14 +187,19 @@
               </label>
             </div>
             <div class="flex w-full gap-3 flex-col items-stretch pt-4">
-              <button
-                class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-text-light text-base font-bold leading-normal tracking-[0.015em] w-full hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark focus:ring-secondary">
-                <span class="truncate">Confirm My Table</span>
-              </button>
-              <button
+              <form id="confirm-form" action="/customer/confirm_reservation" method="GET">
+                <input type="hidden" id="hidden-date" name="date">
+                <input type="hidden" id="hidden-guests" name="guests">
+                <input type="hidden" id="hidden-time" name="time">
+                <button type="submit"
+                  class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-text-light text-base font-bold leading-normal tracking-[0.015em] w-full hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark focus:ring-secondary">
+                  <span class="truncate">Confirm My Table</span>
+                </button>
+              </form>
+              <a id="change-details-link" href="/customer/make_reservation"
                 class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-button-secondary-light dark:bg-button-secondary-dark text-text-light dark:text-text-dark text-base font-bold leading-normal tracking-[0.015em] w-full hover:bg-opacity-80 dark:hover:bg-opacity-80">
                 <span class="truncate">Change Details</span>
-              </button>
+              </a>
             </div>
           </section>
         </div>
@@ -330,7 +331,138 @@
       </div>
     </div>
 
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
+      // ===== RESERVATION DATA PARSING - FIXED =====
+      (function() {
+        // Get URL parameters and decode them
+        const urlParams = new URLSearchParams(window.location.search);
+        const dateParam = urlParams.get('date');
+        const guestsParam = urlParams.get('guests');
+        let timeParam = urlParams.get('time');
+        
+        // Debug log
+        console.log('Raw URL Parameters:', { 
+          dateParam, 
+          guestsParam, 
+          timeParam,
+          fullURL: window.location.href
+        });
+        
+        // DECODE the time parameter (important!)
+        if (timeParam) {
+          timeParam = decodeURIComponent(timeParam);
+          console.log('Decoded time:', timeParam);
+        }
+        
+        // Function to format date from YYYY-MM-DD to readable format
+        function formatDate(dateStr) {
+          if (!dateStr) return 'Not selected';
+          
+          const date = new Date(dateStr);
+          if (isNaN(date.getTime())) return 'Invalid date';
+          
+          const options = { year: 'numeric', month: 'long', day: 'numeric' };
+          return date.toLocaleDateString('en-US', options);
+        }
+        
+        // Function to format guests string
+        function formatGuests(guestsStr) {
+          if (!guestsStr) return '2 Guests';
+          
+          // Convert "2 people" to "2 Guests", "4 people" to "4 Guests", etc.
+          const decodedGuests = decodeURIComponent(guestsStr);
+          return decodedGuests.replace('people', 'Guests').replace('person', 'Guest');
+        }
+        
+        // Update the reservation details on the page
+        function updateReservationDetails() {
+          const dateElement = document.getElementById('reservation-date');
+          const timeElement = document.getElementById('reservation-time');
+          const guestsElement = document.getElementById('reservation-guests');
+          const changeDetailsLink = document.getElementById('change-details-link');
+          const confirmForm = document.getElementById('confirm-form');
+          const hiddenDateInput = document.getElementById('hidden-date');
+          const hiddenGuestsInput = document.getElementById('hidden-guests');
+          const hiddenTimeInput = document.getElementById('hidden-time');
+          
+          console.log('Updating reservation details...');
+          
+          // Format and display the date
+          if (dateParam) {
+            const formattedDate = formatDate(dateParam);
+            dateElement.textContent = formattedDate;
+            console.log('Date updated to:', formattedDate);
+          } else {
+            // Default to today if no date provided
+            const today = new Date();
+            const defaultDate = formatDate(today.toISOString().split('T')[0]);
+            dateElement.textContent = defaultDate;
+            console.log('Using default date:', defaultDate);
+          }
+          
+          // Display time - DECODED version
+          if (timeParam) {
+            timeElement.textContent = timeParam;
+            console.log('Time updated to:', timeParam);
+          } else {
+            // Default to 7:00 PM if not provided
+            timeElement.textContent = '7:00 PM';
+            console.log('Using default time: 7:00 PM');
+          }
+          
+          // Display guests
+          const formattedGuests = formatGuests(guestsParam) || '2 Guests';
+          guestsElement.textContent = formattedGuests;
+          console.log('Guests updated to:', formattedGuests);
+          
+          // Update the "Change Details" link to include current parameters
+          if (changeDetailsLink) {
+            let changeUrl = '/customer/make_reservation';
+            const params = new URLSearchParams();
+            
+            if (dateParam) params.append('date', dateParam);
+            if (guestsParam) params.append('guests', guestsParam);
+            if (timeParam) params.append('time', encodeURIComponent(timeParam));
+            
+            if (params.toString()) {
+              changeUrl += '?' + params.toString();
+            }
+            
+            changeDetailsLink.href = changeUrl;
+            console.log('Change details link updated to:', changeUrl);
+          }
+          
+          // Set hidden form inputs
+          if (hiddenDateInput && dateParam) {
+            hiddenDateInput.value = dateParam;
+          }
+          
+          if (hiddenGuestsInput && guestsParam) {
+            hiddenGuestsInput.value = guestsParam;
+          }
+          
+          if (hiddenTimeInput && timeParam) {
+            hiddenTimeInput.value = timeParam;
+          }
+          
+          // Add parameters to confirmation form if they exist
+          if (confirmForm && (dateParam || guestsParam || timeParam)) {
+            const formAction = new URL(confirmForm.action, window.location.origin);
+            
+            if (dateParam) formAction.searchParams.append('date', dateParam);
+            if (guestsParam) formAction.searchParams.append('guests', guestsParam);
+            if (timeParam) formAction.searchParams.append('time', encodeURIComponent(timeParam));
+            
+            confirmForm.action = formAction.toString();
+            console.log('Form action updated to:', formAction.toString());
+          }
+        }
+        
+        // Call function on page load
+        document.addEventListener('DOMContentLoaded', updateReservationDetails);
+      })();
+      
       // popup.js inline - temporal para debugging
       (function () {
         console.log('✅ Script inline cargado');
@@ -591,7 +723,7 @@
         }
       })();
     </script>
-<script src="../js/functions.js"></script>
+    <script src="../js/functions.js"></script>
 </body>
 
 </html>

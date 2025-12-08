@@ -154,6 +154,10 @@ def customer_menu():
 def make_reservation():
     return render_template('customer/reservation_details_selection.html')
 
+@app.route('/customer/review_reservation')
+def review_reservation():
+   return render_template('customer/table_&_reservation_confirmation.html')
+
 @app.route('/customer/confirm_reservation')
 def confirm_reservation():
     return render_template('customer/reservation_confirmation.html')

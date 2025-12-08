@@ -92,22 +92,30 @@
       display: block;
     }
 
-    /* 8. High Contrast Mode Logic */
-    body.a11y-high-contrast .layout-container,
-    body.a11y-high-contrast .layout-container *:not(.material-symbols-outlined) {
+    /* 8. High Contrast Mode Logic - FIXED */
+    body.a11y-high-contrast {
+      color: var(--a11y-fg) !important;
+      background-color: var(--a11y-bg) !important;
+    }
+
+    body.a11y-high-contrast *:not(.material-symbols-outlined) {
       color: var(--a11y-fg) !important;
       background-color: var(--a11y-bg) !important;
       border-color: var(--a11y-fg) !important;
       box-shadow: none !important;
     }
 
-    body.a11y-high-contrast .layout-container .material-symbols-outlined {
+    body.a11y-high-contrast .material-symbols-outlined {
       color: var(--a11y-fg) !important;
     }
 
-    body.a11y-high-contrast .layout-container button {
+    body.a11y-high-contrast button,
+    body.a11y-high-contrast select,
+    body.a11y-high-contrast textarea,
+    body.a11y-high-contrast input {
       border-width: 2px !important;
       border-style: solid !important;
+      border-color: var(--a11y-fg) !important;
     }
   </style>
 </head>
@@ -154,8 +162,7 @@
             <div class="flex flex-col gap-3">
               <p class="text-4xl font-black leading-tight tracking-[-0.033em] text-black dark:text-white">Your
                 Reservation is Confirmed!</p>
-              <p class="text-base font-normal leading-normal text-black/60 dark:text-white/60">Thank you, Alex. We've
-                sent a confirmation email to alex.doe@email.com.</p>
+              <p id="confirmation-message" class="text-base font-normal leading-normal text-black/60 dark:text-white/60">Thank you. We've sent a confirmation email.</p>
             </div>
           </div>
           <div
@@ -168,23 +175,19 @@
               </div>
               <div class="col-span-2 grid grid-cols-subgrid border-b border-b-black/10 dark:border-b-white/10 py-5">
                 <p class="text-sm font-normal leading-normal text-black/60 dark:text-white/60">Guest Name</p>
-                <p class="text-sm font-medium leading-normal text-black dark:text-white text-right sm:text-left">Alex
-                  Doe</p>
+                <p id="guest-name" class="text-sm font-medium leading-normal text-black dark:text-white text-right sm:text-left">Jane Doe</p>
               </div>
               <div class="col-span-2 grid grid-cols-subgrid border-b border-b-black/10 dark:border-b-white/10 py-5">
                 <p class="text-sm font-normal leading-normal text-black/60 dark:text-white/60">Date</p>
-                <p class="text-sm font-medium leading-normal text-black dark:text-white text-right sm:text-left">October
-                  26, 2024</p>
+                <p id="reservation-date" class="text-sm font-medium leading-normal text-black dark:text-white text-right sm:text-left">October 26, 2024</p>
               </div>
               <div class="col-span-2 grid grid-cols-subgrid border-b border-b-black/10 dark:border-b-white/10 py-5">
                 <p class="text-sm font-normal leading-normal text-black/60 dark:text-white/60">Time</p>
-                <p class="text-sm font-medium leading-normal text-black dark:text-white text-right sm:text-left">7:30 PM
-                </p>
+                <p id="reservation-time" class="text-sm font-medium leading-normal text-black dark:text-white text-right sm:text-left">7:30 PM</p>
               </div>
               <div class="col-span-2 grid grid-cols-subgrid border-b border-b-black/10 dark:border-b-white/10 py-5">
                 <p class="text-sm font-normal leading-normal text-black/60 dark:text-white/60">Number of Guests</p>
-                <p class="text-sm font-medium leading-normal text-black dark:text-white text-right sm:text-left">4
-                  people</p>
+                <p id="reservation-guests" class="text-sm font-medium leading-normal text-black dark:text-white text-right sm:text-left">4 people</p>
               </div>
               <div class="col-span-2 grid grid-cols-subgrid pt-5">
                 <p class="text-sm font-normal leading-normal text-black/60 dark:text-white/60">Booking ID</p>
@@ -337,6 +340,113 @@
     </div>
 
     <script>
+      // ===== RESERVATION DATA PARSING FOR CONFIRMATION PAGE =====
+      (function() {
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const dateParam = urlParams.get('date');
+        const guestsParam = urlParams.get('guests');
+        let timeParam = urlParams.get('time');
+        
+        // Debug log
+        console.log('Confirmation Page - URL Parameters:', { 
+          dateParam, 
+          guestsParam, 
+          timeParam,
+          fullURL: window.location.href
+        });
+        
+        // DECODE the time parameter
+        if (timeParam) {
+          timeParam = decodeURIComponent(timeParam);
+          console.log('Decoded time:', timeParam);
+        }
+        
+        // Function to format date from YYYY-MM-DD to readable format
+        function formatDate(dateStr) {
+          if (!dateStr) return 'Not selected';
+          
+          const date = new Date(dateStr);
+          if (isNaN(date.getTime())) return 'Invalid date';
+          
+          const options = { year: 'numeric', month: 'long', day: 'numeric' };
+          return date.toLocaleDateString('en-US', options);
+        }
+        
+        // Function to format guests string
+        function formatGuests(guestsStr) {
+          if (!guestsStr) return '2 people';
+          
+          // Keep as "2 people", "4 people", etc.
+          return decodeURIComponent(guestsStr);
+        }
+        
+        // Generate a random booking ID
+        function generateBookingId() {
+          const prefix = 'CHD-';
+          const randomNum = Math.floor(1000000 + Math.random() * 9000000);
+          return prefix + randomNum;
+        }
+        
+        // Update the reservation details on the page
+        function updateReservationDetails() {
+          const dateElement = document.getElementById('reservation-date');
+          const timeElement = document.getElementById('reservation-time');
+          const guestsElement = document.getElementById('reservation-guests');
+          const guestNameElement = document.getElementById('guest-name');
+          const confirmationMessage = document.getElementById('confirmation-message');
+          
+          console.log('Updating confirmation page details...');
+          
+          // Format and display the date
+          if (dateParam) {
+            const formattedDate = formatDate(dateParam);
+            dateElement.textContent = formattedDate;
+            console.log('Date updated to:', formattedDate);
+          } else {
+            // Default to today if no date provided
+            const today = new Date();
+            const defaultDate = formatDate(today.toISOString().split('T')[0]);
+            dateElement.textContent = defaultDate;
+            console.log('Using default date:', defaultDate);
+          }
+          
+          // Display time
+          if (timeParam) {
+            timeElement.textContent = timeParam;
+            console.log('Time updated to:', timeParam);
+          } else {
+            // Default to 7:00 PM if not provided
+            timeElement.textContent = '7:00 PM';
+            console.log('Using default time: 7:00 PM');
+          }
+          
+          // Display guests
+          const formattedGuests = formatGuests(guestsParam) || '2 people';
+          guestsElement.textContent = formattedGuests;
+          console.log('Guests updated to:', formattedGuests);
+          
+          // Update confirmation message with guest name
+          if (confirmationMessage) {
+            confirmationMessage.textContent = "Thank you. We've sent a confirmation email.";
+          }
+          
+          // Update booking ID (generate random one)
+          const bookingIdElements = document.querySelectorAll('p:contains("CHD-")');
+          if (bookingIdElements.length > 0) {
+            bookingIdElements.forEach(el => {
+              if (el.textContent.includes('CHD-')) {
+                el.textContent = generateBookingId();
+                console.log('Booking ID generated:', el.textContent);
+              }
+            });
+          }
+        }
+        
+        // Call function on page load
+        document.addEventListener('DOMContentLoaded', updateReservationDetails);
+      })();
+      
       // Modal for "Not Implemented" links
       (function () {
         const style = document.createElement('style');
@@ -396,7 +506,7 @@
           modal.innerHTML = '<h2>Not implemented yet!</h2><p>This functionality is not implemented yet.</p>';
 
           const closeBtn = document.createElement('button');
-          closeBtn.textContent = 'Cerrar';
+          closeBtn.textContent = 'Close';
           closeBtn.addEventListener('click', () => backdrop.remove());
 
           modal.appendChild(closeBtn);
@@ -587,7 +697,7 @@
         }
       })();
     </script>
-<script src="../js/functions.js"></script>
+    <script src="../js/functions.js"></script>
 </body>
 
 </html>
