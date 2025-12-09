@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html class="light" lang="es">
 
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Confirm Cancellation - Cheesy Dreams</title>
+  <title>Confirmar Cancelación - Cheesy Dreams</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
@@ -38,7 +38,7 @@
     class="relative flex h-screen min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-hidden">
     <div class="flex h-full w-full">
 
-      <!-- INICIO: Panel Lateral Unificado (Mismo estilo que Management System) -->
+      <!-- START: Unified Side Panel (Same style as Management System) -->
       <aside
         class="flex h-screen w-64 flex-col bg-white dark:bg-gray-900 p-4 sticky top-0 border-r border-gray-200 dark:border-gray-700">
         <div class="flex flex-col gap-4">
@@ -49,30 +49,30 @@
             </div>
             <div class="flex flex-col">
               <h1 class="text-gray-900 dark:text-white text-base font-medium leading-normal">Cheesy Dreams</h1>
-              <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Management System</p>
+              <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Sistema de Gestión</p>
             </div>
           </div>
           <nav class="flex flex-col gap-2 mt-4">
             <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
               href="/manager/dashboard">
               <span class="material-symbols-outlined">dashboard</span>
-              <p class="text-sm font-medium leading-normal">Dashboard</p>
+              <p class="text-sm font-medium leading-normal">Panel Principal</p>
             </a>
-            <!-- Mantenemos 'Reservations' activo porque estamos en un flujo de reserva -->
+            <!-- 'Reservations' kept active because we are in a reservation flow -->
             <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-gray-900"
               href="/manager/manage_reservations">
               <span class="material-symbols-outlined">book_online</span>
-              <p class="text-sm font-medium leading-normal">Reservations</p>
+              <p class="text-sm font-medium leading-normal">Reservas</p>
             </a>
             <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
               href="/manager/inventory">
               <span class="material-symbols-outlined">inventory_2</span>
-              <p class="text-sm font-medium leading-normal">Inventory</p>
+              <p class="text-sm font-medium leading-normal">Inventario</p>
             </a>
             <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
               href="/manager/sales">
               <span class="material-symbols-outlined">assessment</span>
-              <p class="text-sm font-medium leading-normal">Sales Reports</p>
+              <p class="text-sm font-medium leading-normal">Reportes de Ventas</p>
             </a>
           </nav>
         </div>
@@ -80,21 +80,21 @@
           <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
             href="#" data-not-implemented>
             <span class="material-symbols-outlined">settings</span>
-            <p class="text-sm font-medium leading-normal">Settings</p>
+            <p class="text-sm font-medium leading-normal">Configuración</p>
           </a>
           <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
             href="../logout">
             <span class="material-symbols-outlined">logout</span>
-            <p class="text-sm font-medium leading-normal">Log Out</p>
+            <p class="text-sm font-medium leading-normal">Cerrar Sesión</p>
           </a>
         </div>
       </aside>
-      <!-- FIN: Panel Lateral Unificado -->
+      <!-- END: Unified Side Panel -->
 
       <main class="flex-1 p-8">
-        <h1 class="text-3xl font-bold text-gray-800 dark:text-gray-200">Reservation Management</h1>
+        <h1 class="text-3xl font-bold text-gray-800 dark:text-gray-200">Gestión de Reservas</h1>
         <div class="mt-4 p-4 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800/50">
-          <p class="text-gray-600 dark:text-gray-400">Existing reservation list...</p>
+          <p class="text-gray-600 dark:text-gray-400">Lista de reservas existentes...</p>
         </div>
       </main>
     </div>
@@ -114,31 +114,25 @@
               class="material-symbols-outlined text-4xl text-red-600 dark:text-red-400">warning</span>
           </div>
           <div class="text-center mt-6">
-            <h1 class="text-2xl font-bold text-gray-900 dark:text-white tracking-tight" id="modal-title">Are you sure
-              you want to cancel this reservation?</h1>
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-white tracking-tight" id="modal-title">¿Está seguro de que desea cancelar esta reserva?</h1>
           </div>
           <div class="text-center mt-2">
-            <p class="text-base text-gray-600 dark:text-gray-400" id="modal-description">This action cannot be undone.
-              Please review the details below before proceeding.</p>
+            <p class="text-base text-gray-600 dark:text-gray-400" id="modal-description">Esta acción no se puede deshacer. Por favor, revise los detalles a continuación antes de continuar.</p>
           </div>
         </div>
         <div class="px-8 pb-4">
           <div class="grid grid-cols-[auto_1fr] gap-x-4 rounded-lg border border-gray-200 dark:border-gray-700">
             <div class="col-span-2 grid grid-cols-subgrid p-4 border-b border-b-gray-200 dark:border-b-gray-700">
-              <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Guest Name</p>
+              <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Nombre del Invitado</p>
               <p class="text-sm text-gray-900 dark:text-white text-right font-medium">John Doe</p>
             </div>
             <div class="col-span-2 grid grid-cols-subgrid p-4 border-b border-b-gray-200 dark:border-b-gray-700">
-              <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Date &amp; Time</p>
-              <p class="text-sm text-gray-900 dark:text-white text-right">October 26, 2024 at 7:00 PM</p>
+              <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Fecha y Hora</p>
+              <p class="text-sm text-gray-900 dark:text-white text-right">26 de Octubre de 2024 a las 7:00 PM</p>
             </div>
             <div class="col-span-2 grid grid-cols-subgrid p-4 border-b border-b-gray-200 dark:border-b-gray-700">
-              <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Party Size</p>
+              <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Invitados</p>
               <p class="text-sm text-gray-900 dark:text-white text-right">4</p>
-            </div>
-            <div class="col-span-2 grid grid-cols-subgrid p-4">
-              <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Contact</p>
-              <p class="text-sm text-gray-900 dark:text-white text-right">(555) 123-4567</p>
             </div>
           </div>
         </div>
@@ -146,14 +140,14 @@
           <a href="/manager/manage_reservations" class="w-full sm:w-1/2">
             <button
               class="flex w-full min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-gray-100 dark:bg-white/10 text-gray-800 dark:text-gray-200 text-base font-bold leading-normal tracking-[0.015em] hover:bg-gray-200 dark:hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 dark:focus-visible:ring-offset-background-dark">
-              <span class="truncate">Keep Reservation</span>
+              <span class="truncate">Mantener Reserva</span>
             </button>
           </a>
           <a href="/manager/manage_reservations" class="w-full sm:w-1/2">
-            <!-- Botón mantenido en rojo como se solicitó -->
+            <!-- Button kept red as requested -->
             <button
               class="flex w-full min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-red-600 text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-background-dark">
-              <span class="truncate">Yes, Cancel Reservation</span>
+              <span class="truncate">Sí, Cancelar Reserva</span>
             </button>
           </a>
         </div>
@@ -161,97 +155,7 @@
     </div>
   </div>
 
-  <script>
-    // popup.js inline - temporal para debugging
-    (function () {
-      console.log('✅ Script inline cargado');
-
-      const style = document.createElement('style');
-      style.textContent = `
-    .__notimpl_modal_backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-    .__notimpl_modal {
-      background: white;
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-      max-width: 90%;
-      width: 360px;
-      text-align: center;
-      font-family: 'Work Sans', sans-serif;
-    }
-    .__notimpl_modal h2 {
-      margin: 0 0 12px;
-      font-size: 20px;
-      color: #1F2937;
-    }
-    .__notimpl_modal p {
-      margin: 0 0 20px;
-      color: #6B7280;
-      font-size: 14px;
-    }
-    .__notimpl_modal button {
-      padding: 10px 20px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      background: #fac638;
-      color: white;
-      font-weight: 600;
-    }
-    .__notimpl_modal button:hover {
-      background: #D97706;
-    }
-  `;
-      document.head.appendChild(style);
-
-      function showModal() {
-        console.log('🎉 Mostrando modal');
-        if (document.querySelector('.__notimpl_modal_backdrop')) return;
-
-        const backdrop = document.createElement('div');
-        backdrop.className = '__notimpl_modal_backdrop';
-
-        const modal = document.createElement('div');
-        modal.className = '__notimpl_modal';
-        modal.innerHTML = '<h2>Not implemented yet!</h2><p>This functionality is not implemented yet.</p>';
-
-        const closeBtn = document.createElement('button');
-        closeBtn.textContent = 'Cerrar';
-        closeBtn.addEventListener('click', () => backdrop.remove());
-
-        modal.appendChild(closeBtn);
-        backdrop.appendChild(modal);
-        backdrop.addEventListener('click', (e) => {
-          if (e.target === backdrop) backdrop.remove();
-        });
-
-        document.body.appendChild(backdrop);
-      }
-
-      document.addEventListener('click', function (e) {
-        console.log('👆 Clic en:', e.target.tagName);
-        const target = e.target.closest('[data-not-implemented]');
-        console.log('🔍 Target:', target);
-
-        if (target) {
-          console.log('✋ Previniendo default');
-          e.preventDefault();
-          e.stopPropagation();
-          showModal();
-        }
-      }, true);
-
-      console.log('✅ Event listener configurado');
-    })();
-  </script>
+  <script src="../js/functions.js"></script>
 </body>
 
 </html>

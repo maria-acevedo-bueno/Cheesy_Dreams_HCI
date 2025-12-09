@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Reservation - Cheesy Dreams</title>
+  <title>Reserva - Cheesy Dreams</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
@@ -139,13 +139,13 @@
         </div>
         <nav class="hidden md:flex items-center gap-9">
           <a class="text-[#181611] dark:text-background-light text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors"
-            href="/customer/home">Home</a>
+            href="/customer/home">Inicio</a>
           <a class="text-[#181611] dark:text-background-light text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors"
-            href="/customer/menu">Menu</a>
+            href="/customer/menu">Menú</a>
           <a class="text-[#181611] dark:text-background-light text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors"
-            data-not-implemented href="#">About</a>
+            data-not-implemented href="#">Sobre Nosotros</a>
           <a class="text-[#181611] dark:text-background-light text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors"
-            data-not-implemented href="#">Contact</a>
+            data-not-implemented href="#">Contacto</a>
         </nav>
       </div>
     </header>
@@ -155,31 +155,28 @@
           <div class="flex flex-col gap-3">
             <h1
               class="text-[#181611] dark:text-white text-4xl lg:text-5xl font-black leading-tight tracking-[-0.033em]">
-              Make a Reservation at Cheesy Dreams</h1>
-            <p class="text-[#898161] dark:text-[#a8a184] text-base font-normal leading-normal">Book your table online.
-              For parties larger than 8, please call us directly.</p>
+              Haz una Reserva en Cheesy Dreams</h1>
+            <p class="text-[#898161] dark:text-[#a8a184] text-base font-normal leading-normal">Reserva tu mesa en línea. Para grupos de más de 8 personas, llámanos directamente.</p>
           </div>
           <div
             class="bg-white dark:bg-background-dark/50 rounded-xl border border-[#e6e4db] dark:border-[#3a3524] p-6 lg:p-8 flex flex-col gap-6">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <label class="flex flex-col flex-1">
-                <p class="text-[#181611] dark:text-background-light text-base font-medium leading-normal pb-2">Number of
-                  Guests</p>
+                <p class="text-[#181611] dark:text-background-light text-base font-medium leading-normal pb-2">Número de Invitados</p>
                 <select id="guests-select"
                   class="form-select w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181611] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#e6e4db] dark:border-[#3a3524] bg-background-light dark:bg-background-dark h-14 placeholder:text-[#898161] p-3.5 text-base font-normal leading-normal">
-                  <option>1 person</option>
-                  <option selected="">2 people</option>
-                  <option>3 people</option>
-                  <option>4 people</option>
-                  <option>5 people</option>
-                  <option>6 people</option>
-                  <option>7 people</option>
-                  <option>8 people</option>
+                  <option>1 persona</option>
+                  <option selected="">2 personas</option>
+                  <option>3 personas</option>
+                  <option>4 personas</option>
+                  <option>5 personas</option>
+                  <option>6 personas</option>
+                  <option>7 personas</option>
+                  <option>8 personas</option>
                 </select>
               </label>
               <label class="flex flex-col flex-1">
-                <p class="text-[#181611] dark:text-background-light text-base font-medium leading-normal pb-2">Select a
-                  Time</p>
+                <p class="text-[#181611] dark:text-background-light text-base font-medium leading-normal pb-2">Selecciona una Hora</p>
                 <select id="time-select"
                   class="form-select w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181611] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#e6e4db] dark:border-[#3a3524] bg-background-light dark:bg-background-dark h-14 placeholder:text-[#898161] p-3.5 text-base font-normal leading-normal">
                   <option>5:00 PM</option>
@@ -195,8 +192,7 @@
               </label>
             </div>
             <div class="flex flex-col gap-2">
-              <p class="text-[#181611] dark:text-background-light text-base font-medium leading-normal">Select a Date
-              </p>
+              <p class="text-[#181611] dark:text-background-light text-base font-medium leading-normal">Selecciona una Fecha</p>
               <div class="flex flex-col">
                 <div class="flex items-center p-1 justify-between">
                   <button id="prev-month"
@@ -204,7 +200,7 @@
                     <span class="material-symbols-outlined text-xl">chevron_left</span>
                   </button>
                   <p id="current-month-year" class="text-[#181611] dark:text-white text-base font-bold leading-tight flex-1 text-center">
-                    October 2024</p>
+                    Octubre 2024</p>
                   <button id="next-month"
                     class="text-[#181611] dark:text-background-light flex size-10 items-center justify-center rounded-full hover:bg-primary/20 transition-colors">
                     <span class="material-symbols-outlined text-xl">chevron_right</span>
@@ -213,22 +209,22 @@
                 <div id="calendar-grid" class="grid grid-cols-7">
                   <p
                     class="text-[#898161] dark:text-[#a8a184] text-[13px] font-bold leading-normal flex h-12 w-full items-center justify-center pb-0.5">
-                    S</p>
+                    D</p>
+                  <p
+                    class="text-[#898161] dark:text-[#a8a184] text-[13px] font-bold leading-normal flex h-12 w-full items-center justify-center pb-0.5">
+                    L</p>
                   <p
                     class="text-[#898161] dark:text-[#a8a184] text-[13px] font-bold leading-normal flex h-12 w-full items-center justify-center pb-0.5">
                     M</p>
                   <p
                     class="text-[#898161] dark:text-[#a8a184] text-[13px] font-bold leading-normal flex h-12 w-full items-center justify-center pb-0.5">
-                    T</p>
+                    X</p>
                   <p
                     class="text-[#898161] dark:text-[#a8a184] text-[13px] font-bold leading-normal flex h-12 w-full items-center justify-center pb-0.5">
-                    W</p>
+                    J</p>
                   <p
                     class="text-[#898161] dark:text-[#a8a184] text-[13px] font-bold leading-normal flex h-12 w-full items-center justify-center pb-0.5">
-                    T</p>
-                  <p
-                    class="text-[#898161] dark:text-[#a8a184] text-[13px] font-bold leading-normal flex h-12 w-full items-center justify-center pb-0.5">
-                    F</p>
+                    V</p>
                   <p
                     class="text-[#898161] dark:text-[#a8a184] text-[13px] font-bold leading-normal flex h-12 w-full items-center justify-center pb-0.5">
                     S</p>
@@ -237,14 +233,13 @@
             </div>
             <a id="find-table-link" href="/customer/review_reservation" class="w-full sm:w-auto">
               <button id="find-table-btn"
-                class="flex items-center justify-center rounded-lg h-14 px-6 text-base font-bold bg-primary text-[#181611] dark:text-background-dark hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 dark:focus:ring-offset-background-dark transition-colors w-full">Find
-                a Table</button>
+                class="flex items-center justify-center rounded-lg h-14 px-6 text-base font-bold bg-primary text-[#181611] dark:text-background-dark hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 dark:focus:ring-offset-background-dark transition-colors w-full">Buscar Mesa</button>
             </a>
           </div>
         </div>
         <div class="hidden lg:block">
           <img class="aspect-[4/5] w-full rounded-xl object-cover"
-            data-alt="Cozy interior of Cheesy Dreams restaurant with warm lighting and rustic wooden tables."
+            data-alt="Interior acogedor del restaurante Cheesy Dreams con iluminación cálida y mesas de madera rústica."
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxwziuhgk7IJ12SZd-ixiSD4iRPv3kaYtDpC6xDnUCynDsc4Iz4SRjgRkPZbAMCohEi-F5kzzYbrN2Jgcn45jiCRIE-p8QhL6ztrOH3cXstSWyV0XPVwvsdYZd1JLpuZFDr1M5-aSrhL0r3tuAlx8HwHqHKBOGZaCXFKG7yOLpIvtQjMjhP4ORIJb-RLr85KKRRUJLu_EhuXKY9lfoKzDZL4BDZ_GHOqTpxJxILfqTDMZohek2NAIEjEgyvJS4dMHXxYtGCKDr-Mg" />
         </div>
       </div>
@@ -265,10 +260,10 @@
   </div>
   <div class="fixed bottom-4 right-4 z-50">
     <button id="accessibility-trigger" type="button" aria-controls="accessibility-menu" aria-expanded="false"
-      aria-label="Open Accessibility Options"
+      aria-label="Abrir Opciones de Accesibilidad"
       class="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-text-light shadow-lg transition-transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-primary/50">
       <span class="material-symbols-outlined !text-3xl text-[#181611]">accessibility_new</span>
-      <span class="sr-only">Open Accessibility Menu</span>
+      <span class="sr-only">Abrir Menú de Accesibilidad</span>
     </button>
 
     <div id="accessibility-menu" role="dialog" aria-labelledby="accessibility-heading" aria-modal="true"
@@ -276,14 +271,13 @@
 
       <div class="border-b border-border-light pb-2 mb-4 dark:border-border-dark">
         <h3 id="accessibility-heading" class="text-lg font-bold text-text-light dark:text-text-dark">
-          Accessibility Settings
+          Configuración de Accesibilidad
         </h3>
       </div>
 
       <div class="p-4 space-y-4 h-80 overflow-y-auto pr-1 custom-scrollbar">
         <div class="space-y-2">
-          <label class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark" for="font-size">Text
-            Size</label>
+          <label class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark" for="font-size">Tamaño del Texto</label>
           <div class="flex items-center gap-2">
             <span class="text-xs text-text-muted-light dark:text-text-muted-dark">A</span>
             <input id="font-size" type="range" min="100" max="180" step="10" value="100"
@@ -293,29 +287,30 @@
         </div>
 
         <div class="space-y-2">
-          <p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Contrast Theme</p>
+          <p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Tema de Contraste</p>
           <div class="grid grid-cols-4 gap-2">
             <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-white" data-contrast="black-on-white"
-              data-fg="#000000" data-bg="#ffffff" title="Black on White"
-              aria-label="Black text on White background"></button>
+              data-fg="#000000" data-bg="#ffffff" title="Negro sobre Blanco"
+              aria-label="Texto negro sobre fondo blanco"></button>
 
             <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-black" data-contrast="white-on-black"
-              data-fg="#ffffff" data-bg="#000000" title="White on Black"
-              aria-label="White text on Black background"></button>
+              data-fg="#ffffff" data-bg="#000000" title="Blanco sobre Negro"
+              aria-label="Texto blanco sobre fondo negro"></button>
 
             <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-yellow-400" data-contrast="yellow-on-blue"
-              data-fg="#facc15" data-bg="#020617" title="Yellow on Dark Blue background"></button>
+              data-fg="#facc15" data-bg="#020617" title="Amarillo sobre Azul"
+              aria-label="Texto amarillo sobre fondo azul oscuro"></button>
 
             <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-blue-600" data-contrast="blue-on-white"
-              data-fg="#2563eb" data-bg="#ffffff" title="Blue on White"
-              aria-label="Blue text on White background"></button>
+              data-fg="#2563eb" data-bg="#ffffff" title="Azul sobre Blanco"
+              aria-label="Texto azul sobre fondo blanco"></button>
           </div>
         </div>
 
         <div class="space-y-3 pt-2 border-t border-border-light dark:border-border-dark">
 
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Grayscale</p>
+            <p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Escala de Grises</p>
             <label class="inline-flex items-center gap-2 cursor-pointer">
               <input id="grayscale-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
@@ -324,7 +319,7 @@
           </div>
 
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Text Spacing</p>
+            <p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Espaciado de Texto</p>
             <label class="inline-flex items-center gap-2 cursor-pointer">
               <input id="spacing-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
@@ -333,7 +328,7 @@
           </div>
 
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Dyslexia Font</p>
+            <p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Fuente para Dislexia</p>
             <label class="inline-flex items-center gap-2 cursor-pointer">
               <input id="dyslexia-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
@@ -342,7 +337,7 @@
           </div>
 
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Big Cursor</p>
+            <p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Cursor Grande</p>
             <label class="inline-flex items-center gap-2 cursor-pointer">
               <input id="cursor-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
@@ -351,7 +346,7 @@
           </div>
 
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Highlight Links</p>
+            <p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Resaltar Enlaces</p>
             <label class="inline-flex items-center gap-2 cursor-pointer">
               <input id="links-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
@@ -360,7 +355,7 @@
           </div>
 
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Reading Guide</p>
+            <p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Guía de Lectura</p>
             <label class="inline-flex items-center gap-2 cursor-pointer">
               <input id="reading-guide-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
@@ -369,7 +364,7 @@
           </div>
 
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Pause Animations</p>
+            <p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Pausar Animaciones</p>
             <label class="inline-flex items-center gap-2 cursor-pointer">
               <input id="animation-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
@@ -383,7 +378,7 @@
       <div class="mt-4 border-t border-border-light pt-3 dark:border-border-dark">
         <button id="a11y-reset"
           class="w-full text-center text-sm font-bold text-primary hover:text-primary-dark hover:underline">
-          Reset Settings
+          Restablecer Configuración
         </button>
       </div>
     </div>
@@ -391,7 +386,9 @@
 
   <script>
     // Modal for "Not Implemented" links
+    // This script creates a simple modal to inform the user that a feature is not yet implemented.
     (function () {
+      // Create a style element to inject CSS for the modal
       const style = document.createElement('style');
       style.textContent = `
     .__notimpl_modal_backdrop {
@@ -438,22 +435,28 @@
   `;
       document.head.appendChild(style);
 
+      // Function to show the modal
       function showModal() {
         if (document.querySelector('.__notimpl_modal_backdrop')) return;
 
+        // Create backdrop
         const backdrop = document.createElement('div');
         backdrop.className = '__notimpl_modal_backdrop';
 
+        // Create modal container
         const modal = document.createElement('div');
         modal.className = '__notimpl_modal';
-        modal.innerHTML = '<h2>Not implemented yet!</h2><p>This functionality is not implemented yet.</p>';
+        modal.innerHTML = '<h2>¡Aún no implementado!</h2><p>Esta funcionalidad aún no está implementada.</p>';
 
+        // Create close button
         const closeBtn = document.createElement('button');
-        closeBtn.textContent = 'Close';
+        closeBtn.textContent = 'Cerrar';
         closeBtn.addEventListener('click', () => backdrop.remove());
 
         modal.appendChild(closeBtn);
         backdrop.appendChild(modal);
+        
+        // Close modal when clicking outside
         backdrop.addEventListener('click', (e) => {
           if (e.target === backdrop) backdrop.remove();
         });
@@ -461,6 +464,7 @@
         document.body.appendChild(backdrop);
       }
 
+      // Event listener for clicks on elements with 'data-not-implemented' attribute
       document.addEventListener('click', (e) => {
         const target = e.target.closest('[data-not-implemented]');
         if (target) {
@@ -641,6 +645,7 @@
     })();
     
     // ===== DYNAMIC CALENDAR INTEGRATION - FIXED =====
+    // This script handles the interactive calendar for selecting a reservation date.
     (function() {
       // Calendar elements
       const monthYearElement = document.getElementById('current-month-year');
@@ -658,10 +663,10 @@
       const today = new Date();
       today.setHours(0, 0, 0, 0);
       
-      // Month names
+      // Month names in Spanish
       const monthNames = [
-        "January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
+        "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+        "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
       ];
       
       // Initialize calendar
@@ -833,7 +838,7 @@
         }
         
         // Get values from selects using IDs
-        const guests = guestsSelect ? guestsSelect.value : '2 people';
+        const guests = guestsSelect ? guestsSelect.value : '2 personas';
         const time = timeSelect ? timeSelect.value : '7:00 PM';
         const dateStr = formatDate(selectedDate);
         

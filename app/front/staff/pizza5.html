@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html class="light" lang="es">
 
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Pizza Preparation - Step 5</title>
+  <title>Cheesy Dreams - Preparación de Pizza - Paso 5</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
@@ -119,16 +119,16 @@
     <header class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 px-6 sm:px-10 py-3">
       <div class="flex items-center gap-3">
         <span aria-hidden="true" class="material-symbols-outlined text-primary text-2xl">bakery_dining</span>
-        <h1 class="text-[#333333] dark:text-gray-100 text-lg font-bold">Cheesy Dreams - Kitchen Prep Station</h1>
+        <h1 class="text-[#333333] dark:text-gray-100 text-lg font-bold">Cheesy Dreams - Estación de Preparación de Cocina</h1>
       </div>
     </header>
 
-    <main class="flex flex-1 flex-col items-center justify-center p-4 sm:p-8">
+    <main id="text-menu" class="flex flex-1 flex-col items-center justify-center p-4 sm:p-8">
       <div class="flex w-full max-w-2xl flex-col items-center gap-6">
 
         <div class="w-full max-w-md mb-2">
           <div class="flex justify-between items-center mb-2">
-            <p class="text-base font-medium text-[#212121] dark:text-white">Step 5 of 5</p>
+            <p class="text-base font-medium text-[#212121] dark:text-white">Paso 5 de 5</p>
             <p class="text-base font-medium text-primary">100%</p>
           </div>
           <div class="rounded-full bg-gray-200 dark:bg-gray-700 h-2.5">
@@ -140,7 +140,7 @@
           <span class="material-symbols-outlined text-primary text-8xl">local_pizza</span>
         </div>
 
-        <h2 class="text-4xl font-bold text-[#212121] dark:text-white mb-2">Slicing and Serving</h2>
+        <h2 class="text-4xl font-bold text-[#212121] dark:text-white mb-2">Cortar y Servir</h2>
 
         <div
           class="w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm p-6">
@@ -150,16 +150,23 @@
               <span class="material-symbols-outlined">receipt_long</span>
             </div>
             <div class="flex flex-1 flex-col">
-              <h3 class="text-lg font-bold mb-2">Instructions</h3>
+              <h3 class="text-lg font-bold mb-2">Instrucciones</h3>
               <ul class="list-disc pl-5 space-y-1 text-gray-600 dark:text-gray-300">
-                <li>Slice the pizza into even wedges.</li>
-                <li>Verify the bake quality.</li>
-                <li>Plate immediately and mark as complete.</li>
+                <li>Cortar la pizza en cuñas iguales.</li>
+                <li>Verificar la calidad del horneado.</li>
+                <li>Emplatar inmediatamente y marcar como completado.</li>
               </ul>
             </div>
-            <button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-primary">
-              <span class="material-symbols-outlined">volume_up</span>
-            </button>
+            <div class="flex items-center gap-2 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg">
+              <button id="tts-read-btn" title="Leer texto visible" aria-pressed="false" class="px-3 py-1.5 rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-[#181611] dark:hover:text-white">
+                <span class="material-symbols-outlined text-lg inline-block align-middle mr-1.5">volume_up</span>
+                Leer
+              </button>
+              <button id="tts-stop-btn" title="Detener lectura" aria-hidden="true" class="px-3 py-1.5 rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-[#181611] dark:hover:text-white hidden">
+                <span class="material-symbols-outlined text-lg inline-block align-middle mr-1.5">stop</span>
+                Detener
+              </button>
+            </div>
           </div>
         </div>
 
@@ -167,11 +174,11 @@
           class="flex w-full flex-col sm:flex-row items-center justify-between gap-4 pt-6 mt-4 border-t border-gray-200 dark:border-gray-700">
           <a href="/staff/pizza4"
             class="flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-gray-200 dark:bg-gray-700 px-10 py-4 text-lg font-bold text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
-            <span class="material-symbols-outlined">arrow_back</span> Previous
+            <span class="material-symbols-outlined">arrow_back</span> Anterior
           </a>
           <a href="/staff/task"
             class="flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-accent-orange px-10 py-4 text-lg font-bold text-white hover:bg-orange-600 transition-colors shadow-md hover:scale-105 transform duration-200">
-            Mark as Complete <span class="material-symbols-outlined">check</span>
+            Marcar como Completado <span class="material-symbols-outlined">check</span>
           </a>
         </div>
 
@@ -181,19 +188,19 @@
 
   <div class="fixed bottom-4 right-4 z-50">
     <button id="accessibility-trigger" type="button" aria-controls="accessibility-menu" aria-expanded="false"
-      aria-label="Open Accessibility Options"
+      aria-label="Abrir opciones de accesibilidad"
       class="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-black shadow-lg transition-transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-primary/50">
       <span class="material-symbols-outlined !text-3xl">accessibility_new</span>
     </button>
     <div id="accessibility-menu" role="dialog" aria-labelledby="accessibility-heading" aria-modal="true"
       class="hidden mb-2 w-72 origin-bottom-right rounded-lg border border-gray-200 bg-white p-4 shadow-xl transition-all duration-200 ease-in-out dark:border-gray-700 dark:bg-[#231e0f] absolute bottom-16 right-0">
       <div class="border-b border-gray-200 pb-2 mb-4 dark:border-gray-700">
-        <h3 id="accessibility-heading" class="text-lg font-bold text-gray-900 dark:text-white">Accessibility Settings
+        <h3 id="accessibility-heading" class="text-lg font-bold text-gray-900 dark:text-white">Configuración de Accesibilidad
         </h3>
       </div>
       <div class="space-y-4 h-80 overflow-y-auto pr-1 custom-scrollbar">
         <div class="space-y-2">
-          <label class="text-sm font-medium text-gray-600 dark:text-gray-400" for="font-size">Text Size</label>
+          <label class="text-sm font-medium text-gray-600 dark:text-gray-400" for="font-size">Tamaño del Texto</label>
           <div class="flex items-center gap-2">
             <span class="text-xs text-gray-600 dark:text-gray-400">A</span>
             <input id="font-size" type="range" min="100" max="180" step="10" value="100"
@@ -202,67 +209,66 @@
           </div>
         </div>
         <div class="space-y-2">
-          <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Contrast Theme</p>
+          <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Tema de Contraste</p>
           <div class="grid grid-cols-4 gap-2">
             <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-white" data-contrast="black-on-white"
-              data-fg="#000000" data-bg="#ffffff" title="Black on White"></button>
+              data-fg="#000000" data-bg="#ffffff" title="Negro sobre Blanco"></button>
             <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-black" data-contrast="white-on-black"
-              data-fg="#ffffff" data-bg="#000000" title="White on Black"></button>
+              data-fg="#ffffff" data-bg="#000000" title="Blanco sobre Negro"></button>
             <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-yellow-400" data-contrast="yellow-on-blue"
-              data-fg="#facc15" data-bg="#020617" title="Yellow on Blue"></button>
+              data-fg="#facc15" data-bg="#020617" title="Amarillo sobre Azul"></button>
             <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-blue-600" data-contrast="blue-on-white"
-              data-fg="#2563eb" data-bg="#ffffff" title="Blue on White"></button>
+              data-fg="#2563eb" data-bg="#ffffff" title="Azul sobre Blanco"></button>
           </div>
         </div>
         <div class="space-y-3 pt-2 border-t border-gray-200 dark:border-gray-700">
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Grayscale</p>
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Escala de Grises</p>
             <label class="inline-flex items-center gap-2 cursor-pointer"><input id="grayscale-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary" /><span
-                class="text-xs text-gray-600 dark:text-gray-400">On</span></label>
+                class="text-xs text-gray-600 dark:text-gray-400">Activado</span></label>
           </div>
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Text Spacing</p>
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Espaciado de Texto</p>
             <label class="inline-flex items-center gap-2 cursor-pointer"><input id="spacing-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary" /><span
-                class="text-xs text-gray-600 dark:text-gray-400">On</span></label>
+                class="text-xs text-gray-600 dark:text-gray-400">Activado</span></label>
           </div>
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Dyslexia Font</p>
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Fuente para Dislexia</p>
             <label class="inline-flex items-center gap-2 cursor-pointer"><input id="dyslexia-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary" /><span
-                class="text-xs text-gray-600 dark:text-gray-400">On</span></label>
+                class="text-xs text-gray-600 dark:text-gray-400">Activado</span></label>
           </div>
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Big Cursor</p>
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Cursor Grande</p>
             <label class="inline-flex items-center gap-2 cursor-pointer"><input id="cursor-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary" /><span
-                class="text-xs text-gray-600 dark:text-gray-400">On</span></label>
+                class="text-xs text-gray-600 dark:text-gray-400">Activado</span></label>
           </div>
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Highlight Links</p>
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Resaltar Enlaces</p>
             <label class="inline-flex items-center gap-2 cursor-pointer"><input id="links-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary" /><span
-                class="text-xs text-gray-600 dark:text-gray-400">On</span></label>
+                class="text-xs text-gray-600 dark:text-gray-400">Activado</span></label>
           </div>
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Reading Guide</p>
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Guía de Lectura</p>
             <label class="inline-flex items-center gap-2 cursor-pointer"><input id="reading-guide-toggle"
                 type="checkbox" class="rounded border-gray-300 text-primary focus:ring-primary" /><span
-                class="text-xs text-gray-600 dark:text-gray-400">On</span></label>
+                class="text-xs text-gray-600 dark:text-gray-400">Activado</span></label>
           </div>
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Pause Animations</p>
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Pausar Animaciones</p>
             <label class="inline-flex items-center gap-2 cursor-pointer"><input id="animation-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary" /><span
-                class="text-xs text-gray-600 dark:text-gray-400">On</span></label>
+                class="text-xs text-gray-600 dark:text-gray-400">Activado</span></label>
           </div>
         </div>
       </div>
       <div class="mt-4 border-t border-gray-200 pt-3 dark:border-gray-700">
         <button id="a11y-reset"
-          class="w-full text-center text-sm font-bold text-primary hover:text-yellow-600 hover:underline">Reset
-          Settings</button>
+          class="w-full text-center text-sm font-bold text-primary hover:text-yellow-600 hover:underline">Restablecer Configuración</button>
       </div>
     </div>
   </div>
@@ -323,7 +329,7 @@
 
           const modal = document.createElement('div');
           modal.className = '__notimpl_modal';
-          modal.innerHTML = '<h2>Not implemented yet!</h2><p>This functionality is not implemented yet.</p>';
+          modal.innerHTML = '<h2>¡Aún no implementado!</h2><p>Esta funcionalidad aún no está implementada.</p>';
 
           const closeBtn = document.createElement('button');
           closeBtn.textContent = 'Cerrar';
@@ -518,7 +524,99 @@
       }
     })();
   </script>
-  <script src="../js/functions.js">  <script src="../js/functions.js"></script>
+  <script>
+      // Text-to-Speech for Plain Text menu
+      (function () {
+        const readBtn = document.getElementById('tts-read-btn');
+        const stopBtn = document.getElementById('tts-stop-btn');
+        const textMenu = document.getElementById('text-menu');
+        let utterance;
+
+        function gatherVisibleText() {
+          if (!textMenu) return '';
+          // Only read visible sections inside #text-menu
+          const visible = Array.from(textMenu.querySelectorAll(':scope section, :scope ul, :scope p, :scope h1, :scope h2, :scope h3, :scope li'))
+            .filter(el => el.offsetParent !== null);
+          const texts = visible.map(el => el.innerText.trim()).filter(Boolean);
+          return texts.join('\n\n');
+        }
+
+        function startReading() {
+          if (!('speechSynthesis' in window)) {
+            alert('Texto a voz no es compatible con este navegador.');
+            return;
+          }
+
+          const text = gatherVisibleText();
+          if (!text) return;
+
+          // Stop any existing speech
+          window.speechSynthesis.cancel();
+
+          utterance = new SpeechSynthesisUtterance(text);
+          utterance.lang = document.documentElement.lang || 'es-ES';
+          utterance.rate = 1; // normal
+          utterance.pitch = 1;
+
+          utterance.onstart = () => {
+            readBtn.setAttribute('aria-pressed', 'true');
+            stopBtn.classList.remove('hidden');
+            stopBtn.removeAttribute('aria-hidden');
+          };
+
+          utterance.onend = () => {
+            readBtn.setAttribute('aria-pressed', 'false');
+            stopBtn.classList.add('hidden');
+            stopBtn.setAttribute('aria-hidden', 'true');
+          };
+
+          utterance.onerror = () => {
+            readBtn.setAttribute('aria-pressed', 'false');
+            stopBtn.classList.add('hidden');
+            stopBtn.setAttribute('aria-hidden', 'true');
+          };
+
+          window.speechSynthesis.speak(utterance);
+        }
+
+        function stopReading() {
+          if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+          }
+          if (utterance) utterance = null;
+          readBtn.setAttribute('aria-pressed', 'false');
+          stopBtn.classList.add('hidden');
+          stopBtn.setAttribute('aria-hidden', 'true');
+        }
+
+        if (readBtn) {
+          readBtn.addEventListener('click', (e) => {
+            const pressed = readBtn.getAttribute('aria-pressed') === 'true';
+            if (pressed) {
+              stopReading();
+            } else {
+              startReading();
+            }
+          });
+        }
+
+        if (stopBtn) {
+          stopBtn.addEventListener('click', stopReading);
+        }
+
+        // Stop speech when navigating back to visual menu
+        const visualBtn = document.getElementById('visual-btn');
+        if (visualBtn) visualBtn.addEventListener('click', stopReading);
+
+        // Ensure speech cancels on page hide
+        window.addEventListener('beforeunload', stopReading);
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden) stopReading();
+        });
+      })();
+
+    </script>
+  <script src="../js/functions.js"></script>
 </body>
 
 </html>

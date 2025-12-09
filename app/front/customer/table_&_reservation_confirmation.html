@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html class="" lang="en">
+<html class="" lang="es">
 
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Confirm Your Reservation at Cheesy Dreams</title>
+  <title>Confirma tu Reserva en Cheesy Dreams</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&amp;display=swap"
     rel="stylesheet" />
@@ -146,44 +146,42 @@
           <section class="flex flex-col gap-8 p-4 sm:p-6 lg:p-8">
             <div class="flex flex-col gap-3">
               <h1 class="text-text-light dark:text-text-dark text-4xl font-black leading-tight tracking-[-0.033em]">
-                Confirm Your Reservation</h1>
-              <p class="text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-normal">Please
-                review the details below before confirming your table.</p>
+                Confirma Tu Reserva</h1>
+              <p class="text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-normal">Por favor, revisa los detalles a continuación antes de confirmar tu mesa.</p>
             </div>
             <div
               class="bg-card-light dark:bg-card-dark rounded-xl border border-border-light dark:border-border-dark shadow-sm">
               <div class="p-4 sm:p-6 grid grid-cols-1 sm:grid-cols-2 gap-x-4">
                 <div class="flex flex-col gap-1 border-t border-solid border-border-light dark:border-border-dark py-4">
-                  <p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">Date</p>
-                  <p id="reservation-date" class="text-text-light dark:text-text-dark text-sm font-normal leading-normal">October 26, 2024</p>
+                  <p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">Fecha</p>
+                  <p id="reservation-date" class="text-text-light dark:text-text-dark text-sm font-normal leading-normal">26 de Octubre, 2024</p>
                 </div>
                 <div class="flex flex-col gap-1 border-t border-solid border-border-light dark:border-border-dark py-4">
-                  <p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">Time</p>
+                  <p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">Hora</p>
                   <p id="reservation-time" class="text-text-light dark:text-text-dark text-sm font-normal leading-normal">7:30 PM</p>
                 </div>
                 <div class="flex flex-col gap-1 border-t border-solid border-border-light dark:border-border-dark py-4">
-                  <p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">Guests
+                  <p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">Invitados
                   </p>
-                  <p id="reservation-guests" class="text-text-light dark:text-text-dark text-sm font-normal leading-normal">4 Guests</p>
+                  <p id="reservation-guests" class="text-text-light dark:text-text-dark text-sm font-normal leading-normal">4 Invitados</p>
                 </div>
                 <div class="flex flex-col gap-1 border-t border-solid border-border-light dark:border-border-dark py-4">
-                  <p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">Table
+                  <p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">Mesa
                   </p>
-                  <p class="text-text-light dark:text-text-dark text-sm font-normal leading-normal">Standard Table</p>
+                  <p class="text-text-light dark:text-text-dark text-sm font-normal leading-normal">Mesa Estándar</p>
                 </div>
                 <div class="flex flex-col gap-1 border-t border-solid border-border-light dark:border-border-dark py-4">
-                  <p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">Name</p>
+                  <p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">Nombre</p>
                   <p class="text-text-light dark:text-text-dark text-sm font-normal leading-normal">Jane Doe</p>
                 </div>
               </div>
             </div>
             <div class="flex flex-wrap items-end gap-4">
               <label class="flex flex-col w-full flex-1">
-                <p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">Special
-                  Requests or Dietary Notes</p>
+                <p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">Peticiones Especiales o Notas Dietéticas</p>
                 <textarea
                   class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-secondary/50 border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark focus:border-secondary/80 min-h-36 placeholder:text-text-muted-light dark:placeholder:text-text-muted-dark p-[15px] text-base font-normal leading-normal"
-                  placeholder="e.g., celebrating an anniversary, gluten allergy"></textarea>
+                  placeholder="ej., celebrando un aniversario, alergia al gluten"></textarea>
               </label>
             </div>
             <div class="flex w-full gap-3 flex-col items-stretch pt-4">
@@ -193,12 +191,12 @@
                 <input type="hidden" id="hidden-time" name="time">
                 <button type="submit"
                   class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-text-light text-base font-bold leading-normal tracking-[0.015em] w-full hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark focus:ring-secondary">
-                  <span class="truncate">Confirm My Table</span>
+                  <span class="truncate">Confirmar Mi Mesa</span>
                 </button>
               </form>
               <a id="change-details-link" href="/customer/make_reservation"
                 class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-button-secondary-light dark:bg-button-secondary-dark text-text-light dark:text-text-dark text-base font-bold leading-normal tracking-[0.015em] w-full hover:bg-opacity-80 dark:hover:bg-opacity-80">
-                <span class="truncate">Change Details</span>
+                <span class="truncate">Cambiar Detalles</span>
               </a>
             </div>
           </section>

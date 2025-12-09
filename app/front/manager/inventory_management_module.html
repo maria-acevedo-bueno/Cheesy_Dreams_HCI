@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Cheesy Dreams - Inventory Management</title>
+  <title>Cheesy Dreams - Gestión de Inventario</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&amp;display=swap"
     rel="stylesheet" />
@@ -35,28 +35,28 @@
           </div>
           <div class="flex flex-col">
             <h1 class="text-gray-900 dark:text-white text-base font-medium leading-normal">Cheesy Dreams</h1>
-            <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Management System</p>
+            <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Sistema de Gestión</p>
           </div>
         </div>
         <nav class="flex flex-col gap-2 mt-4">
           <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
             href="/manager/dashboard">
             <span class="material-symbols-outlined">dashboard</span>
-            <p class="text-sm font-medium leading-normal">Dashboard</p>
+            <p class="text-sm font-medium leading-normal">Panel Principal</p>
           </a>
           <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
             href="/manager/manage_reservations">
             <span class="material-symbols-outlined">book_online</span>
-            <p class="text-sm font-medium leading-normal">Reservations</p>
+            <p class="text-sm font-medium leading-normal">Reservas</p>
           </a>
           <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-gray-900" href="/manager/inventory">
             <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
-            <p class="text-sm font-medium leading-normal">Inventory</p>
+            <p class="text-sm font-medium leading-normal">Inventario</p>
           </a>
           <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
             href="/manager/sales">
             <span class="material-symbols-outlined">assessment</span>
-            <p class="text-sm font-medium leading-normal">Sales Reports</p>
+            <p class="text-sm font-medium leading-normal">Reportes de Ventas</p>
           </a>
         </nav>
       </div>
@@ -64,12 +64,12 @@
         <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
           href="#" data-not-implemented>
           <span class="material-symbols-outlined">settings</span>
-          <p class="text-sm font-medium leading-normal">Settings</p>
+          <p class="text-sm font-medium leading-normal">Configuración</p>
         </a>
         <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
           href="../logout">
           <span class="material-symbols-outlined">logout</span>
-          <p class="text-sm font-medium leading-normal">Log Out</p>
+          <p class="text-sm font-medium leading-normal">Cerrar Sesión</p>
         </a>
       </div>
     </aside>
@@ -78,12 +78,12 @@
       <div class="mx-auto max-w-7xl">
         <!-- Page Heading -->
         <div class="flex flex-wrap items-center justify-between gap-4">
-          <h1 class="text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">Inventory Management</h1>
+          <h1 class="text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">Gestión de Inventario</h1>
           <button
             class="flex min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-11 px-6 bg-primary text-neutral-text-light text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-primary/50"
             data-not-implemented>
             <span class="material-symbols-outlined">add</span>
-            <span class="truncate">Add New Item</span>
+            <span class="truncate">Agregar Nuevo Ítem</span>
           </button>
         </div>
         <!-- Search and Filter Bar -->
@@ -97,7 +97,7 @@
                 </div>
                 <input
                   class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-neutral-text-light dark:text-neutral-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border-0 bg-white dark:bg-neutral-bg-dark/40 h-full placeholder:text-neutral-subtle-text-light dark:placeholder:text-neutral-subtle-text-dark px-4 pl-2 text-base font-normal leading-normal"
-                  placeholder="Search by item name..." value="" />
+                  placeholder="Buscar por nombre..." value="" />
               </div>
             </label>
           </div>
@@ -105,21 +105,21 @@
             <button
               class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-neutral-bg-dark/40 pl-4 pr-3 hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50"
               data-not-implemented>
-              <p class="text-sm font-medium leading-normal">Category: All</p>
+              <p class="text-sm font-medium leading-normal">Categoría: Todas</p>
               <span
                 class="material-symbols-outlined text-neutral-subtle-text-light dark:text-neutral-subtle-text-dark">expand_more</span>
             </button>
             <button
               class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-neutral-bg-dark/40 pl-4 pr-3 hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50"
               data-not-implemented>
-              <p class="text-sm font-medium leading-normal">Status: All</p>
+              <p class="text-sm font-medium leading-normal">Estado: Todos</p>
               <span
                 class="material-symbols-outlined text-neutral-subtle-text-light dark:text-neutral-subtle-text-dark">expand_more</span>
             </button>
             <button
               class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-neutral-bg-dark/40 pl-4 pr-3 hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50"
               data-not-implemented>
-              <p class="text-sm font-medium leading-normal">Sort By: Name</p>
+              <p class="text-sm font-medium leading-normal">Ordenar Por: Nombre</p>
               <span
                 class="material-symbols-outlined text-neutral-subtle-text-light dark:text-neutral-subtle-text-dark">expand_more</span>
             </button>
@@ -133,13 +133,13 @@
               <table class="w-full">
                 <thead class="bg-neutral-bg-light/50 dark:bg-neutral-bg-dark/50">
                   <tr>
-                    <th class="px-6 py-4 text-left text-sm font-medium leading-normal tracking-wider">Item Name</th>
-                    <th class="px-6 py-4 text-left text-sm font-medium leading-normal tracking-wider">Category</th>
-                    <th class="px-6 py-4 text-left text-sm font-medium leading-normal tracking-wider">Current Quantity
+                    <th class="px-6 py-4 text-left text-sm font-medium leading-normal tracking-wider">Nombre del Ítem</th>
+                    <th class="px-6 py-4 text-left text-sm font-medium leading-normal tracking-wider">Categoría</th>
+                    <th class="px-6 py-4 text-left text-sm font-medium leading-normal tracking-wider">Cantidad Actual
                     </th>
-                    <th class="px-6 py-4 text-left text-sm font-medium leading-normal tracking-wider">Threshold</th>
-                    <th class="px-6 py-4 text-left text-sm font-medium leading-normal tracking-wider">Status</th>
-                    <th class="px-6 py-4 text-left text-sm font-medium leading-normal tracking-wider">Actions</th>
+                    <th class="px-6 py-4 text-left text-sm font-medium leading-normal tracking-wider">Umbral</th>
+                    <th class="px-6 py-4 text-left text-sm font-medium leading-normal tracking-wider">Estado</th>
+                    <th class="px-6 py-4 text-left text-sm font-medium leading-normal tracking-wider">Acciones</th>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-neutral-border-light dark:divide-neutral-border-dark">
@@ -148,7 +148,7 @@
                     <td class="h-[72px] px-6 py-2 text-sm font-medium">Mozzarella</td>
                     <td
                       class="h-[72px] px-6 py-2 text-sm text-neutral-subtle-text-light dark:text-neutral-subtle-text-dark">
-                      Dairy</td>
+                      Lácteos</td>
                     <td
                       class="h-[72px] px-6 py-2 text-sm text-neutral-subtle-text-light dark:text-neutral-subtle-text-dark">
                       5 kg</td>
@@ -158,8 +158,7 @@
                     <td class="h-[72px] px-6 py-2">
                       <div
                         class="inline-flex items-center gap-2 rounded-full bg-danger-light-bg dark:bg-danger-light-text/30 px-3 py-1 text-xs font-semibold text-danger-light-text dark:text-danger-light-bg">
-                        <span class="h-2 w-2 rounded-full bg-danger-light-text dark:bg-danger-light-bg"></span> Low
-                        Stock
+                        <span class="h-2 w-2 rounded-full bg-danger-light-text dark:bg-danger-light-bg"></span> Stock Bajo
                       </div>
                     </td>
                     <td class="h-[72px] px-6 py-2">
@@ -174,21 +173,20 @@
                     </td>
                   </tr>
                   <tr class="hover:bg-neutral-bg-light/50 dark:hover:bg-neutral-bg-dark/50">
-                    <td class="h-[72px] px-6 py-2 text-sm font-medium">Tomato Sauce</td>
+                    <td class="h-[72px] px-6 py-2 text-sm font-medium">Salsa de Tomate</td>
                     <td
                       class="h-[72px] px-6 py-2 text-sm text-neutral-subtle-text-light dark:text-neutral-subtle-text-dark">
-                      Canned Goods</td>
+                      Conservas</td>
                     <td
                       class="h-[72px] px-6 py-2 text-sm text-neutral-subtle-text-light dark:text-neutral-subtle-text-dark">
-                      20 cans</td>
+                      20 latas</td>
                     <td
                       class="h-[72px] px-6 py-2 text-sm text-neutral-subtle-text-light dark:text-neutral-subtle-text-dark">
-                      15 cans</td>
+                      15 latas</td>
                     <td class="h-[72px] px-6 py-2">
                       <div
                         class="inline-flex items-center gap-2 rounded-full bg-success-light-bg dark:bg-success-light-text/30 px-3 py-1 text-xs font-semibold text-success-light-text dark:text-success-light-bg">
-                        <span class="h-2 w-2 rounded-full bg-success-light-text dark:bg-success-light-bg"></span> In
-                        Stock
+                        <span class="h-2 w-2 rounded-full bg-success-light-text dark:bg-success-light-bg"></span> En Stock
                       </div>
                     </td>
                     <td class="h-[72px] px-6 py-2">
@@ -203,10 +201,10 @@
                     </td>
                   </tr>
                   <tr class="hover:bg-neutral-bg-light/50 dark:hover:bg-neutral-bg-dark/50">
-                    <td class="h-[72px] px-6 py-2 text-sm font-medium">Flour</td>
+                    <td class="h-[72px] px-6 py-2 text-sm font-medium">Harina</td>
                     <td
                       class="h-[72px] px-6 py-2 text-sm text-neutral-subtle-text-light dark:text-neutral-subtle-text-dark">
-                      Dry Goods</td>
+                      Productos Secos</td>
                     <td
                       class="h-[72px] px-6 py-2 text-sm text-neutral-subtle-text-light dark:text-neutral-subtle-text-dark">
                       50 kg</td>
@@ -216,8 +214,7 @@
                     <td class="h-[72px] px-6 py-2">
                       <div
                         class="inline-flex items-center gap-2 rounded-full bg-success-light-bg dark:bg-success-light-text/30 px-3 py-1 text-xs font-semibold text-success-light-text dark:text-success-light-bg">
-                        <span class="h-2 w-2 rounded-full bg-success-light-text dark:bg-success-light-bg"></span> In
-                        Stock
+                        <span class="h-2 w-2 rounded-full bg-success-light-text dark:bg-success-light-bg"></span> En Stock
                       </div>
                     </td>
                     <td class="h-[72px] px-6 py-2">
@@ -233,10 +230,10 @@
                   </tr>
                   <tr
                     class="bg-danger-light-bg/50 dark:bg-danger-light-text/20 hover:bg-danger-light-bg/80 dark:hover:bg-danger-light-text/30">
-                    <td class="h-[72px] px-6 py-2 text-sm font-medium">Basil</td>
+                    <td class="h-[72px] px-6 py-2 text-sm font-medium">Albahaca</td>
                     <td
                       class="h-[72px] px-6 py-2 text-sm text-neutral-subtle-text-light dark:text-neutral-subtle-text-dark">
-                      Produce</td>
+                      Productos Frescos</td>
                     <td
                       class="h-[72px] px-6 py-2 text-sm text-neutral-subtle-text-light dark:text-neutral-subtle-text-dark">
                       1 kg</td>
@@ -246,8 +243,7 @@
                     <td class="h-[72px] px-6 py-2">
                       <div
                         class="inline-flex items-center gap-2 rounded-full bg-danger-light-bg dark:bg-danger-light-text/30 px-3 py-1 text-xs font-semibold text-danger-light-text dark:text-danger-light-bg">
-                        <span class="h-2 w-2 rounded-full bg-danger-light-text dark:bg-danger-light-bg"></span> Low
-                        Stock
+                        <span class="h-2 w-2 rounded-full bg-danger-light-text dark:bg-danger-light-bg"></span> Stock Bajo
                       </div>
                     </td>
                     <td class="h-[72px] px-6 py-2">
@@ -268,8 +264,7 @@
         </div>
         <!-- Pagination -->
         <div class="mt-6 flex items-center justify-between">
-          <p class="text-sm text-neutral-subtle-text-light dark:text-neutral-subtle-text-dark">Showing 1 to 4 of 12
-            items</p>
+          <p class="text-sm text-neutral-subtle-text-light dark:text-neutral-subtle-text-dark">Mostrando 1 a 4 de 12 ítems</p>
           <div class="flex items-center gap-2">
             <button
               class="flex h-9 w-9 items-center justify-center rounded-md border border-neutral-border-light dark:border-neutral-border-dark bg-white dark:bg-neutral-bg-dark/40 hover:bg-neutral-bg-light dark:hover:bg-neutral-bg-dark focus:outline-none focus:ring-2 focus:ring-primary/50"
@@ -291,99 +286,6 @@
     </main>
   </div>
 
-
-
-  <script>
-    // popup.js inline - temporal para debugging
-    (function () {
-      console.log('✅ Script inline cargado');
-
-      const style = document.createElement('style');
-      style.textContent = `
-    .__notimpl_modal_backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-    .__notimpl_modal {
-      background: white;
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-      max-width: 90%;
-      width: 360px;
-      text-align: center;
-      font-family: 'Work Sans', sans-serif;
-    }
-    .__notimpl_modal h2 {
-      margin: 0 0 12px;
-      font-size: 20px;
-      color: #1F2937;
-    }
-    .__notimpl_modal p {
-      margin: 0 0 20px;
-      color: #6B7280;
-      font-size: 14px;
-    }
-    .__notimpl_modal button {
-      padding: 10px 20px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      background: #fac638;
-      color: white;
-      font-weight: 600;
-    }
-    .__notimpl_modal button:hover {
-      background: #D97706;
-    }
-  `;
-      document.head.appendChild(style);
-
-      function showModal() {
-        console.log('🎉 Mostrando modal');
-        if (document.querySelector('.__notimpl_modal_backdrop')) return;
-
-        const backdrop = document.createElement('div');
-        backdrop.className = '__notimpl_modal_backdrop';
-
-        const modal = document.createElement('div');
-        modal.className = '__notimpl_modal';
-        modal.innerHTML = '<h2>Not implemented yet!</h2><p>This functionality is not implemented yet.</p>';
-
-        const closeBtn = document.createElement('button');
-        closeBtn.textContent = 'Cerrar';
-        closeBtn.addEventListener('click', () => backdrop.remove());
-
-        modal.appendChild(closeBtn);
-        backdrop.appendChild(modal);
-        backdrop.addEventListener('click', (e) => {
-          if (e.target === backdrop) backdrop.remove();
-        });
-
-        document.body.appendChild(backdrop);
-      }
-
-      document.addEventListener('click', function (e) {
-        console.log('👆 Clic en:', e.target.tagName);
-        const target = e.target.closest('[data-not-implemented]');
-        console.log('🔍 Target:', target);
-
-        if (target) {
-          console.log('✋ Previniendo default');
-          e.preventDefault();
-          e.stopPropagation();
-          showModal();
-        }
-      }, true);
-
-      console.log('✅ Event listener configurado');
-    })();
-  </script>
   <script src="../js/functions.js"></script>
 </body>
 

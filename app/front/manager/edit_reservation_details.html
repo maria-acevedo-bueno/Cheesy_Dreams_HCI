@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html class="light" lang="es">
 
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Edit Reservation - Cheesy Dreams</title>
+  <title>Editar Reserva - Cheesy Dreams</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&amp;display=swap"
     rel="stylesheet" />
@@ -54,7 +54,7 @@
     class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
     <div class="flex min-h-screen">
 
-      <!-- INICIO: Panel Lateral (Copiado del segundo código) -->
+      <!-- START: Side Panel (Copied from second code) -->
       <aside
         class="flex h-screen w-64 flex-col bg-white dark:bg-gray-900 p-4 sticky top-0 border-r border-gray-200 dark:border-gray-700">
         <div class="flex flex-col gap-4">
@@ -65,30 +65,30 @@
             </div>
             <div class="flex flex-col">
               <h1 class="text-gray-900 dark:text-white text-base font-medium leading-normal">Cheesy Dreams</h1>
-              <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Management System</p>
+              <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Sistema de Gestión</p>
             </div>
           </div>
           <nav class="flex flex-col gap-2 mt-4">
             <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
               href="/manager/dashboard">
               <span class="material-symbols-outlined">dashboard</span>
-              <p class="text-sm font-medium leading-normal">Dashboard</p>
+              <p class="text-sm font-medium leading-normal">Panel Principal</p>
             </a>
-            <!-- Pestaña Activa: Reservations -->
+            <!-- Active Tab: Reservations -->
             <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-gray-900"
               href="/manager/manage_reservations">
               <span class="material-symbols-outlined">book_online</span>
-              <p class="text-sm font-medium leading-normal">Reservations</p>
+              <p class="text-sm font-medium leading-normal">Reservas</p>
             </a>
             <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
               href="/manager/inventory">
               <span class="material-symbols-outlined">inventory_2</span>
-              <p class="text-sm font-medium leading-normal">Inventory</p>
+              <p class="text-sm font-medium leading-normal">Inventario</p>
             </a>
             <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
               href="/manager/sales">
               <span class="material-symbols-outlined">assessment</span>
-              <p class="text-sm font-medium leading-normal">Sales Reports</p>
+              <p class="text-sm font-medium leading-normal">Reportes de Ventas</p>
             </a>
           </nav>
         </div>
@@ -96,39 +96,37 @@
           <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
             href="#" data-not-implemented>
             <span class="material-symbols-outlined">settings</span>
-            <p class="text-sm font-medium leading-normal">Settings</p>
+            <p class="text-sm font-medium leading-normal">Configuración</p>
           </a>
           <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
             href="../logout">
             <span class="material-symbols-outlined">logout</span>
-            <p class="text-sm font-medium leading-normal">Log Out</p>
+            <p class="text-sm font-medium leading-normal">Cerrar Sesión</p>
           </a>
         </div>
       </aside>
-      <!-- FIN: Panel Lateral -->
+      <!-- END: Side Panel -->
 
       <main class="flex-1 p-8 overflow-y-auto">
         <div class="max-w-4xl mx-auto">
-          <p class="text-[#181611] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Edit
-            Reservation</p>
-          <p class="text-brand-gray-text dark:text-gray-400 text-sm font-normal leading-normal pt-1">Editing reservation
-            for John Doe (Confirmation #1A2B3C)</p>
+          <p class="text-[#181611] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Editar Reserva</p>
+          <p class="text-brand-gray-text dark:text-gray-400 text-sm font-normal leading-normal pt-1">Editando reserva de John Doe (Confirmación #1A2B3C)</p>
           <div
             class="mt-8 bg-white dark:bg-black/20 p-8 rounded-xl shadow-sm border border-[#e6e3db] dark:border-gray-700">
             <form class="flex flex-col gap-8">
               <div>
                 <h3 class="text-[#181611] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-4">
-                  Customer Information</h3>
+                  Información del Cliente</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <label class="flex flex-col">
-                    <p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Guest Name
+                    <p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Nombre del Invitado
                     </p>
                     <input
                       class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181611] dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-brand-blue/50 border border-[#e6e3db] dark:border-gray-600 bg-white focus:border-brand-blue dark:focus:border-brand-blue h-12 placeholder:text-brand-gray-text px-4 text-base font-normal leading-normal"
                       value="John Doe" />
                   </label>
                   <label class="flex flex-col">
-                    <p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Contact Phone
+                    <p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Teléfono de Contacto
                     </p>
                     <input
                       class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181611] dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-brand-blue/50 border border-[#e6e3db] dark:border-gray-600 bg-white focus:border-brand-blue dark:focus:border-brand-blue h-12 placeholder:text-brand-gray-text px-4 text-base font-normal leading-normal"
@@ -138,46 +136,45 @@
               </div>
               <div>
                 <h3 class="text-[#181611] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-4">
-                  Reservation Details</h3>
+                  Detalles de la Reserva</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   <label class="flex flex-col">
-                    <p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Date</p>
+                    <p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Fecha</p>
                     <input
                       class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181611] dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-brand-blue/50 border border-[#e6e3db] dark:border-gray-600 bg-white focus:border-brand-blue dark:focus:border-brand-blue h-12 placeholder:text-brand-gray-text px-4 text-base font-normal leading-normal"
                       type="date" value="2024-10-26" />
                   </label>
                   <label class="flex flex-col">
-                    <p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Time</p>
+                    <p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Hora</p>
                     <input
                       class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181611] dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-brand-blue/50 border border-[#e6e3db] dark:border-gray-600 bg-white focus:border-brand-blue dark:focus:border-brand-blue h-12 placeholder:text-brand-gray-text px-4 text-base font-normal leading-normal"
                       type="time" value="19:30" />
                   </label>
                   <label class="flex flex-col">
-                    <p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Guests</p>
+                    <p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Invitados</p>
                     <input
                       class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181611] dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-brand-blue/50 border border-[#e6e3db] dark:border-gray-600 bg-white focus:border-brand-blue dark:focus:border-brand-blue h-12 placeholder:text-brand-gray-text px-4 text-base font-normal leading-normal"
                       type="number" value="4" />
                   </label>
                   <label class="flex flex-col">
-                    <p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Table</p>
+                    <p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Mesa</p>
                     <select
                       class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181611] dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-brand-blue/50 border border-[#e6e3db] dark:border-gray-600 bg-white focus:border-brand-blue dark:focus:border-brand-blue h-12 px-4 text-base font-normal leading-normal">
-                      <option>Table 12</option>
-                      <option>Table 14</option>
-                      <option selected="">Booth 3</option>
-                      <option>Patio 5</option>
+                      <option>Mesa 12</option>
+                      <option>Mesa 14</option>
+                      <option selected="">Cabina 3</option>
+                      <option>Terraza 5</option>
                     </select>
                   </label>
                 </div>
               </div>
               <div>
                 <h3 class="text-[#181611] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-4">
-                  Additional Information</h3>
+                  Información Adicional</h3>
                 <label class="flex flex-col">
-                  <p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Special
-                    Requests / Notes</p>
+                  <p class="text-[#181611] dark:text-gray-200 text-base font-medium leading-normal pb-2">Peticiones Especiales / Notas</p>
                   <textarea
-                    class="form-textarea flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-lg text-[#181611] dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-brand-blue/50 border border-[#e6e3db] dark:border-gray-600 bg-white focus:border-brand-blue dark:focus:border-brand-blue min-h-28 placeholder:text-brand-gray-text p-4 text-base font-normal leading-normal">Anniversary celebration. Please bring a small dessert with a candle.</textarea>
+                    class="form-textarea flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-lg text-[#181611] dark:text-white dark:bg-gray-800 focus:outline-0 focus:ring-2 focus:ring-brand-blue/50 border border-[#e6e3db] dark:border-gray-600 bg-white focus:border-brand-blue dark:focus:border-brand-blue min-h-28 placeholder:text-brand-gray-text p-4 text-base font-normal leading-normal">Celebración de aniversario. Por favor traigan un pequeño postre con una vela.</textarea>
                 </label>
               </div>
             </form>
@@ -187,13 +184,13 @@
             <a href="/manager/manage_reservations" class="w-full sm:w-auto">
               <button
                 class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-6 bg-transparent text-brand-gray-text dark:text-gray-300 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-300 dark:border-gray-600">
-                <span class="truncate">Cancel</span>
+                <span class="truncate">Cancelar</span>
               </button>
             </a>
             <a href="/manager/manage_reservations" class="w-full sm:w-auto">
               <button
                 class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-6 bg-primary text-gray-900 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 disabled:bg-gray-400 dark:disabled:bg-gray-600 disabled:cursor-not-allowed">
-                <span class="truncate">Save Changes</span>
+                <span class="truncate">Guardar Cambios</span>
               </button>
 
             </a>
@@ -201,97 +198,7 @@
         </div>
       </main>
 
-      <script>
-        // popup.js inline - temporal para debugging
-        (function () {
-          console.log('✅ Script inline cargado');
-
-          const style = document.createElement('style');
-          style.textContent = `
-    .__notimpl_modal_backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-    .__notimpl_modal {
-      background: white;
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-      max-width: 90%;
-      width: 360px;
-      text-align: center;
-      font-family: 'Work Sans', sans-serif;
-    }
-    .__notimpl_modal h2 {
-      margin: 0 0 12px;
-      font-size: 20px;
-      color: #1F2937;
-    }
-    .__notimpl_modal p {
-      margin: 0 0 20px;
-      color: #6B7280;
-      font-size: 14px;
-    }
-    .__notimpl_modal button {
-      padding: 10px 20px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      background: #fac638;
-      color: white;
-      font-weight: 600;
-    }
-    .__notimpl_modal button:hover {
-      background: #D97706;
-    }
-  `;
-          document.head.appendChild(style);
-
-          function showModal() {
-            console.log('🎉 Mostrando modal');
-            if (document.querySelector('.__notimpl_modal_backdrop')) return;
-
-            const backdrop = document.createElement('div');
-            backdrop.className = '__notimpl_modal_backdrop';
-
-            const modal = document.createElement('div');
-            modal.className = '__notimpl_modal';
-            modal.innerHTML = '<h2>Not implemented yet!</h2><p>This functionality is not implemented yet.</p>';
-
-            const closeBtn = document.createElement('button');
-            closeBtn.textContent = 'Cerrar';
-            closeBtn.addEventListener('click', () => backdrop.remove());
-
-            modal.appendChild(closeBtn);
-            backdrop.appendChild(modal);
-            backdrop.addEventListener('click', (e) => {
-              if (e.target === backdrop) backdrop.remove();
-            });
-
-            document.body.appendChild(backdrop);
-          }
-
-          document.addEventListener('click', function (e) {
-            console.log('👆 Clic en:', e.target.tagName);
-            const target = e.target.closest('[data-not-implemented]');
-            console.log('🔍 Target:', target);
-
-            if (target) {
-              console.log('✋ Previniendo default');
-              e.preventDefault();
-              e.stopPropagation();
-              showModal();
-            }
-          }, true);
-
-          console.log('✅ Event listener configurado');
-        })();
-      </script>
+      <script src="../js/functions.js"></script>
 </body>
 
 </html>

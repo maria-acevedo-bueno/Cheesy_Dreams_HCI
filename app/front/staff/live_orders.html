@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html class="" lang="en">
+<html class="" lang="es">
 
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Cheesy Dreams - Live Orders</title>
+  <title>Cheesy Dreams - Pedidos en Vivo</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
@@ -143,36 +143,36 @@
           </div>
           <div class="flex flex-col">
             <h1 class="text-gray-900 dark:text-white text-base font-medium leading-normal">Cheesy Dreams</h1>
-            <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Management System</p>
+            <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Sistema de Gestión</p>
           </div>
         </div>
         <nav class="flex flex-col gap-2 mt-4">
           <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
             href="/staff/reservations">
             <span class="material-symbols-outlined">calendar_month</span>
-            <p class="text-sm font-medium leading-normal">Reservations</p>
+            <p class="text-sm font-medium leading-normal">Reservas</p>
           </a>
           <a data-not-implemented
             class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
             href="#">
             <span data-not-implemented class="material-symbols-outlined">table_restaurant</span>
-            <p class="text-sm font-medium leading-normal">Tables</p>
+            <p class="text-sm font-medium leading-normal">Mesas</p>
           </a>
           <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-gray-900" href="/staff/live">
             <span class="material-symbols-outlined">receipt_long</span>
-            <p class="text-sm font-medium leading-normal">Orders</p>
+            <p class="text-sm font-medium leading-normal">Pedidos</p>
           </a>
 
 
           <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
             href="/staff/task">
             <span class="material-symbols-outlined">task_alt</span>
-            <p class="text-sm font-medium leading-normal">Tasks</p>
+            <p class="text-sm font-medium leading-normal">Tareas</p>
           </a>
           <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
             href="/staff/staff_checkin">
             <span class="material-symbols-outlined">how_to_reg</span>
-            <p class="text-sm font-medium leading-normal">Check-in/Check-out</p>
+            <p class="text-sm font-medium leading-normal">Check Out</p>
           </a>
         </nav>
       </div>
@@ -181,19 +181,19 @@
           class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
           href="#">
           <span data-not-implemented class="material-symbols-outlined">help</span>
-          <p class="text-sm font-medium leading-normal">Help</p>
+          <p class="text-sm font-medium leading-normal">Ayuda</p>
         </a>
         <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
           href="/logout">
           <span class="material-symbols-outlined">logout</span>
-          <p class="text-sm font-medium leading-normal">Logout</p>
+          <p class="text-sm font-medium leading-normal">Cerrar Sesión</p>
         </a>
       </div>
     </aside>
     <main class="flex flex-1 overflow-hidden">
       <div class="flex flex-1 flex-col p-6 lg:p-8">
         <header class="mb-6">
-          <p class="text-4xl font-black leading-tight tracking-[-0.033em] text-gray-800 dark:text-white">Live Orders
+          <p class="text-4xl font-black leading-tight tracking-[-0.033em] text-gray-800 dark:text-white">Pedidos en Vivo
           </p>
         </header>
         <div
@@ -204,16 +204,16 @@
                 class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
               <input
                 class="w-full rounded border-gray-300 bg-gray-100 pl-10 focus:border-primary focus:ring-primary dark:border-gray-600 dark:bg-[#3b4354] dark:text-white dark:placeholder-gray-400"
-                placeholder="Search by Table #" type="search" />
+                placeholder="Buscar por # Mesa" type="search" />
             </div>
             <div class="relative max-w-xs">
               <select
                 class="rounded border-gray-300 bg-gray-100 focus:border-primary focus:ring-primary dark:border-gray-600 dark:bg-[#3b4354] dark:text-white">
-                <option>Filter by Status</option>
-                <option>New</option>
-                <option>Preparing</option>
-                <option>Ready</option>
-                <option>Completed</option>
+                <option>Filtrar por Estado</option>
+                <option>Nuevo</option>
+                <option>Preparando</option>
+                <option>Listo</option>
+                <option>Completado</option>
               </select>
             </div>
           </div>
@@ -226,16 +226,16 @@
                 <tr>
                   <th
                     class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-300"
-                    scope="col">Table #</th>
+                    scope="col"># Mesa</th>
                   <th
                     class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-300"
-                    scope="col">Order Items (Summary)</th>
+                    scope="col">Artículos del Pedido (Resumen)</th>
                   <th
                     class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-300"
-                    scope="col">Order Time</th>
+                    scope="col">Hora del Pedido</th>
                   <th
                     class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-300"
-                    scope="col">Order Status</th>
+                    scope="col">Estado del Pedido</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-200 bg-white dark:divide-gray-700 dark:bg-[#2c313a]">
@@ -245,10 +245,10 @@
                   <td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-900 dark:text-white">12</td>
                   <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-500 dark:text-gray-300">Margherita Pizza,
                     Cheesy Garlic...</td>
-                  <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-500 dark:text-gray-300">5 min ago</td>
+                  <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-500 dark:text-gray-300">hace 5 min</td>
                   <td class="whitespace-nowrap px-6 py-4 text-sm">
                     <span
-                      class="inline-flex items-center rounded-full bg-blue-status/20 px-3 py-1 text-xs font-medium text-blue-status">New</span>
+                      class="inline-flex items-center rounded-full bg-blue-status/20 px-3 py-1 text-xs font-medium text-blue-status">Nuevo</span>
                   </td>
                 </tr>
                 <tr
@@ -257,10 +257,10 @@
                   <td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-900 dark:text-white">7</td>
                   <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-500 dark:text-gray-300">Classic Pizza,
                     Fries, Cola...</td>
-                  <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-500 dark:text-gray-300">8 min ago</td>
+                  <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-500 dark:text-gray-300">hace 8 min</td>
                   <td class="whitespace-nowrap px-6 py-4 text-sm">
                     <span
-                      class="inline-flex items-center rounded-full bg-orange-status/20 px-3 py-1 text-xs font-medium text-orange-status">Preparing</span>
+                      class="inline-flex items-center rounded-full bg-orange-status/20 px-3 py-1 text-xs font-medium text-orange-status">Preparando</span>
                   </td>
                 </tr>
                 <tr
@@ -269,10 +269,10 @@
                   <td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-900 dark:text-white">3</td>
                   <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-500 dark:text-gray-300">Double Pepperoni
                     Pizza</td>
-                  <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-500 dark:text-gray-300">12 min ago</td>
+                  <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-500 dark:text-gray-300">hace 12 min</td>
                   <td class="whitespace-nowrap px-6 py-4 text-sm">
                     <span
-                      class="inline-flex items-center rounded-full bg-green-status/20 px-3 py-1 text-xs font-medium text-green-status">Ready</span>
+                      class="inline-flex items-center rounded-full bg-green-status/20 px-3 py-1 text-xs font-medium text-green-status">Listo</span>
                   </td>
                 </tr>
                 <tr
@@ -281,10 +281,10 @@
                   <td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-900 dark:text-white">5</td>
                   <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-500 dark:text-gray-300">Veggie Supreme,
                     Salad</td>
-                  <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-500 dark:text-gray-300">20 min ago</td>
+                  <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-500 dark:text-gray-300">hace 20 min</td>
                   <td class="whitespace-nowrap px-6 py-4 text-sm">
                     <span
-                      class="inline-flex items-center rounded-full bg-grey-status/20 px-3 py-1 text-xs font-medium text-grey-status">Completed</span>
+                      class="inline-flex items-center rounded-full bg-grey-status/20 px-3 py-1 text-xs font-medium text-grey-status">Completado</span>
                   </td>
                 </tr>
               </tbody>
@@ -296,12 +296,12 @@
         class="flex h-full w-96 flex-col border-l border-gray-200 bg-white p-6 shadow-lg dark:border-gray-700 dark:bg-[#2c313a]">
         <div class="flex-1 overflow-y-auto">
           <header class="mb-6">
-            <h2 class="text-2xl font-bold text-gray-800 dark:text-white">Details for Table 12</h2>
-            <p class="text-sm text-gray-500 dark:text-gray-400">Order placed 5 min ago</p>
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-white">Detalles de la Mesa 12</h2>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Pedido realizado hace 5 min</p>
           </header>
           <div class="space-y-6">
             <div>
-              <h3 class="mb-2 text-sm font-semibold uppercase text-gray-400 dark:text-gray-500">Order Items</h3>
+              <h3 class="mb-2 text-sm font-semibold uppercase text-gray-400 dark:text-gray-500">Artículos del Pedido</h3>
               <ul
                 class="divide-y divide-gray-200 rounded-lg border border-gray-200 dark:divide-gray-700 dark:border-gray-700">
                 <li class="flex items-center justify-between p-3">
@@ -319,22 +319,22 @@
               </ul>
             </div>
             <div>
-              <h3 class="mb-2 text-sm font-semibold uppercase text-gray-400 dark:text-gray-500">Special Instructions
+              <h3 class="mb-2 text-sm font-semibold uppercase text-gray-400 dark:text-gray-500">Instrucciones Especiales
               </h3>
               <p
                 class="rounded-lg border border-gray-200 bg-gray-50 p-3 text-gray-700 dark:border-gray-700 dark:bg-[#3b4354] dark:text-gray-200">
-                No onions on the pizza.</p>
+                Sin cebolla en la pizza.</p>
             </div>
           </div>
         </div>
         <div class="mt-6 flex flex-col gap-3 border-t border-gray-200 pt-6 dark:border-gray-700">
           <button data-not-implemented
             class="flex h-12 w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary px-5 text-base font-bold leading-normal tracking-[0.015em] text-background-dark ring-offset-2 ring-offset-background-light focus:outline-none focus:ring-2 focus:ring-primary dark:ring-offset-background-dark">
-            Update Status
+            Actualizar Estado
           </button>
           <button data-not-implemented
             class="flex h-12 w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg border border-gray-300 bg-transparent px-5 text-base font-bold leading-normal tracking-[0.015em] text-gray-700 hover:bg-gray-100 ring-offset-2 ring-offset-background-light focus:outline-none focus:ring-2 focus:ring-primary dark:border-gray-600 dark:text-gray-200 dark:hover:bg-white/10 dark:ring-offset-background-dark">
-            Print Receipt
+            Imprimir Recibo
           </button>
         </div>
       </aside>
@@ -343,7 +343,7 @@
 
   <div class="fixed bottom-4 right-4 z-50">
     <button id="accessibility-trigger" type="button" aria-controls="accessibility-menu" aria-expanded="false"
-      aria-label="Open Accessibility Options"
+      aria-label="Abrir opciones de accesibilidad"
       class="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-black shadow-lg transition-transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-primary/50">
       <span class="material-symbols-outlined !text-3xl">accessibility_new</span>
     </button>
@@ -353,14 +353,13 @@
 
       <div class="border-b border-gray-200 pb-2 mb-4 dark:border-gray-700">
         <h3 id="accessibility-heading" class="text-lg font-bold text-gray-900 dark:text-white">
-          Accessibility Settings
+          Configuración de Accesibilidad
         </h3>
       </div>
 
       <div class="space-y-4 h-80 overflow-y-auto pr-1 custom-scrollbar">
         <div class="space-y-2">
-          <label class="text-sm font-medium text-gray-600 dark:text-gray-400" for="font-size">Text
-            Size</label>
+          <label class="text-sm font-medium text-gray-600 dark:text-gray-400" for="font-size">Tamaño del Texto</label>
           <div class="flex items-center gap-2">
             <span class="text-xs text-gray-600 dark:text-gray-400">A</span>
             <input id="font-size" type="range" min="100" max="180" step="10" value="100"
@@ -370,88 +369,88 @@
         </div>
 
         <div class="space-y-2">
-          <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Contrast Theme</p>
+          <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Tema de Contraste</p>
           <div class="grid grid-cols-4 gap-2">
             <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-white" data-contrast="black-on-white"
-              data-fg="#000000" data-bg="#ffffff" title="Black on White"
-              aria-label="Black text on White background"></button>
+              data-fg="#000000" data-bg="#ffffff" title="Negro sobre Blanco"
+              aria-label="Texto negro sobre fondo blanco"></button>
 
             <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-black" data-contrast="white-on-black"
-              data-fg="#ffffff" data-bg="#000000" title="White on Black"
-              aria-label="White text on Black background"></button>
+              data-fg="#ffffff" data-bg="#000000" title="Blanco sobre Negro"
+              aria-label="Texto blanco sobre fondo negro"></button>
 
             <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-yellow-400" data-contrast="yellow-on-blue"
-              data-fg="#facc15" data-bg="#020617" title="Yellow on Blue"
-              aria-label="Yellow text on Dark Blue background"></button>
+              data-fg="#facc15" data-bg="#020617" title="Amarillo sobre Azul"
+              aria-label="Texto amarillo sobre fondo azul oscuro"></button>
 
             <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-blue-600" data-contrast="blue-on-white"
-              data-fg="#2563eb" data-bg="#ffffff" title="Blue on White"
-              aria-label="Blue text on White background"></button>
+              data-fg="#2563eb" data-bg="#ffffff" title="Azul sobre Blanco"
+              aria-label="Texto azul sobre fondo blanco"></button>
           </div>
         </div>
 
         <div class="space-y-3 pt-2 border-t border-gray-200 dark:border-gray-700">
 
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Grayscale</p>
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Escala de Grises</p>
             <label class="inline-flex items-center gap-2 cursor-pointer">
               <input id="grayscale-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary" />
-              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
+              <span class="text-xs text-gray-600 dark:text-gray-400">Activado</span>
             </label>
           </div>
 
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Text Spacing</p>
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Espaciado de Texto</p>
             <label class="inline-flex items-center gap-2 cursor-pointer">
               <input id="spacing-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary" />
-              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
+              <span class="text-xs text-gray-600 dark:text-gray-400">Activado</span>
             </label>
           </div>
 
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Dyslexia Font</p>
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Fuente para Dislexia</p>
             <label class="inline-flex items-center gap-2 cursor-pointer">
               <input id="dyslexia-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary" />
-              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
+              <span class="text-xs text-gray-600 dark:text-gray-400">Activado</span>
             </label>
           </div>
 
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Big Cursor</p>
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Cursor Grande</p>
             <label class="inline-flex items-center gap-2 cursor-pointer">
               <input id="cursor-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary" />
-              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
+              <span class="text-xs text-gray-600 dark:text-gray-400">Activado</span>
             </label>
           </div>
 
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Highlight Links</p>
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Resaltar Enlaces</p>
             <label class="inline-flex items-center gap-2 cursor-pointer">
               <input id="links-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary" />
-              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
+              <span class="text-xs text-gray-600 dark:text-gray-400">Activado</span>
             </label>
           </div>
 
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Reading Guide</p>
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Guía de Lectura</p>
             <label class="inline-flex items-center gap-2 cursor-pointer">
               <input id="reading-guide-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary" />
-              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
+              <span class="text-xs text-gray-600 dark:text-gray-400">Activado</span>
             </label>
           </div>
 
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Pause Animations</p>
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Pausar Animaciones</p>
             <label class="inline-flex items-center gap-2 cursor-pointer">
               <input id="animation-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary" />
-              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
+              <span class="text-xs text-gray-600 dark:text-gray-400">Activado</span>
             </label>
           </div>
 
@@ -461,7 +460,7 @@
       <div class="mt-4 border-t border-gray-200 pt-3 dark:border-gray-700">
         <button id="a11y-reset"
           class="w-full text-center text-sm font-bold text-primary hover:text-yellow-600 hover:underline">
-          Reset Settings
+          Restablecer Configuración
         </button>
       </div>
     </div>
@@ -523,7 +522,7 @@
 
         const modal = document.createElement('div');
         modal.className = '__notimpl_modal';
-        modal.innerHTML = '<h2>Not implemented yet!</h2><p>This functionality is not implemented yet.</p>';
+        modal.innerHTML = '<h2>¡Aún no implementado!</h2><p>Esta funcionalidad aún no está implementada.</p>';
 
         const closeBtn = document.createElement('button');
         closeBtn.textContent = 'Cerrar';

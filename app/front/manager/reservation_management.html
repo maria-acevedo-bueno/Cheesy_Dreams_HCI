@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html class="light" lang="es">
 
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Reservation Management - Cheesy Dreams</title>
+  <title>Gestión de Reservas - Cheesy Dreams</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
@@ -37,6 +37,7 @@
   <div
     class="relative flex h-screen min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-hidden">
     <div class="flex h-full w-full">
+      <!-- Side Navigation -->
       <aside
         class="flex h-screen w-64 flex-col bg-white dark:bg-gray-900 p-4 sticky top-0 border-r border-gray-200 dark:border-gray-700">
         <div class="flex flex-col gap-4">
@@ -47,29 +48,29 @@
             </div>
             <div class="flex flex-col">
               <h1 class="text-gray-900 dark:text-white text-base font-medium leading-normal">Cheesy Dreams</h1>
-              <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Management System</p>
+              <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Sistema de Gestión</p>
             </div>
           </div>
           <nav class="flex flex-col gap-2 mt-4">
             <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
               href="/manager/dashboard">
               <span class="material-symbols-outlined">dashboard</span>
-              <p class="text-sm font-medium leading-normal">Dashboard</p>
+              <p class="text-sm font-medium leading-normal">Panel Principal</p>
             </a>
             <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-gray-900"
               href="/manager/manage_reservations">
               <span class="material-symbols-outlined">book_online</span>
-              <p class="text-sm font-medium leading-normal">Reservations</p>
+              <p class="text-sm font-medium leading-normal">Reservas</p>
             </a>
             <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
               href="/manager/inventory">
               <span class="material-symbols-outlined">inventory_2</span>
-              <p class="text-sm font-medium leading-normal">Inventory</p>
+              <p class="text-sm font-medium leading-normal">Inventario</p>
             </a>
             <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
               href="/manager/sales">
               <span class="material-symbols-outlined">assessment</span>
-              <p class="text-sm font-medium leading-normal">Sales Reports</p>
+              <p class="text-sm font-medium leading-normal">Reportes de Ventas</p>
             </a>
           </nav>
         </div>
@@ -77,24 +78,25 @@
           <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
             href="#" data-not-implemented>
             <span class="material-symbols-outlined">settings</span>
-            <p class="text-sm font-medium leading-normal">Settings</p>
+            <p class="text-sm font-medium leading-normal">Configuración</p>
           </a>
           <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
             href="../logout">
             <span class="material-symbols-outlined">logout</span>
-            <p class="text-sm font-medium leading-normal">Log Out</p>
+            <p class="text-sm font-medium leading-normal">Cerrar Sesión</p>
           </a>
         </div>
       </aside>
+      <!-- Main Content -->
       <main class="flex-1 flex flex-col p-6 lg:p-8 overflow-y-auto">
         <div class="flex-shrink-0">
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <h1 class="text-3xl font-bold text-gray-800 dark:text-gray-200">Reservation Management</h1>
+            <h1 class="text-3xl font-bold text-gray-800 dark:text-gray-200">Gestión de Reservas</h1>
             <div class="flex items-center gap-4">
               <a class="relative flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
                 href="/manager/pending_reservations">
                 <span class="material-symbols-outlined">notifications</span>
-                <span>Pending</span>
+                <span>Pendientes</span>
                 <span
                   class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-xs font-bold text-gray-900">3</span>
               </a>
@@ -102,24 +104,25 @@
                 class="flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 text-base font-bold text-gray-900 hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 dark:focus-visible:ring-offset-background-dark"
                 data-not-implemented>
                 <span class="material-symbols-outlined">add</span>
-                <span>New Reservation</span>
+                <span>Nueva Reserva</span>
               </button>
             </div>
           </div>
+          <!-- Filters -->
           <div class="mt-6 flex flex-wrap items-center gap-4">
             <div class="relative flex-grow sm:flex-grow-0 sm:w-64">
               <span
                 class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
               <input
                 class="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900/50 py-2 pl-10 pr-4 text-gray-900 dark:text-gray-100 focus:border-primary focus:ring-primary"
-                placeholder="Search by name..." type="search" />
+                placeholder="Buscar por nombre..." type="search" />
             </div>
             <div class="relative">
               <select
                 class="appearance-none rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900/50 py-2 pl-3 pr-8 text-gray-900 dark:text-gray-100 focus:border-primary focus:ring-primary">
-                <option>All Dates</option>
-                <option>Today</option>
-                <option>Tomorrow</option>
+                <option>Todas las Fechas</option>
+                <option>Hoy</option>
+                <option>Mañana</option>
               </select>
               <span
                 class="material-symbols-outlined pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-gray-400">expand_more</span>
@@ -127,89 +130,90 @@
             <div class="relative">
               <select
                 class="appearance-none rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900/50 py-2 pl-3 pr-8 text-gray-900 dark:text-gray-100 focus:border-primary focus:ring-primary">
-                <option>All Times</option>
-                <option>Lunch</option>
-                <option>Dinner</option>
+                <option>Todas las Horas</option>
+                <option>Almuerzo</option>
+                <option>Cena</option>
               </select>
               <span
                 class="material-symbols-outlined pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-gray-400">expand_more</span>
             </div>
           </div>
         </div>
+        <!-- Reservations Table -->
         <div
           class="mt-6 flex-1 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#181611] overflow-hidden">
           <div class="overflow-x-auto">
             <table class="w-full text-left">
               <thead class="bg-gray-50 dark:bg-white/5">
                 <tr>
-                  <th class="px-6 py-3 text-sm font-semibold text-gray-600 dark:text-gray-300">Guest Name</th>
-                  <th class="px-6 py-3 text-sm font-semibold text-gray-600 dark:text-gray-300">Date &amp; Time</th>
-                  <th class="px-6 py-3 text-sm font-semibold text-gray-600 dark:text-gray-300">Party Size</th>
-                  <th class="px-6 py-3 text-sm font-semibold text-gray-600 dark:text-gray-300">Status</th>
-                  <th class="px-6 py-3 text-sm font-semibold text-gray-600 dark:text-gray-300">Actions</th>
+                  <th class="px-6 py-3 text-sm font-semibold text-gray-600 dark:text-gray-300">Nombre del Invitado</th>
+                  <th class="px-6 py-3 text-sm font-semibold text-gray-600 dark:text-gray-300">Fecha y Hora</th>
+                  <th class="px-6 py-3 text-sm font-semibold text-gray-600 dark:text-gray-300">Invitados</th>
+                  <th class="px-6 py-3 text-sm font-semibold text-gray-600 dark:text-gray-300">Estado</th>
+                  <th class="px-6 py-3 text-sm font-semibold text-gray-600 dark:text-gray-300">Acciones</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-200 dark:divide-gray-800">
                 <tr class="hover:bg-gray-50 dark:hover:bg-white/5 cursor-pointer">
                   <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">John Doe
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">Oct 28, 2024, 8:00 PM
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">28 de Oct, 2024, 8:00 PM
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">4</td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm">
                     <span
-                      class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/40 px-2.5 py-0.5 font-medium text-green-800 dark:text-green-300">Confirmed</span>
+                      class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/40 px-2.5 py-0.5 font-medium text-green-800 dark:text-green-300">Confirmada</span>
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                    <a class="text-primary hover:underline" href="/manager/edit_reservations">Edit</a>
+                    <a class="text-primary hover:underline" href="/manager/edit_reservations">Editar</a>
                     <a class="ml-4 text-red-600 dark:text-red-500 hover:underline"
-                      href="/manager/cancel_reservations">Cancel</a>
+                      href="/manager/cancel_reservations">Cancelar</a>
                   </td>
                 </tr>
                 <tr class="hover:bg-gray-50 dark:hover:bg-white/5 cursor-pointer">
                   <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">Jane Cooper
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">Oct 28, 2024, 7:30 PM
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">28 de Oct, 2024, 7:30 PM
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">2</td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm">
                     <span
-                      class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/40 px-2.5 py-0.5 font-medium text-green-800 dark:text-green-300">Confirmed</span>
+                      class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/40 px-2.5 py-0.5 font-medium text-green-800 dark:text-green-300">Confirmada</span>
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                    <a class="text-primary hover:underline" href="/manager/edit_reservations">Edit</a>
+                    <a class="text-primary hover:underline" href="/manager/edit_reservations">Editar</a>
                     <a class="ml-4 text-red-600 dark:text-red-500 hover:underline"
-                      href="/manager/cancel_reservations">Cancel</a>
+                      href="/manager/cancel_reservations">Cancelar</a>
                   </td>
                 </tr>
                 <tr class="hover:bg-gray-50 dark:hover:bg-white/5 cursor-pointer">
                   <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">Alice Smith
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">Oct 28, 2024, 6:00 PM
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">28 de Oct, 2024, 6:00 PM
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">6</td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm">
                     <span
-                      class="inline-flex items-center rounded-full bg-blue-100 dark:bg-blue-900/40 px-2.5 py-0.5 font-medium text-blue-800 dark:text-blue-300">Seated</span>
+                      class="inline-flex items-center rounded-full bg-blue-100 dark:bg-blue-900/40 px-2.5 py-0.5 font-medium text-blue-800 dark:text-blue-300">En Mesa</span>
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                    <a class="text-primary hover:underline" href="/manager/edit_reservations">Edit</a>
+                    <a class="text-primary hover:underline" href="/manager/edit_reservations">Editar</a>
                     <a class="ml-4 text-red-600 dark:text-red-500 hover:underline"
-                      href="/manager/cancel_reservations">Cancel</a>
+                      href="/manager/cancel_reservations">Cancelar</a>
                   </td>
                 </tr>
                 <tr class="hover:bg-gray-50 dark:hover:bg-white/5 cursor-pointer">
                   <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">Bob Johnson
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">Oct 27, 2024, 9:00 PM
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">27 de Oct, 2024, 9:00 PM
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">5</td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm">
                     <span
-                      class="inline-flex items-center rounded-full bg-gray-100 dark:bg-gray-700 px-2.5 py-0.5 font-medium text-gray-800 dark:text-gray-300">Completed</span>
+                      class="inline-flex items-center rounded-full bg-gray-100 dark:bg-gray-700 px-2.5 py-0.5 font-medium text-gray-800 dark:text-gray-300">Completada</span>
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                    <a class="text-primary hover:underline" href="#" data-not-implemented>Details</a>
+                    <a class="text-primary hover:underline" href="#" data-not-implemented>Detalles</a>
                   </td>
                 </tr>
               </tbody>
@@ -218,88 +222,7 @@
         </div>
       </main>
     </div>
-    <script>
-      // popup.js inline - temporal para debugging
-      (function () {
-        console.log('✅ Script inline cargado');
-        const style = document.createElement('style');
-        style.textContent = `
-    .__notimpl_modal_backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-    .__notimpl_modal {
-      background: white;
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-      max-width: 90%;
-      width: 360px;
-      text-align: center;
-      font-family: 'Work Sans', sans-serif;
-    }
-    .__notimpl_modal h2 {
-      margin: 0 0 12px;
-      font-size: 20px;
-      color: #1F2937;
-    }
-    .__notimpl_modal p {
-      margin: 0 0 20px;
-      color: #6B7280;
-      font-size: 14px;
-    }
-    .__notimpl_modal button {
-      padding: 10px 20px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      background: #fac638;
-      color: white;
-      font-weight: 600;
-    }
-    .__notimpl_modal button:hover {
-      background: #D97706;
-    }
-  `;
-        document.head.appendChild(style);
-        function showModal() {
-          console.log('🎉 Mostrando modal');
-          if (document.querySelector('.__notimpl_modal_backdrop')) return;
-          const backdrop = document.createElement('div');
-          backdrop.className = '__notimpl_modal_backdrop';
-          const modal = document.createElement('div');
-          modal.className = '__notimpl_modal';
-          modal.innerHTML = '<h2>Not implemented yet!</h2><p>This functionality is not implemented yet.</p>';
-          const closeBtn = document.createElement('button');
-          closeBtn.textContent = 'Cerrar';
-          closeBtn.addEventListener('click', () => backdrop.remove());
-          modal.appendChild(closeBtn);
-          backdrop.appendChild(modal);
-          backdrop.addEventListener('click', (e) => {
-            if (e.target === backdrop) backdrop.remove();
-          });
-          document.body.appendChild(backdrop);
-        }
-        document.addEventListener('click', function (e) {
-          console.log('👆 Clic en:', e.target.tagName);
-          const target = e.target.closest('[data-not-implemented]');
-          console.log('🔍 Target:', target);
-          if (target) {
-            console.log('✋ Previniendo default');
-            e.preventDefault();
-            e.stopPropagation();
-            showModal();
-          }
-        }, true);
-        console.log('✅ Event listener configurado');
-      })();
-    </script>
-  <script src="../js/functions.js"></script>
+    <script src="../js/functions.js"></script>
 </body>
 
 </html>

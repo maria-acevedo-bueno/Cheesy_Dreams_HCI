@@ -117,44 +117,6 @@
     document.addEventListener('visibilitychange', () => { if (document.hidden) stopReading(); });
   })();
 
-  // --- Not Implemented Modal ---
-  (function () {
-    const style = document.createElement('style');
-    style.textContent = `
-.__notimpl_modal_backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; z-index:9999; }
-.__notimpl_modal { background: white; padding: 24px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); max-width: 90%; width: 360px; text-align: center; font-family: 'Work Sans', sans-serif; }
-.__notimpl_modal h2 { margin: 0 0 12px; font-size: 20px; color: #1F2937; }
-.__notimpl_modal p { margin: 0 0 20px; color: #6B7280; font-size: 14px; }
-.__notimpl_modal button { padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; background: #fac638; color: white; font-weight: 600; }
-.__notimpl_modal button:hover { background: #D97706; }
-    `;
-    document.head.appendChild(style);
-
-    function showModal() {
-      if (document.querySelector('.__notimpl_modal_backdrop')) return;
-      const backdrop = document.createElement('div');
-      backdrop.className = '__notimpl_modal_backdrop';
-      const modal = document.createElement('div');
-      modal.className = '__notimpl_modal';
-      modal.innerHTML = '<h2>Not implemented yet!</h2><p>This functionality is not implemented yet.</p>';
-      const closeBtn = document.createElement('button');
-      closeBtn.textContent = 'Cerrar';
-      closeBtn.addEventListener('click', () => backdrop.remove());
-      modal.appendChild(closeBtn);
-      backdrop.appendChild(modal);
-      backdrop.addEventListener('click', (e) => { if (e.target === backdrop) backdrop.remove(); });
-      document.body.appendChild(backdrop);
-    }
-
-    document.addEventListener('click', (e) => {
-      const target = e.target.closest('[data-not-implemented]');
-      if (target) {
-        e.preventDefault();
-        showModal();
-      }
-    });
-  })();
-
   // --- Accessibility Panel Logic ---
   (function () {
     const KEY_SIZE = 'a11y_font';
@@ -299,4 +261,72 @@
     window.location.href = '/';
   };
 
+})();
+
+// --- Not Implemented Modal (Global) ---
+(function () {
+  const style = document.createElement('style');
+  style.textContent = `
+.__notimpl_modal_backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; z-index:9999; }
+.__notimpl_modal { background: white; padding: 24px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); max-width: 90%; width: 360px; text-align: center; font-family: 'Work Sans', sans-serif; }
+.__notimpl_modal h2 { margin: 0 0 12px; font-size: 20px; color: #1F2937; }
+.__notimpl_modal p { margin: 0 0 20px; color: #6B7280; font-size: 14px; }
+.__notimpl_modal button { padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; background: #fac638; color: white; font-weight: 600; }
+.__notimpl_modal button:hover { background: #D97706; }
+  `;
+  document.head.appendChild(style);
+
+  function showModal() {
+    if (document.querySelector('.__notimpl_modal_backdrop')) return;
+    const backdrop = document.createElement('div');
+    backdrop.className = '__notimpl_modal_backdrop';
+    const modal = document.createElement('div');
+    modal.className = '__notimpl_modal';
+    modal.innerHTML = '<h2>¡Aún no implementado!</h2><p>Esta funcionalidad aún no está implementada.</p>';
+    const closeBtn = document.createElement('button');
+    closeBtn.textContent = 'Cerrar';
+    closeBtn.addEventListener('click', () => backdrop.remove());
+    modal.appendChild(closeBtn);
+    backdrop.appendChild(modal);
+    backdrop.addEventListener('click', (e) => { if (e.target === backdrop) backdrop.remove(); });
+    document.body.appendChild(backdrop);
+  }
+
+  document.addEventListener('click', (e) => {
+    const target = e.target.closest('[data-not-implemented]');
+    if (target) {
+      e.preventDefault();
+      showModal();
+    }
+  });
+})();
+
+// --- Dynamic Date/Time for Sales Report (Robust Initialization) ---
+(function() {
+  function initLiveClock() {
+    const dateEl = document.getElementById('live-datetime');
+    if (!dateEl) return;
+
+    function updateTime() {
+      const now = new Date();
+      const options = {
+        timeZone: 'Europe/Madrid',
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+        // 'hour' and 'minute' are removed to display only the date
+      };
+      // Output example: "9 de diciembre de 2025"
+      dateEl.textContent = now.toLocaleString('es-ES', options);
+    }
+
+    updateTime(); // Run immediately
+    setInterval(updateTime, 1000 * 60 * 60 * 24); // Update once every day
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLiveClock);
+  } else {
+    initLiveClock();
+  }
 })();

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Cheesy Dreams - Task List</title>
+  <title>Cheesy Dreams - Lista de Tareas</title>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
@@ -146,33 +146,33 @@
           </div>
           <div class="flex flex-col">
             <h1 class="text-gray-900 dark:text-white text-base font-medium leading-normal">Cheesy Dreams</h1>
-            <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Management System</p>
+            <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Sistema de Gestión</p>
           </div>
         </div>
         <nav class="flex flex-col gap-2 mt-4">
           <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
             href="/staff/reservations">
             <span class="material-symbols-outlined">calendar_month</span>
-            <p class="text-sm font-medium leading-normal">Reservations</p>
+            <p class="text-sm font-medium leading-normal">Reservas</p>
           </a>
           <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
             href="#">
             <span data-not-implemented class="material-symbols-outlined">table_restaurant</span>
-            <p class="text-sm font-medium leading-normal">Tables</p>
+            <p class="text-sm font-medium leading-normal">Mesas</p>
           </a>
           <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
             href="/staff/live">
             <span class="material-symbols-outlined">receipt_long</span>
-            <p class="text-sm font-medium leading-normal">Orders</p>
+            <p class="text-sm font-medium leading-normal">Pedidos</p>
           </a>
           <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-gray-900" href="/staff/task">
             <span class="material-symbols-outlined">task_alt</span>
-            <p class="text-sm font-medium leading-normal">Tasks</p>
+            <p class="text-sm font-medium leading-normal">Tareas</p>
           </a>
           <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
             href="/staff/staff_checkin">
             <span class="material-symbols-outlined">how_to_reg</span>
-            <p class="text-sm font-medium leading-normal">Check-in/Check-out</p>
+            <p class="text-sm font-medium leading-normal">Check Out</p>
           </a>
         </nav>
       </div>
@@ -180,21 +180,21 @@
         <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
           href="#" data-not-implemented="">
           <span class="material-symbols-outlined">help</span>
-          <p class="text-sm font-medium leading-normal">Help</p>
+          <p class="text-sm font-medium leading-normal">Ayuda</p>
         </a>
         <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
           href="/logout">
           <span class="material-symbols-outlined">logout</span>
-          <p class="text-sm font-medium leading-normal">Logout</p>
+          <p class="text-sm font-medium leading-normal">Cerrar Sesión</p>
         </a>
       </div>
     </aside>
     <div class="flex flex-1 flex-col">
       <header
         class="flex h-16 shrink-0 items-center justify-between border-b border-solid border-black/10 bg-white dark:border-white/10 dark:bg-background-dark px-6">
-        <h2 class="text-lg font-semibold text-gray-600 dark:text-gray-300">Task List View</h2>
+        <h2 class="text-lg font-semibold text-gray-600 dark:text-gray-300">Vista de Lista de Tareas</h2>
         <div class="flex items-center gap-4">
-          <button data-not-implemented aria-label="Notifications" class="relative">
+          <button data-not-implemented aria-label="Notificaciones" class="relative">
             <span class="material-symbols-outlined text-2xl text-gray-600 dark:text-gray-300">notifications</span>
             <span
               class="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-accent text-xs font-bold text-white">2</span>
@@ -203,13 +203,13 @@
       </header>
       <main class="flex-1 overflow-y-auto p-6 md:p-8 lg:p-12">
         <div class="mx-auto max-w-4xl">
-          <h2 class="mb-6 text-3xl font-bold text-[#181611] dark:text-white">Today's Tasks</h2>
+          <h2 class="mb-6 text-3xl font-bold text-[#181611] dark:text-white">Tareas de Hoy</h2>
           <div class="space-y-3">
             <a class="group flex cursor-pointer items-center justify-between rounded-lg border border-black/10 bg-white p-4 text-[#181611] transition-colors hover:border-primary hover:bg-primary/10 dark:border-white/10 dark:bg-black/20 dark:text-white dark:hover:border-primary dark:hover:bg-primary/20"
               href="/staff/pizza1">
               <div class="flex-grow">
-                <span class="text-lg font-medium">Prepare Pizza</span>
-                <p class="text-sm text-gray-500 dark:text-gray-400">Mix, knead, and portion dough for the day.</p>
+                <span class="text-lg font-medium">Preparar Pizza</span>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Mezclar, amasar y porcionar la masa para el día.</p>
               </div>
               <span
                 class="material-symbols-outlined text-gray-500 transition-transform group-hover:translate-x-1 dark:text-gray-400">arrow_forward</span>
@@ -217,8 +217,8 @@
             <a class="group flex cursor-pointer items-center justify-between rounded-lg border border-black/10 bg-white p-4 text-[#181611] transition-colors hover:border-primary hover:bg-primary/10 dark:border-white/10 dark:bg-black/20 dark:text-white dark:hover:border-primary dark:hover:bg-primary/20"
               href="#" data-not-implemented>
               <div class="flex-grow">
-                <span class="text-lg font-medium">Chop Vegetables</span>
-                <p class="text-sm text-gray-500 dark:text-gray-400">Dice onions, slice peppers, and chop mushrooms.</p>
+                <span class="text-lg font-medium">Picar Verduras</span>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Picar cebollas en cubos, rebanar pimientos y picar champiñones.</p>
               </div>
               <span
                 class="material-symbols-outlined text-gray-500 transition-transform group-hover:translate-x-1 dark:text-gray-400">arrow_forward</span>
@@ -226,8 +226,8 @@
             <a class="group flex cursor-pointer items-center justify-between rounded-lg border border-black/10 bg-white p-4 text-[#181611] transition-colors hover:border-primary hover:bg-primary/10 dark:border-white/10 dark:bg-black/20 dark:text-white dark:hover:border-primary dark:hover:bg-primary/20"
               href="#" data-not-implemented>
               <div class="flex-grow">
-                <span class="text-lg font-medium">Clean Kitchen Surfaces</span>
-                <p class="text-sm text-gray-500 dark:text-gray-400">Wipe down all stainless steel counters.</p>
+                <span class="text-lg font-medium">Limpiar Superficies de la Cocina</span>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Limpiar todos los mostradores de acero inoxidable.</p>
               </div>
               <span
                 class="material-symbols-outlined text-gray-500 transition-transform group-hover:translate-x-1 dark:text-gray-400">arrow_forward</span>
@@ -235,8 +235,8 @@
             <a class="group flex cursor-pointer items-center justify-between rounded-lg border border-black/10 bg-white p-4 text-[#181611] transition-colors hover:border-primary hover:bg-primary/10 dark:border-white/10 dark:bg-black/20 dark:text-white dark:hover:border-primary dark:hover:bg-primary/20"
               href="#" data-not-implemented>
               <div class="flex-grow">
-                <span class="text-lg font-medium">Set Up Dining Area</span>
-                <p class="text-sm text-gray-500 dark:text-gray-400">Arrange tables, chairs, and set cutlery.</p>
+                <span class="text-lg font-medium">Preparar Área de Comedor</span>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Organizar mesas, sillas y colocar cubiertos.</p>
               </div>
               <span
                 class="material-symbols-outlined text-gray-500 transition-transform group-hover:translate-x-1 dark:text-gray-400">arrow_forward</span>
@@ -244,8 +244,8 @@
             <a class="group flex cursor-pointer items-center justify-between rounded-lg border border-black/10 bg-white p-4 text-[#181611] transition-colors hover:border-primary hover:bg-primary/10 dark:border-white/10 dark:bg-black/20 dark:text-white dark:hover:border-primary dark:hover:bg-primary/20"
               href="#" data-not-implemented>
               <div class="flex-grow">
-                <span class="text-lg font-medium">Restock Condiments</span>
-                <p class="text-sm text-gray-500 dark:text-gray-400">Refill salt, pepper, and parmesan shakers.</p>
+                <span class="text-lg font-medium">Reponer Condimentos</span>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Rellenar saleros, pimenteros y dispensadores de parmesano.</p>
               </div>
               <span
                 class="material-symbols-outlined text-gray-500 transition-transform group-hover:translate-x-1 dark:text-gray-400">arrow_forward</span>
@@ -258,7 +258,7 @@
 
   <div class="fixed bottom-4 right-4 z-50">
     <button id="accessibility-trigger" type="button" aria-controls="accessibility-menu" aria-expanded="false"
-      aria-label="Open Accessibility Options"
+      aria-label="Abrir opciones de accesibilidad"
       class="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-black shadow-lg transition-transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-primary/50">
       <span class="material-symbols-outlined !text-3xl">accessibility_new</span>
     </button>
@@ -268,14 +268,13 @@
 
       <div class="border-b border-gray-200 pb-2 mb-4 dark:border-gray-700">
         <h3 id="accessibility-heading" class="text-lg font-bold text-gray-900 dark:text-white">
-          Accessibility Settings
+          Configuración de Accesibilidad
         </h3>
       </div>
 
       <div class="space-y-4 h-80 overflow-y-auto pr-1 custom-scrollbar">
         <div class="space-y-2">
-          <label class="text-sm font-medium text-gray-600 dark:text-gray-400" for="font-size">Text
-            Size</label>
+          <label class="text-sm font-medium text-gray-600 dark:text-gray-400" for="font-size">Tamaño del Texto</label>
           <div class="flex items-center gap-2">
             <span class="text-xs text-gray-600 dark:text-gray-400">A</span>
             <input id="font-size" type="range" min="100" max="180" step="10" value="100"
@@ -285,88 +284,88 @@
         </div>
 
         <div class="space-y-2">
-          <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Contrast Theme</p>
+          <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Tema de Contraste</p>
           <div class="grid grid-cols-4 gap-2">
             <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-white" data-contrast="black-on-white"
-              data-fg="#000000" data-bg="#ffffff" title="Black on White"
-              aria-label="Black text on White background"></button>
+              data-fg="#000000" data-bg="#ffffff" title="Negro sobre Blanco"
+              aria-label="Texto negro sobre fondo blanco"></button>
 
             <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-black" data-contrast="white-on-black"
-              data-fg="#ffffff" data-bg="#000000" title="White on Black"
-              aria-label="White text on Black background"></button>
+              data-fg="#ffffff" data-bg="#000000" title="Blanco sobre Negro"
+              aria-label="Texto blanco sobre fondo negro"></button>
 
             <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-yellow-400" data-contrast="yellow-on-blue"
-              data-fg="#facc15" data-bg="#020617" title="Yellow on Blue"
-              aria-label="Yellow text on Dark Blue background"></button>
+              data-fg="#facc15" data-bg="#020617" title="Amarillo sobre Azul"
+              aria-label="Texto amarillo sobre fondo azul oscuro"></button>
 
             <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-blue-600" data-contrast="blue-on-white"
-              data-fg="#2563eb" data-bg="#ffffff" title="Blue on White"
-              aria-label="Blue text on White background"></button>
+              data-fg="#2563eb" data-bg="#ffffff" title="Azul sobre Blanco"
+              aria-label="Texto azul sobre fondo blanco"></button>
           </div>
         </div>
 
         <div class="space-y-3 pt-2 border-t border-gray-200 dark:border-gray-700">
 
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Grayscale</p>
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Escala de Grises</p>
             <label class="inline-flex items-center gap-2 cursor-pointer">
               <input id="grayscale-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary" />
-              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
+              <span class="text-xs text-gray-600 dark:text-gray-400">Activado</span>
             </label>
           </div>
 
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Text Spacing</p>
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Espaciado de Texto</p>
             <label class="inline-flex items-center gap-2 cursor-pointer">
               <input id="spacing-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary" />
-              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
+              <span class="text-xs text-gray-600 dark:text-gray-400">Activado</span>
             </label>
           </div>
 
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Dyslexia Font</p>
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Fuente para Dislexia</p>
             <label class="inline-flex items-center gap-2 cursor-pointer">
               <input id="dyslexia-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary" />
-              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
+              <span class="text-xs text-gray-600 dark:text-gray-400">Activado</span>
             </label>
           </div>
 
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Big Cursor</p>
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Cursor Grande</p>
             <label class="inline-flex items-center gap-2 cursor-pointer">
               <input id="cursor-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary" />
-              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
+              <span class="text-xs text-gray-600 dark:text-gray-400">Activado</span>
             </label>
           </div>
 
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Highlight Links</p>
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Resaltar Enlaces</p>
             <label class="inline-flex items-center gap-2 cursor-pointer">
               <input id="links-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary" />
-              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
+              <span class="text-xs text-gray-600 dark:text-gray-400">Activado</span>
             </label>
           </div>
 
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Reading Guide</p>
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Guía de Lectura</p>
             <label class="inline-flex items-center gap-2 cursor-pointer">
               <input id="reading-guide-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary" />
-              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
+              <span class="text-xs text-gray-600 dark:text-gray-400">Activado</span>
             </label>
           </div>
 
           <div class="flex items-center justify-between">
-            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Pause Animations</p>
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Pausar Animaciones</p>
             <label class="inline-flex items-center gap-2 cursor-pointer">
               <input id="animation-toggle" type="checkbox"
                 class="rounded border-gray-300 text-primary focus:ring-primary" />
-              <span class="text-xs text-gray-600 dark:text-gray-400">On</span>
+              <span class="text-xs text-gray-600 dark:text-gray-400">Activado</span>
             </label>
           </div>
 
@@ -376,17 +375,17 @@
       <div class="mt-4 border-t border-gray-200 pt-3 dark:border-gray-700">
         <button id="a11y-reset"
           class="w-full text-center text-sm font-bold text-primary hover:text-yellow-600 hover:underline">
-          Reset Settings
+          Restablecer Configuración
         </button>
       </div>
     </div>
   </div>
 
   <script>
-      // Modal for "Not Implemented" links
-      (function () {
-        const style = document.createElement('style');
-        style.textContent = `
+    // Modal for "Not Implemented" links
+    (function () {
+      const style = document.createElement('style');
+      style.textContent = `
     .__notimpl_modal_backdrop {
       position: fixed;
       inset: 0;
@@ -429,40 +428,40 @@
       background: #D97706;
     }
   `;
-        document.head.appendChild(style);
+      document.head.appendChild(style);
 
-        function showModal() {
-          if (document.querySelector('.__notimpl_modal_backdrop')) return;
+      function showModal() {
+        if (document.querySelector('.__notimpl_modal_backdrop')) return;
 
-          const backdrop = document.createElement('div');
-          backdrop.className = '__notimpl_modal_backdrop';
+        const backdrop = document.createElement('div');
+        backdrop.className = '__notimpl_modal_backdrop';
 
-          const modal = document.createElement('div');
-          modal.className = '__notimpl_modal';
-          modal.innerHTML = '<h2>Not implemented yet!</h2><p>This functionality is not implemented yet.</p>';
+        const modal = document.createElement('div');
+        modal.className = '__notimpl_modal';
+        modal.innerHTML = '<h2>¡Aún no implementado!</h2><p>Esta funcionalidad aún no está implementada.</p>';
 
-          const closeBtn = document.createElement('button');
-          closeBtn.textContent = 'Cerrar';
-          closeBtn.addEventListener('click', () => backdrop.remove());
+        const closeBtn = document.createElement('button');
+        closeBtn.textContent = 'Cerrar';
+        closeBtn.addEventListener('click', () => backdrop.remove());
 
-          modal.appendChild(closeBtn);
-          backdrop.appendChild(modal);
-          backdrop.addEventListener('click', (e) => {
-            if (e.target === backdrop) backdrop.remove();
-          });
+        modal.appendChild(closeBtn);
+        backdrop.appendChild(modal);
+        backdrop.addEventListener('click', (e) => {
+          if (e.target === backdrop) backdrop.remove();
+        });
 
-          document.body.appendChild(backdrop);
+        document.body.appendChild(backdrop);
+      }
+
+      document.addEventListener('click', function (e) {
+        const target = e.target.closest('[data-not-implemented]');
+        if (target) {
+          e.preventDefault();
+          e.stopPropagation();
+          showModal();
         }
-
-        document.addEventListener('click', function (e) {
-          const target = e.target.closest('[data-not-implemented]');
-          if (target) {
-            e.preventDefault();
-            e.stopPropagation();
-            showModal();
-          }
-        }, true);
-      })();
+      }, true);
+    })();
 
     // ===== ACCESSIBILITY PANEL LOGIC =====
     (function () {
@@ -634,7 +633,7 @@
       }
     })();
   </script>
-  <script src="../js/functions.js">  <script src="../js/functions.js"></script>
+  <script src="../js/functions.js"></script>
 </body>
 
 </html>

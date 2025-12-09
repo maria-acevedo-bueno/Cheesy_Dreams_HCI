@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en">
+<html class="light" lang="es">
 
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Home Delivery Checkout - Cheesy Dreams</title>
+  <title>Pago de Entrega a Domicilio - Cheesy Dreams</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
@@ -115,65 +115,65 @@
       </div>
       <div class="flex flex-1 justify-end">
         <a class="text-[#181611] dark:text-gray-300 dark:hover:text-white text-sm font-medium leading-normal hover:text-primary transition-colors"
-          href="#">Back to Menu</a>
+          href="#">Volver al Menú</a>
       </div>
     </header>
     <main class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
         <div class="lg:col-span-2">
           <div class="flex items-center gap-2 mb-8">
-            <span class="text-primary text-base font-bold leading-normal">Address</span>
+            <span class="text-primary text-base font-bold leading-normal">Dirección</span>
             <span class="text-[#8c805f] dark:text-gray-500 text-base font-medium leading-normal">/</span>
-            <span class="text-[#8c805f] dark:text-gray-500 text-base font-medium leading-normal">Time</span>
+            <span class="text-[#8c805f] dark:text-gray-500 text-base font-medium leading-normal">Hora</span>
             <span class="text-[#8c805f] dark:text-gray-500 text-base font-medium leading-normal">/</span>
-            <span class="text-[#8c805f] dark:text-gray-500 text-base font-medium leading-normal">Payment</span>
+            <span class="text-[#8c805f] dark:text-gray-500 text-base font-medium leading-normal">Pago</span>
           </div>
           <div class="space-y-12">
             <section aria-labelledby="address-heading">
               <h2 class="text-[#181611] dark:text-white text-2xl font-bold leading-tight tracking-[-0.015em] pb-6"
-                id="address-heading">Where should we deliver?</h2>
+                id="address-heading">¿Dónde debemos entregarlo?</h2>
               <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
                 <div class="sm:col-span-6">
                   <label class="block text-base font-medium leading-normal pb-2 text-[#181611] dark:text-gray-300"
-                    for="street-address">Street Address</label>
+                    for="street-address">Dirección</label>
                   <input autocomplete="street-address"
                     class="form-input block w-full resize-none overflow-hidden rounded-xl text-[#181611] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#e6e3db] dark:border-gray-600 bg-white dark:bg-background-dark/50 h-14 placeholder:text-[#8c805f] p-[15px] text-base font-normal leading-normal"
-                    id="street-address" name="street-address" placeholder="123 Cheesy Lane" type="text" />
+                    id="street-address" name="street-address" placeholder="Calle del Queso 123" type="text" />
                 </div>
                 <div class="sm:col-span-3">
                   <label class="block text-base font-medium leading-normal pb-2 text-[#181611] dark:text-gray-300"
-                    for="apt-suite">Apt/Suite (Optional)</label>
+                    for="apt-suite">Apto/Suite (Opcional)</label>
                   <input
                     class="form-input block w-full resize-none overflow-hidden rounded-xl text-[#181611] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#e6e3db] dark:border-gray-600 bg-white dark:bg-background-dark/50 h-14 placeholder:text-[#8c805f] p-[15px] text-base font-normal leading-normal"
-                    id="apt-suite" name="apt-suite" placeholder="Apartment, suite, etc." type="text" />
+                    id="apt-suite" name="apt-suite" placeholder="Apartamento, suite, etc." type="text" />
                 </div>
                 <div class="sm:col-span-3">
                   <label class="block text-base font-medium leading-normal pb-2 text-[#181611] dark:text-gray-300"
-                    for="city">City</label>
+                    for="city">Ciudad</label>
                   <input autocomplete="address-level2"
                     class="form-input block w-full resize-none overflow-hidden rounded-xl text-[#181611] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#e6e3db] dark:border-gray-600 bg-white dark:bg-background-dark/50 h-14 placeholder:text-[#8c805f] p-[15px] text-base font-normal leading-normal"
-                    id="city" name="city" placeholder="Gouda Ville" type="text" />
+                    id="city" name="city" placeholder="Villa Queso" type="text" />
                 </div>
                 <div class="sm:col-span-3">
                   <label class="block text-base font-medium leading-normal pb-2 text-[#181611] dark:text-gray-300"
-                    for="state">State / Province</label>
+                    for="state">Estado / Provincia</label>
                   <input autocomplete="address-level1"
                     class="form-input block w-full resize-none overflow-hidden rounded-xl text-[#181611] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#e6e3db] dark:border-gray-600 bg-white dark:bg-background-dark/50 h-14 placeholder:text-[#8c805f] p-[15px] text-base font-normal leading-normal"
-                    id="state" name="state" placeholder="CA" type="text" />
+                    id="state" name="state" placeholder="MD" type="text" />
                 </div>
                 <div class="sm:col-span-3">
                   <label class="block text-base font-medium leading-normal pb-2 text-[#181611] dark:text-gray-300"
-                    for="zip-code">ZIP / Postal code</label>
+                    for="zip-code">Código Postal</label>
                   <input autocomplete="postal-code"
                     class="form-input block w-full resize-none overflow-hidden rounded-xl text-[#181611] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#e6e3db] dark:border-gray-600 bg-white dark:bg-background-dark/50 h-14 placeholder:text-[#8c805f] p-[15px] text-base font-normal leading-normal"
-                    id="zip-code" name="zip-code" placeholder="90210" type="text" />
+                    id="zip-code" name="zip-code" placeholder="28001" type="text" />
                 </div>
               </div>
             </section>
             <div class="border-t border-[#e6e3db] dark:border-gray-700"></div>
             <section aria-labelledby="time-heading">
               <h2 class="text-[#181611] dark:text-white text-2xl font-bold leading-tight tracking-[-0.015em] pb-6"
-                id="time-heading">When would you like your order?</h2>
+                id="time-heading">¿Cuándo le gustaría recibir su pedido?</h2>
               <fieldset>
                 <legend class="sr-only">Delivery time slots</legend>
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
@@ -220,7 +220,7 @@
             <div class="border-t border-[#e6e3db] dark:border-gray-700"></div>
             <section aria-labelledby="payment-heading">
               <h2 class="text-[#181611] dark:text-white text-2xl font-bold leading-tight tracking-[-0.015em] pb-6"
-                id="payment-heading">How would you like to pay?</h2>
+                id="payment-heading">¿Cómo le gustaría pagar?</h2>
               <fieldset>
                 <legend class="sr-only">Payment method</legend>
                 <div class="space-y-4">
@@ -230,22 +230,21 @@
                     <input checked="" class="form-radio h-5 w-5 text-primary focus:ring-primary" id="payment-card"
                       name="payment-method" type="radio" />
                     <span class="material-symbols-outlined text-3xl">credit_card</span>
-                    <span class="text-base font-medium text-[#181611] dark:text-gray-200">Credit / Debit Card</span>
+                    <span class="text-base font-medium text-[#181611] dark:text-gray-200">Tarjeta de Crédito / Débito</span>
                   </label>
                   <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-4 pl-8">
                     <div class="sm:col-span-4">
-                      <label class="block text-sm font-medium text-[#181611] dark:text-gray-300" for="card-number">Card
-                        Number</label>
+                      <label class="block text-sm font-medium text-[#181611] dark:text-gray-300" for="card-number">Número de Tarjeta</label>
                       <input
                         class="form-input mt-1 block w-full rounded-lg border-[#e6e3db] dark:border-gray-600 bg-white dark:bg-background-dark/50 focus:border-primary focus:ring-primary"
                         id="card-number" name="card-number" placeholder="•••• •••• •••• 1234" type="text" />
                     </div>
                     <div class="sm:col-span-2">
                       <label class="block text-sm font-medium text-[#181611] dark:text-gray-300"
-                        for="expiration-date">Expiration (MM/YY)</label>
+                        for="expiration-date">Vencimiento (MM/AA)</label>
                       <input
                         class="form-input mt-1 block w-full rounded-lg border-[#e6e3db] dark:border-gray-600 bg-white dark:bg-background-dark/50 focus:border-primary focus:ring-primary"
-                        id="expiration-date" name="expiration-date" placeholder="MM/YY" type="text" />
+                        id="expiration-date" name="expiration-date" placeholder="MM/AA" type="text" />
                     </div>
                     <div class="sm:col-span-2">
                       <label class="block text-sm font-medium text-[#181611] dark:text-gray-300" for="cvc">CVC</label>
@@ -270,14 +269,14 @@
         <div class="lg:col-span-1">
           <div
             class="sticky top-10 rounded-xl bg-white dark:bg-background-dark/50 border border-[#e6e3db] dark:border-gray-700 shadow-sm p-6">
-            <h2 class="text-xl font-bold text-[#181611] dark:text-white mb-6">Your Order</h2>
+            <h2 class="text-xl font-bold text-[#181611] dark:text-white mb-6">Su Pedido</h2>
             <ul class="divide-y divide-[#e6e3db] dark:divide-gray-700" role="list">
               <li class="flex items-center justify-between py-4">
                 <div class="flex items-center gap-4">
                   <img alt="A classic margherita pizza with fresh basil." class="h-16 w-16 rounded-lg object-cover"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqudRzxC50Axnc5OXtRoDN1WVTIC_3KDmjvNAlLJ8KyZm7gsRnReIAG2ipynE6w_nejIdh75SB2GPfpoxn28v_kLJ_fKoOCuwqG6Gv31l2kZw8mnpwmMmPQO5HqU3asJj6kBG_VpVfF2qMnMWkJCHzyIKwVP1WgmQFFhK_y6VV2M3TW-ZDOXtdEGLn2gtZjsD5EYEOjUElkaoPRbmqI6uSDqFHlCdw2Ez_TmYbb6NiOvbHoD3oYQo2N_lFeT71Ks5O3AWWbxYvvZY" />
                   <div>
-                    <p class="font-semibold text-[#181611] dark:text-gray-200">The Margherita Dream</p>
+                    <p class="font-semibold text-[#181611] dark:text-gray-200">El Sueño Margherita</p>
                     <p class="text-sm text-[#8c805f] dark:text-gray-400">1x</p>
                   </div>
                 </div>
@@ -289,7 +288,7 @@
                     class="h-16 w-16 rounded-lg object-cover"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOjUClfXebwdUyirHX5LtfKBAXFsqbkxGvhCuLgaWZ9q9sPsfgeZ6eGLT--zmuhyHCkDg0vtSXKoa__gnGDlspOS_UpzivCIv5_Z_1GZc1HYKkcKA7syiDDcGxK3WBQUpvHOOgINMeBFBzqids5uc-OripaDqC79rpLG-Iex3-kHGgztE5owcpeL1uqEWhXs9DxZz1PUIzfM5oG0a5vfl-Tecx_4SeuZ2ST7XHw0UHPckMrSrLQK3mcZPHV-NPoDqYLLa1iTSQbsI" />
                   <div>
-                    <p class="font-semibold text-[#181611] dark:text-gray-200">Pepperoni Paradise</p>
+                    <p class="font-semibold text-[#181611] dark:text-gray-200">Paraíso de Pepperoni</p>
                     <p class="text-sm text-[#8c805f] dark:text-gray-400">1x</p>
                   </div>
                 </div>
@@ -302,11 +301,11 @@
                 <span>$30.00</span>
               </div>
               <div class="flex justify-between text-base text-[#8c805f] dark:text-gray-400">
-                <span>Delivery Fee</span>
+                <span>Tarifa de Entrega</span>
                 <span>$5.00</span>
               </div>
               <div class="flex justify-between text-base text-[#8c805f] dark:text-gray-400">
-                <span>Taxes</span>
+                <span>Impuestos</span>
                 <span>$2.40</span>
               </div>
               <div
@@ -318,7 +317,7 @@
             <button
               class="mt-8 w-full rounded-full bg-primary py-4 px-6 text-center text-base font-bold text-[#181611] hover:brightness-110 transition-all"
               type="submit">
-              Place Order
+              Realizar Pedido
             </button>
           </div>
         </div>
@@ -327,22 +326,23 @@
     <footer class="w-full bg-white dark:bg-background-dark/50 border-t border-[#e6e3db] dark:border-gray-700 mt-12">
       <div
         class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
-        <p class="text-sm text-[#8c805f] dark:text-gray-400">© 2024 Cheesy Dreams. All rights reserved.</p>
+        <p class="text-sm text-[#8c805f] dark:text-gray-400">© 2024 Cheesy Dreams. Todos los derechos reservados.</p>
         <div class="flex gap-6 mt-4 sm:mt-0">
           <a class="text-sm text-[#8c805f] dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
-            href="#">Privacy Policy</a>
+            href="#">Política de Privacidad</a>
           <a class="text-sm text-[#8c805f] dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
-            href="#">Terms of Service</a>
+            href="#">Términos de Servicio</a>
           <a class="text-sm text-[#8c805f] dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
-            href="#">Contact</a>
+            href="#">Contacto</a>
         </div>
       </div>
     </footer>
     <div class="fixed bottom-4 right-4 z-50">
       <button id="accessibility-trigger" type="button" aria-controls="accessibility-menu" aria-expanded="false"
-        class="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-lg hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-background-light">
+        class="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-lg hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-background-light"
+        aria-label="Abrir Opciones de Accesibilidad">
         <span class="material-symbols-outlined !text-3xl text-[#181611]">accessibility_new</span>
-        <span class="sr-only">Open Accessibility Menu</span>
+        <span class="sr-only">Abrir Menú de Accesibilidad</span>
       </button>
 
       <div id="accessibility-menu" role="dialog" aria-labelledby="accessibility-heading" aria-modal="true"
@@ -350,13 +350,13 @@
 
         <div class="p-4 border-b border-gray-200">
           <h2 class="text-lg font-bold text-gray-900" id="accessibility-heading">
-            Accessibility Settings
+            Configuración de Accesibilidad
           </h2>
         </div>
 
         <div class="p-4 space-y-4 h-80 overflow-y-auto custom-scrollbar">
           <div class="space-y-2">
-            <label class="text-sm font-medium text-gray-700" for="font-size">Font Size</label>
+            <label class="text-sm font-medium text-gray-700" for="font-size">Tamaño de Fuente</label>
             <div class="flex items-center gap-2">
               <span class="text-xs text-gray-500">A</span>
               <input id="font-size" type="range" min="100" max="180" value="100"
@@ -366,25 +366,25 @@
           </div>
 
           <div class="space-y-2">
-            <p class="text-sm font-medium text-gray-700">Contrast Theme</p>
+            <p class="text-sm font-medium text-gray-700">Tema de Contraste</p>
             <div class="grid grid-cols-4 gap-2">
               <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-white" data-contrast="black-on-white"
-                data-fg="#000000" data-bg="#ffffff" title="Black on white"></button>
+                data-fg="#000000" data-bg="#ffffff" title="Negro sobre blanco" aria-label="Texto negro sobre fondo blanco"></button>
 
               <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-black" data-contrast="white-on-black"
-                data-fg="#ffffff" data-bg="#000000" title="White on black"></button>
+                data-fg="#ffffff" data-bg="#000000" title="Blanco sobre negro" aria-label="Texto blanco sobre fondo negro"></button>
 
               <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-yellow-400" data-contrast="yellow-on-blue"
-                data-fg="#facc15" data-bg="#020617" title="Yellow on dark blue"></button>
+                data-fg="#facc15" data-bg="#020617" title="Amarillo sobre azul oscuro" aria-label="Texto amarillo sobre fondo azul oscuro"></button>
 
               <button class="h-8 w-8 rounded-full border-2 border-gray-300 bg-blue-600" data-contrast="blue-on-white"
-                data-fg="#2563eb" data-bg="#ffffff" title="Blue on white"></button>
+                data-fg="#2563eb" data-bg="#ffffff" title="Azul sobre blanco" aria-label="Texto azul sobre fondo blanco"></button>
             </div>
           </div>
 
           <div class="space-y-3 pt-2 border-t border-gray-200">
             <div class="flex items-center justify-between">
-              <p class="text-sm font-medium text-gray-700">Grayscale</p>
+              <p class="text-sm font-medium text-gray-700">Escala de Grises</p>
               <label class="inline-flex items-center gap-2 cursor-pointer">
                 <input id="grayscale-toggle" type="checkbox"
                   class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
@@ -393,7 +393,7 @@
             </div>
 
             <div class="flex items-center justify-between">
-              <p class="text-sm font-medium text-gray-700">Text Spacing</p>
+              <p class="text-sm font-medium text-gray-700">Espaciado de Texto</p>
               <label class="inline-flex items-center gap-2 cursor-pointer">
                 <input id="spacing-toggle" type="checkbox"
                   class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
@@ -402,7 +402,7 @@
             </div>
 
             <div class="flex items-center justify-between">
-              <p class="text-sm font-medium text-gray-700">Dyslexia Font</p>
+              <p class="text-sm font-medium text-gray-700">Fuente para Dislexia</p>
               <label class="inline-flex items-center gap-2 cursor-pointer">
                 <input id="dyslexia-toggle" type="checkbox"
                   class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
@@ -411,7 +411,7 @@
             </div>
 
             <div class="flex items-center justify-between">
-              <p class="text-sm font-medium text-gray-700">Big Cursor</p>
+              <p class="text-sm font-medium text-gray-700">Cursor Grande</p>
               <label class="inline-flex items-center gap-2 cursor-pointer">
                 <input id="cursor-toggle" type="checkbox"
                   class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
@@ -420,7 +420,7 @@
             </div>
 
             <div class="flex items-center justify-between">
-              <p class="text-sm font-medium text-gray-700">Highlight Links</p>
+              <p class="text-sm font-medium text-gray-700">Resaltar Enlaces</p>
               <label class="inline-flex items-center gap-2 cursor-pointer">
                 <input id="links-toggle" type="checkbox"
                   class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
@@ -429,7 +429,7 @@
             </div>
 
             <div class="flex items-center justify-between">
-              <p class="text-sm font-medium text-gray-700">Reading Guide</p>
+              <p class="text-sm font-medium text-gray-700">Guía de Lectura</p>
               <label class="inline-flex items-center gap-2 cursor-pointer">
                 <input id="reading-guide-toggle" type="checkbox"
                   class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
@@ -438,7 +438,7 @@
             </div>
 
             <div class="flex items-center justify-between">
-              <p class="text-sm font-medium text-gray-700">Pause Animations</p>
+              <p class="text-sm font-medium text-gray-700">Pausar Animaciones</p>
               <label class="inline-flex items-center gap-2 cursor-pointer">
                 <input id="animation-toggle" type="checkbox"
                   class="rounded border-gray-300 text-primary focus:ring-primary-dark" />
@@ -449,7 +449,7 @@
 
           <div class="p-4 border-t border-gray-200">
             <button id="a11y-reset" class="w-full text-center text-sm font-semibold text-gray-500 hover:underline">
-              Reset to Default
+              Restablecer a Predeterminado
             </button>
           </div>
         </div>
@@ -458,10 +458,12 @@
 
     <script>
       // ===== Simple "not implemented" modal for links with data-not-implemented =====
+      // This script creates a modal to inform the user that a feature is not implemented.
       (function () {
         function showModal() {
           if (document.querySelector('.__notimpl_modal_backdrop')) return;
 
+          // Create backdrop
           const backdrop = document.createElement('div');
           backdrop.className = '__notimpl_modal_backdrop';
           Object.assign(backdrop.style, {
@@ -474,6 +476,7 @@
             zIndex: '9999'
           });
 
+          // Create modal container
           const modal = document.createElement('div');
           Object.assign(modal.style, {
             background: 'white',
@@ -486,14 +489,17 @@
             fontFamily: 'Work Sans, sans-serif'
           });
 
+          // Modal Title
           const title = document.createElement('h2');
-          title.textContent = 'Not implemented yet!';
+          title.textContent = '¡Aún no implementado!';
           title.style.marginBottom = '12px';
 
+          // Modal Text
           const text = document.createElement('p');
-          text.textContent = 'This functionality is not implemented yet.';
+          text.textContent = 'Esta funcionalidad aún no está implementada.';
           text.style.marginBottom = '20px';
 
+          // Close Button
           const btn = document.createElement('button');
           btn.textContent = 'Cerrar';
           Object.assign(btn.style, {
@@ -512,6 +518,7 @@
           modal.appendChild(btn);
           backdrop.appendChild(modal);
 
+          // Close on backdrop click
           backdrop.addEventListener('click', (e) => {
             if (e.target === backdrop) backdrop.remove();
           });
@@ -519,6 +526,7 @@
           document.body.appendChild(backdrop);
         }
 
+        // Attach event listener to all elements with data-not-implemented attribute
         document.addEventListener('click', (e) => {
           const target = e.target.closest('[data-not-implemented]');
           if (target) {
@@ -529,7 +537,9 @@
       })();
 
       // ===== ACCESSIBILITY PANEL + SETTINGS =====
+      // This script manages the accessibility settings including font size, contrast, and other visual aids.
       (function () {
+        // Keys for local storage to persist settings
         const KEY_SIZE = 'a11y_font';
         const KEY_FG = 'a11y_fg';
         const KEY_BG = 'a11y_bg';
@@ -542,6 +552,7 @@
         const KEY_GUIDE = 'a11y_guide';
         const KEY_PAUSE = 'a11y_pause';
 
+        // DOM Elements
         const trigger = document.getElementById('accessibility-trigger');
         const menu = document.getElementById('accessibility-menu');
 
@@ -559,6 +570,7 @@
         const readingGuide = document.getElementById('a11y-reading-guide');
 
         // --- Reading Guide Follow Logic ---
+        // Updates the position of the reading guide bar based on mouse movement
         document.addEventListener('mousemove', (e) => {
           if (document.body.classList.contains('a11y-reading-guide')) {
             readingGuide.style.top = e.clientY + 'px';
@@ -566,6 +578,7 @@
         });
 
         // --- Toggle panel visibility ---
+        // Opens or closes the accessibility menu
         if (trigger && menu) {
           trigger.addEventListener('click', () => {
             const isHidden = menu.classList.contains('hidden');
@@ -575,9 +588,11 @@
         }
 
         // --- Apply settings on load ---
+        // Restore saved settings from local storage
         applyInitialSettings();
 
         // --- Font size (100–180%) ---
+        // Updates the root font size based on slider input
         if (sizeSlider) {
           sizeSlider.addEventListener('input', (e) => {
             const value = e.target.value;
@@ -587,6 +602,7 @@
         }
 
         // --- High contrast presets (safe pairs only) ---
+        // Sets the high contrast theme based on selected button
         contrastButtons.forEach((btn) => {
           btn.addEventListener('click', () => {
             const currentFg = btn.dataset.fg;
@@ -595,6 +611,7 @@
           });
         });
 
+        // Helper function to apply high contrast colors
         function setHighContrast(fg, bg) {
           if (fg) {
             document.documentElement.style.setProperty('--a11y-fg', fg);
@@ -609,6 +626,7 @@
         }
 
         // --- Generic Toggle Handler ---
+        // Helper to handle checkbox toggles for various accessibility features
         function setupToggle(el, cls, key) {
           if (!el) return;
           el.addEventListener('change', () => {
@@ -622,6 +640,7 @@
           });
         }
 
+        // Setup event listeners for each toggle
         setupToggle(dyslexiaToggle, 'a11y-dyslexia-font', KEY_DYS);
         setupToggle(cursorToggle, 'a11y-cursor-big', KEY_CURSOR);
         setupToggle(linksToggle, 'a11y-highlight-links', KEY_LINKS);
@@ -631,6 +650,7 @@
         setupToggle(animationToggle, 'a11y-paused', KEY_PAUSE);
 
         // --- Reset ---
+        // Resets all accessibility settings to default
         if (resetBtn) {
           resetBtn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -661,6 +681,7 @@
           });
         }
 
+        // Function to load and apply settings from local storage
         function applyInitialSettings() {
           // font size
           const savedSize = localStorage.getItem(KEY_SIZE);
