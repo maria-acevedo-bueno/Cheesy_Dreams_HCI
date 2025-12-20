@@ -179,15 +179,17 @@
                 <p class="text-[#181611] dark:text-background-light text-base font-medium leading-normal pb-2">Selecciona una Hora</p>
                 <select id="time-select"
                   class="form-select w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181611] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#e6e4db] dark:border-[#3a3524] bg-background-light dark:bg-background-dark h-14 placeholder:text-[#898161] p-3.5 text-base font-normal leading-normal">
-                  <option>5:00 PM</option>
-                  <option>5:30 PM</option>
-                  <option>6:00 PM</option>
-                  <option>6:30 PM</option>
-                  <option selected="">7:00 PM</option>
-                  <option>7:30 PM</option>
-                  <option>8:00 PM</option>
-                  <option>8:30 PM</option>
-                  <option>9:00 PM</option>
+                  <option>17:00</option>
+                  <option>17:30</option>
+                  <option>18:00</option>
+                  <option>18:30</option>
+                  <option selected="">19:00</option>
+                  <option>19:30</option>
+                  <option>20:00</option>
+                  <option>20:30</option>
+                  <option>21:00</option>
+                  <option>21:30</option>
+                  <option>22:00</option>
                 </select>
               </label>
             </div>
@@ -207,9 +209,7 @@
                   </button>
                 </div>
                 <div id="calendar-grid" class="grid grid-cols-7">
-                  <p
-                    class="text-[#898161] dark:text-[#a8a184] text-[13px] font-bold leading-normal flex h-12 w-full items-center justify-center pb-0.5">
-                    D</p>
+                  <!-- Pazartesiden başlıyor -->
                   <p
                     class="text-[#898161] dark:text-[#a8a184] text-[13px] font-bold leading-normal flex h-12 w-full items-center justify-center pb-0.5">
                     L</p>
@@ -228,6 +228,9 @@
                   <p
                     class="text-[#898161] dark:text-[#a8a184] text-[13px] font-bold leading-normal flex h-12 w-full items-center justify-center pb-0.5">
                     S</p>
+                  <p
+                    class="text-[#898161] dark:text-[#a8a184] text-[13px] font-bold leading-normal flex h-12 w-full items-center justify-center pb-0.5">
+                    D</p>
                 </div>
               </div>
             </div>
@@ -711,7 +714,7 @@
         return new Date(year, month - 1, day);
       }
       
-      // Render calendar for specific month and year
+      // Render calendar for specific month and year - PAZARTESİDEN BAŞLAYACAK ŞEKİLDE
       function renderCalendar(year, month) {
         // Update month/year display
         monthYearElement.textContent = `${monthNames[month]} ${year}`;
@@ -721,7 +724,15 @@
         // Get last day of month
         const lastDay = new Date(year, month + 1, 0);
         // Get day of week for first day (0 = Sunday, 1 = Monday, etc.)
-        const firstDayOfWeek = firstDay.getDay();
+        let firstDayOfWeek = firstDay.getDay();
+        
+        // PAZARTESİ'DEN BAŞLAT: Eğer Pazar ise (0) 6 yap, diğer günlerden 1 çıkar
+        if (firstDayOfWeek === 0) {
+          firstDayOfWeek = 6; // Pazar -> Pazartesi öncesi (6)
+        } else {
+          firstDayOfWeek = firstDayOfWeek - 1; // Pazartesi=0 olacak
+        }
+        
         // Get number of days in month
         const daysInMonth = lastDay.getDate();
         
@@ -839,7 +850,7 @@
         
         // Get values from selects using IDs
         const guests = guestsSelect ? guestsSelect.value : '2 personas';
-        const time = timeSelect ? timeSelect.value : '7:00 PM';
+        const time = timeSelect ? timeSelect.value : '19:00';
         const dateStr = formatDate(selectedDate);
         
         console.log('Creating URL with parameters:', {
