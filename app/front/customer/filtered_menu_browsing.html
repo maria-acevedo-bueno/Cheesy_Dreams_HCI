@@ -183,33 +183,33 @@
               class="flex flex-col gap-6 p-4 bg-white dark:bg-background-dark rounded-xl border border-gray-200 dark:border-gray-800">
               <div class="flex flex-col gap-2">
                 <h3 class="text-[#181611] dark:text-white text-lg font-bold leading-normal">Opciones Dietéticas</h3>
-                <div class="flex flex-col gap-1 border-t border-gray-200 dark:border-gray-700 pt-2">
+                <div class="flex flex-col gap-1 border-t border-gray-200 dark:border-gray-700 pt-2" id="diet-filters">
                   <label class="flex gap-x-3 py-2 flex-row cursor-pointer">
                     <input
                       class="h-5 w-5 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary dark:focus:border-primary"
                       style="--checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(51,51,51)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');"
-                      type="checkbox" />
+                      type="checkbox" value="sin-gluten" />
                     <p class="text-[#333333] dark:text-gray-300 text-base font-normal leading-normal">Sin Gluten</p>
                   </label>
                   <label class="flex gap-x-3 py-2 flex-row cursor-pointer">
                     <input
                       class="h-5 w-5 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary dark:focus:border-primary"
                       style="--checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(51,51,51)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');"
-                      type="checkbox" />
+                      type="checkbox" value="vegetariano" />
                     <p class="text-[#333333] dark:text-gray-300 text-base font-normal leading-normal">Vegetariano</p>
                   </label>
                   <label class="flex gap-x-3 py-2 flex-row cursor-pointer">
                     <input
                       class="h-5 w-5 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary dark:focus:border-primary"
                       style="--checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(51,51,51)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');"
-                      type="checkbox" />
+                      type="checkbox" value="vegano" />
                     <p class="text-[#333333] dark:text-gray-300 text-base font-normal leading-normal">Vegano</p>
                   </label>
                   <label class="flex gap-x-3 py-2 flex-row cursor-pointer">
                     <input
                       class="h-5 w-5 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary dark:focus:border-primary"
-                      style="--checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16%27 fill=%27rgb(51,51,51)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');"
-                      type="checkbox" />
+                      style="--checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(51,51,51)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');"
+                      type="checkbox" value="picante" />
                     <p class="text-[#333333] dark:text-gray-300 text-base font-normal leading-normal">Picante</p>
                   </label>
                 </div>
@@ -270,7 +270,7 @@
                   </button>
                 </div>
                 <div class="flex items-center gap-2 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg">
-                  <button id="tts-read-btn" title="Leer texto visible" aria-pressed="false" class="px-3 py-1.5 rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-[#181611] dark:hover:text-white">
+                  <button id="tts-read-btn" title="Leer texto visible" aria-pressed="false" class="hidden px-3 py-1.5 rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-[#181611] dark:hover:text-white">
                     <span class="material-symbols-outlined text-lg inline-block align-middle mr-1.5">volume_up</span>
                     Leer
                   </button>
@@ -289,8 +289,8 @@
                   class="text-[#181611] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">
                   Pizzas</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                  <div
-                    class="flex flex-col bg-white dark:bg-background-dark rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg transition-shadow duration-300">
+                  <div data-category="pizzas" data-diet="vegetariano"
+                    class="menu-item flex flex-col bg-white dark:bg-background-dark rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg transition-shadow duration-300">
                     <img class="w-full h-48 object-cover"
                       data-alt="Una deliciosa pizza Margherita sobre una tabla de madera."
                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuADSksfeGRXmpjY1Z54mW0SSliuiHuZynJNJsPvD-ONxyK07uhY6tXacSbDobCLcuQn04NBJ55z5KSIsEQ55oju-ROkm62z9RORoY8KbIau_hrV82DLazlQ5kEoX2HILHEvhd4H6-Scl4EZFw8v2IYcnDahh5kJ0X48Gxvm_hW1upAEkpKGbIwNeTQhJCsUrteHmweT-fymwtHUduow84OnL733M8FWdnZ8KpDRejabXarz3AqR5tUS5LP5zujejZHI77tdRKUOeww" />
@@ -309,8 +309,8 @@
                       </div>
                     </div>
                   </div>
-                  <div
-                    class="flex flex-col bg-white dark:bg-background-dark rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg transition-shadow duration-300">
+                  <div data-category="pizzas" data-diet="picante"
+                    class="menu-item flex flex-col bg-white dark:bg-background-dark rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg transition-shadow duration-300">
                     <img class="w-full h-48 object-cover" data-alt="Una pizza de pepperoni picante con hojuelas de chile."
                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBUcFL8N4rFElp_NXC_oB5dLy3E1MpX68I9GZJmorOg8HZFv3qxinnJLJWZLzH1x2k_FM_d4OhPcu1_XOo4AvQmGbrn_rbyFaWrpfsqD2_-3942I_Cnx4mar6Ldz6-E8Ryx30Oq6VVqEBqedj-geQVN7K8wI9cYXK-Pczwwot-0QXkc2ltGsPeyexAIgrfIyXaAMiTvZZbXCn2KC1bUrkVt8XOsL5n7cenR6ZPmuW-156TDvxI8gE_j2JWd3o7GVBETUEslyFbjXM" />
                     <div class="p-4 flex flex-col flex-grow">
@@ -328,8 +328,8 @@
                       </div>
                     </div>
                   </div>
-                  <div
-                    class="flex flex-col bg-white dark:bg-background-dark rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg transition-shadow duration-300">
+                  <div data-category="pizzas" data-diet="sin-gluten vegetariano"
+                    class="menu-item flex flex-col bg-white dark:bg-background-dark rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg transition-shadow duration-300">
                     <img class="w-full h-48 object-cover"
                       data-alt="Una pizza sin gluten con varios ingredientes vegetales."
                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH4mXiRW_DS_1IJUMmrlwm2j9NF-AllPDKf_uq0x-xmLDvh6PfA_YNujbkrf47nDvSFmpxzsuKtsTAc7GC0tDfAZtpDNCn5R5lYigqMsIv_0AI4mgA-8LlLBWYJo0OEKH9dpECa4wJ_yZsc8ruJK4a6RHkU8sFFj6kf8CR2c8SWMyTktwFEjoKASxBUKaCbbg5PmcrqARdL-p5bukqVhiVmD-8r5JGwflpE1-jpf7L2lB9sv8lA9g6cmK3_odrPt6Tc2cYXi_Wg70" />
@@ -355,8 +355,8 @@
                   class="text-[#181611] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">
                   Pastas</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                  <div
-                    class="flex flex-col bg-white dark:bg-background-dark rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg transition-shadow duration-300">
+                  <div data-category="pastas" data-diet="vegetariano"
+                    class="menu-item flex flex-col bg-white dark:bg-background-dark rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg transition-shadow duration-300">
                     <img class="w-full h-48 object-cover" data-alt="Un tazón de cremosa pasta Alfredo."
                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjzCX0MbfUP0kaPAVyjepi0xA9VrFnSX9gUED-ApwX0EQv9xwbSyPzQdWY9U_B5XhLCdy0knogzuvp3DX44fpRCWPgM0TO5ZFt93TUQYIDVoSp_FqYa_Zn-dR1s26e28s5YgFcnYWAaHzMHtBJu-bMT7_2QLmIZDPTDHinl5IAZf6995aSZDh726O7fPWeUzP7fy-4TbY-BD-5GcC4SU7uBRpV_OQ0ZPqBp2MNH9ehN6_DPlD3_3cwE9nbCq4gFe6BHWPttnAWGmg" />
                     <div class="p-4 flex flex-col flex-grow">
@@ -380,7 +380,7 @@
                   Pizzas
                 </h2>
                 <ul class="divide-y divide-gray-200 dark:divide-gray-700">
-                  <li class="p-6">
+                  <li class="p-6 menu-item" data-category="pizzas" data-diet="vegetariano">
                     <article>
                       <header class="flex flex-col mb-2">
                         <h3 class="text-xl font-bold text-[#181611] dark:text-white">La Vida Gouda</h3>
@@ -408,7 +408,7 @@
                     </article>
                   </li>
 
-                  <li class="p-6">
+                  <li class="p-6 menu-item" data-category="pizzas" data-diet="picante">
                     <article>
                       <header class="flex flex-col mb-2">
                         <h3 class="text-xl font-bold text-[#181611] dark:text-white">Pepperoni Picante</h3>
@@ -435,7 +435,7 @@
                     </article>
                   </li>
 
-                  <li class="p-6">
+                  <li class="p-6 menu-item" data-category="pizzas" data-diet="sin-gluten vegetariano">
                     <article>
                       <header class="flex flex-col mb-2">
                         <h3 class="text-xl font-bold text-[#181611] dark:text-white">Delicia Vegetal</h3>
@@ -470,7 +470,7 @@
                   Pastas
                 </h2>
                 <ul class="divide-y divide-gray-200 dark:divide-gray-700">
-                  <li class="p-6">
+                  <li class="p-6 menu-item" data-category="pastas" data-diet="vegetariano">
                     <article>
                       <header class="flex flex-col mb-2">
                         <h3 class="text-xl font-bold text-[#181611] dark:text-white">Fettuccine Alfredo Cremoso</h3>
@@ -508,20 +508,28 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  <!-- Pizza Item 1 -->
-                  <article class="pictogram-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border-4 border-gray-200 dark:border-gray-700 hover:border-primary shadow-xl">
-                    <div class="w-full h-64 bg-gradient-to-br from-yellow-100 to-amber-100 flex items-center justify-center gap-4 p-4">
+                  <!-- Pizza Item 1: La Vida Gouda -->
+                  <article data-category="pizzas" data-diet="vegetariano" class="menu-item pictogram-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border-4 border-gray-200 dark:border-gray-700 hover:border-primary shadow-xl">
+                    <div class="w-full h-auto min-h-64 bg-gradient-to-br from-yellow-100 to-amber-100 flex flex-wrap items-center justify-center gap-4 p-4">
                       <div class="flex flex-col items-center">
-                        <span class="material-symbols-outlined text-yellow-600" style="font-size: 80px;">nutrition</span>
-                        <span class="text-xs font-bold text-gray-600 mt-1">Queso</span>
+                        <img src="https://static.arasaac.org/pictograms/2541/2541_500.png" alt="Queso Gouda" class="w-16 h-16 object-contain drop-shadow-md">
+                        <span class="text-xs font-bold text-gray-600 mt-1">Gouda</span>
                       </div>
                       <div class="flex flex-col items-center">
-                        <span class="material-symbols-outlined text-red-600" style="font-size: 80px;">circle</span>
-                        <span class="text-xs font-bold text-gray-600 mt-1">Tomate</span>
+                        <img src="https://static.arasaac.org/pictograms/27136/27136_500.png" alt="Mozzarella" class="w-16 h-16 object-contain drop-shadow-md">
+                        <span class="text-xs font-bold text-gray-600 mt-1">Mozzarella</span>
                       </div>
                       <div class="flex flex-col items-center">
-                        <span class="material-symbols-outlined text-green-600" style="font-size: 80px;">eco</span>
+                        <img src="https://static.arasaac.org/pictograms/37722/37722_500.png" alt="Albahaca" class="w-16 h-16 object-contain drop-shadow-md">
                         <span class="text-xs font-bold text-gray-600 mt-1">Albahaca</span>
+                      </div>
+                      <div class="flex flex-col items-center">
+                        <img src="https://static.arasaac.org/pictograms/2246/2246_500.png" alt="Aceite de Oliva" class="w-16 h-16 object-contain drop-shadow-md">
+                        <span class="text-xs font-bold text-gray-600 mt-1">Aceite</span>
+                      </div>
+                      <div class="flex flex-col items-center">
+                        <img src="https://static.arasaac.org/pictograms/2594/2594_500.png" alt="Tomate" class="w-16 h-16 object-contain drop-shadow-md">
+                        <span class="text-xs font-bold text-gray-600 mt-1">Tomate</span>
                       </div>
                     </div>
                     <div class="p-6">
@@ -545,19 +553,23 @@
                     </div>
                   </article>
 
-                  <!-- Pizza Item 2 -->
-                  <article class="pictogram-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border-4 border-gray-200 dark:border-gray-700 hover:border-primary shadow-xl">
-                    <div class="w-full h-64 bg-gradient-to-br from-red-100 to-orange-100 flex items-center justify-center gap-4 p-4">
+                  <!-- Pizza Item 2: Pepperoni Picante -->
+                  <article data-category="pizzas" data-diet="picante" class="menu-item pictogram-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border-4 border-gray-200 dark:border-gray-700 hover:border-primary shadow-xl">
+                    <div class="w-full h-auto min-h-64 bg-gradient-to-br from-red-100 to-orange-100 flex flex-wrap items-center justify-center gap-4 p-4">
                       <div class="flex flex-col items-center">
-                        <span class="material-symbols-outlined text-red-700" style="font-size: 80px;">circle</span>
+                        <img src="https://static.arasaac.org/pictograms/3290/3290_500.png" alt="Pepperoni" class="w-16 h-16 object-contain drop-shadow-md">
                         <span class="text-xs font-bold text-gray-600 mt-1">Pepperoni</span>
                       </div>
                       <div class="flex flex-col items-center">
-                        <span class="material-symbols-outlined text-red-600" style="font-size: 80px;">local_fire_department</span>
+                        <img src="https://static.arasaac.org/pictograms/2838/2838_500.png" alt="Pimiento Verde (Jalapeños)" class="w-16 h-16 object-contain drop-shadow-md">
+                        <span class="text-xs font-bold text-gray-600 mt-1">Jalapeños</span>
+                      </div>
+                      <div class="flex flex-col items-center">
+                        <img src="https://static.arasaac.org/pictograms/4661/4661_500.png" alt="Chile (Guindilla)" class="w-16 h-16 object-contain drop-shadow-md">
                         <span class="text-xs font-bold text-gray-600 mt-1">Chile</span>
                       </div>
                       <div class="flex flex-col items-center">
-                        <span class="material-symbols-outlined text-yellow-600" style="font-size: 80px;">nutrition</span>
+                        <img src="https://static.arasaac.org/pictograms/2541/2541_500.png" alt="Queso" class="w-16 h-16 object-contain drop-shadow-md">
                         <span class="text-xs font-bold text-gray-600 mt-1">Queso</span>
                       </div>
                     </div>
@@ -582,23 +594,23 @@
                     </div>
                   </article>
 
-                  <!-- Pizza Item 3 -->
-                  <article class="pictogram-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border-4 border-gray-200 dark:border-gray-700 hover:border-primary shadow-xl">
-                    <div class="w-full h-64 bg-gradient-to-br from-green-100 to-lime-100 flex items-center justify-center gap-3 p-4">
+                  <!-- Pizza Item 3: Delicia Vegetal -->
+                  <article data-category="pizzas" data-diet="sin-gluten vegetariano" class="menu-item pictogram-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border-4 border-gray-200 dark:border-gray-700 hover:border-primary shadow-xl">
+                    <div class="w-full h-auto min-h-64 bg-gradient-to-br from-green-100 to-lime-100 flex flex-wrap items-center justify-center gap-3 p-4">
                       <div class="flex flex-col items-center">
-                        <span class="material-symbols-outlined text-red-600" style="font-size: 70px;">nutrition</span>
+                        <img src="https://static.arasaac.org/pictograms/2839/2839_500.png" alt="Pimientos" class="w-16 h-16 object-contain drop-shadow-md">
                         <span class="text-xs font-bold text-gray-600 mt-1">Pimientos</span>
                       </div>
                       <div class="flex flex-col items-center">
-                        <span class="material-symbols-outlined text-purple-600" style="font-size: 70px;">circle</span>
+                        <img src="https://static.arasaac.org/pictograms/2323/2323_500.png" alt="Cebollas" class="w-16 h-16 object-contain drop-shadow-md">
                         <span class="text-xs font-bold text-gray-600 mt-1">Cebollas</span>
                       </div>
                       <div class="flex flex-col items-center">
-                        <span class="material-symbols-outlined text-gray-700" style="font-size: 70px;">circle</span>
+                        <img src="https://static.arasaac.org/pictograms/8316/8316_500.png" alt="Aceitunas" class="w-16 h-16 object-contain drop-shadow-md">
                         <span class="text-xs font-bold text-gray-600 mt-1">Aceitunas</span>
                       </div>
                       <div class="flex flex-col items-center">
-                        <span class="material-symbols-outlined text-amber-700" style="font-size: 70px;">eco</span>
+                        <img src="https://static.arasaac.org/pictograms/10220/10220_500.png" alt="Champiñones" class="w-16 h-16 object-contain drop-shadow-md">
                         <span class="text-xs font-bold text-gray-600 mt-1">Champiñones</span>
                       </div>
                     </div>
@@ -633,20 +645,24 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  <!-- Pasta Item 1 -->
-                  <article class="pictogram-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border-4 border-gray-200 dark:border-gray-700 hover:border-primary shadow-xl">
-                    <div class="w-full h-64 bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center gap-4 p-4">
+                  <!-- Pasta Item 1: Fettuccine Alfredo -->
+                  <article data-category="pastas" data-diet="vegetariano" class="menu-item pictogram-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border-4 border-gray-200 dark:border-gray-700 hover:border-primary shadow-xl">
+                    <div class="w-full h-auto min-h-64 bg-gradient-to-br from-amber-100 to-orange-100 flex flex-wrap items-center justify-center gap-4 p-4">
                       <div class="flex flex-col items-center">
-                        <span class="material-symbols-outlined text-amber-600" style="font-size: 80px;">restaurant</span>
+                        <img src="https://static.arasaac.org/pictograms/8652/8652_500.png" alt="Pasta" class="w-16 h-16 object-contain drop-shadow-md">
                         <span class="text-xs font-bold text-gray-600 mt-1">Pasta</span>
                       </div>
                       <div class="flex flex-col items-center">
-                        <span class="material-symbols-outlined text-yellow-600" style="font-size: 80px;">nutrition</span>
+                        <img src="https://static.arasaac.org/pictograms/13376/13376_500.png" alt="Nata" class="w-16 h-16 object-contain drop-shadow-md">
+                        <span class="text-xs font-bold text-gray-600 mt-1">Nata</span>
+                      </div>
+                      <div class="flex flex-col items-center">
+                        <img src="https://static.arasaac.org/pictograms/2541/2541_500.png" alt="Queso Parmesano" class="w-16 h-16 object-contain drop-shadow-md">
                         <span class="text-xs font-bold text-gray-600 mt-1">Queso</span>
                       </div>
                       <div class="flex flex-col items-center">
-                        <span class="material-symbols-outlined text-gray-400" style="font-size: 80px;">bubble_chart</span>
-                        <span class="text-xs font-bold text-gray-600 mt-1">Nata</span>
+                        <img src="https://static.arasaac.org/pictograms/2641/2641_500.png" alt="Ajo" class="w-16 h-16 object-contain drop-shadow-md">
+                        <span class="text-xs font-bold text-gray-600 mt-1">Ajo</span>
                       </div>
                     </div>
                     <div class="p-6">
@@ -666,19 +682,19 @@
                     </div>
                   </article>
 
-                  <!-- Pasta Item 2 -->
-                  <article class="pictogram-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border-4 border-gray-200 dark:border-gray-700 hover:border-primary shadow-xl">
-                    <div class="w-full h-64 bg-gradient-to-br from-red-100 to-orange-100 flex items-center justify-center gap-4 p-4">
+                  <!-- Pasta Item 2: Espaguetis Marinara -->
+                  <article data-category="pastas" data-diet="vegetariano" class="menu-item pictogram-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border-4 border-gray-200 dark:border-gray-700 hover:border-primary shadow-xl">
+                    <div class="w-full h-auto min-h-64 bg-gradient-to-br from-red-100 to-orange-100 flex flex-wrap items-center justify-center gap-4 p-4">
                       <div class="flex flex-col items-center">
-                        <span class="material-symbols-outlined text-amber-600" style="font-size: 80px;">restaurant</span>
+                        <img src="https://static.arasaac.org/pictograms/2383/2383_500.png" alt="Espaguetis" class="w-16 h-16 object-contain drop-shadow-md">
                         <span class="text-xs font-bold text-gray-600 mt-1">Espaguetis</span>
                       </div>
                       <div class="flex flex-col items-center">
-                        <span class="material-symbols-outlined text-red-600" style="font-size: 80px;">circle</span>
+                        <img src="https://static.arasaac.org/pictograms/2594/2594_500.png" alt="Tomate" class="w-16 h-16 object-contain drop-shadow-md">
                         <span class="text-xs font-bold text-gray-600 mt-1">Tomate</span>
                       </div>
                       <div class="flex flex-col items-center">
-                        <span class="material-symbols-outlined text-green-600" style="font-size: 80px;">eco</span>
+                        <img src="https://static.arasaac.org/pictograms/14244/14244_500.png" alt="Hierbas" class="w-16 h-16 object-contain drop-shadow-md">
                         <span class="text-xs font-bold text-gray-600 mt-1">Hierbas</span>
                       </div>
                     </div>
@@ -704,7 +720,7 @@
               <!-- More sections can be added similarly -->
             </div>
 
-            <div class="hidden text-center py-16 px-6 bg-gray-50 dark:bg-gray-800/50 rounded-xl">
+            <div id="no-results" class="hidden text-center py-16 px-6 bg-gray-50 dark:bg-gray-800/50 rounded-xl">
               <span class="material-symbols-outlined text-6xl text-gray-400 dark:text-gray-600">search_off</span>
               <h3 class="mt-4 text-xl font-bold text-[#181611] dark:text-white">No Se Encontraron Platos</h3>
               <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Intenta ajustar tus filtros para encontrar lo que buscas.</p>
@@ -849,6 +865,8 @@
         const visualMenu = document.getElementById('visual-menu');
         const textMenu = document.getElementById('text-menu');
         const pictogramMenu = document.getElementById('pictogram-menu');
+        const ttsReadBtn = document.getElementById('tts-read-btn');
+        const ttsStopBtn = document.getElementById('tts-stop-btn');
 
         function setActiveButton(activeBtn, inactiveBtns) {
           activeBtn.classList.add('font-bold', 'text-[#181611]', 'dark:text-white', 'bg-white', 'dark:bg-gray-700', 'shadow-sm');
@@ -860,11 +878,18 @@
           });
         }
 
+        // Initially hide TTS buttons
+        ttsReadBtn.classList.add('hidden');
+        ttsStopBtn.classList.add('hidden');
+
         textBtn.addEventListener('click', () => {
           visualMenu.classList.add('hidden');
           pictogramMenu.classList.add('hidden');
           textMenu.classList.remove('hidden');
           setActiveButton(textBtn, [visualBtn, pictogramBtn]);
+          
+          // Show Read button only in Text mode
+          ttsReadBtn.classList.remove('hidden');
         });
 
         visualBtn.addEventListener('click', () => {
@@ -872,6 +897,11 @@
           pictogramMenu.classList.add('hidden');
           visualMenu.classList.remove('hidden');
           setActiveButton(visualBtn, [textBtn, pictogramBtn]);
+          
+          // Hide TTS buttons
+          ttsReadBtn.classList.add('hidden');
+          ttsStopBtn.classList.add('hidden');
+          window.speechSynthesis.cancel();
         });
 
         pictogramBtn.addEventListener('click', () => {
@@ -879,6 +909,11 @@
           visualMenu.classList.add('hidden');
           pictogramMenu.classList.remove('hidden');
           setActiveButton(pictogramBtn, [visualBtn, textBtn]);
+          
+          // Hide TTS buttons
+          ttsReadBtn.classList.add('hidden');
+          ttsStopBtn.classList.add('hidden');
+          window.speechSynthesis.cancel();
         });
 
         // Check URL hash on load to show specific menu
@@ -887,12 +922,52 @@
           pictogramMenu.classList.add('hidden');
           textMenu.classList.remove('hidden');
           setActiveButton(textBtn, [visualBtn, pictogramBtn]);
+          ttsReadBtn.classList.remove('hidden');
         } else if (window.location.hash === '#pictogram') {
           visualMenu.classList.add('hidden');
           textMenu.classList.add('hidden');
           pictogramMenu.classList.remove('hidden');
           setActiveButton(pictogramBtn, [visualBtn, textBtn]);
         }
+      });
+    </script>
+    
+    <script>
+      // Filter Logic
+      document.addEventListener('DOMContentLoaded', () => {
+        const checkboxes = document.querySelectorAll('#diet-filters input[type="checkbox"]');
+        const items = document.querySelectorAll('.menu-item');
+        const noResultsMsg = document.getElementById('no-results');
+
+        function filterItems() {
+          const activeFilters = Array.from(checkboxes)
+            .filter(cb => cb.checked)
+            .map(cb => cb.value);
+
+          let hasResults = false;
+
+          items.forEach(item => {
+            const itemDiet = (item.dataset.diet || '').split(' ');
+            
+            // Inclusive filtering: Item must match ALL active filters
+            const matches = activeFilters.every(filter => itemDiet.includes(filter));
+
+            if (matches) {
+              item.style.display = '';
+              hasResults = true;
+            } else {
+              item.style.display = 'none';
+            }
+          });
+
+          if (noResultsMsg) {
+            noResultsMsg.classList.toggle('hidden', hasResults);
+          }
+        }
+
+        checkboxes.forEach(cb => {
+          cb.addEventListener('change', filterItems);
+        });
       });
     </script>
 
@@ -909,10 +984,16 @@
         function gatherVisibleText() {
           if (!textMenu) return '';
           // Only read visible sections inside #text-menu
-          const visible = Array.from(textMenu.querySelectorAll(':scope section, :scope ul, :scope p, :scope h1, :scope h2, :scope h3, :scope li'))
-            .filter(el => el.offsetParent !== null);
-          const texts = visible.map(el => el.innerText.trim()).filter(Boolean);
-          return texts.join('\n\n');
+          // We need to exclude hidden filtered items
+          const visibleArticles = Array.from(textMenu.querySelectorAll('li.menu-item:not([style*="display: none"]) article'));
+          
+          if (visibleArticles.length === 0) return "No hay platos visibles con los filtros actuales.";
+
+          const texts = visibleArticles.map(article => {
+             return article.innerText.trim();
+          });
+          
+          return "Menú de Texto:\n\n" + texts.join('\n\nSiguiente plato:\n\n');
         }
 
         // Starts the text-to-speech
@@ -936,18 +1017,21 @@
 
           utterance.onstart = () => {
             readBtn.setAttribute('aria-pressed', 'true');
+            readBtn.classList.add('hidden'); // Hide read, show stop
             stopBtn.classList.remove('hidden');
             stopBtn.removeAttribute('aria-hidden');
           };
 
           utterance.onend = () => {
             readBtn.setAttribute('aria-pressed', 'false');
+            readBtn.classList.remove('hidden'); // Show read, hide stop
             stopBtn.classList.add('hidden');
             stopBtn.setAttribute('aria-hidden', 'true');
           };
 
           utterance.onerror = () => {
             readBtn.setAttribute('aria-pressed', 'false');
+            readBtn.classList.remove('hidden');
             stopBtn.classList.add('hidden');
             stopBtn.setAttribute('aria-hidden', 'true');
           };
@@ -962,18 +1046,14 @@
           }
           if (utterance) utterance = null;
           readBtn.setAttribute('aria-pressed', 'false');
+          readBtn.classList.remove('hidden');
           stopBtn.classList.add('hidden');
           stopBtn.setAttribute('aria-hidden', 'true');
         }
 
         if (readBtn) {
           readBtn.addEventListener('click', (e) => {
-            const pressed = readBtn.getAttribute('aria-pressed') === 'true';
-            if (pressed) {
-              stopReading();
-            } else {
-              startReading();
-            }
+             startReading();
           });
         }
 
